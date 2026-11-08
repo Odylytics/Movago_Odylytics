@@ -5,6 +5,8 @@ export type Lang = 'en' | 'vi'
 const dict = {
   navHow: { en: 'How it works', vi: 'Cách hoạt động' },
   navDemo: { en: 'Open demo', vi: 'Mở demo' },
+  navBiz: { en: 'Business case', vi: 'Kinh doanh' },
+  bizCta: { en: 'See the business case', vi: 'Xem bài toán kinh doanh' },
   slogan: { en: 'Move smarter. Go safer.', vi: 'Move smarter. Go safer.' },
   heroTitle: { en: 'Check every freight charge before you pay it.', vi: 'Kiểm tra từng khoản cước trước khi thanh toán.' },
   heroBody: {

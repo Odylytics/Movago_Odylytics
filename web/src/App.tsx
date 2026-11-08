@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { LangContext, useT, type Lang } from './i18n'
+import Business from './Business'
 import Landing from './Landing'
 import Workspace from './Workspace'
 
@@ -38,6 +39,7 @@ function Nav() {
         <a className="brand" href="#/"><Mark />Movago</a>
         <div className="nav-links">
           <a className="link" href="#/#how">{t('navHow')}</a>
+          <a className="link" href="#/business">{t('navBiz')}</a>
           <LangSwitch lang={lang} />
           <a className="btn small" href="#/demo">{t('navDemo')}</a>
         </div>
@@ -67,16 +69,17 @@ export default function App() {
   const hash = useHash()
   const [path, query] = hash.replace(/^#/, '').split('?')
   const isDemo = path.startsWith('/demo')
+  const isBiz = path.startsWith('/business')
   const story = new URLSearchParams(query ?? '').get('story') === '1'
 
   useEffect(() => {
-    if (!isDemo && hash.includes('#how')) document.getElementById('how')?.scrollIntoView()
-  }, [hash, isDemo])
+    if (!isDemo && !isBiz && hash.includes('#how')) document.getElementById('how')?.scrollIntoView()
+  }, [hash, isDemo, isBiz])
 
   return (
     <LangContext.Provider value={{ lang, setLang }}>
       <Nav />
-      <main>{isDemo ? <Workspace key={String(story)} story={story} /> : <Landing />}</main>
+      <main>{isDemo ? <Workspace key={String(story)} story={story} /> : isBiz ? <Business /> : <Landing />}</main>
     </LangContext.Provider>
   )
 }

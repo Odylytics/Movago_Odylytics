@@ -109,6 +109,7 @@ export default function Landing() {
             </div>
             <div className="cta-row" style={{ marginTop: 0 }}>
               <a className="btn on-dark" href="#/demo?story=1">{t('ctaStory')}</a>
+              <a className="btn ghost-dark" href="#/business">{t('bizCta')}</a>
             </div>
           </div>
         </section>

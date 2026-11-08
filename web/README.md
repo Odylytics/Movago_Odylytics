@@ -13,7 +13,7 @@ npm test           # reconciliation acceptance cases
 npm run build      # static site in dist/
 ```
 
-Routes: `#/` landing · `#/demo` try the sample case · `#/demo?story=1` guided story. Hash routing, so `dist/` works on any static host. To deploy on Vercel, import the repo and set the root directory to `web`.
+Routes: `#/` landing · `#/business` business case, ROI and Vietnam plan · `#/demo` try the sample case · `#/demo?story=1` guided story. Hash routing, so `dist/` works on any static host. To deploy on Vercel, import the repo and set the root directory to `web`.
 
 ## What is real and what is simulated
 
