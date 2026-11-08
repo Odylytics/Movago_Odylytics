@@ -14,6 +14,7 @@
 | Tập nói, chạy demo và chuẩn bị hỏi đáp | [Kịch bản thuyết trình](colio_ai_pitch_research_vi.md) |
 | Tra tên, slogan và quy tắc thiết kế website demo | [Quy tắc thiết kế demo](DEMO_DESIGN_RULES.md) |
 | Xem các mẫu demo và luồng đề xuất cho Movago | [Nghiên cứu demo sản phẩm](MOVAGO_DEMO_RESEARCH.md) |
+| Chuẩn bị hồ sơ logistics Việt Nam và tập chạy demo | [Kế hoạch demo Movago](MOVAGO_DEMO_PLAN.md) |
 | Tra thông tin đội và hồ sơ công khai | [Đội Odylytics](ODYLYTICS_TEAM.md) |
 | Xây luồng kiểm tra và kiểm thử ngoại lệ | [Cách Movago hoạt động](nghien_cuu_tung_slide/colio_ai_hoat_dong_the_nao.md) |
 | Tìm mẫu tài liệu và chuẩn bị bộ test | [Nguồn dữ liệu và chứng từ](nghien_cuu_tung_slide/nguon_du_lieu_chung_tu_colio.md) |
