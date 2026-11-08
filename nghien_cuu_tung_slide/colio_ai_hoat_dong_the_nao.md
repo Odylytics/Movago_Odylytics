@@ -1,10 +1,10 @@
 # Colio AI hoạt động như thế nào?
 
-**Ghi chú nghiên cứu · 07/11/2026 · Dùng để hiểu các slide 5–8**
+**Đặc tả luồng kiểm tra và đáp án demo · 08/11/2026 · Slide 5–8**
 
-Colio AI là thiết kế đề xuất cho kế toán công nợ của một công ty giao nhận. Ứng dụng kiểm tra căn cứ của từng khoản cước trước khi doanh nghiệp thanh toán. **AI đọc chứng từ, quy tắc tính mức phí kỳ vọng, người phụ trách xác nhận kết quả.** Hồ sơ bên dưới là dữ liệu giả lập từ brief. [Brief Colio AI](</Users/evice2457/Competitions/KTC Ideathon/colio_ai_project_brief.md>).
+Colio AI là thiết kế đề xuất cho kế toán công nợ của một công ty giao nhận. Ứng dụng kiểm tra căn cứ của từng khoản cước trước khi doanh nghiệp thanh toán. **AI đọc chứng từ, quy tắc tính mức phí kỳ vọng, người phụ trách xác nhận kết quả.** Ca INV-095 dùng dữ liệu giả lập. [Phạm vi MVP và cách đo pilot](../colio_ai_project_brief.md) · [Mẫu chứng từ và ca kiểm thử bổ sung](nguon_du_lieu_chung_tu_colio.md)
 
-## 1. Kế toán cần trả lời ba câu hỏi
+## 1. Ba nguồn và điều kiện để đối chiếu
 
 | Câu hỏi | Dữ liệu dùng để trả lời | Ai có dữ liệu? |
 |---|---|---|
@@ -14,7 +14,7 @@ Colio AI là thiết kế đề xuất cho kế toán công nợ của một cô
 
 **Colio nằm giữa lúc nhận đề nghị chi và lúc duyệt chi.** Ví dụ tại Việt Nam, Maersk công bố hóa đơn phí địa phương cho hàng nhập có trên MyFinance trước khi tàu đến, còn Lacco mô tả nhân viên chứng từ kiểm tra debit note của hãng tàu hoặc đại lý trước khi lập đề nghị thanh toán. Vì thế, loại tài liệu cần đọc phụ thuộc vào quy trình đối tác. Demo chọn một hóa đơn PDF sẵn có trước khi duyệt. [Maersk Việt Nam — mục Import Local Charge Invoice](https://www.maersk.com/local-information/asia-pacific/vietnam/import) · [Lacco — nghiệp vụ chứng từ tại TP.HCM](https://lacco.com.vn/tuyen-dung/tuyen-dung-nhan-vien-chung-tu-xuat-nhap-khau-tai-tp-hcm).
 
-## 2. Theo dõi một bộ hồ sơ từ đầu đến cuối
+## 2. Luồng kiểm tra trên ca INV-095
 
 ### Bước 1 · Nạp ba nguồn
 
@@ -73,7 +73,7 @@ flowchart TD
     H --> I
 ```
 
-## 4. Những tình huống dễ hiểu nhầm
+## 4. Quy tắc cho các trường hợp ngoại lệ
 
 | Tình huống | Colio xử lý thế nào trong thiết kế |
 |---|---|
@@ -83,11 +83,18 @@ flowchart TD
 | **Phí lưu container tính theo ngày** | Chuyển sang xác minh nếu thiếu thời gian miễn phí, thời điểm lấy hoặc trả container, hoặc điều khoản áp dụng. Với Maersk, phí lưu trong cảng và phí giữ ngoài cảng dựa trên các mốc vận hành khác nhau. [Maersk Việt Nam — Demurrage and Detention](https://www.maersk.com/local-information/asia-pacific/vietnam/import) |
 | **Có hóa đơn điều chỉnh hoặc thay thế** | Giữ liên kết với chứng từ trước đó và chuyển người phụ trách xác nhận bản có hiệu lực. |
 
-## 5. Cái gì cần có để bản đầu chạy được?
+## 5. Phạm vi và bộ ca nghiệm thu
 
 **Phạm vi đầu tiên.** Một nhà cung cấp, một lô trên mỗi hóa đơn VND, vài mã phí có đơn giá cố định và bảng giá đã được nhập thành cột. Luồng cần làm được là tải hồ sơ, mở bằng chứng từng dòng và lưu kết quả xác minh. Bảng giá phải do người phụ trách duyệt. Nếu bảng giá chỉ có trong email hoặc phụ lục PDF, bước chuẩn hóa và kiểm tra bảng giá cần thực hiện trước.
 
-**Bốn ca nên chạy thử.** Một hóa đơn khớp, một khoản lệch giá, một hồ sơ thiếu bảng giá và một bản gửi lại. Với mỗi ca, kiểm tra hệ thống ghép đúng lô, chọn đúng phiên bản giá, tính đúng và mở được bằng chứng. Sau đó thử thêm trường hợp ảnh mờ và phụ phí có phê duyệt bổ sung. Các ca này kiểm tra logic. Để biết thời gian giảm và tỷ lệ bỏ sót ngoài demo, cần chạy trên mẫu thực tế được phép sử dụng.
+| Ca nghiệm thu | Đáp án dự kiến |
+|---|---|
+| Hóa đơn khớp giá và đúng lô | Khớp trong phạm vi kiểm tra. Hiện căn cứ hai phía. |
+| INV-095 trước khi có phê duyệt bổ sung | Cước chính khớp. Dòng DOC chênh +800.000 đồng trước thuế. Mở được hóa đơn trang 1 và RATE-V3 dòng 12. |
+| Thiếu bảng giá hoặc có hai phiên bản cùng điều kiện | Thiếu căn cứ. Ghi dữ liệu cần bổ sung và để trống mức chênh lệch. |
+| Cùng PDF đổi tên rồi tải lại | Hiện bản đã ghi nhận. Trạng thái thanh toán cần sổ công nợ hoặc bằng chứng chi. |
+| Dòng tiền trên ảnh mờ | Yêu cầu người dùng kiểm tra vùng trích trước khi tính. |
+| Chênh lệch có phê duyệt bổ sung | Lưu phê duyệt, chạy lại với căn cứ đã xác nhận và giữ lịch sử kết quả cũ. |
 
 **Căn cứ của thiết kế.** Hướng dẫn nghiệp vụ của GSA Hoa Kỳ mô tả kiểm tra cước bằng cách ghép hóa đơn với vận đơn, kiểm tra mức phí và xác nhận dịch vụ đã thực hiện. Tài liệu công khai của Conlio và ShipCheck mô tả cách đối chiếu hóa đơn với thông tin vận tải và biểu phí. Luồng trong tài liệu là đề xuất cho Colio và cần kiểm thử trên dữ liệu của nhóm. [GSA — Transportation Invoice Audit](https://www.gsa.gov/policy-regulations/policy/transportation-management-policy/transportation-invoice-audit) · [Conlio — mô tả dịch vụ, mục 3](https://www.conlio.com/terms-conditions) · [ShipCheck — mục Freight Audit](https://shipcheck.com/en).
 

@@ -1,5 +1,7 @@
 # Colio AI · Nội dung 10 slide
 
+Bản chép vào deck. Dùng [kịch bản thuyết trình](colio_ai_pitch_research_vi.md) để tập nói và [nghiên cứu bài toán kinh doanh](nghien_cuu_tung_slide/colio_ai_business_problems.md) để tra nguồn.
+
 ## 01 · Colio AI
 
 **Đối chiếu cước vận tải trước khi thanh toán**
@@ -20,7 +22,7 @@ KTC Ideathon
 | Lô hàng và dịch vụ liên quan | Hồ sơ lô hàng |
 | Đơn giá và phụ phí được duyệt | Bảng giá và phê duyệt bổ sung |
 
-Khi dữ liệu nằm ở nhiều nơi, kế toán phải gom hồ sơ, so từng dòng phí và hỏi lại bộ phận phụ trách khi có chênh lệch.
+Khi căn cứ nằm ở nhiều nơi, kế toán phải gom hồ sơ, so từng dòng phí và hỏi lại người phụ trách. Pilot đo thời gian gom hồ sơ và số chênh lệch được xác nhận.
 
 *Nguồn nghiệp vụ tại TP.HCM · [Lacco Logistics](https://lacco.com.vn/tuyen-dung/tuyen-dung-nhan-vien-chung-tu-xuat-nhap-khau-tai-tp-hcm) · [Flexport](https://job-boards.greenhouse.io/flexport/jobs/7660304)*
 
@@ -33,7 +35,7 @@ Khi dữ liệu nằm ở nhiều nơi, kế toán phải gom hồ sơ, so từn
 - **Người mua dự kiến** · Kế toán trưởng hoặc CFO.
 - **Phạm vi pilot** · Một nhóm kế toán, một tuyến hoặc nhóm phí, một đến hai nhà cung cấp.
 
-*Bối cảnh · Khoảng **4.000–4.500 doanh nghiệp giao nhận** trên cả nước năm 2025, theo ước tính VLA được dẫn trong báo cáo. [Bộ Công Thương, mục 3.3](https://cdn.hstatic.net/files/200001055703/file/bao_cao_logistics_viet_nam_2025.pdf#page=76)*
+*Bối cảnh toàn ngành · Khoảng **4.000–4.500 doanh nghiệp giao nhận** trên cả nước năm 2025, theo ước tính VLA được dẫn trong báo cáo. [Bộ Công Thương, mục 3.3](https://cdn.hstatic.net/files/200001055703/file/bao_cao_logistics_viet_nam_2025.pdf#page=76)*
 
 ---
 
@@ -94,9 +96,9 @@ Kế toán xác nhận kết quả hoặc chuyển người phụ trách xử l�
 | Phí chứng từ (DOC) | 1.300.000 đ | 500.000 đ | **+800.000 đ** |
 | **Tổng trước thuế** | **9.300.000 đ** | **8.500.000 đ** | **Cần xác minh** |
 
-**Bằng chứng** · Hóa đơn trang 1, dòng DOC ↔ Bảng giá RATE-V3, dòng 12  
-**Bản gửi lại** · INV-095 đã có trong hồ sơ  
-**Thao tác** · Yêu cầu xác minh · Xuất báo cáo
+- **Bằng chứng** · Hóa đơn trang 1, dòng DOC ↔ Bảng giá RATE-V3, dòng 12
+- **Bản gửi lại** · PDF INV-095 đã có trong lịch sử tiếp nhận
+- **Thao tác** · Yêu cầu xác minh · Xuất báo cáo
 
 *Dữ liệu giả lập. Các số tiền đối chiếu đều tính trước thuế.*
 
@@ -105,9 +107,9 @@ Kế toán xác nhận kết quả hoặc chuyển người phụ trách xử l�
 ## 09 · Pilot đo thời gian và chất lượng kiểm tra
 
 - **Pilot** · So quy trình hiện tại và quy trình có Colio trên bộ hồ sơ có nhãn.
-- **Chỉ số** · Phút thao tác, cảnh báo đúng, sai lệch bỏ sót.
+- **Chỉ số** · Phút thao tác, cảnh báo đúng, sai lệch bỏ sót và khoản thực tế điều chỉnh.
 - **Nguồn lực** · Nghiệp vụ cước, kỹ thuật trích xuất và quy tắc, giao diện.
-- **Mô hình bán thử** · Thuê bao theo số hóa đơn xử lý, kèm phí thiết lập khi cần.
+- **Mô hình bán thử** · Thuê bao theo số hóa đơn duy nhất đã xử lý, kèm phí thiết lập khi cần.
 
 **Kịch bản minh họa** · 1.000 hóa đơn/tháng × 6 phút giảm/hóa đơn = **100 giờ/tháng**. Với 60.000 đ/giờ, giá trị thời gian là **6 triệu đồng/tháng** trước chi phí.
 

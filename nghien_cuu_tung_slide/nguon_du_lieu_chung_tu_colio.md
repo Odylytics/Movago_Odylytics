@@ -1,8 +1,8 @@
 # Nguồn dữ liệu và chứng từ công khai cho Colio
 
-Rà nguồn ngày 07/11/2026. Trong các nguồn đã kiểm tra, chưa thấy bộ hồ sơ thật ở Việt Nam công khai **chứng từ đề nghị chi, hồ sơ lô và báo giá đã duyệt của cùng một lô**. Các tài liệu dưới đây có thể dùng để tìm hiểu bố cục, trích quy tắc giá và kiểm thử bằng dữ liệu giả lập.
+Danh mục phục vụ chuẩn bị đầu vào. Mẫu công khai dùng để tham khảo bố cục và điều kiện tính phí. Pilot cần bộ hồ sơ do doanh nghiệp cho phép sử dụng, có **chứng từ đề nghị chi, hồ sơ lô và căn cứ giá của cùng một lô**. [Luồng kiểm tra và demo chính](colio_ai_hoat_dong_the_nao.md) · [Kế hoạch pilot](../colio_ai_project_brief.md)
 
-## 1. Chứng từ và biểu phí
+## 1. Nguồn công khai theo loại đầu vào
 
 | Đầu vào | Tài liệu tìm được | Cách dùng |
 |---|---|---|
@@ -13,15 +13,15 @@ Rà nguồn ngày 07/11/2026. Trong các nguồn đã kiểm tra, chưa thấy b
 | **Bảng giá theo điều kiện tại Việt Nam** | ONE Việt Nam công bố mức phí hàng nhập/xuất từ 01/04/2026 với mã phí, số tiền trước và sau VAT, đơn vị, loại container và điều kiện. [Thông báo biểu phí ONE Việt Nam](https://vn.one-line.com/sites/vietnam/files/2026-03/Customer%20Advisory%20for%20Surcharge%20-%20Vietnam.pdf) | Dùng làm căn cứ cho các ca giả lập. Với hồ sơ thật, dùng báo giá hoặc hợp đồng áp dụng cho chính lô đó. |
 | **Biểu phí để đối chiếu thêm** | PIL công bố bảng phí Việt Nam với nhóm THC và D/O, đơn vị tính và ngày áp dụng. Bảng hàng nhập ghi số tiền đã gồm VAT theo cách trình bày của hãng. [PDF biểu phí PIL Việt Nam](https://www.pilship.com/wp-content/uploads/2026/03/VN-local-charges-1.pdf) | Dùng để kiểm thử tình huống nguồn giá có cơ sở thuế khác nhau. |
 
-## 2. Bộ mẫu để kiểm thử từng phần
+## 2. Bộ mẫu kiểm thử theo mục đích
 
 - **Kiểm tra logic ghép ba nguồn.** ParcelProof có dữ liệu điền sẵn cho hồ sơ chuyến, dòng hóa đơn và bảng giá, với các tình huống giả lập để chọn trên trang. Các ca này thuộc chuyển phát ở Mỹ. Dùng tham khảo cách tổ chức đầu vào và nhãn kết quả của một bài toán đối soát. [ParcelProof — các bộ CSV mẫu trên trang](https://apps.aichieve.net/parcelproof)
 - **Kiểm tra AI đọc hóa đơn.** Invoice Extraction Benchmark có 181 tài liệu giả lập, trong đó tác giả phân loại 16 mẫu là hóa đơn vận tải, kèm dữ liệu đáp án. Dữ liệu công bố theo CC BY 4.0 và có yêu cầu ghi công nêu trong repo. Dùng cho trích xuất trường và dòng phí. [InvoiceParser Pro — bộ benchmark và hướng dẫn](https://github.com/DrewKraken/invoice-extraction-benchmark)
 - **Kiểm tra OCR tiếng Việt.** Bộ dữ liệu MC-OCR có ảnh hóa đơn bán lẻ và nhãn văn bản theo dòng. Ban tổ chức giới hạn dữ liệu cho mục đích nghiên cứu và yêu cầu đăng ký bằng thỏa thuận sử dụng trước khi tải. [RIVF2021 MC-OCR — bộ dữ liệu và điều kiện](https://www.rivf2021-mc-ocr.vietnlp.com/dataset)
 
-## 3. Một ca demo ở Việt Nam có thể dựng từ nguồn công khai
+## 3. Ca kiểm thử bổ sung theo biểu phí ONE
 
-Giả lập **một vận đơn và một container khô 20 feet** nhập trực tiếp vào TP.HCM, thuộc dòng giá chung trong biểu phí ONE sau ngày 01/04/2026. Giả định biểu phí công bố là mức áp dụng cho lô demo. Hóa đơn mô phỏng có hai dòng, đều tính **trước VAT**.
+Giả lập **một vận đơn và một container khô 20 feet** nhập trực tiếp vào TP.HCM, ngoài trường hợp đi qua Cái Mép, thuộc dòng giá chung trong biểu phí ONE áp dụng từ 01/04/2026. Giả định biểu phí công bố là mức áp dụng cho lô demo. Hóa đơn mô phỏng có hai dòng, đều tính **trước VAT**.
 
 | Mã phí | Mức theo biểu phí | Số ghi trên hóa đơn giả lập | Kết quả kỳ vọng |
 |---|---:|---:|---|
@@ -30,4 +30,9 @@ Giả lập **một vận đơn và một container khô 20 feet** nhập trực
 
 **Dữ liệu thật** trong ca trên là các mức phí và điều kiện được ONE công bố. **Dữ liệu giả lập** là lô hàng, số hóa đơn và khoản phí bị tính theo sai loại container. Các mẫu Maersk và CMA CGM dùng tham khảo bố cục tài liệu. [ONE Việt Nam — dòng THD và DOF](https://vn.one-line.com/sites/vietnam/files/2026-03/Customer%20Advisory%20for%20Surcharge%20-%20Vietnam.pdf)
 
-Để kiểm thử trên dữ liệu doanh nghiệp, xin các bộ đã ẩn thông tin nhạy cảm và có quyền sử dụng. Mỗi bộ cần giữ cùng một mã lô hoặc số B/L trên **hóa đơn/debit note, hồ sơ lô và căn cứ giá**, kể cả khi mã thật được thay bằng mã giả. Chọn vài ca đã được kế toán xác nhận kết quả để có đáp án đối chiếu.
+## 4. Checklist nhận bộ mẫu từ doanh nghiệp
+
+- **Chứng từ đề nghị chi.** Giữ nhà cung cấp, định danh, mã tham chiếu, dòng phí, đơn vị, cơ sở thuế và trạng thái bản gốc, gửi lại hoặc điều chỉnh.
+- **Hồ sơ lô.** Giữ mã lô hoặc liên kết B/L, tuyến, loại và số lượng container, mốc áp dụng giá. Dùng cùng mã giả ở các nguồn khi ẩn danh.
+- **Căn cứ giá.** Giữ phiên bản, ngày hiệu lực, đơn vị, tiền tệ, cơ sở thuế và phê duyệt phát sinh nếu có.
+- **Đáp án nghiệp vụ.** Nhờ AP hoặc pricing ghi kết quả đã xác nhận, tài liệu dùng để quyết định và khoản điều chỉnh nếu có. Gắn nhãn nguồn thật hoặc giả lập và lưu điều kiện sử dụng.

@@ -1,248 +1,75 @@
-# COLIO AI
+# Colio AI · Brief dự án
 
-> **AI-powered Logistics Document Verification**  
-> **Tagline:** Catch discrepancies before they cost you.  
-> **Trạng thái:** Ý tưởng / giả thuyết cần kiểm chứng  
-> **Bối cảnh:** Hackathon AI for Business Innovation, TP.HCM — hạn nộp theo thông tin BTC được cung cấp: 23:59, 13/11/2026.
+**KTC Ideathon · 08/11/2026 · Đề xuất cần kiểm chứng**
 
-## 1. Executive summary
+Colio AI hỗ trợ kế toán công nợ kiểm tra từng khoản cước trước khi thanh toán. Công cụ ghép **chứng từ đề nghị chi, hồ sơ lô và bảng giá đã duyệt**, tính lại các khoản có đủ căn cứ và đưa chênh lệch kèm bằng chứng cho người xác minh. Mục tiêu thử nghiệm là giảm thời gian đối chiếu và giữ chất lượng kiểm soát.
 
-**Colio AI** là nền tảng AI hỗ trợ doanh nghiệp logistics và giao nhận vận tải (freight forwarder) **đọc, trích xuất, đối chiếu và kiểm chứng chứng từ**, ưu tiên workflow **kiểm tra hóa đơn cước vận chuyển trước khi thanh toán**.
+## 1. Bài toán và khách hàng
 
-Hệ thống nhận các tài liệu như **freight invoice, bill of lading, proof of delivery, shipment record và bảng giá/hợp đồng**, sau đó phát hiện thông tin không khớp, khoản phí bất thường hoặc hóa đơn trùng. Mỗi cảnh báo đi kèm **bằng chứng truy vết về tài liệu gốc** để nhân viên kiểm duyệt. Colio không tự quyết định thanh toán và không thay thế người phụ trách nghiệp vụ.
+Giả thuyết ưu tiên là kế toán mất công tìm đủ ba nguồn, rồi phải hỏi lại pricing hoặc operations khi không rõ điều kiện tính phí. Sai loại container, sai phiên bản giá hoặc thiếu phê duyệt bổ sung có thể dẫn đến chênh lệch. Quy trình đối chiếu xuất hiện trong mô tả công việc của Lacco và Flexport tại TP.HCM. Tần suất, tác động và cách phần mềm hiện có xử lý là nội dung pilot. [Nghiên cứu và ma trận bằng chứng](nghien_cuu_tung_slide/colio_ai_business_problems.md)
 
-**Giá trị đề xuất:** giảm thời gian đối chiếu thủ công, hạn chế thanh toán sai/trùng, chuẩn hóa quy trình và tăng năng lực xử lý mà không phải tăng nhân sự tương ứng.
-
-**Nguồn cảm hứng:** mô hình kiểm chứng chứng từ vận tải của **Conlio** (Đức), và hướng tự động hóa logistics của **Raft** và **Freightmate**. Colio là đề xuất độc lập, định hướng bản địa hóa cho Việt Nam; không phải sản phẩm chính thức hay công ty liên quan đến Conlio.
-
-## 2. Business problem
-
-### 2.1 Bối cảnh
-
-Trong một lô hàng, dữ liệu liên quan có thể nằm rải rác trong email, PDF, ảnh scan, bảng Excel, TMS/ERP và phần mềm kế toán. Nhân viên operations hoặc kế toán phải tự tìm, nhập và so sánh các trường như số vận đơn, số container, trọng lượng, đơn giá cước, phụ phí và số tiền cần thanh toán.
-
-### 2.2 Pain points
-
-| Pain point | Vấn đề vận hành | Tác động kinh doanh cần đo |
-|---|---|---|
-| Đối chiếu thủ công | Mở và so sánh nhiều chứng từ/nguồn dữ liệu | Phút/bộ hồ sơ; giờ lao động/tháng |
-| Sai lệch thông tin | Nhầm shipment ID, trọng lượng, phụ phí hoặc đồng tiền | Tỷ lệ lỗi; thời gian sửa lỗi |
-| Thanh toán trùng/thừa | Invoice trùng hoặc charge không khớp hợp đồng | Số tiền có nguy cơ thanh toán sai |
-| Dữ liệu phân tán | PDF, email, Excel và phần mềm nội bộ không đồng nhất | Số lần chuyển ứng dụng; thời gian tìm chứng từ |
-| Thiếu audit trail | Khó giải thích tại sao một hóa đơn bị giữ lại | Thời gian tra cứu và phê duyệt |
-
-### 2.3 Câu hỏi cần kiểm chứng tại Việt Nam
-
-1. Một forwarder xử lý bao nhiêu hóa đơn cước/tháng và mất bao nhiêu phút để kiểm tra một hóa đơn?
-2. Các lỗi phổ biến nhất là gì? Sai sót có thực sự dẫn đến chi phí hay chỉ làm mất thời gian?
-3. Hóa đơn và bảng giá hiện nằm ở đâu (email, PDF, Excel, TMS, ERP)?
-4. Ai có quyền phê duyệt thanh toán và ai quyết định mua phần mềm?
-5. Đơn vị chấp nhận mức độ tự động hóa nào, và yêu cầu bảo mật ra sao?
-
-> **Nguyên tắc chứng cứ:** Chưa có số liệu khảo sát khách hàng Việt Nam cho Colio. Mọi tỷ lệ tiết kiệm thời gian, giảm lỗi hay doanh thu trong tài liệu này đều là **mục tiêu đo lường hoặc ví dụ giả định**, không phải kết quả thực nghiệm.
-
-## 3. Target customers & buyer
-
-**ICP ban đầu (giả thuyết):** freight forwarder hoặc 3PL quy mô vừa tại Việt Nam, có lượng hóa đơn và chứng từ đủ lớn, đang dùng nhiều PDF/Excel/email và có đội operations/kế toán xử lý thủ công.
-
-- **End users:** nhân viên operations, documentation, accounts payable, billing.
-- **Economic buyers:** trưởng bộ phận operations, CFO/kế toán trưởng, giám đốc doanh nghiệp.
-- **Influencers:** IT, compliance, trưởng nhóm chứng từ.
-- **Không ưu tiên ở MVP:** doanh nghiệp siêu nhỏ có khối lượng tài liệu thấp; tập đoàn cần triển khai tích hợp/phân quyền phức tạp ngay từ đầu.
-
-## 4. AI solution
-
-### 4.1 Workflow đề xuất
-
-1. **Upload / Ingest:** nhân viên tải lên tài liệu liên quan đến một shipment hoặc invoice.
-2. **Extract:** OCR / document AI nhận dạng, trích xuất các trường dữ liệu theo schema.
-3. **Normalize & Link:** chuẩn hóa ngày, tiền tệ, đơn vị đo; liên kết invoice với shipment, hợp đồng hoặc bảng giá phù hợp.
-4. **Cross-check:** rule engine kiểm tra số tham chiếu, charges, đơn giá, số tiền và bản ghi trùng.
-5. **Flag discrepancies:** ghi rõ trường không khớp, mức độ ưu tiên, quy tắc bị vi phạm và bằng chứng gốc.
-6. **Human review:** nhân viên xác nhận, bác bỏ hoặc yêu cầu sửa; lưu lịch sử quyết định.
-7. **Export:** xuất báo cáo kiểm tra (CSV/PDF) hoặc chuẩn bị dữ liệu đưa sang TMS/ERP.
-
-### 4.2 Ví dụ minh họa
-
-- **Shipment record:** `SHP-001`, cước cơ bản 8.000.000 VND, phụ phí được duyệt 500.000 VND.
-- **Carrier invoice:** `INV-095`, tham chiếu `SHP-001`, tổng tiền 9.300.000 VND.
-- **Colio flag:** chênh lệch 800.000 VND so với tổng dự kiến 8.500.000 VND; yêu cầu người kiểm duyệt xem lại cơ sở tính phí và thuế trước thanh toán.
-
-*Ví dụ dữ liệu giả lập; không có nghĩa chênh lệch luôn là sai. Thuế, phụ phí phát sinh, tỷ giá và điều khoản hợp đồng phải được xem xét.*
-
-### 4.3 Nguyên tắc kỹ thuật
-
-- **LLM/VLM để hiểu tài liệu**, không để LLM tự ý quyết định số tiền phải trả.
-- **Kiểm chứng có tính quyết định** bằng quy tắc/đối chiếu số học khi có thể.
-- **Traceability:** mọi trường quan trọng lưu `document_id`, trang, vị trí đoạn trích hoặc bounding box và mức tin cậy.
-- **Human-in-the-loop:** hóa đơn rủi ro cao phải được phê duyệt thủ công.
-- **Privacy-by-design:** ẩn dữ liệu nhạy cảm trong demo; phân quyền và nhật ký truy cập khi làm sản phẩm thật.
-
-## 5. MVP cho hackathon
-
-### 5.1 Phạm vi nên làm
-
-**Một workflow duy nhất:** đối chiếu *freight invoice* với *shipment record* và *rate sheet/contract*; có thể bổ sung B/L hoặc POD nếu đủ mẫu dữ liệu.
-
-**Tính năng tối thiểu:**
-
-- Upload PDF/ảnh và nhập dữ liệu shipment bằng CSV.
-- Trích xuất các trường: `invoice_number`, `carrier`, `shipment_reference`, `currency`, `invoice_date`, `line_items`, `subtotal`, `tax`, `total`.
-- Phát hiện **invoice trùng**, **shipment reference sai/không có**, **tổng tiền không khớp**, **phụ phí không có trong bảng giá**, **trường dữ liệu thiếu**.
-- Dashboard cảnh báo có dẫn chiếu tài liệu gốc.
-- Nút **Approve / Request review**, xuất báo cáo.
-
-### 5.2 Ngoài phạm vi MVP
-
-- Tự động thanh toán hoặc khai hải quan.
-- Kiểm tra tuân thủ pháp luật đầy đủ.
-- Tích hợp sâu với mọi TMS/ERP tại Việt Nam.
-- Cam kết đọc chính xác mọi ảnh scan, mọi định dạng và mọi ngôn ngữ.
-
-### 5.3 Demo story (3–4 phút)
-
-1. Nhân viên tải lên 3 tài liệu của cùng shipment.
-2. Colio trích xuất dữ liệu và hiển thị các trường với nguồn trích dẫn.
-3. Hệ thống phát hiện một **phụ phí sai** và một **invoice trùng** được cài vào bộ demo.
-4. Người xem click vào cảnh báo để thấy giá trị và trang chứng từ gốc.
-5. Nhân viên chọn **Request review**, sau đó xuất báo cáo.
-
-**Điểm nhấn:** trình diễn được lỗi thật trong bộ dữ liệu thử nghiệm; không chỉ là chatbot trả lời từ PDF.
-
-## 6. Business value & ROI
-
-### 6.1 KPI cần đo bằng thí nghiệm
-
-| KPI | Định nghĩa |
+| Vai trò | Phạm vi đề xuất |
 |---|---|
-| Manual handling time | Số phút người dùng cần để hoàn thành một bộ hồ sơ |
-| Field extraction accuracy | Số trường trích xuất đúng / tổng số trường được gán nhãn |
-| Discrepancy precision | Cảnh báo đúng / tổng cảnh báo |
-| Discrepancy recall | Sai lệch được phát hiện / tổng sai lệch thực |
-| False negative rate | Sai lệch bị bỏ sót / tổng sai lệch thực |
-| Straight-through rate | Tỷ lệ hồ sơ không cần sửa thủ công trong phạm vi được phép |
-| Financial exposure flagged | Giá trị khoản phí bất thường cần được xác minh, **không đồng nghĩa tiền đã tiết kiệm** |
+| Doanh nghiệp thử nghiệm | Forwarder hàng biển quy mô vừa tại TP.HCM, có nhóm công nợ và xuất được hồ sơ lô. |
+| Người dùng và xác minh | AP kiểm tra. Operations xác nhận lô và dịch vụ. Pricing xác nhận phiên bản giá hoặc khoản phát sinh. |
+| Người mua dự kiến | Kế toán trưởng hoặc CFO, phối hợp với trưởng vận hành. IT hoặc người phụ trách dữ liệu quyết định khả năng triển khai. |
+| Đối tượng phù hợp nhất | Một nhóm AP, một tuyến hoặc nhóm phí và một đến hai nhà cung cấp. Ưu tiên nơi có hồ sơ lặp lại và bước đối chiếu còn thực hiện ngoài phần mềm. |
 
-### 6.2 Ví dụ tính ROI (giả định)
+## 2. MVP và tiêu chí nghiệm thu
 
-- 1.000 hóa đơn/tháng.
-- 15 phút xử lý thủ công/hóa đơn.
-- 60.000 VND/giờ chi phí lao động quy đổi.
-- Giả sử giảm 70% thời gian kiểm tra.
+**Đầu vào.** Một hóa đơn cước PDF bằng VND cho một lô, CSV hồ sơ lô và CSV bảng giá do người phụ trách duyệt. Chọn vài mã phí đơn giá cố định, đối chiếu trên cùng tiền tệ và cơ sở trước thuế. Khi đơn vị nhận debit note trước lúc duyệt, xác định định danh và quan hệ với hóa đơn của cùng khoản trước khi bổ sung mẫu này vào pilot.
 
-Chi phí lao động trước tự động hóa: `1.000 × 15 / 60 × 60.000 = 15.000.000 VND/tháng`.
+1. Trích nhà cung cấp, số và ngày hóa đơn, mã lô hoặc B/L, tiền tệ, dòng phí, tổng trước thuế, thuế và tổng ghi trên chứng từ. Lưu vị trí gốc của trường quan trọng.
+2. Ghép lô bằng tham chiếu và nhà cung cấp. Chọn mã phí, đơn vị và phiên bản bảng giá theo điều kiện đã duyệt. Trường mờ hoặc nhiều ứng viên chuyển người kiểm tra.
+3. Kiểm tra phép cộng và đối chiếu mức kỳ vọng theo từng dòng. So tệp gửi lại với lịch sử đã nhập. Xác minh đã chi cần dữ liệu sổ công nợ hoặc bằng chứng thanh toán.
+4. Hiển thị **Khớp trong phạm vi kiểm tra**, **Có chênh lệch** hoặc **Thiếu căn cứ**, kèm nguồn hai phía. Ghi người và lý do xác minh, rồi xuất CSV. Phê duyệt chi thuộc quy trình của doanh nghiệp.
 
-Giá trị thời gian giải phóng ước tính: `15.000.000 × 70% = 10.500.000 VND/tháng`.
+**Nghiệm thu demo.** Chạy ca khớp, lệch giá, thiếu căn cứ và bản gửi lại. Mỗi ca có kết quả dự kiến và nguồn mở được. Ca chính `INV-095` chênh **+800.000 đồng trước thuế** ở phí chứng từ và cần pricing xác minh. Xem [luồng chi tiết và ca kiểm thử](nghien_cuu_tung_slide/colio_ai_hoat_dong_the_nao.md) và [nguồn mẫu chứng từ](nghien_cuu_tung_slide/nguon_du_lieu_chung_tu_colio.md).
 
-**Lưu ý:** Đây là kịch bản minh họa, **không phải kết quả đã chứng minh**. Giờ tiết kiệm không tự động chuyển thành tiết kiệm tiền mặt. Cần trừ phí sử dụng, chi phí AI, kiểm duyệt, tích hợp và vận hành.
+**Mở rộng sau khi kiểm chứng.** Xem xét XML có cấu trúc, debit note nhiều mẫu, hóa đơn gộp lô, credit note hoặc hóa đơn điều chỉnh, D&D, đối chiếu đa tiền tệ và tích hợp TMS/ERP theo nhu cầu khách hàng. Demo mô phỏng bước kiểm tra nội bộ. Nếu thử XML, xác minh định dạng và liên kết giữa chứng từ gốc, bản điều chỉnh và bản thay thế. [Nghị định 254/2026/NĐ-CP](https://vanban.chinhphu.vn/?classid=1&docid=218689&pageid=27160&typegroupid=4) · [Thông tư 91/2026/TT-BTC](https://congbao.chinhphu.vn/van-ban/thong-tu-so-91-2026-tt-btc-470171.htm)
 
-## 7. Business model (giả thuyết)
+## 3. Pilot và cách ra quyết định
 
-- **SaaS theo tháng + hạn mức chứng từ:** gói nhỏ và vừa theo số lượng invoice/shipments.
-- **Usage-based overage:** tính thêm theo chứng từ vượt hạn mức.
-- **Enterprise:** báo giá theo khối lượng, tích hợp, phân quyền, triển khai riêng và SLA.
-- **Implementation fee:** phí thiết lập rule, tích hợp hệ thống và chuyển đổi dữ liệu.
+### Khảo sát trước khi xây thêm
 
-**Giá khảo sát ban đầu (chưa xác minh):** Starter 1,5–3 triệu VND/tháng; Growth 5–10 triệu VND/tháng; Enterprise báo giá riêng.
+Phỏng vấn 5–10 người ở AP, operations, pricing và người có ngân sách. Nhờ họ đi qua hồ sơ gần nhất thay vì ước lượng chung. Ghi sản lượng, công cụ hiện tại, thời gian tìm đủ ba nguồn, người xử lý ngoại lệ và khoản tiền thực sự điều chỉnh. Hỏi khách đã có những tính năng đối chiếu nào và bước nào còn thực hiện bên ngoài. Tìm đầu mối qua [danh bạ VLA](https://vla.com.vn/danh-sach-hoi-vien/) và [danh bạ HLA](https://www.hla-hcm.vn/danh-sach-hoi-vien/).
 
-## 8. Competitor & international inspiration
+### Chạy pilot
 
-| Đơn vị | Mô hình tham khảo | Bài học cho Colio |
-|---|---|---|
-| **Conlio (Đức)** | Kiểm chứng chứng từ vận tải và chứng từ thanh toán | Bán độ tin cậy của workflow, không chỉ bán OCR |
-| **Raft** | Tự động hóa xử lý dữ liệu, chứng từ và nghiệp vụ freight forwarding | Tích hợp vào quy trình vận hành hiện có |
-| **Freightmate** | Tự động hóa luồng email/chứng từ cho forwarder | Bắt đầu từ sự phân mảnh dữ liệu và thao tác lặp lại |
-| **OCR / generic LLM** | Trích xuất, hỏi đáp, tóm tắt tài liệu | Colio phải khác biệt bằng rules, liên kết shipment và audit trail |
+1. Lấy 10–20 bộ đã ẩn thông tin để khảo sát. Khi đủ điều kiện, mở rộng khoảng 30–100 bộ có quyền sử dụng. Dùng một nhóm hồ sơ liên tiếp để đo thời gian và độ bao phủ. Dùng bộ ca ngoại lệ có chủ đích để thử quy tắc. Báo cáo mẫu thật và ca giả lập riêng.
+2. Nhờ người nghiệp vụ xác nhận lô, phiên bản giá, dòng phí và kết quả. Gán riêng các nhãn sai phí, phí hợp lệ, thiếu căn cứ và nghi trùng. Tách bộ cấu hình khỏi bộ đánh giá, ưu tiên giữ lại mẫu từ bố cục chưa dùng.
+3. So quy trình thực tế và quy trình có Colio trên nhóm ca tương đương. Đảo thứ tự hoặc chia người duyệt để giảm hiệu ứng nhớ. Bấm giờ cả tải file, sửa kết quả trích và duyệt. Ghi thời gian chờ phản hồi riêng.
+4. Chốt ngưỡng cùng người mua trước thử nghiệm. Mốc thảo luận là giảm ít nhất 30% phút thao tác trung vị trên hồ sơ trong phạm vi, các cảnh báo tiền có căn cứ mở được và chạy đủ các ca trọng yếu. Xem từng lỗi bỏ sót hoặc hồ sơ hợp lệ bị giữ nhầm. Nếu khâu chờ chiếm phần lớn thời gian, đánh giá lại ưu tiên giữa trích xuất và luồng chuyển ngoại lệ.
 
-**Tình trạng bằng chứng:** Các con số gọi vốn, khách hàng và hiệu suất được nhắc đến trong quá trình nghiên cứu trước đó cần đối chiếu lại nguồn gốc trước khi đưa vào slide như số liệu xác nhận. Gọi vốn không đồng nghĩa đã có lợi nhuận hoặc product-market fit.
-
-**Nguồn để tìm hiểu thêm:**
-- Conlio qua Sonic: https://www.sonic.tech/de/project/conlio
-- Raft: https://raft.ai/freight-forwarding
-- Freightmate: tìm website và tài liệu công khai chính thức trước khi trích dẫn.
-
-## 9. Competitive advantage giả định tại Việt Nam
-
-- Xử lý kết hợp **tiếng Việt – tiếng Anh** và biểu mẫu phổ biến trong xuất nhập khẩu Việt Nam.
-- Cấu hình business rules theo forwarder, hãng vận chuyển và bảng giá cụ thể.
-- Liên kết chứng từ từ email/Excel/TMS theo shipment reference.
-- Bằng chứng rõ ràng, có thể kiểm tra lại bởi nhân viên.
-- Hướng triển khai nhẹ, phù hợp doanh nghiệp vừa, không bắt thay toàn bộ ERP/TMS.
-
-**Chưa được phép tuyên bố:** “Không có đối thủ tại Việt Nam” hoặc “AI chính xác hơn con người” nếu chưa có benchmark và competitor scan.
-
-## 10. Risks & edge cases
-
-| Rủi ro | Cách giảm thiểu |
+| Chỉ số | Cách đọc |
 |---|---|
-| OCR sai từ ảnh mờ/chữ viết tay | Confidence threshold, hiển thị vùng ảnh, yêu cầu xác nhận |
-| Nhiều invoice có số gần giống | Kết hợp supplier + invoice number + date + amount + shipment |
-| Một shipment có nhiều invoice | Thiết kế quan hệ một-nhiều; không đánh dấu nhầm là trùng |
-| Tỷ giá, thuế, phụ phí phát sinh hợp lệ | Rule có điều kiện; trạng thái “needs review” thay vì khẳng định lỗi |
-| Split shipment, partial delivery, thay đổi B/L | Hỗ trợ ngoại lệ nghiệp vụ và lịch sử phiên bản |
-| LLM hallucination | Structured extraction, schema validation, deterministic rules, source citation |
-| Dữ liệu nhạy cảm | Ẩn thông tin, mã hóa, phân quyền, quản lý retention |
-| Tích hợp TMS/ERP khó | MVP qua CSV/PDF trước, tích hợp API sau |
-| Chi phí inference cao | Benchmark lựa chọn OCR/LLM và tối ưu xử lý theo loại tài liệu |
-| Khách hàng không sẵn sàng trả phí | Pilot có KPI, xác minh người mua và mức giá trước khi mở rộng |
+| Thời gian và độ bao phủ | Phút thao tác trung vị và trung bình, giờ chờ, tỷ lệ hồ sơ đủ ba nguồn và tỷ lệ dòng có thể đối chiếu. Công bố cả hồ sơ ngoài phạm vi. |
+| Chất lượng đọc | Số trường quan trọng trích đúng trên số trường có nhãn, tách theo trường và bố cục. |
+| Chất lượng kiểm tra | Precision = cảnh báo đúng / toàn bộ cảnh báo. Recall = sai lệch bắt được / toàn bộ sai lệch thật đã gán nhãn. Công bố tử số, mẫu số và số lỗi bỏ sót theo loại. Nếu mẫu số bằng 0, ghi chưa tính được. |
+| Tác động tài chính | Theo dõi riêng chênh lệch được gắn cờ, khoản xác nhận sai và khoản đã điều chỉnh, tránh chi hoặc thu hồi. |
 
-## 11. Validation plan
+**Điều kiện dữ liệu.** Thống nhất quyền sử dụng, quyền truy cập, thời hạn lưu, trường được gửi tới nhà cung cấp AI và cách xóa dữ liệu. Khi ẩn danh, giữ khóa liên kết nhất quán giữa ba nguồn. Dữ liệu dùng trong pitch là giả lập. [Luật Bảo vệ dữ liệu cá nhân 91/2025/QH15](https://vanban.chinhphu.vn/?docid=214590&pageid=27160) · [Nghị định 356/2025/NĐ-CP](https://vanban.chinhphu.vn/?docid=216387&pageid=27160)
 
-### Customer discovery
+## 4. Giá trị kinh tế và mô hình bán thử
 
-Phỏng vấn **5–10** người làm logistics/forwarding, ưu tiên operations lead, chứng từ và AP.
+**Kịch bản minh họa dùng trong pitch.** 1.000 hóa đơn/tháng, trung bình giảm từ 15 còn 9 phút mỗi hóa đơn. Phần thời gian giải phóng là **100 giờ/tháng**. Với 60.000 đồng/giờ, giá trị thời gian là **6 triệu đồng/tháng** trước chi phí. Nếu chỉ giảm 3 phút hoặc giảm tới 9 phút, giá trị tương ứng là 3 hoặc 9 triệu đồng/tháng. Các số là giả định.
 
-**Câu hỏi chính:**
-1. Một tháng đơn vị xử lý bao nhiêu hóa đơn cước?
-2. Thời gian trung bình kiểm tra một hóa đơn là bao lâu?
-3. 3 lỗi chứng từ phổ biến nhất là gì? Lỗi nào gây thiệt hại tiền?
-4. Đơn vị đã dùng phần mềm nào? Vì sao vẫn phải kiểm tra thủ công?
-5. Có thể chia sẻ 10–20 mẫu chứng từ đã ẩn thông tin để thử nghiệm không?
-6. Với kết quả pilot đo được, người nào có thể quyết định trả phí?
+Giá trị ròng ước tính bằng giá trị thời gian giải phóng cộng khoản tránh chi hoặc thu hồi đã xác nhận, rồi trừ thuê bao, thiết lập, chuẩn hóa giá, tích hợp và chi phí vận hành tăng thêm. Tách lợi ích năng lực xử lý khỏi khoản tiết kiệm tiền mặt. Tránh tính hai lần thời gian duyệt đã nằm trong số phút đo.
 
-### Evaluation plan
+**Giả thuyết bán thử.** Thuê bao theo số hóa đơn duy nhất xử lý, với phí thiết lập khi cần cấu hình riêng. Nếu chi phí sử dụng quy đổi là 3 triệu đồng/tháng, kịch bản trên cần giảm trung bình 3 phút/hóa đơn để cân bằng theo giá trị thời gian. Đề nghị pilot có KPI và xác nhận người mua, ngân sách và khả năng trả phí trước khi ước lượng phân khúc có thể phục vụ.
 
-- Tập hợp 30–100 bộ chứng từ mẫu có quyền sử dụng.
-- Gán nhãn thủ công các trường và sai lệch; có ít nhất một người am hiểu nghiệp vụ xác nhận.
-- Tạo thêm các lỗi kiểm soát (invoice trùng, mismatch, charge sai) và gắn nhãn rõ là dữ liệu tổng hợp.
-- So sánh **manual baseline** và **Colio-assisted** trên cùng bộ hồ sơ.
-- Báo cáo precision, recall, false negatives, thời gian thực và loại lỗi chưa xử lý.
+**Đối chứng cạnh tranh.** So trực tiếp với quy trình TMS/ERP, bảng tính và luồng AP đang dùng. Thử xem Colio có rút ngắn thời gian thiết lập và đối chiếu trên cùng bộ hồ sơ, với nguồn giá và vị trí chứng từ truy được hay không. Ghi riêng phần kiểm tra với giá hợp đồng và phần so với chi phí dự ghi trong TMS. Hai căn cứ có thể khác nhau. [Ma trận cạnh tranh và điều kiện đổi ưu tiên](nghien_cuu_tung_slide/colio_ai_business_problems.md)
 
-## 12. Kế hoạch hackathon 7–13/11/2026
+## 5. Kế hoạch Ideathon
 
-| Ngày | Việc ưu tiên | Deliverable |
-|---|---|---|
-| 7–8/11 | Phỏng vấn nhanh, lấy mẫu, chọn workflow | Problem statement + dữ liệu mẫu |
-| 9/11 | Chuẩn hóa schema & business rules | Data dictionary + test cases |
-| 10–11/11 | Xây pipeline và dashboard | MVP chạy được |
-| 12/11 | Benchmark, test edge cases, tính ROI giả định | Evaluation table + demo |
-| 13/11 | Pitch deck, video demo, kiểm tra form nộp | Hồ sơ nộp hoàn chỉnh |
+| Mốc | Kết quả cần có |
+|---|---|
+| 7–8/11 | Giả thuyết bài toán, đầu mối phỏng vấn và bộ hồ sơ demo. |
+| 9/11 | Schema, bảng giá đã duyệt cho ca demo và bộ đáp án kiểm thử. |
+| 10–11/11 | Luồng tải, đối chiếu, mở bằng chứng, xác minh và xuất báo cáo. |
+| 12/11 | Chạy ca kiểm thử, rà false positive/false negative và tập demo. |
+| 13/11 | Chốt deck, video và hồ sơ nộp. Hạn 23:59 theo thông tin BTC được cung cấp trong brief ban đầu. |
 
-## 13. Pitch structure — Business Problem / AI Solution / Business Value
+[Deck 10 slide](colio_ai_noi_dung_slide.md) · [Lời thuyết trình, demo và hỏi đáp](colio_ai_pitch_research_vi.md)
 
-**Business Problem:** Doanh nghiệp vận tải và forwarder phải đối chiếu hóa đơn với chứng từ, shipment record và bảng giá bằng tay. Quy trình tốn công, thiếu truy vết và có rủi ro thanh toán sai/trùng.
-
-**AI Solution:** Colio kết hợp Document AI/OCR, structured extraction, shipment matching và rule-based cross-checking. Hệ thống đánh dấu bất thường kèm dẫn chứng để nhân viên phê duyệt.
-
-**Business Value:** Đo thời gian đối chiếu giảm, khả năng phát hiện sai lệch và giá trị khoản phí được cảnh báo. Bán dưới dạng SaaS theo lượng chứng từ, với lộ trình tích hợp vào hệ thống hiện có.
-
-**One-line pitch:**
-
-> **Colio AI turns fragmented freight documents into verifiable payment decisions — with every discrepancy linked back to its source.**
-
-## 14. Open questions trước khi gọi đây là startup khả thi
-
-- Pain point mạnh nhất ở Việt Nam là **freight invoice audit** hay **xuất nhập khẩu/customs document matching**?
-- Doanh nghiệp đã có tính năng tương đương trong TMS/ERP hiện tại hay chưa?
-- Ai giữ dữ liệu, ai chịu trách nhiệm với false negatives, và hệ thống cần chứng chỉ/đánh giá bảo mật nào?
-- Một lô hàng thường có bao nhiêu invoice, bao nhiêu ngoại lệ hợp lệ?
-- ROI có đủ lớn sau khi tính người kiểm duyệt và chi phí triển khai không?
-- Buyer trả tiền theo shipment, invoice, seat hay flat monthly fee?
-
----
-
-### Ghi chú về tên và nguồn
-
-Tài liệu dùng tên **Colio AI** theo yêu cầu. Đây là tên làm việc, chưa tra cứu trùng tên/nhãn hiệu/tên miền. **Conlio** là một doanh nghiệp nước ngoài dùng làm nguồn cảm hứng; không nên sử dụng nhãn hiệu, giao diện hay tài sản thương hiệu của họ như của mình.
-
-**Phiên bản:** 0.1 — 07/11/2026. Tài liệu ý tưởng để thảo luận và chuẩn bị hackathon, không phải market research được kiểm toán.
+**Tên làm việc.** Colio AI là đề xuất độc lập của nhóm. Conlio là một nguồn tham khảo về kiểm tra cước. [Mô tả dịch vụ Conlio](https://www.conlio.com/terms-conditions)
