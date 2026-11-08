@@ -2,6 +2,8 @@
 
 > Move smarter. Go safer. · Team Odylytics · KTC Ideathon 2026
 
+**Live demo:** https://movago-odylytics.vercel.app
+
 A runnable MVP of Movago: it checks each line of a freight invoice against the shipment file and the approved rate card, shows the evidence behind every discrepancy, records who verifies it, flags resubmitted PDFs and exports a CSV report. All data is simulated.
 
 ## Run
