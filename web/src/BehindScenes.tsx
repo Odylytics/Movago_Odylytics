@@ -188,7 +188,7 @@ function Backdrop({ set }: { set: Vignette['set'] }) {
   if (set === 'port') {
     return (
       <div className="bd" aria-hidden="true">
-        <span className="crane" />
+        <span className="crane" /><span className="jib" />
         {[0, 1, 2, 3, 4].map((i) => <span key={i} className={`box c${i % 3}`} style={{ left: 96 + i * 40, top: 138 - (i % 2) * 18 }} />)}
         <span className="ground" />
       </div>
