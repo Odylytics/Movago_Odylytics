@@ -3,6 +3,7 @@ import { LangContext, useT, type Lang } from './i18n'
 import Business from './Business'
 import Intro from './Intro'
 import Landing from './Landing'
+import { unlock } from './sound'
 import Workspace from './Workspace'
 
 const store = {
@@ -42,7 +43,13 @@ function Nav() {
           <a className="link" href="#/#how">{t('navHow')}</a>
           <a className="link" href="#/business">{t('navBiz')}</a>
           <LangSwitch lang={lang} />
-          <a className="btn small" href="#/demo">{t('navDemo')}</a>
+          <a className="btn small" href="#/demo?story=1"
+            onClick={() => {
+              // the click is the user gesture that lets the story start straight away, with sound
+              unlock()
+              try { sessionStorage.setItem('movago.autostart', '1') } catch { /* private mode */ }
+              if (window.location.hash === '#/demo?story=1') window.location.reload() // already there: start over
+            }}>{t('navDemo')}</a>
         </div>
       </nav>
     </div>

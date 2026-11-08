@@ -1,4 +1,5 @@
 import Avatar from './Avatar'
+import StackSection from './StackSection'
 import { useT } from './i18n'
 import { PERSONAS } from './story'
 
@@ -104,6 +105,8 @@ export default function Landing() {
             ))}
           </ol>
         </section>
+
+        <StackSection />
 
         <section className="section split">
           <div>

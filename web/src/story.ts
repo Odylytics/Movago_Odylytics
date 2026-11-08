@@ -42,18 +42,34 @@ export const PERSONAS: Persona[] = [
 
 export const persona = (id: PersonaId) => PERSONAS.find((p) => p.id === id)!
 
-export type Cue = 'arrive' | 'reconcile' | 'focus' | 'duplicate' | 'send' | 'done'
+export type Cue = 'channels' | 'scan' | 'extract' | 'reconcile' | 'focus' | 'duplicate' | 'send' | 'done'
 
 /** who speaks; also lists the cast members the step mentions, so they light up too */
 export interface StoryStep { who: PersonaId; also: PersonaId[]; title: L; body: L; cue: Cue; seconds: number }
 
 export const STEPS: StoryStep[] = [
   {
-    who: 'vy', cue: 'arrive', also: ['bao', 'khoa', 'an'], seconds: 9,
-    title: { en: 'Vy sends invoice INV-095', vi: 'Vy gửi hóa đơn INV-095' },
+    who: 'vy', cue: 'channels', seconds: 12, also: ['bao'],
+    title: { en: 'INV-095 arrives from three channels', vi: 'INV-095 đến từ ba kênh' },
     body: {
-      en: 'Supplier A bills shipment SHP-001: Minh An Uniforms’ 20ft container from Singapore to Cat Lai. Movago already holds Bảo’s shipment file and Khoa’s approved rate card RATE-V3.',
-      vi: 'Nhà cung cấp A lập hóa đơn cho lô SHP-001: container 20 feet của Minh An Uniforms từ Singapore về Cát Lái. Movago đã có hồ sơ lô của Bảo và bảng giá đã duyệt RATE-V3 của Khoa.',
+      en: 'Vy emails the PDF and also sends a photo on Messenger; Bảo scans the paper copy at Cat Lai. Movago pulls all three into one inbox and groups them by supplier and invoice number, keeping the PDF as the source.',
+      vi: 'Vy gửi PDF qua email và gửi thêm ảnh qua Messenger; Bảo quét bản giấy tại Cát Lái. Movago gom cả ba về một hộp thư, gộp theo nhà cung cấp và số hóa đơn, giữ PDF làm bản gốc.',
+    },
+  },
+  {
+    who: 'bao', cue: 'scan', seconds: 10, also: [],
+    title: { en: 'Bảo scans the paper copy', vi: 'Bảo quét bản giấy' },
+    body: {
+      en: 'The phone camera finds the page edges, straightens the image and uploads it. The scan joins the same invoice, so nobody types it in again.',
+      vi: 'Camera điện thoại tìm mép trang, làm thẳng ảnh rồi tải lên. Bản quét được gắn vào đúng hóa đơn đó, không ai phải gõ lại.',
+    },
+  },
+  {
+    who: 'ha', cue: 'extract', seconds: 12, also: [],
+    title: { en: 'Movago reads INV-095', vi: 'Movago đọc INV-095' },
+    body: {
+      en: 'AI reads the PDF: invoice number, shipment, each fee line, the amount and where it sits on the page. It suggests mapping “Documentation fee” to fee code DOC, for Hà to confirm.',
+      vi: 'AI đọc PDF: số hóa đơn, mã lô, từng dòng phí, số tiền và vị trí trên trang. AI gợi ý gắn “Documentation fee” với mã phí DOC để Hà xác nhận.',
     },
   },
   {

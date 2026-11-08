@@ -6,6 +6,7 @@ import { CountUp } from './charts'
 import { useT, type Key, type Lang } from './i18n'
 import { isMuted, play, setMuted, unlock } from './sound'
 import { STEPS } from './story'
+import Stage, { type Scene } from './Stage'
 import { StoryBar, StoryStart } from './StoryBar'
 
 const SAMPLES = `${import.meta.env.BASE_URL}samples/`
@@ -29,6 +30,10 @@ async function seedIntake(): Promise<IntakeRecord[]> {
   store.set(INTAKE_KEY, JSON.stringify(recs))
   return recs
 }
+
+/** story steps 0–2 are the intake scenes; k counts the workspace steps after them */
+const INTRO = 2
+const SCENES: Scene[] = ['channels', 'scan', 'extract']
 
 const caseKey = (id: string) => `case_${id.replace(/-/g, '_')}` as Key
 
@@ -54,10 +59,18 @@ export default function Workspace({ story }: { story: boolean }) {
   const [intakeMsg, setIntakeMsg] = useState<IntakeMsg | null>(null)
   const [log, setLog] = useState<{ at: string; text: string }[]>([])
   const [step, setStep] = useState(story ? 0 : -1)
-  const [started, setStarted] = useState(!story) // story waits for a click so sound is allowed
-  const [playing, setPlaying] = useState(false)
+  // the story waits for a click so sound is allowed, unless it was opened from the nav's Open demo (already a click)
+  const [autostart] = useState(() => {
+    if (!story) return false
+    try { return sessionStorage.getItem('movago.autostart') === '1' } catch { return false }
+  })
+  // consume the flag after mount (not in the initializer, which StrictMode runs twice)
+  useEffect(() => { try { sessionStorage.removeItem('movago.autostart') } catch { /* private mode */ } }, [])
+  const [started, setStarted] = useState(!story || autostart)
+  const [playing, setPlaying] = useState(autostart)
   const [muted, setMutedState] = useState(isMuted)
   const [runId, setRunId] = useState(0)
+  const k = step - INTRO
   const resentDone = useRef(false) // story step 4 receives the resent PDF once, even if the step is revisited
   const [over, setOver] = useState(false)
 
@@ -161,15 +174,15 @@ export default function Workspace({ story }: { story: boolean }) {
     if (step < 0 || !data || !started) return
     if (caseId !== 'INV-095') { setCaseId('INV-095'); return }
     setViewer(null)
-    if (step === 0) { setResult(null); setSelected(null); setVerifyFor(null) }
-    if (step >= 1 && !result) run()
-    if (step === 1) { setSelected(null); setVerifyFor(null) }
-    if (step === 2 || step === 3) { setSelected('DOC'); setVerifyFor(null) }
-    if (step === 3 && !resentDone.current) { resentDone.current = true; simulateResend() }
-    if (step >= 4) setSelected('DOC')
-    if (step !== 4) setVerifyFor(null)
+    if (k <= 0) { setResult(null); setSelected(null); setVerifyFor(null) }
+    if (k >= 1 && !result) run()
+    if (k === 1) { setSelected(null); setVerifyFor(null) }
+    if (k === 2 || k === 3) { setSelected('DOC'); setVerifyFor(null) }
+    if (k === 3 && !resentDone.current) { resentDone.current = true; simulateResend() }
+    if (k >= 4) setSelected('DOC')
+    if (k !== 4) setVerifyFor(null)
     // jumping straight to the last step: the line has been sent to pricing already
-    if (step === 5 && !verifications[`${caseId}:DOC`]) {
+    if (k === 5 && !verifications[`${caseId}:DOC`]) {
       setVerifications((m) => ({ ...m, [`${caseId}:DOC`]: { assignee: t('roles_pricing'), reason: t('defaultReason'), at: new Date().toISOString() } }))
     }
     play(STEPS[step].cue)
@@ -187,19 +200,18 @@ export default function Workspace({ story }: { story: boolean }) {
       const gap = cardTop - navBottom
       const r = el.getBoundingClientRect()
       // fits: centre it in the gap · too tall: show its top, except on the last step where the actions sit at its bottom
-      const top = r.height <= gap ? r.top - (navBottom + (gap - r.height) / 2) : step === 5 ? r.bottom - cardTop : r.top - navBottom
+      const top = r.height <= gap ? r.top - (navBottom + (gap - r.height) / 2) : k === 5 ? r.bottom - cardTop : r.top - navBottom
       const smooth = !window.matchMedia('(prefers-reduced-motion: reduce)').matches
       window.scrollTo({ top: Math.max(0, window.scrollY + top), behavior: smooth ? 'smooth' : 'auto' })
     }, 120)
     // step 5 (index 4) opens the verification form once the evidence is in view
-    const open = step === 4 && !verifications[`${caseId}:DOC`] ? window.setTimeout(() => setVerifyFor((v) => v ?? 'DOC'), 900) : 0
+    const open = k === 4 && !verifications[`${caseId}:DOC`] ? window.setTimeout(() => setVerifyFor((v) => v ?? 'DOC'), 900) : 0
     return () => { window.clearTimeout(id); window.clearTimeout(open) }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [step, result, selected, verifications, started])
 
   const sel = result?.lines.find((l) => l.feeCode === selected) ?? null
-  const spot = (n: number) => (step === n ? 'spot' : '')
-  const target = (n: number) => (step === n ? 'spot story-target' : '')
+  const target = (n: number) => (story && k === n ? 'spot story-target' : '')
 
   return (
     <div className="wrap ws">
@@ -224,9 +236,11 @@ export default function Workspace({ story }: { story: boolean }) {
 
       {loadError && <p className="callout strong" role="alert">Could not load sample files. Run the app with `npm run dev` from the web folder.</p>}
 
+      {story && started && k <= 0 && step >= 0 && <Stage key={step} scene={SCENES[step]} className="spot story-target" />}
+
       <div className="ws-grid">
         <div>
-          <section aria-label={t('sources')} className={`src-cards ${target(0)}`}>
+          <section aria-label={t('sources')} className="src-cards">
             <SourceCard k={t('srcInvoice')} v={c.header.invoiceId} d={`${c.header.supplier} · ${c.invoiceDate}`} open={viewer === 'invoice'} onClick={() => setViewer('invoice')} />
             <SourceCard k={t('srcShipment')} v={c.header.shipmentId} d={data?.shipments[0] ? `${data.shipments[0].origin} → ${data.shipments[0].destination} · ${data.shipments[0].container_type}` : '…'} open={viewer === 'shipment'} onClick={() => setViewer('shipment')} />
             <SourceCard k={t('srcRate')} v={c.rateFile.replace('.csv', '')} d={`${data?.rates.length ?? '…'} ${t('rateRows')}`} open={viewer === 'rate'} onClick={() => setViewer('rate')} />
@@ -291,7 +305,7 @@ export default function Workspace({ story }: { story: boolean }) {
 
           {sel && (
             <Evidence
-              line={sel} c={c} rates={data?.rates ?? []} className={step === 2 || step === 4 || step === 5 ? 'spot story-target' : ''}
+              line={sel} c={c} rates={data?.rates ?? []} className={story && (k === 2 || k === 4 || k === 5) ? 'spot story-target' : ''}
               verification={verifications[vKey(sel.feeCode)]}
               onOpen={setViewer} onVerify={() => setVerifyFor(sel.feeCode)} time={time}
             />
@@ -365,7 +379,7 @@ export default function Workspace({ story }: { story: boolean }) {
           key={verifyFor}
           line={result.lines.find((l) => l.feeCode === verifyFor)!}
           caseId={caseId}
-          auto={story && playing && step === 4}
+          auto={story && playing && k === 4}
           onCancel={() => setVerifyFor(null)}
           onSubmit={(v) => submitVerification(verifyFor, v)}
         />
@@ -458,7 +472,7 @@ export default function Workspace({ story }: { story: boolean }) {
         ) : null}
         {p.verification ? (
           <div className="row" style={{ marginTop: 14 }}>
-            <button className={`btn ${step === 5 ? 'spot' : ''}`} onClick={exportCsv}>{t('export')}</button>
+            <button className={`btn ${story && k === 5 ? 'spot' : ''}`} onClick={exportCsv}>{t('export')}</button>
           </div>
         ) : l.status !== 'matched' && (
           <div className="row" style={{ marginTop: 14 }}>
