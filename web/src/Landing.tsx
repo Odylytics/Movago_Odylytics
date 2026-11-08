@@ -1,4 +1,6 @@
+import Avatar from './Avatar'
 import { useT } from './i18n'
+import { PERSONAS } from './story'
 
 const icons = {
   check: <path d="M3 8.5l3 3 7-7" />,
@@ -73,6 +75,20 @@ export default function Landing() {
             <li><Ico name="doc" tone="dark" /><div><h3>{t('src1Title')}</h3><p>{t('src1Body')}</p></div></li>
             <li><Ico name="box" tone="dark" /><div><h3>{t('src2Title')}</h3><p>{t('src2Body')}</p></div></li>
             <li><Ico name="tag" tone="dark" /><div><h3>{t('src3Title')}</h3><p>{t('src3Body')}</p></div></li>
+          </ul>
+        </section>
+
+        <section className="section split" aria-labelledby="cast">
+          <div>
+            <h2 id="cast">{t('castTitle')}</h2>
+            <p className="sub">{t('castSub')}</p>
+            <div className="cta-row"><a className="btn" href="#/demo?story=1">{t('ctaStory')}</a></div>
+            <p className="muted mini" style={{ marginTop: 16 }}>{t('avatarCredit')}</p>
+          </div>
+          <ul className="rows cast-rows">
+            {PERSONAS.map((p) => (
+              <li key={p.id}><Avatar p={p} size={48} /><div><h3>{p.name} · {p.role[lang]}</h3><span className="who-org">{p.org[lang]}</span><p>{p.does[lang]}</p></div></li>
+            ))}
           </ul>
         </section>
 

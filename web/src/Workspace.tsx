@@ -2,7 +2,11 @@ import { useCallback, useEffect, useMemo, useRef, useState, type DragEvent } fro
 import { store } from './App'
 import { CASES, SAMPLE_FILES, type DemoCase } from './cases'
 import { findDuplicate, parseCsv, reconcile, sha256Hex, type IntakeRecord, type LineResult, type ReconcileResult, type Row } from './engine/reconcile'
-import { useT, type Key } from './i18n'
+import { CountUp } from './charts'
+import { useT, type Key, type Lang } from './i18n'
+import { isMuted, play, setMuted, unlock } from './sound'
+import { STEPS } from './story'
+import { StoryBar, StoryStart } from './StoryBar'
 
 const SAMPLES = `${import.meta.env.BASE_URL}samples/`
 const INTAKE_KEY = 'movago.intake'
@@ -27,7 +31,12 @@ async function seedIntake(): Promise<IntakeRecord[]> {
 }
 
 const caseKey = (id: string) => `case_${id.replace(/-/g, '_')}` as Key
-const STORY_STEPS = ['s1', 's2', 's3', 's4', 's5'] as const
+
+/** Money that counts up from 0 when it first renders (a new key replays it). */
+function Money({ n, lang, sign = false }: { n: number; lang: Lang; sign?: boolean }) {
+  return <CountUp to={sign ? Math.abs(n) : n} prefix={sign ? (n > 0 ? '+' : n < 0 ? '−' : '') : ''} suffix={lang === 'en' ? ' ₫' : ' đ'}
+    locale={lang === 'en' ? 'en-US' : 'vi-VN'} start duration={1100} />
+}
 
 export default function Workspace({ story }: { story: boolean }) {
   const { t, money, signed, plain, lang } = useT()
@@ -45,6 +54,10 @@ export default function Workspace({ story }: { story: boolean }) {
   const [intakeMsg, setIntakeMsg] = useState<IntakeMsg | null>(null)
   const [log, setLog] = useState<{ at: string; text: string }[]>([])
   const [step, setStep] = useState(story ? 0 : -1)
+  const [started, setStarted] = useState(!story) // story waits for a click so sound is allowed
+  const [playing, setPlaying] = useState(false)
+  const [muted, setMutedState] = useState(isMuted)
+  const [runId, setRunId] = useState(0)
   const resentDone = useRef(false) // story step 4 receives the resent PDF once, even if the step is revisited
   const [over, setOver] = useState(false)
 
@@ -74,6 +87,7 @@ export default function Workspace({ story }: { story: boolean }) {
     if (!data) return null
     const r = reconcile(c.header, data.lines, data.shipments, data.rates)
     setResult(r)
+    setRunId((n) => n + 1)
     addLog(`${t('logRun')} · ${c.header.invoiceId}`)
     return r
   }, [data, c, t])
@@ -129,12 +143,22 @@ export default function Workspace({ story }: { story: boolean }) {
     setCaseId('INV-095'); setResult(null); setSelected(null); setViewer(null); setVerifyFor(null)
     setVerifications({}); setIntakeMsg(null); setLog([]); resentDone.current = false
     setIntake(await seedIntake().catch(() => []))
-    if (story) setStep(0)
+    if (story) { setStep(0); setPlaying(false) }
   }
+
+  const goto = useCallback((n: number) => setStep(Math.max(0, Math.min(STEPS.length - 1, n))), [])
+  const toggleMute = useCallback(() => setMutedState((m) => { setMuted(!m); return !m }), [])
+  const submitVerification = useCallback((fee: string, v: Verification) => {
+    setVerifications((m) => ({ ...m, [`${caseId}:${fee}`]: v }))
+    addLog(`${t('logVerify')} · ${fee} → ${v.assignee}`)
+    play('send')
+    setVerifyFor(null)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [caseId, t])
 
   // Story mode: each step drives the UI to its state.
   useEffect(() => {
-    if (step < 0 || !data) return
+    if (step < 0 || !data || !started) return
     if (caseId !== 'INV-095') { setCaseId('INV-095'); return }
     setViewer(null)
     if (step === 0) { setResult(null); setSelected(null); setVerifyFor(null) }
@@ -142,13 +166,19 @@ export default function Workspace({ story }: { story: boolean }) {
     if (step === 1) { setSelected(null); setVerifyFor(null) }
     if (step === 2 || step === 3) { setSelected('DOC'); setVerifyFor(null) }
     if (step === 3 && !resentDone.current) { resentDone.current = true; simulateResend() }
-    if (step === 4) setSelected('DOC')
+    if (step >= 4) setSelected('DOC')
+    if (step !== 4) setVerifyFor(null)
+    // jumping straight to the last step: the line has been sent to pricing already
+    if (step === 5 && !verifications[`${caseId}:DOC`]) {
+      setVerifications((m) => ({ ...m, [`${caseId}:DOC`]: { assignee: t('roles_pricing'), reason: t('defaultReason'), at: new Date().toISOString() } }))
+    }
+    play(STEPS[step].cue)
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [step, data])
+  }, [step, data, started])
 
   // Story mode: bring the step's target into the gap between the floating nav and the story card.
   useEffect(() => {
-    if (step < 0) return
+    if (step < 0 || !started) return
     const id = window.setTimeout(() => {
       const el = document.querySelector<HTMLElement>('.story-target')
       if (!el) return
@@ -157,15 +187,15 @@ export default function Workspace({ story }: { story: boolean }) {
       const gap = cardTop - navBottom
       const r = el.getBoundingClientRect()
       // fits: centre it in the gap · too tall: show its top, except on the last step where the actions sit at its bottom
-      const top = r.height <= gap ? r.top - (navBottom + (gap - r.height) / 2) : step === 4 ? r.bottom - cardTop : r.top - navBottom
+      const top = r.height <= gap ? r.top - (navBottom + (gap - r.height) / 2) : step === 5 ? r.bottom - cardTop : r.top - navBottom
       const smooth = !window.matchMedia('(prefers-reduced-motion: reduce)').matches
       window.scrollTo({ top: Math.max(0, window.scrollY + top), behavior: smooth ? 'smooth' : 'auto' })
     }, 120)
-    // step 5 opens the verification form once the evidence is in view
+    // step 5 (index 4) opens the verification form once the evidence is in view
     const open = step === 4 && !verifications[`${caseId}:DOC`] ? window.setTimeout(() => setVerifyFor((v) => v ?? 'DOC'), 900) : 0
     return () => { window.clearTimeout(id); window.clearTimeout(open) }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [step, result, selected, verifications])
+  }, [step, result, selected, verifications, started])
 
   const sel = result?.lines.find((l) => l.feeCode === selected) ?? null
   const spot = (n: number) => (step === n ? 'spot' : '')
@@ -212,7 +242,7 @@ export default function Workspace({ story }: { story: boolean }) {
               </div>
               <div className="row">
                 <button className="btn" onClick={() => { run(); setSelected(null) }} disabled={!data}>{result ? t('rerun') : t('run')}</button>
-                <button className={`btn ghost ${spot(4)}`} onClick={exportCsv} disabled={!result}>{t('export')}</button>
+                <button className="btn ghost" onClick={exportCsv} disabled={!result}>{t('export')}</button>
               </div>
             </div>
 
@@ -232,9 +262,9 @@ export default function Workspace({ story }: { story: boolean }) {
                             <b>{l.feeCode}</b> <span className="muted">{l.description}</span>
                             <div className="mini muted">{l.quantity} × {l.unit}</div>
                           </td>
-                          <td className="n">{money(l.invoiced)}</td>
-                          <td className="n">{l.expected === null ? '—' : money(l.expected)}</td>
-                          <td className="n">{l.diff === null ? '—' : l.diff === 0 ? money(0) : <b>{signed(l.diff)}</b>}</td>
+                          <td className="n"><Money key={runId} n={l.invoiced} lang={lang} /></td>
+                          <td className="n">{l.expected === null ? '—' : <Money key={runId} n={l.expected} lang={lang} />}</td>
+                          <td className="n">{l.diff === null ? '—' : l.diff === 0 ? money(0) : <b><Money key={runId} n={l.diff} sign lang={lang} /></b>}</td>
                           <td>
                             <div className="row" style={{ gap: 6 }}>
                               <span className={`status ${l.status}`}>{t(`st_${l.status}`)}</span>
@@ -246,9 +276,9 @@ export default function Workspace({ story }: { story: boolean }) {
                       ))}
                       <tr className="total">
                         <td>{t('total')}</td>
-                        <td className="n">{money(result.invoicedTotal)}</td>
-                        <td className="n">{result.expectedTotal === null ? '—' : money(result.expectedTotal)}</td>
-                        <td className="n">{result.expectedTotal === null ? '—' : signed(result.invoicedTotal - result.expectedTotal)}</td>
+                        <td className="n"><Money key={runId} n={result.invoicedTotal} lang={lang} /></td>
+                        <td className="n">{result.expectedTotal === null ? '—' : <Money key={runId} n={result.expectedTotal} lang={lang} />}</td>
+                        <td className="n">{result.expectedTotal === null ? '—' : <Money key={runId} n={result.invoicedTotal - result.expectedTotal} sign lang={lang} />}</td>
                         <td><span className={`status ${result.overall === 'matched' ? 'matched' : 'sent'}`}>{result.overall === 'matched' ? t('allMatched') : t('needsReview')}</span></td>
                       </tr>
                     </tbody>
@@ -261,7 +291,7 @@ export default function Workspace({ story }: { story: boolean }) {
 
           {sel && (
             <Evidence
-              line={sel} c={c} rates={data?.rates ?? []} className={step === 2 || step === 4 ? 'spot story-target' : ''}
+              line={sel} c={c} rates={data?.rates ?? []} className={step === 2 || step === 4 || step === 5 ? 'spot story-target' : ''}
               verification={verifications[vKey(sel.feeCode)]}
               onOpen={setViewer} onVerify={() => setVerifyFor(sel.feeCode)} time={time}
             />
@@ -319,7 +349,7 @@ export default function Workspace({ story }: { story: boolean }) {
             <h2>{t('activity')}</h2>
             {log.length === 0 ? <p className="muted">—</p> : (
               <ul className="log" style={{ marginTop: 10 }}>
-                {log.map((x, i) => <li key={i}><time>{time(x.at)}</time><span>{x.text}</span></li>)}
+                {log.map((x) => <li key={x.at + x.text}><time>{time(x.at)}</time><span>{x.text}</span></li>)}
               </ul>
             )}
           </section>
@@ -335,33 +365,25 @@ export default function Workspace({ story }: { story: boolean }) {
           key={verifyFor}
           line={result.lines.find((l) => l.feeCode === verifyFor)!}
           caseId={caseId}
+          auto={story && playing && step === 4}
           onCancel={() => setVerifyFor(null)}
-          onSubmit={(v) => {
-            setVerifications((m) => ({ ...m, [vKey(verifyFor)]: v }))
-            addLog(`${t('logVerify')} · ${verifyFor} → ${v.assignee}`)
-            setVerifyFor(null)
-          }}
+          onSubmit={(v) => submitVerification(verifyFor, v)}
         />
       )}
 
-      {story && step >= 0 && !verifyFor && (
+      {story && !started && (
+        <StoryStart onStart={(withSound) => {
+          unlock()
+          setMuted(!withSound); setMutedState(!withSound)
+          setStarted(true); setStep(0); setPlaying(true)
+        }} />
+      )}
+
+      {story && started && step >= 0 && (
         <>
           <div className="story-pad" />
-          <div className="story" role="dialog" aria-label={t('storyLabel')}>
-            <div className="bar" aria-hidden="true">{STORY_STEPS.map((_, i) => <i key={i} className={i <= step ? 'on' : ''} />)}</div>
-            <span className="mini" style={{ opacity: 0.8 }}>{step + 1} / {STORY_STEPS.length}</span>
-            <h2>{t(`${STORY_STEPS[step]}t`)}</h2>
-            <p>{t(`${STORY_STEPS[step]}b`)}</p>
-            <div className="row">
-              <a className="btn ghost small" href="#/demo">{t('exit')}</a>
-              <div className="row">
-                <button className="btn ghost small" onClick={() => setStep((s) => Math.max(0, s - 1))} disabled={step === 0}>{t('back')}</button>
-                {step < STORY_STEPS.length - 1
-                  ? <button className="btn small" onClick={() => setStep((s) => s + 1)}>{t('next')}</button>
-                  : <a className="btn small" href="#/demo">{t('finish')}</a>}
-              </div>
-            </div>
-          </div>
+          <StoryBar step={step} goto={goto} playing={playing} setPlaying={setPlaying} muted={muted} toggleMute={toggleMute}
+            hold={!!verifyFor} onExit={() => { window.location.hash = '#/demo' }} />
         </>
       )}
     </div>
@@ -436,7 +458,7 @@ export default function Workspace({ story }: { story: boolean }) {
         ) : null}
         {p.verification ? (
           <div className="row" style={{ marginTop: 14 }}>
-            <button className={`btn ${step === 4 ? 'spot' : ''}`} onClick={exportCsv}>{t('export')}</button>
+            <button className={`btn ${step === 5 ? 'spot' : ''}`} onClick={exportCsv}>{t('export')}</button>
           </div>
         ) : l.status !== 'matched' && (
           <div className="row" style={{ marginTop: 14 }}>
@@ -507,14 +529,31 @@ function SourceViewer(p: { viewer: Exclude<Viewer, null>; c: DemoCase; data: Cas
   )
 }
 
-function VerifyModal(p: { line: LineResult; caseId: string; onCancel: () => void; onSubmit: (v: Verification) => void }) {
+function VerifyModal(p: { line: LineResult; caseId: string; auto?: boolean; onCancel: () => void; onSubmit: (v: Verification) => void }) {
   const { t, money } = useT()
   const roles = [t('roles_pricing'), t('roles_ops'), t('roles_chief')]
   const [assignee, setAssignee] = useState<string>(roles[0])
   const defaultReason = p.caseId === 'INV-095' && p.line.feeCode === 'DOC'
     ? t('defaultReason')
     : `${p.line.feeCode} · ${p.caseId}: ${money(p.line.invoiced)}${p.line.expected !== null ? ` vs ${money(p.line.expected)}` : ''}. ${t(p.line.status === 'missing_basis' ? 'why_no_rate' : 'why_diff')}`
-  const [reason, setReason] = useState<string>(defaultReason)
+  const [reason, setReason] = useState<string>(p.auto ? '' : defaultReason)
+  // story autoplay: type the reason as if Hà were typing, then send it
+  useEffect(() => {
+    if (!p.auto) return
+    let i = 0
+    let done = 0
+    const id = window.setInterval(() => {
+      i += 2
+      setReason(defaultReason.slice(0, i))
+      if (i % 6 === 0) play('click')
+      if (i >= defaultReason.length) {
+        window.clearInterval(id)
+        done = window.setTimeout(() => p.onSubmit({ assignee: roles[0], reason: defaultReason, at: new Date().toISOString() }), 900)
+      }
+    }, 28)
+    return () => { window.clearInterval(id); window.clearTimeout(done) }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [p.auto])
   return (
     <div className="modal-c" onClick={p.onCancel}>
       <form className="modal" role="dialog" aria-modal="true" aria-label={t('requestVerify')} onClick={(e) => e.stopPropagation()}

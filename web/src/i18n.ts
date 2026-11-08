@@ -175,31 +175,23 @@ const dict = {
   back: { en: 'Back', vi: 'Lùi' },
   exit: { en: 'Exit story', vi: 'Thoát' },
   finish: { en: 'Finish', vi: 'Kết thúc' },
-  s1t: { en: 'Three sources are preloaded', vi: 'Ba nguồn đã nạp sẵn' },
-  s1b: {
-    en: 'Supplier A sent invoice INV-095 for shipment SHP-001. Movago already has the shipment file and the approved rate card RATE-V3. Open any card to see the source.',
-    vi: 'Nhà cung cấp A gửi hóa đơn INV-095 cho lô SHP-001. Movago đã có hồ sơ lô và bảng giá đã duyệt RATE-V3. Bấm từng thẻ để xem nguồn.',
+  play: { en: 'Play', vi: 'Chạy' },
+  pause: { en: 'Pause', vi: 'Tạm dừng' },
+  replay: { en: 'Replay', vi: 'Xem lại' },
+  soundOn: { en: 'Sound on', vi: 'Bật tiếng' },
+  soundOff: { en: 'Sound off', vi: 'Tắt tiếng' },
+  fictional: { en: 'Fictional characters', vi: 'Nhân vật giả tưởng' },
+  startTitle: { en: 'Six people, one invoice', vi: 'Sáu người, một hóa đơn' },
+  startSub: {
+    en: 'Follow invoice INV-095 from the carrier’s clerk to the chief accountant. It plays by itself in about a minute; jump to any step or person at any time.',
+    vi: 'Theo hóa đơn INV-095 từ nhân viên của hãng tới kế toán trưởng. Tự chạy trong khoảng một phút; có thể nhảy tới bất kỳ bước hay nhân vật nào.',
   },
-  s2t: { en: 'Run the reconciliation', vi: 'Chạy đối chiếu' },
-  s2b: {
-    en: 'Ocean freight matches 8,000,000. The documentation fee does not: 1,300,000 on the invoice vs 500,000 approved. The invoice arithmetic is still correct, which is why a sum check alone misses it.',
-    vi: 'Cước chính khớp 8.000.000. Phí chứng từ thì không: 1.300.000 trên hóa đơn so với 500.000 đã duyệt. Phép cộng trên hóa đơn vẫn đúng, nên chỉ kiểm tra tổng sẽ bỏ sót.',
-  },
-  s3t: { en: 'Open the +800,000 evidence', vi: 'Mở căn cứ khoản +800.000' },
-  s3b: {
-    en: 'Both sources sit side by side: invoice page 1, DOC line and RATE-V3 line 12, with the calculation 1,300,000 − 500,000.',
-    vi: 'Hai nguồn đặt cạnh nhau: hóa đơn trang 1 dòng DOC và RATE-V3 dòng 12, kèm phép tính 1.300.000 − 500.000.',
-  },
-  s4t: { en: 'The same PDF arrives again', vi: 'Cùng PDF được gửi lại' },
-  s4b: {
-    en: 'The supplier resends INV-095 under a new file name. Movago compares the file fingerprint and points to the copy already received.',
-    vi: 'Nhà cung cấp gửi lại INV-095 với tên tệp mới. Movago so dấu vân tay tệp và chỉ ra bản đã tiếp nhận.',
-  },
-  s5t: { en: 'Request verification and export', vi: 'Yêu cầu xác minh và xuất báo cáo' },
-  s5b: {
-    en: 'Send the line to pricing with a reason, then export the CSV report. The discrepancy stays visible with its new status. Payment approval stays with your company.',
-    vi: 'Chuyển dòng phí cho pricing kèm lý do, rồi xuất báo cáo CSV. Cảnh báo vẫn hiển thị cùng trạng thái mới. Phê duyệt chi thuộc doanh nghiệp.',
-  },
+  playSound: { en: 'Play with sound', vi: 'Chạy có âm thanh' },
+  playMuted: { en: 'Play muted', vi: 'Chạy không tiếng' },
+  exploreSelf: { en: 'Explore on my own', vi: 'Tự khám phá' },
+  avatarCredit: { en: 'Illustrations: Notionists by Zoish (CC0), rendered with DiceBear. All people and companies are fictional.', vi: 'Hình minh họa: Notionists của Zoish (CC0), dựng bằng DiceBear. Mọi người và công ty đều là giả tưởng.' },
+  castTitle: { en: 'Six people, one invoice', vi: 'Sáu người, một hóa đơn' },
+  castSub: { en: 'The fictional cast of the demo story: who sends, checks, confirms and pays a freight invoice at a forwarder in Ho Chi Minh City.', vi: 'Nhóm nhân vật giả tưởng trong câu chuyện demo: ai gửi, kiểm tra, xác nhận và chi một hóa đơn cước tại một forwarder ở TP.HCM.' },
 } as const
 
 export type Key = keyof typeof dict
