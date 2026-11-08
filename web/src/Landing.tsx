@@ -93,19 +93,6 @@ export default function Landing() {
           </ul>
         </section>
 
-        <section className="section split" id="how">
-          <div>
-            <h2>{t('howTitle')}</h2>
-            <p className="sub">{t('howSub')}</p>
-            <p className="note">{t('howNote')}</p>
-          </div>
-          <ol className="numbered">
-            {(['1', '2', '3', '4', '5', '6'] as const).map((n) => (
-              <li key={n}><div><strong>{t(`step${n}`)}</strong><span>{t(`step${n}b`)}</span></div></li>
-            ))}
-          </ol>
-        </section>
-
         <StackSection />
 
         <section className="section split">

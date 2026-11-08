@@ -23,7 +23,7 @@ const SOURCES: { title: L; url: string }[] = [
   { title: { en: 'CMA CGM Vietnam. Invoice dispute requests on MyCS.', vi: 'CMA CGM Việt Nam. Yêu cầu tranh chấp hóa đơn qua MyCS.' }, url: 'https://www.cma-cgm.com/local/vietnam/news/224/notice-of-invoice-dispute-team-s-email-address-deactivation-amp-invoice-dispute-request-on-mycs' },
   { title: { en: 'Maersk Vietnam. Import: local charge invoices, delivery orders, demurrage and detention.', vi: 'Maersk Việt Nam. Hàng nhập: hóa đơn phí địa phương, lệnh giao hàng, lưu container.' }, url: 'https://www.maersk.com/local-information/asia-pacific/vietnam/import' },
   { title: { en: 'U.S. GSA. Transportation invoice audit (duplicate payments, rate checks).', vi: 'GSA Hoa Kỳ. Kiểm tra hóa đơn vận tải (chi trùng, kiểm tra giá).' }, url: 'https://www.gsa.gov/policy-regulations/policy/transportation-management-policy/transportation-invoice-audit' },
-  { title: { en: 'Movago project brief: MVP scope, pilot plan and illustrative ROI scenario (team Odylytics, 08/11/2026).', vi: 'Brief dự án Movago: phạm vi MVP, kế hoạch pilot và kịch bản ROI minh họa (đội Odylytics, 08/11/2026).' }, url: 'https://github.com/tuannghia2457/Odylytics_KTC/blob/main/colio_ai_project_brief.md' },
+  { title: { en: 'Movago project brief: MVP scope, pilot plan and illustrative ROI scenario (team Odylytics, internal document, 08/11/2026).', vi: 'Brief dự án Movago: phạm vi MVP, kế hoạch pilot và kịch bản ROI minh họa (đội Odylytics, tài liệu nội bộ, 08/11/2026).' }, url: '' },
   { title: { en: 'Vietnam Logistics Business Association (VLA) and HCMC Logistics Association (HLA) member directories.', vi: 'Danh bạ hội viên Hiệp hội Doanh nghiệp Dịch vụ Logistics Việt Nam (VLA) và Hiệp hội Logistics TP.HCM (HLA).' }, url: 'https://vla.com.vn/danh-sach-hoi-vien/' },
   { title: { en: 'Personal Data Protection Law 91/2025/QH15 and Decree 356/2025/NĐ-CP.', vi: 'Luật Bảo vệ dữ liệu cá nhân 91/2025/QH15 và Nghị định 356/2025/NĐ-CP.' }, url: 'https://vanban.chinhphu.vn/?docid=214590&pageid=27160' },
   { title: { en: 'Decree 254/2026/NĐ-CP and Circular 91/2026/TT-BTC on invoices and documents.', vi: 'Nghị định 254/2026/NĐ-CP và Thông tư 91/2026/TT-BTC về hóa đơn, chứng từ.' }, url: 'https://vanban.chinhphu.vn/?classid=1&docid=218689&pageid=27160&typegroupid=4' },
@@ -204,7 +204,7 @@ export default function Business() {
         <p className="sub">{tx({ en: 'Links accessed 8 November 2026. Figures were checked against the documents cited in the project research files.', vi: 'Truy cập ngày 08/11/2026. Số liệu đối chiếu với tài liệu được dẫn trong hồ sơ nghiên cứu của dự án.' })}</p>
         <ol className="refs">
           {SOURCES.map((s, i) => (
-            <li key={s.url + i} id={`src-${i + 1}`}><span className="ref-n">{String(i + 1).padStart(2, '0')}</span><a href={s.url} target="_blank" rel="noreferrer">{tx(s.title)}</a></li>
+            <li key={i} id={`src-${i + 1}`}><span className="ref-n">{String(i + 1).padStart(2, '0')}</span>{s.url ? <a href={s.url} target="_blank" rel="noreferrer">{tx(s.title)}</a> : <span>{tx(s.title)}</span>}</li>
           ))}
         </ol>
       </section>

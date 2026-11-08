@@ -4,7 +4,7 @@
 
 - Tên dự án là **Movago**. Slogan là **Move smarter. Go safer.**
 - Cách kể tên đề xuất là **MOV · A · GO**. **MOV** lấy ba chữ đầu của **MOVE**, gợi việc vận chuyển và dẫn vào *Move smarter*. **GO** giữ nguyên, gợi bước tiếp theo sau khi kiểm tra và dẫn vào *Go safer*.
-- Có thể dùng **A** để gợi **Audit**, tức đối chiếu hóa đơn cước với hồ sơ lô và mức giá đã duyệt trước khi chi. Đây là cách giải thích đề xuất cho chữ A. [Hướng dẫn kiểm tra hóa đơn vận tải của GSA](https://www.gsa.gov/policy-regulations/policy/transportation-management-policy/transportation-invoice-audit)
+- Animation mở đầu của web kể **A** là **AI** (MOVE · AI · GO) theo yêu cầu của người dùng ngày 09/11/2026. Khi cần giải thích sâu hơn, có thể nói thêm việc AI phục vụ là **Audit**, tức đối chiếu hóa đơn cước với hồ sơ lô và mức giá đã duyệt trước khi chi. [Hướng dẫn kiểm tra hóa đơn vận tải của GSA](https://www.gsa.gov/policy-regulations/policy/transportation-management-policy/transportation-invoice-audit)
 - Trong ngữ cảnh Movago, *Go safer* nói về việc có căn cứ để giảm rủi ro chi sai. Khi minh họa, dùng ca giả lập `INV-095`, trong đó kế toán thấy khoản chênh lệch và kiểm tra chứng từ trước khi chuyển sang bước duyệt chi.
 
 ## Cách dùng tài liệu tham chiếu

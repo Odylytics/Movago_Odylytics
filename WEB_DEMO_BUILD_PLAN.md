@@ -18,9 +18,11 @@ Tài liệu nguồn: [Kế hoạch demo](MOVAGO_DEMO_PLAN.md) · [Luồng và đ
 
 ## Màn hình
 
-1. **Landing `/`** — Movago, slogan *Move smarter. Go safer.*, câu giới thiệu đội Odylytics, vấn đề 3 nguồn, cách hoạt động, hai nút: **Play the story** (xem tình huống) và **Try the sample case** (tự thử).
-2. **Workspace `/demo`** — chọn ca; 3 thẻ nguồn (Invoice / Shipment / Rate card) mở được; nút **Run reconciliation**; bảng kết quả từng dòng (Matched / Discrepancy / Missing basis, luôn có nhãn chữ); bấm dòng để mở panel bằng chứng hai phía (hóa đơn trang 1 dòng DOC được highlight ↔ RATE-V3 dòng 12 được highlight) với phép tính `1,300,000 − 500,000 = +800,000`; **Request verification** (người + lý do, trạng thái đổi); **Export CSV**; vùng tải tệp để thử bản gửi lại.
-3. **Story mode `/demo?story=1`** — cùng workspace, lớp hướng dẫn 5 bước theo kịch bản 3 phút.
+1. **Intro** — lần đầu mở web trong một tab: MOVAGO tách thành MOV · A · GO rồi thành MOVE · AI · GO và slogan. Thêm `?intro` vào link để xem lại.
+2. **Trang chủ `#/`** — hero có khung thiết bị, vấn đề ba nguồn, sáu nhân vật giả tưởng, sơ đồ "một hộp thư cho mọi kênh" kèm tech stack (đã dựng và dự kiến cho pilot), ba loại kết quả.
+3. **Business `#/business`** — số liệu có nguồn với hiệu ứng số chạy, vấn đề kinh tế, mô hình kinh doanh, ROI kèm máy tính, định hướng Việt Nam, danh mục nguồn. Mỗi số có nhãn Có nguồn, Giả định hoặc Giả lập.
+4. **Tự thử `#/demo`** — chọn 4 ca, mở ba nguồn, chạy đối chiếu, xem căn cứ hai phía, yêu cầu xác minh, xuất CSV, thử tệp gửi lại.
+5. **Xem tình huống `#/demo?story=1`** (nút Open demo vào thẳng và tự chạy) — 8 cảnh khoảng 85 giây: nhận từ 3 kênh, điện thoại quét bản giấy, AI đọc PDF, đối chiếu, căn cứ +800.000, bản gửi lại, xác minh với pricing, kế toán trưởng quyết định. Có âm thanh Web Audio, tự chạy, tạm dừng, nhảy bước, khung "Hậu trường" ở góc.
 
 ## Bộ ca và đáp án (nghiệm thu)
 
@@ -34,4 +36,4 @@ Tài liệu nguồn: [Kế hoạch demo](MOVAGO_DEMO_PLAN.md) · [Luồng và đ
 
 ## Trạng thái
 
-Đã dựng xong trong `web/`. `npm test` chạy 7 ca nghiệm thu, `npm run build` tạo web tĩnh. Định tuyến dùng hash (`#/`, `#/demo`, `#/demo?story=1`) nên chạy được trên mọi host tĩnh. Cách chạy: [web/README.md](web/README.md).
+Đã dựng xong trong `web/` và chạy tại https://movago-odylytics.vercel.app. `npm test` chạy 10 test (7 ca đối chiếu và 3 ca ROI), `npm run build` tạo web tĩnh. Định tuyến dùng hash nên chạy được trên mọi host tĩnh. Cách chạy và phần nào là mô phỏng: [web/README.md](web/README.md).

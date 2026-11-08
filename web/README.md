@@ -11,11 +11,20 @@ A runnable MVP of Movago: it checks each line of a freight invoice against the s
 ```bash
 npm install
 npm run dev        # http://localhost:5173
-npm test           # reconciliation acceptance cases
+npm test           # 7 reconciliation acceptance cases + 3 ROI cases
 npm run build      # static site in dist/
 ```
 
-Routes: `#/` landing · `#/business` business case, ROI and Vietnam plan · `#/demo` try the sample case · `#/demo?story=1` guided story. Hash routing, so `dist/` works on any static host. To deploy on Vercel, import the repo and set the root directory to `web`.
+## Pages
+
+| Route | What it shows |
+| --- | --- |
+| `#/` | Landing: hero, the three-sources problem, the fictional cast, the multi-channel data flow and tech stack, the three outcomes. An opening MOVAGO → MOVE · AI · GO intro plays once per tab; add `?intro` to the URL to replay it. |
+| `#/business` | Cited market and rate statistics with count-up and drawn charts, economic problems, business model, ROI scenario with a calculator, Vietnam roadmap, numbered sources. |
+| `#/demo` | Try it yourself: four cases, three sources, reconciliation, evidence, verification, CSV export, resend check. |
+| `#/demo?story=1` | Guided story, 8 scenes in about 85 s: three-channel intake, phone scan, AI reading, reconciliation, evidence, resend, verification, decision. Autoplay with Web Audio cues, pause, jump to any step or character, keyboard ← → K M, and a behind-the-scenes picture-in-picture. The nav's **Open demo** starts it straight away. |
+
+Hash routing, so `dist/` works on any static host. Production is the Vercel project `movago-odylytics`; redeploy from this folder with `npx vercel@latest deploy --prod`.
 
 ## What is real and what is simulated
 
@@ -25,6 +34,8 @@ Routes: `#/` landing · `#/business` business case, ROI and Vietnam plan · `#/d
 | Shipment matching, rate selection, recalculation | Live, in `src/engine/reconcile.ts`. Selection uses supplier, route, container type, Cai Mep routing, fee code, unit, currency and the rating date. Two matching rates → missing basis. |
 | Resubmission check | Live. SHA-256 of the file bytes, compared with the intake history in `localStorage`. |
 | Verification and CSV export | Live in the browser. No backend; **Reset demo** restores the starting state. |
+| Email / Messenger / phone intake, phone scan, AI reading scenes | Simulated story scenes; confidence figures are illustrative. |
+| Cast | Fictional people and companies. Avatars: Notionists by Zoish (CC0), pre-rendered with DiceBear (`npm run make:avatars`). |
 
 ## Acceptance cases (`npm test`)
 

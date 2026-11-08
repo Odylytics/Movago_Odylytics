@@ -33,7 +33,7 @@ export default function StackSection() {
   const { lang } = useT()
   const tx = (x: L) => x[lang]
   return (
-    <section className="section" aria-labelledby="stack">
+    <section className="section" id="how" aria-labelledby="stack">
       <div className="split">
         <div>
           <h2 id="stack">{tx({ en: 'One inbox for every channel', vi: 'Một hộp thư cho mọi kênh' })}</h2>
