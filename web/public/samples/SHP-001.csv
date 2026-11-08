@@ -1,0 +1,2 @@
+shipment_id,supplier,bl_number,origin,destination,container_type,container_count,bl_count,via_cai_mep,rating_date,currency
+SHP-001,Supplier A,BL-SG-001,Singapore,Cat Lai,20 DRY,1,1,no,2026-11-06,VND

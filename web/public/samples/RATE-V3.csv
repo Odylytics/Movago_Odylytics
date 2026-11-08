@@ -1,0 +1,13 @@
+supplier,origin,destination,container_type,fee_code,unit,currency,unit_price,effective_from,effective_to,via_cai_mep,rate_card
+Supplier A,Singapore,Cat Lai,40 DRY,OCEAN,CONTAINER,VND,12000000,2026-11-01,2026-11-30,no,RATE-V3
+Supplier A,Singapore,Cat Lai,20 DRY,OCEAN,CONTAINER,VND,7500000,2026-09-01,2026-10-31,no,RATE-V2 expired
+Supplier A,Singapore,Cat Lai,20 DRY,THC,CONTAINER,VND,900000,2026-11-01,2026-11-30,no,RATE-V3
+Supplier A,Singapore,Cat Lai,40 DRY,DOC,BL,VND,700000,2026-11-01,2026-11-30,no,RATE-V3
+Supplier A,Singapore,Cat Lai,20 DRY,SEAL,CONTAINER,VND,150000,2026-11-01,2026-11-30,no,RATE-V3
+Supplier A,Singapore,Cat Lai,20 DRY,OCEAN,CONTAINER,VND,8000000,2026-11-01,2026-11-30,no,RATE-V3
+Supplier A,Singapore,Cat Lai,20 DRY,AMS,BL,VND,300000,2026-11-01,2026-11-30,no,RATE-V3
+Supplier B,Singapore,Cat Lai,20 DRY,OCEAN,CONTAINER,VND,7800000,2026-11-01,2026-11-30,no,RATE-V3
+Supplier A,Ho Chi Minh,Singapore,20 DRY,OCEAN,CONTAINER,VND,8100000,2026-11-01,2026-11-30,no,RATE-V3
+Supplier A,Singapore,Cat Lai,40 DRY,THC,CONTAINER,VND,1100000,2026-11-01,2026-11-30,no,RATE-V3
+Supplier A,Singapore,Cat Lai,20 DRY,DOC,BL,VND,500000,2026-11-01,2026-11-30,no,RATE-V3
+Supplier A,Singapore,Cat Lai,20 DRY,ISPS,CONTAINER,VND,250000,2026-11-01,2026-11-30,no,RATE-V3

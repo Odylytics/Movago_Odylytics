@@ -1,0 +1,4 @@
+supplier,origin,destination,container_type,fee_code,unit,currency,unit_price,effective_from,effective_to,via_cai_mep,rate_card
+ONE Vietnam,Manila,Cat Lai,20 DRY,THD,CONTAINER,VND,3000000,2026-04-01,2026-12-31,no,ONE-VN-2026-04
+ONE Vietnam,Manila,Cat Lai,40 DRY,THD,CONTAINER,VND,4800000,2026-04-01,2026-12-31,no,ONE-VN-2026-04
+ONE Vietnam,Manila,Cat Lai,ANY,DOF,BL,VND,950000,2026-04-01,2026-12-31,any,ONE-VN-2026-04

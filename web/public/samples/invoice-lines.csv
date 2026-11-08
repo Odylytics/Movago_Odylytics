@@ -1,0 +1,9 @@
+invoice_id,fee_code,description,quantity,unit,amount,page,line_label
+INV-095,OCEAN,Ocean freight,1,CONTAINER,8000000,1,Ocean freight
+INV-095,DOC,Documentation fee,1,BL,1300000,1,DOC
+INV-095-MATCH,OCEAN,Ocean freight,1,CONTAINER,8000000,1,Ocean freight
+INV-095-MATCH,DOC,Documentation fee,1,BL,500000,1,DOC
+INV-095-NORATE,OCEAN,Ocean freight,1,CONTAINER,8000000,1,Ocean freight
+INV-095-NORATE,DOC,Documentation fee,1,BL,1300000,1,DOC
+INV-VN-020,THD,Terminal handling charge,1,CONTAINER,4800000,1,THD
+INV-VN-020,DOF,Documentation fee,1,BL,950000,1,DOF

@@ -1,0 +1,2 @@
+shipment_id,supplier,bl_number,origin,destination,container_type,container_count,bl_count,via_cai_mep,rating_date,currency
+SHP-VN-020,ONE Vietnam,BL-MNL-020,Manila,Cat Lai,20 DRY,1,1,no,2026-04-15,VND

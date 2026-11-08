@@ -13,6 +13,7 @@
 | Làm deck | [Nội dung 10 slide](colio_ai_noi_dung_slide.md) |
 | Tập nói, chạy demo và chuẩn bị hỏi đáp | [Kịch bản thuyết trình](colio_ai_pitch_research_vi.md) |
 | Tra tên, slogan và quy tắc thiết kế website demo | [Quy tắc thiết kế demo](DEMO_DESIGN_RULES.md) |
+| Chạy web demo (MVP) | [Movago web demo](web/README.md) · [Kế hoạch dựng web](WEB_DEMO_BUILD_PLAN.md) |
 | Xem các mẫu demo và luồng đề xuất cho Movago | [Nghiên cứu demo sản phẩm](MOVAGO_DEMO_RESEARCH.md) |
 | Chuẩn bị hồ sơ logistics Việt Nam và tập chạy demo | [Kế hoạch demo Movago](MOVAGO_DEMO_PLAN.md) |
 | Tra thông tin đội và hồ sơ công khai | [Đội Odylytics](ODYLYTICS_TEAM.md) |
