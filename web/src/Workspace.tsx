@@ -7,6 +7,7 @@ import { useT, type Key, type Lang } from './i18n'
 import { isMuted, play, setMuted, unlock } from './sound'
 import { STEPS } from './story'
 import Stage, { type Scene } from './Stage'
+import BehindScenes from './BehindScenes'
 import { StoryBar, StoryStart } from './StoryBar'
 
 const SAMPLES = `${import.meta.env.BASE_URL}samples/`
@@ -196,7 +197,8 @@ export default function Workspace({ story }: { story: boolean }) {
       const el = document.querySelector<HTMLElement>('.story-target')
       if (!el) return
       const navBottom = (document.querySelector('.nav')?.getBoundingClientRect().bottom ?? 80) + 16
-      const cardTop = (document.querySelector('.story')?.getBoundingClientRect().top ?? window.innerHeight) - 16
+      // the target must clear both the story card and the behind-the-scenes window
+      const cardTop = Math.min(...['.story', '.pip'].map((q) => document.querySelector(q)?.getBoundingClientRect().top ?? window.innerHeight)) - 16
       const gap = cardTop - navBottom
       const r = el.getBoundingClientRect()
       // fits: centre it in the gap · too tall: show its top, except on the last step where the actions sit at its bottom
@@ -396,6 +398,7 @@ export default function Workspace({ story }: { story: boolean }) {
       {story && started && step >= 0 && (
         <>
           <div className="story-pad" />
+          <BehindScenes step={step} />
           <StoryBar step={step} goto={goto} playing={playing} setPlaying={setPlaying} muted={muted} toggleMute={toggleMute}
             hold={!!verifyFor} onExit={() => { window.location.hash = '#/demo' }} />
         </>
