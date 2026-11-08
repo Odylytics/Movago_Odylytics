@@ -1,15 +1,15 @@
-# Colio AI · Nội dung 10 slide
+# Movago · Nội dung 10 slide
 
 Bản chép vào deck. Dùng [kịch bản thuyết trình](colio_ai_pitch_research_vi.md) để tập nói và [nghiên cứu bài toán kinh doanh](nghien_cuu_tung_slide/colio_ai_business_problems.md) để tra nguồn.
 
-## 01 · Colio AI
+## 01 · Movago
 
 **Đối chiếu cước vận tải trước khi thanh toán**
 
-> Phát hiện sai lệch trước khi chuyển tiền.
+> Move smarter. Go safer.
 
-**[Tên đội]**  
-**[Tên người 1] · [Tên người 2]**  
+**Đội Odylytics**\
+**[Danh sách thành viên dự thi]**\
 KTC Ideathon
 
 ---
@@ -106,7 +106,7 @@ Kế toán xác nhận kết quả hoặc chuyển người phụ trách xử l�
 
 ## 09 · Pilot đo thời gian và chất lượng kiểm tra
 
-- **Pilot** · So quy trình hiện tại và quy trình có Colio trên bộ hồ sơ có nhãn.
+- **Pilot** · So quy trình hiện tại và quy trình có Movago trên bộ hồ sơ có nhãn.
 - **Chỉ số** · Phút thao tác, cảnh báo đúng, sai lệch bỏ sót và khoản thực tế điều chỉnh.
 - **Nguồn lực** · Nghiệp vụ cước, kỹ thuật trích xuất và quy tắc, giao diện.
 - **Mô hình bán thử** · Thuê bao theo số hóa đơn duy nhất đã xử lý, kèm phí thiết lập khi cần.

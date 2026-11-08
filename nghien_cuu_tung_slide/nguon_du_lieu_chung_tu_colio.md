@@ -1,4 +1,4 @@
-# Nguồn dữ liệu và chứng từ công khai cho Colio
+# Nguồn dữ liệu và chứng từ công khai cho Movago
 
 Danh mục phục vụ chuẩn bị đầu vào. Mẫu công khai dùng để tham khảo bố cục và điều kiện tính phí. Pilot cần bộ hồ sơ do doanh nghiệp cho phép sử dụng, có **chứng từ đề nghị chi, hồ sơ lô và căn cứ giá của cùng một lô**. [Luồng kiểm tra và demo chính](colio_ai_hoat_dong_the_nao.md) · [Kế hoạch pilot](../colio_ai_project_brief.md)
 

@@ -1,4 +1,4 @@
-# Colio AI có thể giải quyết bài toán kinh doanh nào?
+# Movago có thể giải quyết bài toán kinh doanh nào?
 
 **Ngày rà soát 08/11/2026 · Deep Research, chế độ Quick Research Brief**
 

@@ -1,8 +1,8 @@
-# Colio AI hoạt động như thế nào?
+# Movago hoạt động như thế nào?
 
 **Đặc tả luồng kiểm tra và đáp án demo · 08/11/2026 · Slide 5–8**
 
-Colio AI là thiết kế đề xuất cho kế toán công nợ của một công ty giao nhận. Ứng dụng kiểm tra căn cứ của từng khoản cước trước khi doanh nghiệp thanh toán. **AI đọc chứng từ, quy tắc tính mức phí kỳ vọng, người phụ trách xác nhận kết quả.** Ca INV-095 dùng dữ liệu giả lập. [Phạm vi MVP và cách đo pilot](../colio_ai_project_brief.md) · [Mẫu chứng từ và ca kiểm thử bổ sung](nguon_du_lieu_chung_tu_colio.md)
+Movago là thiết kế đề xuất cho kế toán công nợ của một công ty giao nhận. Ứng dụng kiểm tra căn cứ của từng khoản cước trước khi doanh nghiệp thanh toán. **AI đọc chứng từ, quy tắc tính mức phí kỳ vọng, người phụ trách xác nhận kết quả.** Ca INV-095 dùng dữ liệu giả lập. [Phạm vi MVP và cách đo pilot](../colio_ai_project_brief.md) · [Mẫu chứng từ và ca kiểm thử bổ sung](nguon_du_lieu_chung_tu_colio.md)
 
 ## 1. Ba nguồn và điều kiện để đối chiếu
 
@@ -12,7 +12,7 @@ Colio AI là thiết kế đề xuất cho kế toán công nợ của một cô
 | **Khoản phí thuộc lô nào và tính theo điều kiện nào?** | Hồ sơ lô có mã lô, số vận đơn, nhà cung cấp, tuyến, loại container và mốc tính giá. Với một số phí, cần thêm bằng chứng dịch vụ đã phát sinh. | Bộ phận vận hành giữ hồ sơ hoặc xuất từ hệ thống quản lý lô hàng. |
 | **Mức nào được phép áp dụng?** | Bảng giá hoặc thỏa thuận đã duyệt, kèm điều kiện, đơn vị tính, hiệu lực và phê duyệt bổ sung nếu có. | Bộ phận quản lý giá hoặc hợp đồng xác nhận. |
 
-**Colio nằm giữa lúc nhận đề nghị chi và lúc duyệt chi.** Ví dụ tại Việt Nam, Maersk công bố hóa đơn phí địa phương cho hàng nhập có trên MyFinance trước khi tàu đến, còn Lacco mô tả nhân viên chứng từ kiểm tra debit note của hãng tàu hoặc đại lý trước khi lập đề nghị thanh toán. Vì thế, loại tài liệu cần đọc phụ thuộc vào quy trình đối tác. Demo chọn một hóa đơn PDF sẵn có trước khi duyệt. [Maersk Việt Nam — mục Import Local Charge Invoice](https://www.maersk.com/local-information/asia-pacific/vietnam/import) · [Lacco — nghiệp vụ chứng từ tại TP.HCM](https://lacco.com.vn/tuyen-dung/tuyen-dung-nhan-vien-chung-tu-xuat-nhap-khau-tai-tp-hcm).
+**Movago nằm giữa lúc nhận đề nghị chi và lúc duyệt chi.** Ví dụ tại Việt Nam, Maersk công bố hóa đơn phí địa phương cho hàng nhập có trên MyFinance trước khi tàu đến, còn Lacco mô tả nhân viên chứng từ kiểm tra debit note của hãng tàu hoặc đại lý trước khi lập đề nghị thanh toán. Vì thế, loại tài liệu cần đọc phụ thuộc vào quy trình đối tác. Demo chọn một hóa đơn PDF sẵn có trước khi duyệt. [Maersk Việt Nam — mục Import Local Charge Invoice](https://www.maersk.com/local-information/asia-pacific/vietnam/import) · [Lacco — nghiệp vụ chứng từ tại TP.HCM](https://lacco.com.vn/tuyen-dung/tuyen-dung-nhan-vien-chung-tu-xuat-nhap-khau-tai-tp-hcm).
 
 ## 2. Luồng kiểm tra trên ca INV-095
 
@@ -28,11 +28,11 @@ Giả sử kế toán công nợ nhận hóa đơn **INV-095** của nhà cung c
 
 Document AI nhận dạng chữ và bố cục để lấy số hóa đơn, mã lô, nhà cung cấp, tiền tệ và các dòng phí. Với mỗi trường, thiết kế lưu giá trị đọc được, giá trị chuẩn hóa, trang và vùng trên PDF nếu trích được. Ví dụ, chữ gốc là “Documentation fee”, giá trị là 1.300.000 VND và vị trí là dòng phí ở trang 1. Danh mục phí của doanh nghiệp cho phép gắn tên này với mã **DOC**. Với tên lạ, AI có thể gợi ý mã để người dùng xác nhận. [Microsoft Learn — trích xuất trường và dòng hóa đơn](https://learn.microsoft.com/en-us/azure/ai-services/document-intelligence/prebuilt/invoice?view=doc-intel-4.0.0) · [Microsoft Learn — vị trí trên trang](https://learn.microsoft.com/en-us/azure/ai-services/document-intelligence/concept/analyze-document-response?view=doc-intel-4.0.0).
 
-Nếu trường tiền, nhà cung cấp hoặc mã lô mờ hay thiếu nguồn, Colio chuyển trường đó sang kiểm tra. Điểm tin cậy của mô hình giúp ưu tiên việc rà soát. Độ chính xác trên hóa đơn cước Việt–Anh cần đo bằng bộ mẫu của nhóm, kể cả khi công cụ công bố hỗ trợ ngôn ngữ. [Microsoft Learn — ghi chú về năng lực và giới hạn](https://learn.microsoft.com/en-us/azure/foundry/responsible-ai/document-intelligence/transparency-note).
+Nếu trường tiền, nhà cung cấp hoặc mã lô mờ hay thiếu nguồn, Movago chuyển trường đó sang kiểm tra. Điểm tin cậy của mô hình giúp ưu tiên việc rà soát. Độ chính xác trên hóa đơn cước Việt–Anh cần đo bằng bộ mẫu của nhóm, kể cả khi công cụ công bố hỗ trợ ngôn ngữ. [Microsoft Learn — ghi chú về năng lực và giới hạn](https://learn.microsoft.com/en-us/azure/foundry/responsible-ai/document-intelligence/transparency-note).
 
 ### Bước 3 · Ghép hóa đơn với lô và chọn bảng giá
 
-Colio tìm **SHP-001 + nhà cung cấp A** trong hồ sơ. Nếu hóa đơn dùng số vận đơn, hệ thống tìm qua liên kết vận đơn đã biết. Kết quả ghép cần chỉ đến một hồ sơ phù hợp trong phạm vi MVP. Khi mã tham chiếu bị thiếu hoặc dẫn đến nhiều ứng viên, kế toán chọn hoặc bổ sung bằng chứng trước khi đối chiếu.
+Movago tìm **SHP-001 + nhà cung cấp A** trong hồ sơ. Nếu hóa đơn dùng số vận đơn, hệ thống tìm qua liên kết vận đơn đã biết. Kết quả ghép cần chỉ đến một hồ sơ phù hợp trong phạm vi MVP. Khi mã tham chiếu bị thiếu hoặc dẫn đến nhiều ứng viên, kế toán chọn hoặc bổ sung bằng chứng trước khi đối chiếu.
 
 Với lô đã xác định, bộ quy tắc chọn dòng giá theo nhà cung cấp, tuyến, loại container, mã phí, đơn vị, tiền tệ và ngày dùng để xét hiệu lực. Ngày đó lấy theo thỏa thuận của lô. Chẳng hạn, biểu phí của Maersk có điều kiện dùng lịch tàu tại lúc xác nhận booking hoặc mốc container vào cảng, tùy nhóm booking và phạm vi áp dụng. Nếu hai mức giá cùng có vẻ phù hợp và chưa có quy tắc ưu tiên đã duyệt, hồ sơ chuyển sang xác minh. [Maersk — điều kiện áp dụng OHC/DHC tại Việt Nam](https://www.maersk.com/news/articles/2026/03/31/terminal-handling-charges-vietnam-ohc-dhc).
 
@@ -56,7 +56,7 @@ Trên màn hình, kế toán thấy **“Phí chứng từ chênh +800.000 đồ
 - **Xác nhận hãng tính sai.** Kế toán dùng chứng từ và phép tính trong báo cáo để yêu cầu nhà cung cấp giải thích hoặc điều chỉnh theo quy trình của họ.
 - **Chưa đủ tài liệu để quyết định.** Giữ trạng thái cần xác minh và ghi rõ hồ sơ còn thiếu.
 
-Đầu ra của Colio là **kết quả kiểm tra có bằng chứng**. Báo cáo ghi mã lô, mã chứng từ, giá trị hai phía, nguồn, thời điểm và người xác nhận. Phê duyệt chi và thanh toán thuộc quy trình có thẩm quyền của doanh nghiệp. Ví dụ về kênh xử lý thực tế là MyCS của CMA CGM Việt Nam, nơi khách hàng gửi yêu cầu tranh chấp, sửa hoặc hủy hóa đơn. [CMA CGM Việt Nam — quy trình MyCS](https://www.cma-cgm.com/local/vietnam/news/224/notice-of-invoice-dispute-team-s-email-address-deactivation-amp-invoice-dispute-request-on-mycs).
+Đầu ra của Movago là **kết quả kiểm tra có bằng chứng**. Báo cáo ghi mã lô, mã chứng từ, giá trị hai phía, nguồn, thời điểm và người xác nhận. Phê duyệt chi và thanh toán thuộc quy trình có thẩm quyền của doanh nghiệp. Ví dụ về kênh xử lý thực tế là MyCS của CMA CGM Việt Nam, nơi khách hàng gửi yêu cầu tranh chấp, sửa hoặc hủy hóa đơn. [CMA CGM Việt Nam — quy trình MyCS](https://www.cma-cgm.com/local/vietnam/news/224/notice-of-invoice-dispute-team-s-email-address-deactivation-amp-invoice-dispute-request-on-mycs).
 
 ## 3. Sơ đồ một lượt kiểm tra
 
@@ -75,7 +75,7 @@ flowchart TD
 
 ## 4. Quy tắc cho các trường hợp ngoại lệ
 
-| Tình huống | Colio xử lý thế nào trong thiết kế |
+| Tình huống | Movago xử lý thế nào trong thiết kế |
 |---|---|
 | **Không có bảng giá cho mã phí** | Hiện **Thiếu căn cứ**. Cần bổ sung giá hoặc phê duyệt. Chênh lệch chỉ tính khi có mức kỳ vọng hợp lệ. |
 | **Cùng PDF được gửi lại** | So dấu vân tay của tệp để nhận bản giống hệt, kể cả đổi tên file. Khi tệp khác nhau, kiểm tra định danh như nhà cung cấp, ký hiệu và số hóa đơn nếu có. Hiện bản cũ để người dùng xác nhận. |
@@ -96,6 +96,6 @@ flowchart TD
 | Dòng tiền trên ảnh mờ | Yêu cầu người dùng kiểm tra vùng trích trước khi tính. |
 | Chênh lệch có phê duyệt bổ sung | Lưu phê duyệt, chạy lại với căn cứ đã xác nhận và giữ lịch sử kết quả cũ. |
 
-**Căn cứ của thiết kế.** Hướng dẫn nghiệp vụ của GSA Hoa Kỳ mô tả kiểm tra cước bằng cách ghép hóa đơn với vận đơn, kiểm tra mức phí và xác nhận dịch vụ đã thực hiện. Tài liệu công khai của Conlio và ShipCheck mô tả cách đối chiếu hóa đơn với thông tin vận tải và biểu phí. Luồng trong tài liệu là đề xuất cho Colio và cần kiểm thử trên dữ liệu của nhóm. [GSA — Transportation Invoice Audit](https://www.gsa.gov/policy-regulations/policy/transportation-management-policy/transportation-invoice-audit) · [Conlio — mô tả dịch vụ, mục 3](https://www.conlio.com/terms-conditions) · [ShipCheck — mục Freight Audit](https://shipcheck.com/en).
+**Căn cứ của thiết kế.** Hướng dẫn nghiệp vụ của GSA Hoa Kỳ mô tả kiểm tra cước bằng cách ghép hóa đơn với vận đơn, kiểm tra mức phí và xác nhận dịch vụ đã thực hiện. Tài liệu công khai của Conlio và ShipCheck mô tả cách đối chiếu hóa đơn với thông tin vận tải và biểu phí. Luồng trong tài liệu là đề xuất cho Movago và cần kiểm thử trên dữ liệu của nhóm. [GSA — Transportation Invoice Audit](https://www.gsa.gov/policy-regulations/policy/transportation-management-policy/transportation-invoice-audit) · [Conlio — mô tả dịch vụ, mục 3](https://www.conlio.com/terms-conditions) · [ShipCheck — mục Freight Audit](https://shipcheck.com/en).
 
 *Ghi chú phương pháp. Đọc brief và đối chiếu hướng dẫn của hãng tàu, mô tả nghiệp vụ và tài liệu kỹ thuật công khai. AI hỗ trợ tra cứu và tổng hợp.*

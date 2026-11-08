@@ -1,8 +1,10 @@
-# Colio AI · Brief dự án
+# Movago · Brief dự án
 
 **KTC Ideathon · 08/11/2026 · Đề xuất cần kiểm chứng**
 
-Colio AI hỗ trợ kế toán công nợ kiểm tra từng khoản cước trước khi thanh toán. Công cụ ghép **chứng từ đề nghị chi, hồ sơ lô và bảng giá đã duyệt**, tính lại các khoản có đủ căn cứ và đưa chênh lệch kèm bằng chứng cho người xác minh. Mục tiêu thử nghiệm là giảm thời gian đối chiếu và giữ chất lượng kiểm soát.
+> Move smarter. Go safer.
+
+Movago hỗ trợ kế toán công nợ kiểm tra từng khoản cước trước khi thanh toán. Công cụ ghép **chứng từ đề nghị chi, hồ sơ lô và bảng giá đã duyệt**, tính lại các khoản có đủ căn cứ và đưa chênh lệch kèm bằng chứng cho người xác minh. Mục tiêu thử nghiệm là giảm thời gian đối chiếu và giữ chất lượng kiểm soát.
 
 ## 1. Bài toán và khách hàng
 
@@ -38,7 +40,7 @@ Phỏng vấn 5–10 người ở AP, operations, pricing và người có ngân
 
 1. Lấy 10–20 bộ đã ẩn thông tin để khảo sát. Khi đủ điều kiện, mở rộng khoảng 30–100 bộ có quyền sử dụng. Dùng một nhóm hồ sơ liên tiếp để đo thời gian và độ bao phủ. Dùng bộ ca ngoại lệ có chủ đích để thử quy tắc. Báo cáo mẫu thật và ca giả lập riêng.
 2. Nhờ người nghiệp vụ xác nhận lô, phiên bản giá, dòng phí và kết quả. Gán riêng các nhãn sai phí, phí hợp lệ, thiếu căn cứ và nghi trùng. Tách bộ cấu hình khỏi bộ đánh giá, ưu tiên giữ lại mẫu từ bố cục chưa dùng.
-3. So quy trình thực tế và quy trình có Colio trên nhóm ca tương đương. Đảo thứ tự hoặc chia người duyệt để giảm hiệu ứng nhớ. Bấm giờ cả tải file, sửa kết quả trích và duyệt. Ghi thời gian chờ phản hồi riêng.
+3. So quy trình thực tế và quy trình có Movago trên nhóm ca tương đương. Đảo thứ tự hoặc chia người duyệt để giảm hiệu ứng nhớ. Bấm giờ cả tải file, sửa kết quả trích và duyệt. Ghi thời gian chờ phản hồi riêng.
 4. Chốt ngưỡng cùng người mua trước thử nghiệm. Mốc thảo luận là giảm ít nhất 30% phút thao tác trung vị trên hồ sơ trong phạm vi, các cảnh báo tiền có căn cứ mở được và chạy đủ các ca trọng yếu. Xem từng lỗi bỏ sót hoặc hồ sơ hợp lệ bị giữ nhầm. Nếu khâu chờ chiếm phần lớn thời gian, đánh giá lại ưu tiên giữa trích xuất và luồng chuyển ngoại lệ.
 
 | Chỉ số | Cách đọc |
@@ -58,7 +60,7 @@ Giá trị ròng ước tính bằng giá trị thời gian giải phóng cộng
 
 **Giả thuyết bán thử.** Thuê bao theo số hóa đơn duy nhất xử lý, với phí thiết lập khi cần cấu hình riêng. Nếu chi phí sử dụng quy đổi là 3 triệu đồng/tháng, kịch bản trên cần giảm trung bình 3 phút/hóa đơn để cân bằng theo giá trị thời gian. Đề nghị pilot có KPI và xác nhận người mua, ngân sách và khả năng trả phí trước khi ước lượng phân khúc có thể phục vụ.
 
-**Đối chứng cạnh tranh.** So trực tiếp với quy trình TMS/ERP, bảng tính và luồng AP đang dùng. Thử xem Colio có rút ngắn thời gian thiết lập và đối chiếu trên cùng bộ hồ sơ, với nguồn giá và vị trí chứng từ truy được hay không. Ghi riêng phần kiểm tra với giá hợp đồng và phần so với chi phí dự ghi trong TMS. Hai căn cứ có thể khác nhau. [Ma trận cạnh tranh và điều kiện đổi ưu tiên](nghien_cuu_tung_slide/colio_ai_business_problems.md)
+**Đối chứng cạnh tranh.** So trực tiếp với quy trình TMS/ERP, bảng tính và luồng AP đang dùng. Thử xem Movago có rút ngắn thời gian thiết lập và đối chiếu trên cùng bộ hồ sơ, với nguồn giá và vị trí chứng từ truy được hay không. Ghi riêng phần kiểm tra với giá hợp đồng và phần so với chi phí dự ghi trong TMS. Hai căn cứ có thể khác nhau. [Ma trận cạnh tranh và điều kiện đổi ưu tiên](nghien_cuu_tung_slide/colio_ai_business_problems.md)
 
 ## 5. Kế hoạch Ideathon
 
@@ -72,4 +74,4 @@ Giá trị ròng ước tính bằng giá trị thời gian giải phóng cộng
 
 [Deck 10 slide](colio_ai_noi_dung_slide.md) · [Lời thuyết trình, demo và hỏi đáp](colio_ai_pitch_research_vi.md)
 
-**Tên làm việc.** Colio AI là đề xuất độc lập của nhóm. Conlio là một nguồn tham khảo về kiểm tra cước. [Mô tả dịch vụ Conlio](https://www.conlio.com/terms-conditions)
+**Tham chiếu ngành.** Conlio là một nguồn tham khảo về kiểm tra cước. [Mô tả dịch vụ Conlio](https://www.conlio.com/terms-conditions)
