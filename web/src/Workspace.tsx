@@ -277,7 +277,7 @@ export default function Workspace({ story }: { story: boolean }) {
               </div>
             )}
 
-            <h3 className="muted mini" style={{ margin: '14px 0 6px', textTransform: 'uppercase', fontWeight: 800 }}>{t('history')}</h3>
+            <h3 className="muted mini" style={{ margin: '14px 0 6px', textTransform: 'uppercase', fontWeight: 600, letterSpacing: '0.05em' }}>{t('history')}</h3>
             <ul className="log">
               {intake.map((r) => (
                 <li key={r.hash + r.receivedAt}><time>{time(r.receivedAt)}</time><span><b>{r.fileName}</b> <span className="hash">{r.hash.slice(0, 12)}…</span></span></li>
@@ -434,7 +434,7 @@ function SourceViewer(p: { viewer: Exclude<Viewer, null>; c: DemoCase; data: Cas
     <div className="overlay" onClick={p.onClose}>
       <div className="drawer" role="dialog" aria-modal="true" aria-label={title} onClick={(e) => e.stopPropagation()}>
         <div className="box-head">
-          <div className="row"><h2 style={{ fontSize: 20, fontWeight: 800 }}>{title}</h2><span className="chip sim">{t('simulated')}</span></div>
+          <div className="row"><h2 style={{ fontSize: 24, fontWeight: 500, letterSpacing: '-0.01em' }}>{title}</h2><span className="chip sim">{t('simulated')}</span></div>
           <button className="btn ghost small" onClick={p.onClose} autoFocus>{t('close')}</button>
         </div>
 
@@ -491,7 +491,7 @@ function VerifyModal(p: { line: LineResult; caseId: string; onCancel: () => void
     <div className="modal-c" onClick={p.onCancel}>
       <form className="modal" role="dialog" aria-modal="true" aria-label={t('requestVerify')} onClick={(e) => e.stopPropagation()}
         onSubmit={(e) => { e.preventDefault(); if (reason.trim()) p.onSubmit({ assignee, reason: reason.trim(), at: new Date().toISOString() }) }}>
-        <h2 style={{ fontSize: 20, fontWeight: 800 }}>{t('requestVerify')} · {p.line.feeCode}</h2>
+        <h2 style={{ fontSize: 24, fontWeight: 500, letterSpacing: '-0.01em' }}>{t('requestVerify')} · {p.line.feeCode}</h2>
         <label className="field">{t('assignee')}
           <select value={assignee} onChange={(e) => setAssignee(e.target.value)}>{roles.map((r) => <option key={r}>{r}</option>)}</select>
         </label>

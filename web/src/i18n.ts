@@ -17,6 +17,13 @@ const dict = {
     en: 'Movago is the freight-cost reconciliation project of team Odylytics at KTC Ideathon.',
     vi: 'Movago là dự án đối chiếu cước vận tải của đội Odylytics tại KTC Ideathon.',
   },
+  bannerText: { en: 'Move smarter. Go safer. · Play the 3-minute story', vi: 'Move smarter. Go safer. · Xem tình huống 3 phút' },
+  feat1: { en: 'Matches each invoice to its shipment and B/L', vi: 'Ghép từng hóa đơn với đúng lô và vận đơn' },
+  feat2: { en: 'Picks the approved rate by route, container and date', vi: 'Chọn giá đã duyệt theo tuyến, loại container và mốc ngày' },
+  feat3: { en: 'Opens both sources behind every difference', vi: 'Mở hai nguồn căn cứ của từng khoản chênh' },
+  feat4: { en: 'Flags a resent PDF, even under a new name', vi: 'Nhận ra PDF gửi lại, kể cả khi đổi tên' },
+  howSub: { en: 'From the moment a supplier sends a payment request to the moment a person approves it.', vi: 'Từ lúc nhà cung cấp gửi đề nghị chi tới lúc người phụ trách duyệt.' },
+  outcomesSub: { en: 'Status is never colour alone: every line carries its label and the reason behind it.', vi: 'Trạng thái không chỉ dựa vào màu: mỗi dòng luôn có nhãn chữ và lý do.' },
   simulated: { en: 'Simulated data', vi: 'Hồ sơ giả lập' },
   problemTitle: { en: 'The basis for paying freight lives in three places', vi: 'Căn cứ trả cước nằm ở ba nguồn' },
   problemBody: {
