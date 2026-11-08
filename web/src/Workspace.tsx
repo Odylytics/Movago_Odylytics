@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useState, type DragEvent } from 'react'
+import { useCallback, useEffect, useMemo, useRef, useState, type DragEvent } from 'react'
 import { store } from './App'
 import { CASES, SAMPLE_FILES, type DemoCase } from './cases'
 import { findDuplicate, parseCsv, reconcile, sha256Hex, type IntakeRecord, type LineResult, type ReconcileResult, type Row } from './engine/reconcile'
@@ -45,6 +45,7 @@ export default function Workspace({ story }: { story: boolean }) {
   const [intakeMsg, setIntakeMsg] = useState<IntakeMsg | null>(null)
   const [log, setLog] = useState<{ at: string; text: string }[]>([])
   const [step, setStep] = useState(story ? 0 : -1)
+  const resentDone = useRef(false) // story step 4 receives the resent PDF once, even if the step is revisited
   const [over, setOver] = useState(false)
 
   const time = (iso: string) => new Date(iso).toLocaleString(lang === 'en' ? 'en-GB' : 'vi-VN', { hour: '2-digit', minute: '2-digit', day: '2-digit', month: '2-digit' })
@@ -126,7 +127,7 @@ export default function Workspace({ story }: { story: boolean }) {
   const reset = async () => {
     try { localStorage.removeItem(INTAKE_KEY) } catch { /* ignore */ }
     setCaseId('INV-095'); setResult(null); setSelected(null); setViewer(null); setVerifyFor(null)
-    setVerifications({}); setIntakeMsg(null); setLog([])
+    setVerifications({}); setIntakeMsg(null); setLog([]); resentDone.current = false
     setIntake(await seedIntake().catch(() => []))
     if (story) setStep(0)
   }
@@ -140,13 +141,35 @@ export default function Workspace({ story }: { story: boolean }) {
     if (step >= 1 && !result) run()
     if (step === 1) { setSelected(null); setVerifyFor(null) }
     if (step === 2 || step === 3) { setSelected('DOC'); setVerifyFor(null) }
-    if (step === 3) simulateResend()
-    if (step === 4) { setSelected('DOC'); setVerifyFor('DOC') }
+    if (step === 3 && !resentDone.current) { resentDone.current = true; simulateResend() }
+    if (step === 4) setSelected('DOC')
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [step, data])
 
+  // Story mode: bring the step's target into the gap between the floating nav and the story card.
+  useEffect(() => {
+    if (step < 0) return
+    const id = window.setTimeout(() => {
+      const el = document.querySelector<HTMLElement>('.story-target')
+      if (!el) return
+      const navBottom = (document.querySelector('.nav')?.getBoundingClientRect().bottom ?? 80) + 16
+      const cardTop = (document.querySelector('.story')?.getBoundingClientRect().top ?? window.innerHeight) - 16
+      const gap = cardTop - navBottom
+      const r = el.getBoundingClientRect()
+      // fits: centre it in the gap · too tall: show its top, except on the last step where the actions sit at its bottom
+      const top = r.height <= gap ? r.top - (navBottom + (gap - r.height) / 2) : step === 4 ? r.bottom - cardTop : r.top - navBottom
+      const smooth = !window.matchMedia('(prefers-reduced-motion: reduce)').matches
+      window.scrollTo({ top: Math.max(0, window.scrollY + top), behavior: smooth ? 'smooth' : 'auto' })
+    }, 120)
+    // step 5 opens the verification form once the evidence is in view
+    const open = step === 4 && !verifications[`${caseId}:DOC`] ? window.setTimeout(() => setVerifyFor((v) => v ?? 'DOC'), 900) : 0
+    return () => { window.clearTimeout(id); window.clearTimeout(open) }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [step, result, selected, verifications])
+
   const sel = result?.lines.find((l) => l.feeCode === selected) ?? null
   const spot = (n: number) => (step === n ? 'spot' : '')
+  const target = (n: number) => (step === n ? 'spot story-target' : '')
 
   return (
     <div className="wrap ws">
@@ -173,13 +196,13 @@ export default function Workspace({ story }: { story: boolean }) {
 
       <div className="ws-grid">
         <div>
-          <section aria-label={t('sources')} className={`src-cards ${spot(0)}`}>
+          <section aria-label={t('sources')} className={`src-cards ${target(0)}`}>
             <SourceCard k={t('srcInvoice')} v={c.header.invoiceId} d={`${c.header.supplier} · ${c.invoiceDate}`} open={viewer === 'invoice'} onClick={() => setViewer('invoice')} />
             <SourceCard k={t('srcShipment')} v={c.header.shipmentId} d={data?.shipments[0] ? `${data.shipments[0].origin} → ${data.shipments[0].destination} · ${data.shipments[0].container_type}` : '…'} open={viewer === 'shipment'} onClick={() => setViewer('shipment')} />
             <SourceCard k={t('srcRate')} v={c.rateFile.replace('.csv', '')} d={`${data?.rates.length ?? '…'} ${t('rateRows')}`} open={viewer === 'rate'} onClick={() => setViewer('rate')} />
           </section>
 
-          <section className={`box ${spot(1)}`} style={{ marginTop: 16 }} aria-live="polite">
+          <section className={`box ${target(1)}`} style={{ marginTop: 16 }} aria-live="polite">
             <div className="box-head">
               <div>
                 <h2>{t('results')}</h2>
@@ -238,7 +261,7 @@ export default function Workspace({ story }: { story: boolean }) {
 
           {sel && (
             <Evidence
-              line={sel} c={c} rates={data?.rates ?? []} className={spot(2)}
+              line={sel} c={c} rates={data?.rates ?? []} className={step === 2 || step === 4 ? 'spot story-target' : ''}
               verification={verifications[vKey(sel.feeCode)]}
               onOpen={setViewer} onVerify={() => setVerifyFor(sel.feeCode)} time={time}
             />
@@ -246,7 +269,7 @@ export default function Workspace({ story }: { story: boolean }) {
         </div>
 
         <aside className="stack">
-          <section className={`box ${spot(3)}`}>
+          <section className={`box ${target(3)}`}>
             <h2>{t('intakeTitle')}</h2>
             <p className="muted" style={{ marginBottom: 12 }}>{t('intakeBody')}</p>
             <label
@@ -410,6 +433,11 @@ export default function Workspace({ story }: { story: boolean }) {
           <p className="callout" style={{ marginTop: 12 }}>
             <b>{t('sentTo')} {p.verification.assignee}</b> · {p.time(p.verification.at)}<br />{p.verification.reason}
           </p>
+        ) : null}
+        {p.verification ? (
+          <div className="row" style={{ marginTop: 14 }}>
+            <button className={`btn ${step === 4 ? 'spot' : ''}`} onClick={exportCsv}>{t('export')}</button>
+          </div>
         ) : l.status !== 'matched' && (
           <div className="row" style={{ marginTop: 14 }}>
             <button className="btn" onClick={p.onVerify}>{t('requestVerify')}</button>

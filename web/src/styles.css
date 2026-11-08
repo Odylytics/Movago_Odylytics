@@ -244,9 +244,15 @@ textarea { resize: vertical; min-height: 84px; }
 .story .row { margin-top: 14px; justify-content: space-between; }
 .story .btn { background: var(--white); color: var(--navy); border-color: var(--white); }
 .story .btn.ghost { background: transparent; color: var(--white); border-color: rgba(255, 255, 255, 0.4); }
-.story-pad { height: 200px; }
+.story-pad { height: 360px; }
 /* outline follows the element's own radius plus its offset; only the borderless card grid needs one */
-.spot { outline: 2px solid var(--blue); outline-offset: 4px; }
+.spot { outline: 3px solid var(--blue); outline-offset: 6px; animation: spot-in 1.4s cubic-bezier(0.16, 1, 0.3, 1) 1; }
+@keyframes spot-in {
+  0% { outline-color: rgba(40, 120, 255, 0); outline-offset: 18px; }
+  35% { outline-color: var(--blue); }
+  100% { outline-color: var(--blue); outline-offset: 6px; }
+}
+@media (prefers-reduced-motion: reduce) { .spot { animation: none; } }
 .src-cards.spot { border-radius: var(--r-card); }
 
 @media (max-width: 1000px) {
