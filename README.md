@@ -14,6 +14,7 @@
 | Chạy demo 3 phút và chuẩn bị hỏi đáp | [Kịch bản demo và hỏi đáp](colio_ai_pitch_research_vi.md) |
 | Tra tên, slogan và quy tắc thiết kế website demo | [Quy tắc thiết kế demo](DEMO_DESIGN_RULES.md) |
 | Chạy web demo (MVP), bộ ca và demo tham chiếu | [Movago web demo](web/README.md) · [Kế hoạch dựng web](WEB_DEMO_BUILD_PLAN.md) |
+| So sánh đối thủ, quy mô thị trường và lý do “why now” | [Phân tích cạnh tranh](nghien_cuu_tung_slide/phan_tich_canh_tranh.md) |
 | Khảo sát kế toán công nợ (Google Forms) | [Form khảo sát](nghien_cuu_tung_slide/form_khao_sat.md) |
 | Trả lời câu hỏi của giám khảo | [Phụ lục Q&A tiếng Việt](nghien_cuu_tung_slide/Movago_Phu_luc_QA.pptx) · [tiếng Anh](nghien_cuu_tung_slide/Movago_Appendix_QA_EN.pptx) |
 | Phỏng vấn kế toán công nợ để lấy số liệu thật | [Kịch bản phỏng vấn](nghien_cuu_tung_slide/phong_van_ke_toan_cong_no.md) |
