@@ -166,8 +166,8 @@ const dict = {
   fictional: { en: 'Fictional characters', vi: 'Nhân vật giả tưởng' },
   startTitle: { en: 'Six people, one invoice', vi: 'Sáu người, một hóa đơn' },
   startSub: {
-    en: 'Follow invoice INV-095 from the carrier’s clerk to the chief accountant. It plays by itself in about a minute; jump to any step or person at any time.',
-    vi: 'Theo hóa đơn INV-095 từ nhân viên của hãng tới kế toán trưởng. Tự chạy trong khoảng một phút; có thể nhảy tới bất kỳ bước hay nhân vật nào.',
+    en: 'From the carrier’s quotation to the chief accountant’s decision: pricing builds the rate card, then invoice INV-095 is checked against it. It plays by itself in under two minutes; jump to any step or person at any time.',
+    vi: 'Từ báo giá của hãng tới quyết định của kế toán trưởng: pricing dựng bảng giá, rồi hóa đơn INV-095 được kiểm theo bảng giá đó. Tự chạy trong chưa tới hai phút; có thể nhảy tới bất kỳ bước hay nhân vật nào.',
   },
   playSound: { en: 'Play with sound', vi: 'Chạy có âm thanh' },
   playMuted: { en: 'Play muted', vi: 'Chạy không tiếng' },

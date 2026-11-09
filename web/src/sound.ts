@@ -64,6 +64,13 @@ function noise(at: number, dur: number, from: number, to: number, gain = 0.05) {
 const SOUNDS: Record<Cue | 'click' | 'step', () => void> = {
   click: () => tone(1800, 0, 0.04, { gain: 0.04 }),
   step: () => { tone(660, 0, 0.12, { gain: 0.05 }); tone(990, 0.06, 0.16, { gain: 0.04 }) },
+  // the quotation is swept, one tick per rate line, a low double tick for the lines to check, then the approval chime
+  rates: () => {
+    noise(0.3, 1.8, 500, 3500, 0.03)
+    for (let i = 0; i < 9; i++) tone(1700 + i * 50, 2.4 + i * 0.6, 0.04, { gain: 0.035 })
+    ;[5.4, 7.2].forEach((a) => { tone(520, a + 0.3, 0.08, { type: 'triangle', gain: 0.05 }); tone(520, a + 0.45, 0.08, { type: 'triangle', gain: 0.05 }) })
+    tone(784, 8.6, 0.2, { gain: 0.05 }); tone(1047, 8.72, 0.3, { gain: 0.045 })
+  },
   // three messages land (timed with the inbox scene), then the group chime
   channels: () => {
     [0.6, 2.2, 3.8].forEach((a, i) => { noise(a, 0.3, 400, 2600, 0.045); tone([587, 659, 784][i], a + 0.26, 0.14, { type: 'triangle', gain: 0.06 }) })

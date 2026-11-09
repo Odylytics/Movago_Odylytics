@@ -33,8 +33,8 @@ async function seedIntake(): Promise<IntakeRecord[]> {
 }
 
 /** story steps 0–2 are the intake scenes; k counts the workspace steps after them */
-const INTRO = 2
-const SCENES: Scene[] = ['channels', 'scan', 'extract']
+const INTRO = 3
+const SCENES: Scene[] = ['rates', 'channels', 'scan', 'extract']
 
 const caseKey = (id: string) => `case_${id.replace(/-/g, '_')}` as Key
 

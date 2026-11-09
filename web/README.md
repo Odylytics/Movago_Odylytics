@@ -23,7 +23,7 @@ npm run build      # static site in dist/
 | `#/business` | Cited market and rate statistics with count-up and drawn charts, economic problems, business model, ROI scenario with a calculator, Vietnam roadmap, numbered sources. |
 | `#/demo` | Try it yourself: four cases, three sources, reconciliation, evidence, verification, CSV export, resend check. |
 | `#/rates` | Build the approved rate card: receive a carrier quotation (`QUOTE-SA-2611.pdf`), see the rate lines extracted with confidence, approve each line, export the rate card. Low-confidence lines must be approved one by one. |
-| `#/demo?story=1` | Guided story, 8 scenes in about 85 s: three-channel intake, phone scan, AI reading, reconciliation, evidence, resend, verification, decision. Autoplay with Web Audio cues, pause, jump to any step or character, keyboard ← → K M, and a behind-the-scenes picture-in-picture. The nav's **Open demo** starts it straight away. |
+| `#/demo?story=1` | Guided story, 9 scenes in about 98 s: rate card built from the carrier quotation, three-channel intake, phone scan, AI reading, reconciliation, evidence, resend, verification, decision. Autoplay with Web Audio cues, pause, jump to any step or character, keyboard ← → K M, and a behind-the-scenes picture-in-picture. The nav's **Open demo** starts it straight away. |
 
 Hash routing, so `dist/` works on any static host. Production is the Vercel project `movago-odylytics`; redeploy from this folder with `npx vercel@latest deploy --prod`.
 

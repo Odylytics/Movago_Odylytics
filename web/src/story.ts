@@ -26,7 +26,7 @@ export const PERSONAS: Persona[] = [
   {
     id: 'khoa', name: 'Lê Minh Khoa', initials: 'MK', tone: 'blue',
     role: { en: 'Pricing executive', vi: 'Nhân viên pricing' }, org: FORWARDER,
-    does: { en: 'Owns approved rate card RATE-V3 and confirms any extra charge.', vi: 'Giữ bảng giá đã duyệt RATE-V3 và xác nhận khoản phát sinh.' },
+    does: { en: 'Builds rate card RATE-V3 from the carrier quotation, approves it and confirms any extra charge.', vi: 'Dựng bảng giá RATE-V3 từ báo giá của hãng, duyệt và xác nhận khoản phát sinh.' },
   },
   {
     id: 'lananh', name: 'Nguyễn Lan Anh', initials: 'LA', tone: 'navy',
@@ -42,12 +42,20 @@ export const PERSONAS: Persona[] = [
 
 export const persona = (id: PersonaId) => PERSONAS.find((p) => p.id === id)!
 
-export type Cue = 'channels' | 'scan' | 'extract' | 'reconcile' | 'focus' | 'duplicate' | 'send' | 'done'
+export type Cue = 'rates' | 'channels' | 'scan' | 'extract' | 'reconcile' | 'focus' | 'duplicate' | 'send' | 'done'
 
 /** who speaks; also lists the cast members the step mentions, so they light up too */
 export interface StoryStep { who: PersonaId; also: PersonaId[]; title: L; body: L; cue: Cue; seconds: number }
 
 export const STEPS: StoryStep[] = [
+  {
+    who: 'khoa', cue: 'rates', seconds: 13, also: ['vy'],
+    title: { en: 'Khoa builds the rate card from the quotation', vi: 'Khoa dựng bảng giá từ báo giá' },
+    body: {
+      en: 'Before any invoice arrives, Supplier A emails quotation Q-SA-2611. Movago reads its nine rate lines; Khoa checks the two it is unsure about, approves all nine and publishes RATE-V3. Nobody types the rates into Excel.',
+      vi: 'Trước khi hóa đơn đến, nhà cung cấp A gửi báo giá Q-SA-2611. Movago đọc chín dòng giá; Khoa xem riêng hai dòng AI chưa chắc, duyệt đủ chín dòng và phát hành RATE-V3. Không ai phải gõ giá vào Excel.',
+    },
+  },
   {
     who: 'vy', cue: 'channels', seconds: 12, also: ['bao'],
     title: { en: 'INV-095 arrives from three channels', vi: 'INV-095 đến từ ba kênh' },
