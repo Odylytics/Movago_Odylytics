@@ -42,7 +42,7 @@ Trước mỗi lần chi cước, kế toán công nợ phải gom ba nguồn, s
 ## 04 · Business Insight · Mức phí đúng phụ thuộc vào từng lô hàng
 
 - **3,25 triệu đồng** · DHC Maersk cho container 20 feet khô. **5 triệu đồng** cho 40 feet khô. Áp dụng từ 01/05/2026. [Maersk](https://www.maersk.com/news/articles/2026/03/31/terminal-handling-charges-vietnam-ohc-dhc)
-- **3 nguồn** phải mở để kiểm một dòng phí.
+- **3–6%** hóa đơn cước có lỗi trong một đợt audit điển hình, chủ yếu ở phụ phí và chiết khấu. [Transportation Insight](https://transportationinsight.com/resources/freight-audit-payment-protect-profit-soft-rates/) · Việt Nam chưa có số công bố, pilot sẽ đo.
 
 Quy trình hiện tại còn hạn chế:
 
@@ -95,7 +95,7 @@ Bằng chứng: hóa đơn trang 1 ↔ RATE-V3 dòng 12. *Dữ liệu giả lậ
 - **Nguồn lực** · 1 tuyến, 1–2 nhà cung cấp, dữ liệu CSV, 3 vai: nghiệp vụ, kỹ thuật, giao diện.
 - **Công nghệ** · Document AI + rules engine + web app. Demo đã chạy đủ luồng.
 
-*Số liệu là giả định, không phải kết quả pilot.*
+*Số liệu là giả định, không phải kết quả pilot. 60.000 đ/giờ thấp hơn lương kế toán công nợ trung bình khoảng 11,5 triệu đồng/tháng (TopCV). Benchmark: trung vị chi phí xử lý một hóa đơn AP là 6 USD ([APQC](https://www.apqc.org/What-Is-the-Average-Cost-to-Process-an-Invoice)).*
 
 ## 10 · Competitive Advantage · Khác biệt: căn cứ từng dòng phí cho forwarder Việt Nam
 

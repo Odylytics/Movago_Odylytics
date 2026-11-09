@@ -14,6 +14,8 @@
 | Chạy demo 3 phút và chuẩn bị hỏi đáp | [Kịch bản demo và hỏi đáp](colio_ai_pitch_research_vi.md) |
 | Tra tên, slogan và quy tắc thiết kế website demo | [Quy tắc thiết kế demo](DEMO_DESIGN_RULES.md) |
 | Chạy web demo (MVP), bộ ca và demo tham chiếu | [Movago web demo](web/README.md) · [Kế hoạch dựng web](WEB_DEMO_BUILD_PLAN.md) |
+| Phỏng vấn kế toán công nợ để lấy số liệu thật | [Kịch bản phỏng vấn](nghien_cuu_tung_slide/phong_van_ke_toan_cong_no.md) |
+| Đo AI đọc hóa đơn thật | [Bộ kiểm thử trích xuất](nghien_cuu_tung_slide/kiem_thu_trich_xuat/README.md) |
 | Tra thông tin đội và hồ sơ công khai | [Đội Odylytics](ODYLYTICS_TEAM.md) |
 | Xây luồng kiểm tra và kiểm thử ngoại lệ | [Cách Movago hoạt động](nghien_cuu_tung_slide/colio_ai_hoat_dong_the_nao.md) |
 | Tìm mẫu tài liệu và chuẩn bị bộ test | [Nguồn dữ liệu và chứng từ](nghien_cuu_tung_slide/nguon_du_lieu_chung_tu_colio.md) |

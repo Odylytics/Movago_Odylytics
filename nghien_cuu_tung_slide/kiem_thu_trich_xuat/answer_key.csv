@@ -1,0 +1,46 @@
+file,field,expected
+INV-095_pdf,supplier,SUPPLIER A (FICTIONAL CARRIER)
+INV-095_pdf,invoice_no,INV-095
+INV-095_pdf,invoice_date,2026-11-06
+INV-095_pdf,shipment_ref,SHP-001
+INV-095_pdf,bl_no,BL-SG-001
+INV-095_pdf,currency,VND
+INV-095_pdf,line1_desc,Ocean freight - 20' DRY
+INV-095_pdf,line1_qty_unit,1 x CONTAINER
+INV-095_pdf,line1_amount,8000000
+INV-095_pdf,line2_desc,Documentation fee (DOC)
+INV-095_pdf,line2_qty_unit,1 x B/L
+INV-095_pdf,line2_amount,1300000
+INV-095_pdf,subtotal,9300000
+INV-095_pdf,vat,930000
+INV-095_pdf,total,10230000
+INV-095_scan,supplier,SUPPLIER A (FICTIONAL CARRIER)
+INV-095_scan,invoice_no,INV-095
+INV-095_scan,invoice_date,2026-11-06
+INV-095_scan,shipment_ref,SHP-001
+INV-095_scan,bl_no,BL-SG-001
+INV-095_scan,currency,VND
+INV-095_scan,line1_desc,Ocean freight - 20' DRY
+INV-095_scan,line1_qty_unit,1 x CONTAINER
+INV-095_scan,line1_amount,8000000
+INV-095_scan,line2_desc,Documentation fee (DOC)
+INV-095_scan,line2_qty_unit,1 x B/L
+INV-095_scan,line2_amount,1300000
+INV-095_scan,subtotal,9300000
+INV-095_scan,vat,930000
+INV-095_scan,total,10230000
+INV-095_photo,supplier,SUPPLIER A (FICTIONAL CARRIER)
+INV-095_photo,invoice_no,INV-095
+INV-095_photo,invoice_date,2026-11-06
+INV-095_photo,shipment_ref,SHP-001
+INV-095_photo,bl_no,BL-SG-001
+INV-095_photo,currency,VND
+INV-095_photo,line1_desc,Ocean freight - 20' DRY
+INV-095_photo,line1_qty_unit,1 x CONTAINER
+INV-095_photo,line1_amount,8000000
+INV-095_photo,line2_desc,Documentation fee (DOC)
+INV-095_photo,line2_qty_unit,1 x B/L
+INV-095_photo,line2_amount,1300000
+INV-095_photo,subtotal,9300000
+INV-095_photo,vat,930000
+INV-095_photo,total,10230000

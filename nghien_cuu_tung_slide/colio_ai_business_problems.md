@@ -37,6 +37,19 @@ Một nghiên cứu thiết kế hệ thống AP trong thương mại hàng hóa
 
 Pitch có thể nói **có nghiệp vụ kiểm tra theo lô và giá tại TP.HCM, và điều kiện tính phí làm cho việc kiểm tra từng dòng có ý nghĩa**. Pilot cần bắt đầu bằng hóa đơn VND, một lô trên mỗi hóa đơn, một hoặc hai nhà cung cấp và vài mã phí cố định. Đánh giá ba kết quả độc lập gồm thời gian thao tác, chất lượng phát hiện và số tiền được xác nhận điều chỉnh hoặc tránh chi. Quy trình lấy mẫu, ngưỡng thử và mô hình giá trị nằm trong [brief dự án](../colio_ai_project_brief.md).
 
+## Số liệu ngành cho slide (rà ngày 09/11/2026)
+
+| Chỉ số | Số liệu | Mức tin cậy và cách dùng |
+|---|---|---|
+| Tỷ lệ hóa đơn cước có lỗi | Một đợt audit cước điển hình tìm thấy lỗi ở **3–6% hóa đơn**, phần lớn ở phụ phí và chiết khấu áp sai. Khoảng 1–5% tổng chi cước có thể thu hồi. [Transportation Insight](https://transportationinsight.com/resources/freight-audit-payment-protect-profit-soft-rates/) | Nguồn là công ty bán dịch vụ audit cước ở Mỹ. Dùng làm bối cảnh quốc tế, ghi rõ nguồn. Phù hợp với cơ chế phụ phí ở slide 4. |
+| Con số “22% hóa đơn cước có lỗi” | Nhiều blog ghi là của IOFM 2025 nhưng không dẫn báo cáo gốc. Con số này có thể là tỷ lệ ngoại lệ AP chung của Ardent Partners. [Phân tích của Phacet Labs](https://www.phacetlabs.com/blog/cost-of-invoice-errors) | **Không dùng trên slide.** Giám khảo tra lại sẽ không ra nguồn. |
+| Chi phí xử lý một hóa đơn AP | Trung vị **6,00 USD/hóa đơn**, mẫu 5.846 tổ chức, gồm nhân sự, hệ thống, chi phí chung và thuê ngoài. Trung vị theo dòng hàng: 1,36 USD. [APQC](https://www.apqc.org/What-Is-the-Average-Cost-to-Process-an-Invoice) | Đã mở trang gốc. Benchmark đa ngành, chủ yếu doanh nghiệp quốc tế. |
+| Thời gian và ngoại lệ AP | Ardent Partners, State of ePayables 2025: chi phí trung bình 9,84 USD/hóa đơn, 8,2 ngày xử lý, 18,4% hóa đơn có ngoại lệ (khảo sát 204 lãnh đạo AP, tháng 3–5/2025). [Tổng hợp của Parseur](https://parseur.com/blog/ai-invoice-processing-benchmarks) | Chưa mở được báo cáo gốc. Dùng trong speaker notes nếu cần, ghi “theo Ardent Partners”. |
+| Lương kế toán công nợ | Trung bình toàn quốc khoảng 11,5 triệu đồng/tháng theo TopCV. Tại TP.HCM, khảo sát được CareerViet dẫn là 7,9–11 triệu đồng. [TopCV](https://www.topcv.vn/tra-cuu-muc-luong-tai-viet-nam/ke-toan-cong-no) · [CareerViet](https://careerviet.vn/viec-lam/ke-toan-kiem-toan-tai-ho-chi-minh-c2l8-vi.html) | Lấy từ kết quả tìm kiếm, trang gốc chặn truy cập tự động. 11,5 triệu chia khoảng 176 giờ ra khoảng 65.000 đồng/giờ trước bảo hiểm do doanh nghiệp đóng. Mốc 60.000 đồng/giờ ở slide 9 vì vậy là mức thận trọng. |
+| Độ chính xác AI đọc hóa đơn | Businessware 03/2026: Gemini 3 Pro 94,75%, Azure Document Intelligence 90,52%, Claude Sonnet 4.5 90,27%. Nghiên cứu trước: GPT-4o 98% trường đầu, 57% dòng hàng. [RevExOS](https://revexos.com/blog/best-ai-model-for-invoice-parsing) | Mẫu 20 hóa đơn, không phải hóa đơn cước Việt Nam. Đội tự đo bằng [bộ kiểm thử trích xuất](kiem_thu_trich_xuat/README.md). |
+
+**Cách nói trên sân khấu.** “Ở thị trường có audit cước chuyên nghiệp, 3–6% hóa đơn cước có lỗi. Ở Việt Nam chưa có số công bố, nên pilot của chúng em sẽ đo con số đó.” Câu này trung thực và biến khoảng trống dữ liệu thành lý do để chạy pilot.
+
 ## Bối cảnh thị trường và giới hạn
 
 Báo cáo Logistics Việt Nam 2025 dẫn VLA ước tính khoảng 4.000–4.500 doanh nghiệp giao nhận trong cả nước và nêu TP.HCM là một địa bàn tập trung. Khảo sát 202 đơn vị trong cùng báo cáo, gồm 161 bên sử dụng và 41 bên cung cấp dịch vụ, cho thấy cả bên dùng và bên cung cấp dịch vụ chấm áp lực tăng chi phí logistics 3,23/5. Hai con số mô tả bối cảnh ngành. Quy mô phân khúc có thể phục vụ cần lọc theo phương thức vận tải, khối lượng chứng từ, khả năng lấy dữ liệu và quy trình hiện tại. [Bộ Công Thương, Báo cáo Logistics Việt Nam 2025, tr. 74–75 và 94–98](https://proship.vn/wp-content/uploads/2026/03/Bao-cao-Logistics-Viet-Nam-2025.pdf)

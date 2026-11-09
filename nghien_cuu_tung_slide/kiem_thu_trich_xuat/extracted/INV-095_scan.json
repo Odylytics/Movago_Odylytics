@@ -1,0 +1,17 @@
+{
+ "supplier": "SUPPLIER A (FICTIONAL CARRIER)",
+ "invoice_no": "INV-095",
+ "invoice_date": "2026-11-06",
+ "shipment_ref": "SHP-001",
+ "bl_no": "BL-SG-001",
+ "currency": "VND",
+ "line1_desc": "Ocean freight - 20' DRY",
+ "line1_qty_unit": "1 x CONTAINER",
+ "line1_amount": "8000000",
+ "line2_desc": "Documentation fee (DOC)",
+ "line2_qty_unit": "1 x B/L",
+ "line2_amount": "1300000",
+ "subtotal": "9300000",
+ "vat": "930000",
+ "total": "10230000"
+}
