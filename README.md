@@ -10,12 +10,10 @@
 |---|---|
 | Chốt khách hàng, phạm vi MVP, kế hoạch pilot và mô hình kinh doanh | [Brief dự án](colio_ai_project_brief.md) |
 | Chọn bài toán kinh doanh và chuẩn bị bằng chứng cho pitch | [Nghiên cứu bài toán kinh doanh](nghien_cuu_tung_slide/colio_ai_business_problems.md) |
-| Làm deck | [Nội dung 10 slide](colio_ai_noi_dung_slide.md) |
-| Tập nói, chạy demo và chuẩn bị hỏi đáp | [Kịch bản thuyết trình](colio_ai_pitch_research_vi.md) |
+| Làm deck | [Deck PowerPoint](nghien_cuu_tung_slide/Movago_Pitch_Deck.pptx) · [Nội dung 10 slide](colio_ai_noi_dung_slide.md) |
+| Chạy demo 3 phút và chuẩn bị hỏi đáp | [Kịch bản demo và hỏi đáp](colio_ai_pitch_research_vi.md) |
 | Tra tên, slogan và quy tắc thiết kế website demo | [Quy tắc thiết kế demo](DEMO_DESIGN_RULES.md) |
-| Chạy web demo (MVP) | [Movago web demo](web/README.md) · [Kế hoạch dựng web](WEB_DEMO_BUILD_PLAN.md) |
-| Xem các mẫu demo và luồng đề xuất cho Movago | [Nghiên cứu demo sản phẩm](MOVAGO_DEMO_RESEARCH.md) |
-| Chuẩn bị hồ sơ logistics Việt Nam và tập chạy demo | [Kế hoạch demo Movago](MOVAGO_DEMO_PLAN.md) |
+| Chạy web demo (MVP), bộ ca và demo tham chiếu | [Movago web demo](web/README.md) · [Kế hoạch dựng web](WEB_DEMO_BUILD_PLAN.md) |
 | Tra thông tin đội và hồ sơ công khai | [Đội Odylytics](ODYLYTICS_TEAM.md) |
 | Xây luồng kiểm tra và kiểm thử ngoại lệ | [Cách Movago hoạt động](nghien_cuu_tung_slide/colio_ai_hoat_dong_the_nao.md) |
 | Tìm mẫu tài liệu và chuẩn bị bộ test | [Nguồn dữ liệu và chứng từ](nghien_cuu_tung_slide/nguon_du_lieu_chung_tu_colio.md) |

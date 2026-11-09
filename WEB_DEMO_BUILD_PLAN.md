@@ -2,7 +2,7 @@
 
 Đội **Odylytics** · 08/11/2026 · Hạn nộp 23:59 13/11/2026 (folder `AI4Biz_Tendoi_2026`, slide tiếng Anh ≤ 15 trang, điểm cộng cho Prototype/MVP).
 
-Tài liệu nguồn: [Kế hoạch demo](MOVAGO_DEMO_PLAN.md) · [Luồng và đáp án](nghien_cuu_tung_slide/colio_ai_hoat_dong_the_nao.md) · [Quy tắc thiết kế](DEMO_DESIGN_RULES.md) · [Mẫu Dimension](DESIGN.md) · [Brief](colio_ai_project_brief.md).
+Tài liệu nguồn: [Luồng và đáp án](nghien_cuu_tung_slide/colio_ai_hoat_dong_the_nao.md) · [Quy tắc thiết kế](DEMO_DESIGN_RULES.md) · [Mẫu Dimension](DESIGN.md) · [Brief](colio_ai_project_brief.md).
 
 ## Quyết định
 
@@ -33,6 +33,10 @@ Tài liệu nguồn: [Kế hoạch demo](MOVAGO_DEMO_PLAN.md) · [Luồng và đ
 | Thiếu giá DOC | Freight khớp; DOC **Missing basis**, mức kỳ vọng và chênh lệch để trống. |
 | Bản gửi lại | Tải lại PDF `INV-095` đã đổi tên → nhận ra trùng vân tay, chỉ bản đã tiếp nhận. |
 | `INV-VN-020` Manila → Cát Lái | 20' DRY, không qua Cái Mép. THD 4.800.000 vs 3.000.000 → **+1.800.000**; DOF 950.000/B/L khớp. Ghi chú 4.800.000 là mức 40' áp nhầm (dữ liệu kiểm thử). |
+
+## Demo tham chiếu
+
+Hai lối vào *Xem tình huống* và *Tự thử* học theo [Unfound](https://unfound-be-reached-not-found.vercel.app/). Nạp sẵn hồ sơ học theo [Linehaul](https://trylinehaul.com/demo). Căn cứ hai phía cạnh chênh lệch học theo [FreightProof](https://getfreightproof.com/demo). Ba nguồn hiện sẵn ở điểm vào học theo [Venpalo](https://revenue.anrotex.com/demo).
 
 ## Trạng thái
 

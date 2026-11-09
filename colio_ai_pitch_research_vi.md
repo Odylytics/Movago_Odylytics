@@ -2,20 +2,7 @@
 
 Dùng cùng [nội dung 10 slide](colio_ai_noi_dung_slide.md). [Brief](colio_ai_project_brief.md) giữ phạm vi MVP và số liệu minh họa. [Nghiên cứu bài toán kinh doanh](nghien_cuu_tung_slide/colio_ai_business_problems.md) giữ căn cứ và giới hạn của từng nhận định.
 
-## Lời thuyết trình theo slide
-
-| Slide | Lời nói gợi ý |
-|---|---|
-| **01 · Movago** | “Khi nhận hóa đơn cước, kế toán cần biết khoản nào khớp với lô và giá đã duyệt, khoản nào cần hỏi lại. Movago đưa câu trả lời và chứng từ gốc vào cùng một chỗ.” |
-| **02 · Ba nguồn căn cứ** | “Chứng từ ghi số tiền đang được yêu cầu. Hồ sơ lô ghi dịch vụ và điều kiện. Pricing giữ mức đã duyệt. Lacco và Flexport mô tả các bước bàn giao và kiểm tra này ở TP.HCM. Pilot sẽ đo phần thao tác còn phải làm tay.” |
-| **03 · Khách hàng đầu tiên** | “Chúng tôi bắt đầu với forwarder hàng biển vừa tại TP.HCM có nhóm công nợ và xuất được dữ liệu lô. Kế toán dùng hằng ngày, còn pricing và vận hành bổ sung căn cứ. Kế toán trưởng hoặc CFO là người mua giả định.” |
-| **04 · Điều kiện giá** | “Với biểu phí Maersk trên màn hình, cùng mã DHC nhưng container khô 20 feet và 40 feet chịu hai mức khác nhau. Đọc đúng số trên hóa đơn vẫn có thể đối chiếu sai nếu chọn nhầm loại container hoặc mốc hiệu lực.” |
-| **05 · Một màn hình đối chiếu** | “Mỗi dòng sẽ hiện số trên chứng từ, mức kỳ vọng và nguồn của cả hai. Nếu chưa có giá được duyệt, kế toán biết chính xác cần bổ sung gì.” |
-| **06 · Vai trò của AI** | “AI đọc trường và vị trí trên PDF, đồng thời gợi ý mã phí. Quy tắc đã duyệt chọn điều kiện và tính lại số tiền. Người phụ trách xác nhận trường mơ hồ và xử lý ngoại lệ.” |
-| **07 · Luồng MVP** | “Ta tải một hóa đơn VND, một CSV lô và một CSV giá. Movago ghép đúng lô, so từng dòng và xuất kết quả kiểm tra. Việc duyệt chi tiếp tục theo thẩm quyền của doanh nghiệp.” |
-| **08 · Demo** | “Cước chính khớp. Riêng phí chứng từ chênh 800.000 đồng trước thuế. Tôi mở dòng gốc trên hóa đơn và dòng giá đã duyệt rồi chuyển cho người phụ trách kiểm tra xem có phê duyệt bổ sung không.” |
-| **09 · Đo hiệu quả** | “Pilot so với quy trình đang dùng, gồm cả thời gian sửa trường và duyệt ngoại lệ. Kịch bản giảm từ 15 còn 9 phút ở 1.000 hóa đơn giải phóng 100 giờ/tháng, tương đương 6 triệu đồng theo giả định. Tác động thực tế sẽ được đo.” |
-| **10 · Khác biệt cần chứng minh** | “Khách có thể dùng tính năng sẵn trong hệ thống hoặc mua công cụ đối chiếu chuyên biệt. Chúng tôi sẽ so trên hồ sơ của họ, bắt đầu từ một tuyến, đo thời gian thiết lập, công kiểm tra và chất lượng phát hiện.” |
+Lời nói cho từng slide nằm trong speaker notes của [deck PowerPoint](nghien_cuu_tung_slide/Movago_Pitch_Deck.pptx). Tệp này giữ kịch bản demo và phần hỏi đáp.
 
 ## Demo khoảng 3 phút
 
