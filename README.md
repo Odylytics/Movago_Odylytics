@@ -10,7 +10,7 @@
 |---|---|
 | Chốt khách hàng, phạm vi MVP, kế hoạch pilot và mô hình kinh doanh | [Brief dự án](colio_ai_project_brief.md) |
 | Chọn bài toán kinh doanh và chuẩn bị bằng chứng cho pitch | [Nghiên cứu bài toán kinh doanh](nghien_cuu_tung_slide/colio_ai_business_problems.md) |
-| Làm deck | [Deck PowerPoint](nghien_cuu_tung_slide/Movago_Pitch_Deck.pptx) · [Nội dung 10 slide](colio_ai_noi_dung_slide.md) |
+| Làm deck | [Deck tiếng Anh để nộp](nghien_cuu_tung_slide/Movago_Pitch_Deck_EN.pptx) · [Deck tiếng Việt](nghien_cuu_tung_slide/Movago_Pitch_Deck.pptx) · [Nội dung 10 slide](colio_ai_noi_dung_slide.md) |
 | Chạy demo 3 phút và chuẩn bị hỏi đáp | [Kịch bản demo và hỏi đáp](colio_ai_pitch_research_vi.md) |
 | Tra tên, slogan và quy tắc thiết kế website demo | [Quy tắc thiết kế demo](DEMO_DESIGN_RULES.md) |
 | Chạy web demo (MVP), bộ ca và demo tham chiếu | [Movago web demo](web/README.md) · [Kế hoạch dựng web](WEB_DEMO_BUILD_PLAN.md) |

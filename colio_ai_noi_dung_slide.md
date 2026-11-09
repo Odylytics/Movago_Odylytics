@@ -1,6 +1,6 @@
 # Movago · Nội dung 10 slide
 
-Bản khớp với [deck PowerPoint](nghien_cuu_tung_slide/Movago_Pitch_Deck.pptx), dựng trên [template Odylytics](nghien_cuu_tung_slide/Odylytics_Company_Deck.pptx). Lời nói cho từng slide nằm trong speaker notes của deck. Dùng [kịch bản demo và hỏi đáp](colio_ai_pitch_research_vi.md) để tập hỏi đáp và [nghiên cứu bài toán kinh doanh](nghien_cuu_tung_slide/colio_ai_business_problems.md) để tra nguồn.
+Bản khớp với [deck PowerPoint tiếng Việt](nghien_cuu_tung_slide/Movago_Pitch_Deck.pptx) và [bản tiếng Anh để nộp](nghien_cuu_tung_slide/Movago_Pitch_Deck_EN.pptx), dựng trên [template Odylytics](nghien_cuu_tung_slide/Odylytics_Company_Deck.pptx). Lời nói cho từng slide nằm trong speaker notes của deck. Dùng [kịch bản demo và hỏi đáp](colio_ai_pitch_research_vi.md) để tập hỏi đáp và [nghiên cứu bài toán kinh doanh](nghien_cuu_tung_slide/colio_ai_business_problems.md) để tra nguồn.
 
 **Hạng mục dự thi** · Operations & Productivity: AI trích xuất thông tin từ hóa đơn và phát hiện điểm nghẽn trong quy trình kiểm tra cước.
 
