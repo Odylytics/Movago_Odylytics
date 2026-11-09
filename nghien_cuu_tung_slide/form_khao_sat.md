@@ -18,7 +18,7 @@ Dùng cho slide **User validation**. Chép từng câu vào Google Forms. Mục 
 | 6 | Trong tháng gần nhất, có khoảng bao nhiêu hóa đơn phải hỏi lại hoặc điều chỉnh? | Một lựa chọn | 0 · 1–5 · 6–20 · Trên 20 · Không nhớ | Tần suất vấn đề |
 | 7 | Lỗi nào anh/chị từng gặp? | Nhiều lựa chọn | Sai đơn giá · Sai loại container / số lượng · Phụ phí chưa được duyệt · Hóa đơn gửi trùng · Sai lô / sai B/L · Khác | Slide Insight |
 | 8 | Nếu một công cụ tự so hóa đơn với lô và bảng giá, rồi hiện chênh lệch kèm hai căn cứ, anh/chị có muốn dùng thử không? | Thang 1–5 | 1 = Không · 5 = Chắc chắn | Tỷ lệ 4–5/5 trên slide |
-| 9 | Mức phí hằng tháng công ty có thể cân nhắc? | Một lựa chọn | Dưới 1 triệu · 1–3 triệu · 3–5 triệu · Trên 5 triệu · Không phải người quyết định | Slide Feasibility |
+| 9 | Mức phí hằng tháng công ty có thể cân nhắc? | Một lựa chọn | Dưới $40 (1 triệu đ) · $40–120 (1–3 triệu) · $120–200 (3–5 triệu) · Trên $200 · Không phải người quyết định | Slide Feasibility |
 | 10 | Điều gì khiến anh/chị lo ngại nhất khi dùng công cụ như vậy? | Trả lời ngắn | | Phụ lục hỏi đáp |
 | 11 | Anh/chị có sẵn lòng nói chuyện 20 phút hoặc cho xem 1–2 hóa đơn đã che thông tin không? Để lại email hoặc Zalo nếu đồng ý. | Trả lời ngắn, không bắt buộc | | Phỏng vấn và bộ kiểm thử trích xuất |
 

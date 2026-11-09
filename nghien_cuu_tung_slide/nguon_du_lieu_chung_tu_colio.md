@@ -26,8 +26,8 @@ Giả lập **một vận đơn và một container khô 20 feet** nhập trực
 
 | Mã phí | Mức theo biểu phí | Số ghi trên hóa đơn giả lập | Kết quả kỳ vọng |
 |---|---:|---:|---|
-| THD · Phí làm hàng tại cảng đích | 3.000.000 đ cho 20 feet khô | 4.800.000 đ | **Chênh +1.800.000 đ.** Mức ghi trên chứng từ trùng mức của container 40 feet khô trong bảng. |
-| DOF · Phí chứng từ đầu nhập | 950.000 đ/vận đơn | 950.000 đ | Khớp |
+| THD · Phí làm hàng tại cảng đích | $118 (3.000.000 đ) cho 20 feet khô | $188 (4.800.000 đ) | **Chênh +$71 (1.800.000 đ).** Mức ghi trên chứng từ trùng mức của container 40 feet khô trong bảng. |
+| DOF · Phí chứng từ đầu nhập | $37 (950.000 đ)/vận đơn | $37 (950.000 đ) | Khớp |
 
 **Dữ liệu thật** trong ca trên là các mức phí và điều kiện được ONE công bố. **Dữ liệu giả lập** là lô hàng, số hóa đơn và khoản phí bị tính theo sai loại container. Các mẫu Maersk và CMA CGM dùng tham khảo bố cục tài liệu. [ONE Việt Nam — dòng THD và DOF](https://vn.one-line.com/sites/vietnam/files/2026-03/Customer%20Advisory%20for%20Surcharge%20-%20Vietnam.pdf)
 

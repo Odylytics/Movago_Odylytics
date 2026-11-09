@@ -2,6 +2,8 @@
 
 **Rà ngày 09/11/2026 · Khung: competitive analysis (market context → bản đồ đối thủ → định vị → so sánh → lợi thế bền vững)**
 
+Tỷ giá quy đổi: 1 USD = 25.500 đồng, 1 EUR = 1,12 USD (09/11/2026).
+
 Tài liệu này lấp các chỗ trống của deck 15 slide: **Why now** (slide 5), **Market size** (slide 11) và **Competitive** (slide 13). Phần cuối liệt kê từng thay đổi cần đưa vào slide. Số liệu công ty tư nhân phần lớn không công bố, nên ô thiếu ghi “–”. Mọi nhận định về đối thủ dựa trên trang sản phẩm công khai, chưa qua dùng thử.
 
 **Phạm vi đã chọn.** Movago là công ty trung tâm. Đối thủ chia theo mức độ cạnh tranh: hiện trạng, liền kề, trực tiếp. Người đọc là ban giám khảo Ideathon, nên bỏ phần kịch bản đầu tư (bull/base/bear).
@@ -69,7 +71,7 @@ Phần mềm forwarder (G.O.L, CargoWise) quản lý cả chuỗi và **phát h�
 | | CargoWise Invoice Processing Portal (WiseTech) | AI đọc hóa đơn, khớp dòng với chi phí dự ghi theo job, chặn hóa đơn trùng, đưa ngoại lệ đi duyệt [12] |
 | **Liền kề: AI đối chiếu hóa đơn tại Việt Nam** | Innomation AutoMatching | AI trích xuất, khớp hóa đơn với PO, GR, hợp đồng; phát hiện trùng; tích hợp MISA, FAST, Bravo, SAP. Không chuyên cước [13] |
 | | FPT AI Read | OCR và trích xuất hóa đơn VAT Việt Nam qua API, tính phí theo lượt. Không có logic đối chiếu [14] |
-| **Trực tiếp: freight audit quốc tế** | ShipCheck (Thụy Sĩ/Đức) | Kiểm từng dòng hóa đơn theo biểu giá; AI số hóa biểu giá. Giá từ 99 €/tháng [15] |
+| **Trực tiếp: freight audit quốc tế** | ShipCheck (Thụy Sĩ/Đức) | Kiểm từng dòng hóa đơn theo biểu giá; AI số hóa biểu giá. Giá từ $111 (99 €)/tháng [15] |
 | | Conlio (Đức) | Phần mềm kiểm cước cho chủ hàng, hãng vận chuyển và forwarder; dữ liệu xử lý trong EU [16] |
 | | Loop (Mỹ) | Nền tảng AI freight audit, nay mở rộng thành dữ liệu chuỗi cung ứng. Tổng vốn 210 triệu USD [17] |
 
@@ -125,9 +127,9 @@ Phần mềm forwarder (G.O.L, CargoWise) quản lý cả chuỗi và **phát h�
 | Hạng mục | Nhận định |
 |---|---|
 | Làm gì | Kiểm từng dòng hóa đơn theo biểu giá cho mọi phương thức; AI số hóa biểu giá, có chuyên gia rà [15] |
-| Giá | Miễn phí (dashboard), 99 €, 199 €, 499 €, 1.499 €/tháng, cam kết năm [15] |
+| Giá | Miễn phí (dashboard), $111, $223, $559, $1.679/tháng (99/199/499/1.499 €), cam kết năm [15] |
 | Điểm yếu với Việt Nam | Khách hàng chủ yếu là nhà sản xuất châu Âu; không thấy hỗ trợ chứng từ tiếng Việt |
-| Hàm ý | **Mốc giá tham chiếu tốt**: 99 €/tháng (cỡ 3 triệu đồng; kiểm lại tỷ giá ngày nộp) gần với mốc hòa vốn 3 triệu đồng/tháng ở slide 9 |
+| Hàm ý | **Mốc giá tham chiếu tốt**: $111/tháng, gần với mốc hòa vốn $118/tháng của Movago |
 
 ### Loop
 
@@ -186,10 +188,10 @@ Phần mềm forwarder (G.O.L, CargoWise) quản lý cả chuỗi và **phát h�
 | Ô trên slide | Giá trị | Ghi chú |
 |---|---|---|
 | TAM | ~1 tỷ USD (2025), CAGR 13–14% | Freight audit & payment toàn cầu [5][6][7] |
-| SAM | `[số DN đạt tiêu chí] × 36 triệu đồng/năm` | Ví dụ minh họa: nếu 10% của 4.000 doanh nghiệp đạt tiêu chí thì 400 × 36 triệu ≈ **14,4 tỷ đồng/năm**. Tỷ lệ 10% là giả định, cần thay bằng số lọc từ danh bạ VLA/HLA và khảo sát |
-| SOM | **1,08 tỷ đồng/năm** = 30 khách năm thứ 3 × 36 triệu đồng | Minh họa: 30 khách bằng 7,5% của 400 doanh nghiệp SAM, theo lộ trình 1 pilot năm 2027 rồi mở rộng. Đội chốt lại mục tiêu |
+| SAM | `[số DN đạt tiêu chí] × $1.400/năm` | Ví dụ minh họa: nếu 10% của 4.000 doanh nghiệp đạt tiêu chí thì 400 × $1.400 ≈ **$565K/năm**. Tỷ lệ 10% là giả định, cần thay bằng số lọc từ danh bạ VLA/HLA và khảo sát |
+| SOM | **$42K/năm** = 30 khách năm thứ 3 × $1.400 | Minh họa: 30 khách bằng 7,5% của 400 doanh nghiệp SAM, theo lộ trình 1 pilot năm 2027 rồi mở rộng. Đội chốt lại mục tiêu |
 | Pilot | 1 forwarder | Theo slide 15 |
-| Unit economics | Mốc giá: ShipCheck 99–499 €/tháng [15]; mốc hòa vốn của Movago 3 triệu đồng/tháng | LTV và CAC chưa có dữ liệu. Để `[x]` cho đến sau pilot |
+| Unit economics | Mốc giá: ShipCheck $111–559/tháng [15]; mốc hòa vốn của Movago $118/tháng | LTV và CAC chưa có dữ liệu. Để `[x]` cho đến sau pilot |
 
 ### Slide 13 · Competitive
 

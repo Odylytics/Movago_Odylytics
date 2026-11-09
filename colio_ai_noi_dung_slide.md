@@ -11,6 +11,9 @@ Bản khớp với [deck PowerPoint tiếng Việt](nghien_cuu_tung_slide/Movago
 | 7, 9 | Feasibility 25% |
 | 8 và toàn deck | Presentation 20% |
 
+
+Tỷ giá quy đổi: 1 USD = 25.500 đồng, 1 EUR = 1,12 USD (09/11/2026).
+
 ## Thứ tự 15 slide và phần còn phải điền
 
 Deck chính có 15 trang, đúng giới hạn bài nộp. Bốn slide đánh dấu **KHUNG** có chỗ trống `[ ]` để đội điền sau. Phụ lục hỏi đáp nằm ở file riêng: [tiếng Việt](nghien_cuu_tung_slide/Movago_Phu_luc_QA.pptx) · [tiếng Anh](nghien_cuu_tung_slide/Movago_Appendix_QA_EN.pptx).
@@ -21,7 +24,7 @@ Deck chính có 15 trang, đúng giới hạn bài nộp. Bốn slide đánh d�
 | 5 | Why now | Đã điền: Nghị định 254/2026 hiệu lực 01/07/2026, 8,5 tỷ hóa đơn điện tử năm 2025. Còn ô ảnh và điều khoản phía người mua | Toàn văn Nghị định 254/2026/NĐ-CP, Thông tư 91/2026/TT-BTC |
 | 6–9 | Solution · AI · How it works · Mockup | Xong | |
 | 10 | User validation | **KHUNG** | [Form khảo sát](nghien_cuu_tung_slide/form_khao_sat.md) và [phỏng vấn](nghien_cuu_tung_slide/phong_van_ke_toan_cong_no.md) |
-| 11 | Market size và giá tham chiếu | Đã điền: TAM ~1 tỷ USD, SAM minh họa 14,4 tỷ đồng (giả định 10%), SOM minh họa 1,08 tỷ đồng/năm (30 khách năm 3), giá ShipCheck. Còn tỷ lệ đạt tiêu chí thật và LTV : CAC | Danh bạ VLA/HLA, câu 3 và 9 của form khảo sát |
+| 11 | Market size và giá tham chiếu | Đã điền: TAM ~1 tỷ USD, SAM minh họa $565K (giả định 10%), SOM minh họa $42K/năm (30 khách năm 3), giá ShipCheck. Còn tỷ lệ đạt tiêu chí thật và LTV : CAC | Danh bạ VLA/HLA, câu 3 và 9 của form khảo sát |
 | 12 | Feasibility | Xong | |
 | 13 | Competitive | Đã thay bằng bảng 6 lựa chọn, thêm CargoWise IPP và Innomation | [Phân tích cạnh tranh](nghien_cuu_tung_slide/phan_tich_canh_tranh.md) |
 | 14 | Team và roadmap | Đã điền năng lực đội, vai trò, cố vấn từ [odylytics.com](https://odylytics.com/#/team/co-founders). Mốc lộ trình vẫn là bản nháp | Đội chốt mốc thời gian và vai trò trên Movago |
@@ -61,7 +64,7 @@ Trước mỗi lần chi cước, kế toán công nợ phải gom ba nguồn, s
 
 ## 04 · Business Insight · Mức phí đúng phụ thuộc vào từng lô hàng
 
-- **3,25 triệu đồng** · DHC Maersk cho container 20 feet khô. **5 triệu đồng** cho 40 feet khô. Áp dụng từ 01/05/2026. [Maersk](https://www.maersk.com/news/articles/2026/03/31/terminal-handling-charges-vietnam-ohc-dhc)
+- **$127** (3,25 triệu đồng) · DHC Maersk cho container 20 feet khô. **$196** (5 triệu đồng) cho 40 feet khô. Áp dụng từ 01/05/2026. [Maersk](https://www.maersk.com/news/articles/2026/03/31/terminal-handling-charges-vietnam-ohc-dhc)
 - **3–6%** hóa đơn cước có lỗi trong một đợt audit điển hình, chủ yếu ở phụ phí và chiết khấu. [Transportation Insight](https://transportationinsight.com/resources/freight-audit-payment-protect-profit-soft-rates/) · Việt Nam chưa có số công bố, pilot sẽ đo.
 
 Quy trình hiện tại còn hạn chế:
@@ -94,28 +97,28 @@ AI không quyết định số tiền: mọi chênh lệch đều có phép tín
 
 Đầu vào MVP: hóa đơn PDF bằng VND, CSV hồ sơ lô và CSV bảng giá đã duyệt.
 
-## 08 · Mockup / Demo · Ca INV-095: phí chứng từ chênh +800.000 đ
+## 08 · Mockup / Demo · Ca INV-095: phí chứng từ chênh +$31 (800.000 đ)
 
 Bốn ảnh chụp từ [web demo](https://movago-odylytics.vercel.app): trang giới thiệu, kết quả từng dòng, căn cứ hai phía, nhận ra bản gửi lại.
 
 | Dòng phí | Hóa đơn | Bảng giá đã duyệt | Kết quả |
 |---|---:|---:|---|
-| Cước biển | 8.000.000 đ | 8.000.000 đ | Khớp |
-| Phí chứng từ (DOC) | 1.300.000 đ | 500.000 đ | **+800.000 đ** |
+| Cước biển | $314 (8.000.000 đ) | $314 (8.000.000 đ) | Khớp |
+| Phí chứng từ (DOC) | $51 (1.300.000 đ) | $20 (500.000 đ) | **+$31** (800.000 đ) |
 
 Bằng chứng: hóa đơn trang 1 ↔ RATE-V3 dòng 12. *Dữ liệu giả lập, số tiền trước thuế.*
 
 ## 09 · Feasibility & Business Value · Pilot nhỏ, đo được, hòa vốn từ 3 phút mỗi hóa đơn
 
-**Kịch bản minh họa** · 1.000 hóa đơn/tháng × giảm 6 phút (15 xuống 9) = **100 giờ/tháng** ≈ **6 triệu đồng/tháng** ở 60.000 đ/giờ, trước chi phí.
+**Kịch bản minh họa** · 1.000 hóa đơn/tháng × giảm 6 phút (15 xuống 9) = **100 giờ/tháng** ≈ **$235/tháng** ở $2,35/giờ, trước chi phí.
 
 - **Mô hình** · B2B SaaS, thuê bao theo số hóa đơn đã xử lý, thêm phí thiết lập khi cần.
-- **Hòa vốn** · 3 phút/hóa đơn nếu thuê bao quy đổi 3 triệu đồng/tháng.
+- **Hòa vốn** · 3 phút/hóa đơn nếu thuê bao quy đổi $118/tháng.
 - **KPI pilot** · Giảm ít nhất 30% phút thao tác trung vị, trên 30–100 bộ hồ sơ.
 - **Nguồn lực** · 1 tuyến, 1–2 nhà cung cấp, dữ liệu CSV, 3 vai: nghiệp vụ, kỹ thuật, giao diện.
 - **Công nghệ** · Document AI + rules engine + web app. Demo đã chạy đủ luồng.
 
-*Số liệu là giả định, không phải kết quả pilot. 60.000 đ/giờ thấp hơn lương kế toán công nợ trung bình khoảng 11,5 triệu đồng/tháng (TopCV). Benchmark: trung vị chi phí xử lý một hóa đơn AP là 6 USD ([APQC](https://www.apqc.org/What-Is-the-Average-Cost-to-Process-an-Invoice)).*
+*Số liệu là giả định, không phải kết quả pilot. $2,35/giờ thấp hơn lương kế toán công nợ trung bình khoảng $450/tháng (TopCV). Benchmark: trung vị chi phí xử lý một hóa đơn AP là $6 ([APQC](https://www.apqc.org/What-Is-the-Average-Cost-to-Process-an-Invoice)).*
 
 ## 10 · Competitive Advantage · Khác biệt: căn cứ từng dòng phí cho forwarder Việt Nam
 

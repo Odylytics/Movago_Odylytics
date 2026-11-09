@@ -7,7 +7,7 @@ Lời nói cho từng slide nằm trong speaker notes của [deck PowerPoint](ng
 ## Demo khoảng 3 phút
 
 1. **0:00–0:40.** Tải `INV-095`, `SHP-001` và `RATE-V3`. Hiện nhà cung cấp, lô và phiên bản giá được chọn.
-2. **0:40–1:35.** Mở cảnh báo **+800.000 đồng trước thuế**. Chỉ `INV-095` trang 1, dòng DOC và `RATE-V3` dòng 12. Hỏi có phê duyệt bổ sung cho lô hay không.
+2. **0:40–1:35.** Mở cảnh báo **+$31 (800.000 đồng) trước thuế**. Chỉ `INV-095` trang 1, dòng DOC và `RATE-V3` dòng 12. Hỏi có phê duyệt bổ sung cho lô hay không.
 3. **1:35–2:15.** Tải lại cùng PDF dưới tên khác. Hiện bản đã ghi nhận. Để xác nhận đã trả, cần sổ công nợ hoặc lịch sử chi.
 4. **2:15–3:00.** Bấm **Yêu cầu xác minh**, ghi lý do và xuất kết quả. Nếu còn thời gian, mở hồ sơ đối chứng có phê duyệt bổ sung để giải thích cách đóng ngoại lệ.
 
@@ -15,7 +15,7 @@ Lời nói cho từng slide nằm trong speaker notes của [deck PowerPoint](ng
 
 ## Hỏi đáp
 
-**Có số liệu chứng minh forwarder thường trả sai không?** Nguồn công khai xác nhận bước đối chiếu và cơ chế phát sinh sai lệch. Nhóm sẽ dùng hồ sơ có nhãn để đo tỷ lệ, mức tiền và nguyên nhân. Con số 800.000 đồng là ca giả lập.
+**Có số liệu chứng minh forwarder thường trả sai không?** Nguồn công khai xác nhận bước đối chiếu và cơ chế phát sinh sai lệch. Nhóm sẽ dùng hồ sơ có nhãn để đo tỷ lệ, mức tiền và nguyên nhân. Con số $31 (800.000 đồng) là ca giả lập.
 
 **Vì sao cần AI nếu đã có Excel hoặc TMS?** Dùng AI ở bước đọc PDF và gợi ý mã phí. Khi khách đã xuất được dữ liệu cấu trúc, ưu tiên đọc trực tiếp. Giá trị tăng thêm được đo trên quy trình TMS hoặc Excel khách đang sử dụng.
 
