@@ -14,7 +14,7 @@ Tài liệu nguồn: [Kế hoạch demo](MOVAGO_DEMO_PLAN.md) · [Luồng và đ
 | Bước "AI đọc PDF" | Mô phỏng: dùng `invoice-lines.csv` đã trích sẵn kèm vị trí trên trang. Giao diện ghi rõ là mô phỏng. |
 | Engine đối chiếu | Hàm TypeScript thuần, có unit test (Vitest) cho mọi ca trong bảng đáp án. |
 | Bản gửi lại | SHA-256 bằng Web Crypto trên byte của tệp; lịch sử tiếp nhận lưu `localStorage`, có nút **Reset demo**. |
-| Màu, font | 5 màu và Manrope theo `DEMO_DESIGN_RULES.md`; bố cục, bo góc, khoảng cách theo `DESIGN.md`. |
+| Màu, font | 5 màu và bộ font Hagrid · Acumin Pro · Source Sans Pro theo `DEMO_DESIGN_RULES.md`; bố cục, bo góc, khoảng cách theo `DESIGN.md`. |
 
 ## Màn hình
 

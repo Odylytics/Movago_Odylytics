@@ -25,8 +25,13 @@
   --t-body: 16px;
   --t-sub: 18px;
   --t-heading: 36px;
-  --t-display: 72px;
-  font-family: 'Manrope', system-ui, sans-serif;
+  --t-display: 88px;
+  /* Type — DEMO_DESIGN_RULES.md. Hagrid and Acumin Pro are licensed fonts: they render when installed locally
+     or served by a licensed kit; otherwise the stack falls back to Source Sans 3 (Source Sans Pro). */
+  --f-display: 'Hagrid', 'Hagrid Heavy', 'acumin-pro', 'Acumin Pro', 'Source Sans 3', 'Source Sans Pro', system-ui, sans-serif;
+  --f-ui: 'acumin-pro', 'Acumin Pro', 'Source Sans 3', 'Source Sans Pro', system-ui, sans-serif;
+  --f-body: 'Source Sans 3', 'Source Sans Pro', system-ui, sans-serif;
+  font-family: var(--f-body);
   color: var(--navy);
   background: var(--ice);
   -webkit-font-smoothing: antialiased;
@@ -37,6 +42,10 @@ body { margin: 0; background: var(--ice); font-size: var(--t-body); line-height:
 h1, h2, h3, h4, p { margin: 0; }
 a { color: inherit; }
 button, input, select, textarea { font: inherit; color: inherit; }
+/* Main / UI type: headings, navigation, controls, labels, tables and figures */
+h1, h2, h3, h4, button, input, select, textarea, th, label, nav, .brand, .status, .field, .src .k, .src .v, .ev, .ev-amount, .ev-src,
+.stat-tag, .ref, .prio, .roadmap .when, .ch-name, .fields-head, .flow-title, .conf, .col-val, .calc-out dt, .calc-out dd,
+.proof-num, .files a, .lang button, .banner, .intro-slogan, .intro-skip { font-family: var(--f-ui); }
 :focus-visible { outline: 2px solid var(--blue); outline-offset: 2px; }
 ::selection { background: var(--navy); color: var(--white); }
 .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
@@ -110,7 +119,7 @@ button, input, select, textarea { font: inherit; color: inherit; }
 }
 .banner:hover { border-color: var(--white); }
 .display {
-  font-size: clamp(40px, 6vw, var(--t-display)); line-height: 1; letter-spacing: -0.035em; font-weight: 500;
+  font-size: clamp(40px, 6.5vw, var(--t-display)); line-height: 0.97; letter-spacing: -0.025em; font-weight: 800; font-family: var(--f-display);
   margin: 28px 0 24px; text-wrap: balance; max-width: 15ch;
 }
 .lead { font-size: var(--t-sub); color: rgba(255, 255, 255, 0.86); max-width: 34rem; }
@@ -129,7 +138,7 @@ button, input, select, textarea { font: inherit; color: inherit; }
 /* editorial sections on the Ice canvas — two-column text + content, no card walls */
 .section { padding: 80px 0; }
 .split { display: grid; grid-template-columns: 5fr 7fr; gap: 56px; align-items: start; }
-.section h2 { font-size: clamp(28px, 3.2vw, var(--t-heading)); letter-spacing: -0.02em; line-height: 1.11; font-weight: 500; text-wrap: balance; }
+.section h2 { font-size: clamp(28px, 3.2vw, var(--t-heading)); letter-spacing: -0.01em; line-height: 1.11; font-weight: 600; text-wrap: balance; }
 .section .sub { margin-top: 16px; font-size: var(--t-sub); font-weight: 500; max-width: 32rem; }
 .rows { background: var(--white); border: 1px solid var(--hairline); border-radius: var(--r-card); padding: 4px var(--pad-card); }
 .rows > li { list-style: none; display: flex; gap: 16px; align-items: flex-start; padding: 22px 0; }
@@ -174,7 +183,7 @@ tr.hl td { background: var(--tint-blue); font-weight: 700; }
 /* workspace */
 .ws { padding-top: 120px; padding-bottom: 80px; }
 .ws-head { display: flex; justify-content: space-between; align-items: flex-end; gap: 16px; flex-wrap: wrap; margin-bottom: 20px; }
-.ws-head h1 { font-size: var(--t-heading); line-height: 1.11; letter-spacing: -0.02em; font-weight: 500; }
+.ws-head h1 { font-size: var(--t-heading); line-height: 1.11; letter-spacing: -0.01em; font-weight: 600; }
 .field { display: flex; flex-direction: column; gap: 6px; font-size: var(--t-caption); font-weight: 600; letter-spacing: 0.02em; }
 select, input[type='text'], textarea {
   border: 1px solid var(--hairline); border-radius: var(--r-ui); padding: 10px 12px; background: var(--white); font-size: 15px; min-width: 0;
@@ -262,7 +271,7 @@ textarea { resize: vertical; min-height: 84px; }
 .story-pad { height: 440px; }
 
 .start-card { width: min(640px, 100%); gap: 16px; }
-.start-card h2 { font-size: clamp(26px, 4vw, 34px); font-weight: 500; letter-spacing: -0.02em; line-height: 1.1; }
+.start-card h2 { font-size: clamp(26px, 4vw, 34px); font-weight: 600; letter-spacing: -0.01em; line-height: 1.1; }
 .start-cast { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px 16px; }
 .start-cast li { display: flex; gap: 10px; align-items: center; font-size: 14px; }
 .start-cast li > span { display: grid; }
@@ -325,7 +334,7 @@ select:disabled { cursor: not-allowed; opacity: 0.6; }
 
 /* ===== business page — statistic cards and motion modelled on Unfound ===== */
 .biz { padding: 120px 0 40px; }
-.biz-head h1 { font-size: clamp(36px, 5vw, 56px); line-height: 1.05; letter-spacing: -0.03em; font-weight: 500; max-width: 18ch; text-wrap: balance; }
+.biz-head h1 { font-size: clamp(40px, 5vw, 64px); line-height: 0.97; letter-spacing: -0.025em; font-weight: 800; font-family: var(--f-display); max-width: 18ch; text-wrap: balance; }
 .biz-head .sub { margin-top: 18px; font-size: var(--t-sub); font-weight: 500; max-width: 40rem; }
 .ev-legend { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 20px; }
 .ev { display: inline-flex; align-items: center; gap: 6px; padding: 3px 10px; border-radius: var(--r-ui); font-size: 12px; font-weight: 600; letter-spacing: 0.02em; border: 1px solid var(--hairline); background: var(--white); white-space: nowrap; }
@@ -338,7 +347,7 @@ select:disabled { cursor: not-allowed; opacity: 0.6; }
 .stat-card { background: var(--white); border: 1px solid var(--hairline); border-radius: var(--r-card); padding: var(--pad-card); display: grid; gap: 16px; align-content: start; }
 .stat-top { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
 .stat-tag { font-size: 12px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--slate); }
-.stat-num { font-size: clamp(44px, 5vw, 64px); line-height: 1; letter-spacing: -0.035em; font-weight: 500; font-variant-numeric: tabular-nums; }
+.stat-num { font-size: clamp(44px, 5vw, 64px); line-height: 0.97; letter-spacing: -0.025em; font-weight: 800; font-family: var(--f-display); font-variant-numeric: tabular-nums; }
 .stat-num small { font-size: 0.45em; letter-spacing: 0; margin-left: 2px; color: var(--slate); }
 .stat-claim { max-width: 46ch; }
 .source { font-size: 12px; color: var(--slate); }
@@ -389,7 +398,7 @@ select:disabled { cursor: not-allowed; opacity: 0.6; }
 .proof { list-style: none; margin: 48px 0 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-top: 1px solid var(--hairline); }
 .proof li { display: grid; gap: 6px; align-content: start; padding: 28px 24px 28px 0; border-bottom: 1px solid var(--hairline); }
 .proof li:not(:nth-child(3n + 1)) { padding-left: 24px; border-left: 1px solid var(--hairline); }
-.proof-num { font-size: clamp(32px, 3.6vw, 44px); line-height: 1.05; letter-spacing: -0.03em; font-weight: 500; font-variant-numeric: tabular-nums; }
+.proof-num { font-size: clamp(32px, 3.6vw, 44px); line-height: 1.05; letter-spacing: -0.01em; font-weight: 600; font-variant-numeric: tabular-nums; }
 .proof b { font-size: var(--t-body); font-weight: 600; }
 .proof .muted { font-size: 13px; color: var(--navy); }
 
@@ -401,7 +410,7 @@ select:disabled { cursor: not-allowed; opacity: 0.6; }
 .calc-out div { padding: 14px 0; }
 .calc-out div + div { border-top: 1px solid var(--hairline); }
 .calc-out dt { font-size: 13px; font-weight: 600; }
-.calc-out dd { margin: 2px 0 0; font-size: 24px; font-weight: 500; letter-spacing: -0.01em; font-variant-numeric: tabular-nums; }
+.calc-out dd { margin: 2px 0 0; font-size: 24px; font-weight: 600; letter-spacing: -0.01em; font-variant-numeric: tabular-nums; }
 .calc-out .neg dd { text-decoration: underline 2px var(--blue); text-underline-offset: 6px; }
 
 /* economic problems */
@@ -459,7 +468,7 @@ select:disabled { cursor: not-allowed; opacity: 0.6; }
 @keyframes intro-skip { from { clip-path: inset(0); } to { clip-path: inset(0 0 100% 0); } }
 .intro-stage { display: grid; justify-items: center; gap: 0.6em; font-size: clamp(40px, 12vw, 168px); }
 .intro-word {
-  display: flex; align-items: baseline; gap: 0; font-weight: 600; line-height: 1; letter-spacing: -0.02em;
+  display: flex; align-items: baseline; gap: 0; font-weight: 800; line-height: 0.97; letter-spacing: -0.025em; font-family: var(--f-display);
   animation: intro-split 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.85s forwards;
 }
 @keyframes intro-split { to { gap: 0.32em; } }
