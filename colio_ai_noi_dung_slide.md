@@ -22,7 +22,7 @@ Deck chính có 15 trang, đúng giới hạn bài nộp. Bốn slide đánh d�
 |---|---|---|---|
 | 1–4 | Title · Problem · Users · Insight | Xong | |
 | 5 | Why now | Đã điền: Nghị định 254/2026 hiệu lực 01/07/2026, 8,5 tỷ hóa đơn điện tử năm 2025. Còn ô ảnh và điều khoản phía người mua | Toàn văn Nghị định 254/2026/NĐ-CP, Thông tư 91/2026/TT-BTC |
-| 6–9 | Solution · AI · How it works · Mockup | Xong | |
+| 6–9 | Solution · AI · How it works · Mockup | Xong. Slide 8 có bước Dựng bảng giá và ảnh trang `#/rates` | |
 | 10 | User validation | **KHUNG** | [Form khảo sát](nghien_cuu_tung_slide/form_khao_sat.md) và [phỏng vấn](nghien_cuu_tung_slide/phong_van_ke_toan_cong_no.md) |
 | 11 | Market size và giá tham chiếu | Đã điền: TAM ~1 tỷ USD, SAM minh họa $565K (giả định 10%), SOM minh họa $42K/năm (30 khách năm 3), giá ShipCheck. Còn tỷ lệ đạt tiêu chí thật và LTV : CAC | Danh bạ VLA/HLA, câu 3 và 9 của form khảo sát |
 | 12 | Feasibility | Xong | |
@@ -88,14 +88,14 @@ Hóa đơn + Hồ sơ lô + Bảng giá → **Movago**. Movago đọc hóa đơn
 
 AI không quyết định số tiền: mọi chênh lệch đều có phép tính và nguồn.
 
-## 07 · How It Works · Bốn bước từ hóa đơn đến báo cáo
+## 07 · How It Works · Bốn bước từ báo giá đến báo cáo
 
-1. **Tiếp nhận** · Gom PDF từ email, Zalo, cổng hãng. Dấu vân tay SHA-256 nhận ra bản gửi lại.
-2. **AI trích xuất** · Đọc số hóa đơn, mã lô, dòng phí và vị trí. Chuẩn hóa mã phí.
+1. **Dựng bảng giá** · AI đọc báo giá của hãng; pricing duyệt từng dòng (dòng tin cậy thấp xem riêng) rồi xuất bảng giá. Trước đây pricing gõ tay vào Excel. Demo: trang `#/rates`.
+2. **Nhận và đọc hóa đơn** · AI trích dòng phí và vị trí. Dấu vân tay SHA-256 chặn bản gửi lại.
 3. **Ghép lô và giá** · Ghép theo mã lô hoặc vận đơn và nhà cung cấp. Chọn bảng giá có hiệu lực.
 4. **So và xác nhận** · Gắn trạng thái, kế toán xác nhận, xuất CSV.
 
-Đầu vào MVP: hóa đơn PDF bằng VND, CSV hồ sơ lô và CSV bảng giá đã duyệt.
+Đầu vào MVP: báo giá PDF của hãng, hóa đơn PDF bằng VND và CSV hồ sơ lô. Bảng giá đã duyệt do bước 1 tạo ra.
 
 ## 08 · Mockup / Demo · Ca INV-095: phí chứng từ chênh +$31 (800.000 đ)
 
