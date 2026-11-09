@@ -2,7 +2,7 @@
 
 Dùng cùng [nội dung 10 slide](colio_ai_noi_dung_slide.md). [Brief](colio_ai_project_brief.md) giữ phạm vi MVP và số liệu minh họa. [Nghiên cứu bài toán kinh doanh](nghien_cuu_tung_slide/colio_ai_business_problems.md) giữ căn cứ và giới hạn của từng nhận định.
 
-Lời nói cho từng slide nằm trong speaker notes của [deck PowerPoint](nghien_cuu_tung_slide/Movago_Pitch_Deck.pptx). Tệp này giữ kịch bản demo và phần hỏi đáp.
+Lời nói cho từng slide nằm trong speaker notes của [deck tiếng Anh](nghien_cuu_tung_slide/Movago_Pitch_Deck_EN.pptx). Tệp này giữ kịch bản demo và phần hỏi đáp.
 
 ## Demo khoảng 3 phút
 

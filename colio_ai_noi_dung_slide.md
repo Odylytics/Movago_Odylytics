@@ -1,6 +1,6 @@
 # Movago · Nội dung 10 slide
 
-Bản khớp với [deck PowerPoint tiếng Việt](nghien_cuu_tung_slide/Movago_Pitch_Deck.pptx) và [bản tiếng Anh để nộp](nghien_cuu_tung_slide/Movago_Pitch_Deck_EN.pptx), dựng trên [template Odylytics](nghien_cuu_tung_slide/Odylytics_Company_Deck.pptx). Lời nói cho từng slide nằm trong speaker notes của deck. Dùng [kịch bản demo và hỏi đáp](colio_ai_pitch_research_vi.md) để tập hỏi đáp và [nghiên cứu bài toán kinh doanh](nghien_cuu_tung_slide/colio_ai_business_problems.md) để tra nguồn.
+Bản tiếng Việt của nội dung trong [deck tiếng Anh để nộp](nghien_cuu_tung_slide/Movago_Pitch_Deck_EN.pptx). Đội chỉ làm slide bằng tiếng Anh; deck dựng trên [template Odylytics](nghien_cuu_tung_slide/Odylytics_Company_Deck.pptx). Lời nói cho từng slide nằm trong speaker notes của deck. Dùng [kịch bản demo và hỏi đáp](colio_ai_pitch_research_vi.md) để tập hỏi đáp và [nghiên cứu bài toán kinh doanh](nghien_cuu_tung_slide/colio_ai_business_problems.md) để tra nguồn.
 
 **Hạng mục dự thi** · Operations & Productivity: AI trích xuất thông tin từ hóa đơn và phát hiện điểm nghẽn trong quy trình kiểm tra cước.
 
@@ -16,7 +16,7 @@ Tỷ giá quy đổi: 1 USD = 25.500 đồng, 1 EUR = 1,12 USD (09/11/2026).
 
 ## Thứ tự 15 slide và phần còn phải điền
 
-Deck chính có 15 trang, đúng giới hạn bài nộp. Bốn slide đánh dấu **KHUNG** có chỗ trống `[ ]` để đội điền sau. Phụ lục hỏi đáp nằm ở file riêng: [tiếng Việt](nghien_cuu_tung_slide/Movago_Phu_luc_QA.pptx) · [tiếng Anh](nghien_cuu_tung_slide/Movago_Appendix_QA_EN.pptx).
+Deck chính có 15 trang, đúng giới hạn bài nộp. Bốn slide đánh dấu **KHUNG** có chỗ trống `[ ]` để đội điền sau. Phụ lục hỏi đáp nằm ở file riêng: [Movago_Appendix_QA_EN.pptx](nghien_cuu_tung_slide/Movago_Appendix_QA_EN.pptx).
 
 | # | Slide | Trạng thái | Điền từ đâu |
 |---|---|---|---|
