@@ -23,7 +23,7 @@ Deck chính có 15 trang, đúng giới hạn bài nộp. Bốn slide đánh d�
 | 10 | User validation | **KHUNG** | [Form khảo sát](nghien_cuu_tung_slide/form_khao_sat.md) và [phỏng vấn](nghien_cuu_tung_slide/phong_van_ke_toan_cong_no.md) |
 | 11 | Market size và unit economics | **KHUNG** | Tính từ dưới lên: số DN × hóa đơn × giá. Câu 3 và 9 của form khảo sát |
 | 12–13 | Feasibility · Competitive | Xong | |
-| 14 | Team và roadmap | **KHUNG**: mốc thời gian là bản nháp, thiếu cố vấn | Đội tự xác nhận |
+| 14 | Team và roadmap | Đã điền năng lực đội, vai trò, cố vấn từ [odylytics.com](https://odylytics.com/#/team/co-founders). Mốc lộ trình vẫn là bản nháp | Đội chốt mốc thời gian và vai trò trên Movago |
 | 15 | Kết | Xong | |
 
 Phụ lục: #1 Dữ liệu tài chính có an toàn không · #2 Nếu AI đọc sai · #3 Sao không dùng TMS/ERP · #4 Đo tác động · Tài liệu tham khảo.
