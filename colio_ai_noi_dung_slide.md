@@ -11,6 +11,25 @@ Bản khớp với [deck PowerPoint tiếng Việt](nghien_cuu_tung_slide/Movago
 | 7, 9 | Feasibility 25% |
 | 8 và toàn deck | Presentation 20% |
 
+## Thứ tự 15 slide và phần còn phải điền
+
+Deck chính có 15 trang, đúng giới hạn bài nộp. Bốn slide đánh dấu **KHUNG** có chỗ trống `[ ]` để đội điền sau. Phụ lục hỏi đáp nằm ở file riêng: [tiếng Việt](nghien_cuu_tung_slide/Movago_Phu_luc_QA.pptx) · [tiếng Anh](nghien_cuu_tung_slide/Movago_Appendix_QA_EN.pptx).
+
+| # | Slide | Trạng thái | Điền từ đâu |
+|---|---|---|---|
+| 1–4 | Title · Problem · Users · Insight | Xong | |
+| 5 | Why now | **KHUNG** | Nghị định 254/2026/NĐ-CP, Thông tư 91/2026/TT-BTC, Luật 91/2025/QH15, Nghị định 356/2025/NĐ-CP |
+| 6–9 | Solution · AI · How it works · Mockup | Xong | |
+| 10 | User validation | **KHUNG** | [Form khảo sát](nghien_cuu_tung_slide/form_khao_sat.md) và [phỏng vấn](nghien_cuu_tung_slide/phong_van_ke_toan_cong_no.md) |
+| 11 | Market size và unit economics | **KHUNG** | Tính từ dưới lên: số DN × hóa đơn × giá. Câu 3 và 9 của form khảo sát |
+| 12–13 | Feasibility · Competitive | Xong | |
+| 14 | Team và roadmap | **KHUNG**: mốc thời gian là bản nháp, thiếu cố vấn | Đội tự xác nhận |
+| 15 | Kết | Xong | |
+
+Phụ lục: #1 Dữ liệu tài chính có an toàn không · #2 Nếu AI đọc sai · #3 Sao không dùng TMS/ERP · #4 Đo tác động · Tài liệu tham khảo.
+
+> Phần nội dung chi tiết bên dưới giữ đánh số 10 slide cũ. Số slide trong deck đã đổi theo bảng trên.
+
 ## 01 · Title
 
 **Movago** · *Move smarter. Go safer.*
