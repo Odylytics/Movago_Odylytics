@@ -1,130 +1,114 @@
 # Movago · Nội dung 10 slide
 
-Bản chép vào deck. Dùng [kịch bản thuyết trình](colio_ai_pitch_research_vi.md) để tập nói và [nghiên cứu bài toán kinh doanh](nghien_cuu_tung_slide/colio_ai_business_problems.md) để tra nguồn.
+Bản khớp với [deck PowerPoint](nghien_cuu_tung_slide/Movago_Pitch_Deck.pptx), dựng trên [template Odylytics](nghien_cuu_tung_slide/Odylytics_Company_Deck.pptx). Lời nói cho từng slide nằm trong speaker notes của deck. Dùng [kịch bản thuyết trình](colio_ai_pitch_research_vi.md) để tập hỏi đáp và [nghiên cứu bài toán kinh doanh](nghien_cuu_tung_slide/colio_ai_business_problems.md) để tra nguồn.
 
-## 01 · Movago
+**Hạng mục dự thi** · Operations & Productivity: AI trích xuất thông tin từ hóa đơn và phát hiện điểm nghẽn trong quy trình kiểm tra cước.
 
-**Đối chiếu cước vận tải trước khi thanh toán**
-
-> Move smarter. Go safer.
-
-**Đội Odylytics**\
-**[Danh sách thành viên dự thi]**\
-KTC Ideathon
-
----
-
-## 02 · Căn cứ trả cước nằm ở ba nguồn
-
-| Kế toán cần gì? | Xem ở đâu? |
+| Slide | Tiêu chí chấm chính |
 |---|---|
-| Khoản nhà cung cấp yêu cầu trả | Hóa đơn hoặc debit note |
-| Lô hàng và dịch vụ liên quan | Hồ sơ lô hàng |
-| Đơn giá và phụ phí được duyệt | Bảng giá và phê duyệt bổ sung |
+| 2–4 | Problem 25% |
+| 5–6, 10 | Idea & Innovation 30% |
+| 7, 9 | Feasibility 25% |
+| 8 và toàn deck | Presentation 20% |
 
-Khi căn cứ nằm ở nhiều nơi, kế toán phải gom hồ sơ, so từng dòng phí và hỏi lại người phụ trách. Pilot đo thời gian gom hồ sơ và số chênh lệch được xác nhận.
+## 01 · Title
 
-*Nguồn nghiệp vụ tại TP.HCM · [Lacco Logistics](https://lacco.com.vn/tuyen-dung/tuyen-dung-nhan-vien-chung-tu-xuat-nhap-khau-tai-tp-hcm) · [Flexport](https://job-boards.greenhouse.io/flexport/jobs/7660304)*
+**Movago** · *Move smarter. Go safer.*
 
----
+AI đối chiếu hóa đơn cước với hồ sơ lô hàng và bảng giá đã duyệt, trước khi kế toán thanh toán.
 
-## 03 · Forwarder hàng biển tại TP.HCM
+Đội Odylytics · Nguyễn Minh Quân · Trần Tuấn Nghĩa · Nguyễn Trường Sơn · Nguyễn Minh Quân · Trương Nguyễn Bảo Khang · KTC Ideathon 2026. Xác nhận danh sách đăng ký trước khi nộp.
 
-- **Khách hàng đầu tiên** · Forwarder vừa, mua cước từ nhiều hãng hoặc đại lý, có dữ liệu lô hàng xuất được.
-- **Người dùng** · Kế toán công nợ kiểm tra phí. Vận hành và phụ trách giá xác nhận khoản phát sinh.
-- **Người mua dự kiến** · Kế toán trưởng hoặc CFO.
-- **Phạm vi pilot** · Một nhóm kế toán, một tuyến hoặc nhóm phí, một đến hai nhà cung cấp.
+## 02 · Business Problem · Căn cứ để trả một khoản cước nằm ở ba nơi
 
-*Bối cảnh toàn ngành · Khoảng **4.000–4.500 doanh nghiệp giao nhận** trên cả nước năm 2025, theo ước tính VLA được dẫn trong báo cáo. [Bộ Công Thương, mục 3.3](https://cdn.hstatic.net/files/200001055703/file/bao_cao_logistics_viet_nam_2025.pdf#page=76)*
+Trước mỗi lần chi cước, kế toán công nợ phải gom ba nguồn, so từng dòng phí và hỏi lại vận hành hoặc pricing.
 
----
+1. **Hóa đơn, debit note** · PDF hoặc bản scan gửi qua email, Zalo, cổng hãng tàu.
+2. **Hồ sơ lô hàng** · Tuyến, loại container, số vận đơn nằm trong TMS hoặc Excel.
+3. **Bảng giá đã duyệt** · Đơn giá, phụ phí do pricing giữ, đổi theo phiên bản.
 
-## 04 · Mức phí đúng phụ thuộc vào lô hàng
+*Hình: các kênh hóa đơn đến, chụp từ web demo.*
 
-**Ví dụ · Phí làm hàng tại cảng đích (DHC) của Maersk**
+## 03 · Target Business & Users · Forwarder hàng biển quy mô vừa tại TP.HCM
 
-| Container khô 20 feet | Container khô 40 feet |
-|---:|---:|
-| **3,25 triệu đồng/container** | **5 triệu đồng/container** |
+| Vai trò | Ai | Vấn đề |
+|---|---|---|
+| Doanh nghiệp | Forwarder vừa | Mua cước từ nhiều hãng và đại lý. Bối cảnh: 4.000–4.500 DN giao nhận cả nước (VLA, BCT 2025). |
+| **Người dùng chính** | Kế toán công nợ (AP) | Kiểm từng dòng phí trước khi chi, mất thời gian gom đủ ba nguồn. |
+| Xác minh lô | Vận hành | Xác nhận lô, container, dịch vụ. Bị hỏi lại qua email, Zalo. |
+| Xác minh giá | Pricing | Giữ bảng giá và phụ phí đã duyệt, xác minh khoản phát sinh. |
+| Người mua | Kế toán trưởng hoặc CFO | Quyết định ngân sách và duyệt chi, cần bằng chứng trước khi ký. |
 
-*Biểu phí công bố áp dụng từ 01/05/2026 cho tuyến vào Việt Nam từ các điểm đi ngoài Trung Quốc. [Thông báo Maersk](https://www.maersk.com/news/articles/2026/03/31/terminal-handling-charges-vietnam-ohc-dhc)*
+## 04 · Business Insight · Mức phí đúng phụ thuộc vào từng lô hàng
 
-**Để kiểm tra một khoản phí, cần biết đúng lô, đúng điều kiện giá và căn cứ của khoản phát sinh.**
+- **3,25 triệu đồng** · DHC Maersk cho container 20 feet khô. **5 triệu đồng** cho 40 feet khô. Áp dụng từ 01/05/2026. [Maersk](https://www.maersk.com/news/articles/2026/03/31/terminal-handling-charges-vietnam-ohc-dhc)
+- **3 nguồn** phải mở để kiểm một dòng phí.
 
----
+Quy trình hiện tại còn hạn chế:
 
-## 05 · Một màn hình đối chiếu ba nguồn
+- **Thủ công** · So bằng mắt và Excel. Tên phí khác nhau giữa các hãng, dễ sót khi nhiều hóa đơn.
+- **Phụ thuộc người** · Thiếu căn cứ thì hồ sơ chờ qua email, Zalo. Người duyệt chi không thấy bằng chứng.
+- **Rủi ro chi** · Sai giá, sai phiên bản, trả trùng. Hóa đơn gửi lại với tên tệp mới có thể bị nhập hai lần.
 
-**Chứng từ đề nghị chi + Hồ sơ lô hàng + Bảng giá đã duyệt**
+## 05 · Proposed Solution · Movago: một màn hình đối chiếu ba nguồn
 
-| Kết quả | Kế toán nhìn thấy |
-|---|---|
-| **Khớp** | Khoản phí khớp trong phạm vi kiểm tra |
-| **Có chênh lệch** | Dòng phí, số tiền chênh và căn cứ hai phía |
-| **Thiếu căn cứ** | Thông tin cần bổ sung trước khi xác nhận |
+Hóa đơn + Hồ sơ lô + Bảng giá → **Movago**. Movago đọc hóa đơn, ghép đúng lô và đúng phiên bản giá, rồi tính lại từng dòng phí. Mỗi dòng nhận một kết quả: **Khớp**, **Có chênh lệch** hoặc **Thiếu căn cứ**, kèm nguồn hai phía.
 
-Kế toán xác nhận kết quả hoặc chuyển người phụ trách xử lý. Người có thẩm quyền quyết định thanh toán.
+*Kế toán xác nhận trên bằng chứng. Người có thẩm quyền vẫn là người duyệt chi.*
 
----
+## 06 · How AI Helps · AI đọc chứng từ, quy tắc kiểm tra số tiền
 
-## 06 · AI đọc chứng từ, quy tắc kiểm tra số tiền
+- Document AI trích trường, dòng phí và vị trí trên PDF, bản scan.
+- AI gợi ý mã phí: “Phí chứng từ” → DOC.
+- Quy tắc chọn giá đúng tuyến, container, ngày hiệu lực.
+- Độ tin cậy thấp hoặc mơ hồ: chuyển người kiểm tra.
 
-- **AI trích dữ liệu** · Đọc số hóa đơn, mã lô, dòng phí và vị trí trên PDF hoặc bản scan.
-- **AI gợi ý mã phí** · Đề xuất ghép “Documentation fee” và “Phí chứng từ” vào mã DOC khi phù hợp.
-- **Quy tắc đối chiếu** · Chọn bảng giá có hiệu lực, so cùng đơn vị và cơ sở thuế, kiểm tra chứng từ gửi lại.
-- **Nhân viên xác nhận ngoại lệ** · Kiểm tra trường đọc chưa rõ, mã phí mơ hồ hoặc hồ sơ thiếu căn cứ.
+AI không quyết định số tiền: mọi chênh lệch đều có phép tính và nguồn.
 
----
+## 07 · How It Works · Bốn bước từ hóa đơn đến báo cáo
 
-## 07 · Quy trình kiểm tra cước
+1. **Tiếp nhận** · Gom PDF từ email, Zalo, cổng hãng. Dấu vân tay SHA-256 nhận ra bản gửi lại.
+2. **AI trích xuất** · Đọc số hóa đơn, mã lô, dòng phí và vị trí. Chuẩn hóa mã phí.
+3. **Ghép lô và giá** · Ghép theo mã lô hoặc vận đơn và nhà cung cấp. Chọn bảng giá có hiệu lực.
+4. **So và xác nhận** · Gắn trạng thái, kế toán xác nhận, xuất CSV.
 
-**Tải hồ sơ → Trích xuất → Ghép lô → So từng dòng → Xác nhận → Xuất báo cáo**
+Đầu vào MVP: hóa đơn PDF bằng VND, CSV hồ sơ lô và CSV bảng giá đã duyệt.
 
-- **Đầu vào MVP** · Hóa đơn PDF bằng VND, CSV lô hàng và CSV bảng giá.
-- **Ghép hồ sơ** · Dùng mã lô hoặc số vận đơn cùng thông tin nhà cung cấp.
-- **Đầu ra** · Báo cáo từng dòng phí, nguồn đối chiếu và kết quả xác nhận.
+## 08 · Mockup / Demo · Ca INV-095: phí chứng từ chênh +800.000 đ
 
----
-
-## 08 · Một khoản phí chênh 800.000 đồng
-
-**Mockup · Hóa đơn INV-095 · Lô SHP-001**
+Bốn ảnh chụp từ [web demo](https://movago-odylytics.vercel.app): trang giới thiệu, kết quả từng dòng, căn cứ hai phía, nhận ra bản gửi lại.
 
 | Dòng phí | Hóa đơn | Bảng giá đã duyệt | Kết quả |
 |---|---:|---:|---|
-| Cước vận tải | 8.000.000 đ | 8.000.000 đ | Khớp |
+| Cước biển | 8.000.000 đ | 8.000.000 đ | Khớp |
 | Phí chứng từ (DOC) | 1.300.000 đ | 500.000 đ | **+800.000 đ** |
-| **Tổng trước thuế** | **9.300.000 đ** | **8.500.000 đ** | **Cần xác minh** |
 
-- **Bằng chứng** · Hóa đơn trang 1, dòng DOC ↔ Bảng giá RATE-V3, dòng 12
-- **Bản gửi lại** · PDF INV-095 đã có trong lịch sử tiếp nhận
-- **Thao tác** · Yêu cầu xác minh · Xuất báo cáo
+Bằng chứng: hóa đơn trang 1 ↔ RATE-V3 dòng 12. *Dữ liệu giả lập, số tiền trước thuế.*
 
-*Dữ liệu giả lập. Các số tiền đối chiếu đều tính trước thuế.*
+## 09 · Feasibility & Business Value · Pilot nhỏ, đo được, hòa vốn từ 3 phút mỗi hóa đơn
 
----
+**Kịch bản minh họa** · 1.000 hóa đơn/tháng × giảm 6 phút (15 xuống 9) = **100 giờ/tháng** ≈ **6 triệu đồng/tháng** ở 60.000 đ/giờ, trước chi phí.
 
-## 09 · Pilot đo thời gian và chất lượng kiểm tra
+- **Mô hình** · B2B SaaS, thuê bao theo số hóa đơn đã xử lý, thêm phí thiết lập khi cần.
+- **Hòa vốn** · 3 phút/hóa đơn nếu thuê bao quy đổi 3 triệu đồng/tháng.
+- **KPI pilot** · Giảm ít nhất 30% phút thao tác trung vị, trên 30–100 bộ hồ sơ.
+- **Nguồn lực** · 1 tuyến, 1–2 nhà cung cấp, dữ liệu CSV, 3 vai: nghiệp vụ, kỹ thuật, giao diện.
+- **Công nghệ** · Document AI + rules engine + web app. Demo đã chạy đủ luồng.
 
-- **Pilot** · So quy trình hiện tại và quy trình có Movago trên bộ hồ sơ có nhãn.
-- **Chỉ số** · Phút thao tác, cảnh báo đúng, sai lệch bỏ sót và khoản thực tế điều chỉnh.
-- **Nguồn lực** · Nghiệp vụ cước, kỹ thuật trích xuất và quy tắc, giao diện.
-- **Mô hình bán thử** · Thuê bao theo số hóa đơn duy nhất đã xử lý, kèm phí thiết lập khi cần.
+*Số liệu là giả định, không phải kết quả pilot.*
 
-**Kịch bản minh họa** · 1.000 hóa đơn/tháng × 6 phút giảm/hóa đơn = **100 giờ/tháng**. Với 60.000 đ/giờ, giá trị thời gian là **6 triệu đồng/tháng** trước chi phí.
+## 10 · Competitive Advantage · Khác biệt: căn cứ từng dòng phí cho forwarder Việt Nam
 
----
+| Năng lực | Excel + email | Phần mềm forwarder | Audit cước quốc tế | Movago |
+|---|---|---|---|---|
+| Kiểm từng dòng phí theo biểu giá | Thủ công | Chưa rõ | Có | Có |
+| Ghép hóa đơn với hồ sơ lô | Thủ công | Có | Chưa rõ | Có |
+| Hiểu tên phí Việt–Anh | Thủ công | Chưa rõ | Chưa rõ | Có |
+| Mở căn cứ hai phía cho mỗi chênh lệch | Thủ công | Chưa rõ | Chưa rõ | Có |
+| Nhận ra bản gửi lại khi đổi tên | Thủ công | Chưa rõ | Chưa rõ | Có |
 
-## 10 · Kiểm chứng trên hồ sơ cước Việt Nam
+*Chưa rõ = chưa thấy trong tài liệu công bố, sẽ so trực tiếp khi pilot. Ví dụ: [G.O.L SMS Live](https://gol.vn/services/logistics-software/), [Innomation AutoMatching](https://innomation.vn/product/automatching), [ShipCheck](https://shipcheck.com/en).*
 
-| Giải pháp hiện có | Năng lực công bố |
-|---|---|
-| G.O.L SMS Live | Quản lý giá mua, công nợ và duyệt chi phí |
-| Innomation AutoMatching | Đối chiếu chứng từ và xử lý ngoại lệ |
-| ShipCheck | Kiểm tra từng dòng hóa đơn theo biểu phí |
+## Slide kết
 
-**Khác biệt đề xuất** · Gắn tên phí Việt–Anh với lô hàng, phiên bản giá và chứng từ gốc của forwarder Việt Nam.
-
-**Cách chứng minh** · Pilot một tuyến. So thời gian thiết lập, phút kiểm tra và sai lệch bỏ sót với quy trình hiện tại.
-
-*Nguồn tính năng · [G.O.L](https://gol.vn/services/logistics-software/) · [Innomation](https://innomation.vn/product/automatching) · [ShipCheck](https://shipcheck.com/en)*
+**Kiểm tra trước khi chi.** *Move smarter. Go safer.* Đề nghị pilot 30–100 bộ hồ sơ với một forwarder tại TP.HCM. movago-odylytics.vercel.app · odylytics@gmail.com
