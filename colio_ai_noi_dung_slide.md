@@ -21,7 +21,7 @@ Deck chính có 15 trang, đúng giới hạn bài nộp. Bốn slide đánh d�
 | 5 | Why now | Đã điền: Nghị định 254/2026 hiệu lực 01/07/2026, 8,5 tỷ hóa đơn điện tử năm 2025. Còn ô ảnh và điều khoản phía người mua | Toàn văn Nghị định 254/2026/NĐ-CP, Thông tư 91/2026/TT-BTC |
 | 6–9 | Solution · AI · How it works · Mockup | Xong | |
 | 10 | User validation | **KHUNG** | [Form khảo sát](nghien_cuu_tung_slide/form_khao_sat.md) và [phỏng vấn](nghien_cuu_tung_slide/phong_van_ke_toan_cong_no.md) |
-| 11 | Market size và giá tham chiếu | Đã điền: TAM ~1 tỷ USD, SAM minh họa 14,4 tỷ đồng (giả định 10%), giá ShipCheck. Còn SOM, tỷ lệ đạt tiêu chí, LTV : CAC | Danh bạ VLA/HLA, câu 3 và 9 của form khảo sát |
+| 11 | Market size và giá tham chiếu | Đã điền: TAM ~1 tỷ USD, SAM minh họa 14,4 tỷ đồng (giả định 10%), SOM minh họa 1,08 tỷ đồng/năm (30 khách năm 3), giá ShipCheck. Còn tỷ lệ đạt tiêu chí thật và LTV : CAC | Danh bạ VLA/HLA, câu 3 và 9 của form khảo sát |
 | 12 | Feasibility | Xong | |
 | 13 | Competitive | Đã thay bằng bảng 6 lựa chọn, thêm CargoWise IPP và Innomation | [Phân tích cạnh tranh](nghien_cuu_tung_slide/phan_tich_canh_tranh.md) |
 | 14 | Team và roadmap | Đã điền năng lực đội, vai trò, cố vấn từ [odylytics.com](https://odylytics.com/#/team/co-founders). Mốc lộ trình vẫn là bản nháp | Đội chốt mốc thời gian và vai trò trên Movago |

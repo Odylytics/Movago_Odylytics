@@ -187,7 +187,7 @@ Phần mềm forwarder (G.O.L, CargoWise) quản lý cả chuỗi và **phát h�
 |---|---|---|
 | TAM | ~1 tỷ USD (2025), CAGR 13–14% | Freight audit & payment toàn cầu [5][6][7] |
 | SAM | `[số DN đạt tiêu chí] × 36 triệu đồng/năm` | Ví dụ minh họa: nếu 10% của 4.000 doanh nghiệp đạt tiêu chí thì 400 × 36 triệu ≈ **14,4 tỷ đồng/năm**. Tỷ lệ 10% là giả định, cần thay bằng số lọc từ danh bạ VLA/HLA và khảo sát |
-| SOM | `[số khách 3 năm] × 36 triệu đồng` | Đặt mục tiêu cùng đội |
+| SOM | **1,08 tỷ đồng/năm** = 30 khách năm thứ 3 × 36 triệu đồng | Minh họa: 30 khách bằng 7,5% của 400 doanh nghiệp SAM, theo lộ trình 1 pilot năm 2027 rồi mở rộng. Đội chốt lại mục tiêu |
 | Pilot | 1 forwarder | Theo slide 15 |
 | Unit economics | Mốc giá: ShipCheck 99–499 €/tháng [15]; mốc hòa vốn của Movago 3 triệu đồng/tháng | LTV và CAC chưa có dữ liệu. Để `[x]` cho đến sau pilot |
 
