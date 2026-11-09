@@ -9,6 +9,7 @@
     "preview": "vite preview",
     "test": "vitest run",
     "make:sample-pdf": "node scripts/make-sample-pdf.mjs",
+    "make:sample-quote": "node scripts/make-sample-quote.mjs",
     "make:avatars": "node scripts/make-avatars.mjs"
   },
   "dependencies": {
