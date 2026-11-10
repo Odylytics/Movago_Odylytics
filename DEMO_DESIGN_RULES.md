@@ -33,7 +33,7 @@
 | Vai trò | Font | Độ đậm | Cỡ | Dùng cho |
 | --- | --- | --- | --- | --- |
 | Logo / wordmark | Hagrid Heavy | Heavy | Theo artwork | Chỉ logo Movago và các lockup đã duyệt. Không dùng cho tiêu đề web, chiến dịch, giao diện, bảng hay chữ nội dung. |
-| Display / UI | Acumin Pro | Regular, Medium, Semibold | 14–72 px | Hero, tiêu đề chiến dịch, điều hướng, nút, nhãn và giao diện sản phẩm. Tracking −1% đến −2,5% cho tiêu đề lớn. |
+| Display / UI | Acumin Pro | Regular, Medium, Semibold; Black cho tiêu đề hero | 14–72 px | Hero, tiêu đề chiến dịch, điều hướng, nút, nhãn và giao diện sản phẩm. Tracking −1% đến −2,5% cho tiêu đề lớn. |
 | Body | Source Sans Pro | Regular, Semibold | 14–18 px | Đoạn văn, ghi chú căn cứ, bảng, hóa đơn, chú thích và chữ hỗ trợ. Line-height 1,45–1,6. |
 
 - Quy tắc màu × chữ: Transit Lime là màu nhấn, không phải màu để đọc. Chữ cần dễ đọc dùng Deep Navy trên Ice Blue hoặc White, hay White trên Deep Navy. Electric Blue dành cho liên kết, focus và tương tác hệ thống.
