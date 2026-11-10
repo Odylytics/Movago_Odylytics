@@ -463,6 +463,8 @@ select:disabled { cursor: not-allowed; opacity: 0.6; }
    The intro wordmark is always Latin and keeps Hagrid. */
 :root:lang(vi) { --f-display: var(--f-ui); }
 :root:lang(vi) .intro { --f-display: 'Hagrid', var(--f-ui); }
+/* Hagrid Heavy is 900; match it with Source Sans 3 Black so the Vietnamese hero keeps the same weight. */
+:root:lang(vi) .display { font-weight: 900; }
 
 /* ===== opening intro: logo + MOVAGO → MOVE AI GO → drop into Home ===== */
 .intro {
