@@ -3,6 +3,7 @@ import { LangContext, useT, type Lang } from './i18n'
 import Business from './Business'
 import Intro from './Intro'
 import Landing from './Landing'
+import RateBuilder from './RateBuilder'
 import { unlock } from './sound'
 import Workspace from './Workspace'
 
@@ -42,6 +43,7 @@ function Nav() {
         <div className="nav-links">
           <a className="link" href="#/#how">{t('navHow')}</a>
           <a className="link" href="#/business">{t('navBiz')}</a>
+          <a className="link" href="#/rates">{t('navRates')}</a>
           <LangSwitch lang={lang} />
           <a className="btn small" href="#/demo?story=1"
             onClick={() => {
@@ -78,17 +80,18 @@ export default function App() {
   const [path, query] = hash.replace(/^#/, '').split('?')
   const isDemo = path.startsWith('/demo')
   const isBiz = path.startsWith('/business')
+  const isRates = path.startsWith('/rates')
   const story = new URLSearchParams(query ?? '').get('story') === '1'
 
   useEffect(() => {
-    if (!isDemo && !isBiz && hash.includes('#how')) document.getElementById('how')?.scrollIntoView()
-  }, [hash, isDemo, isBiz])
+    if (!isDemo && !isBiz && !isRates && hash.includes('#how')) document.getElementById('how')?.scrollIntoView()
+  }, [hash, isDemo, isBiz, isRates])
 
   return (
     <LangContext.Provider value={{ lang, setLang }}>
       <Intro />
       <Nav />
-      <main>{isDemo ? <Workspace key={String(story)} story={story} /> : isBiz ? <Business /> : <Landing />}</main>
+      <main>{isDemo ? <Workspace key={String(story)} story={story} /> : isBiz ? <Business /> : isRates ? <RateBuilder /> : <Landing />}</main>
     </LangContext.Provider>
   )
 }

@@ -1,13 +1,14 @@
 import type { CSSProperties, ReactNode } from 'react'
 import { Icon, type IconName } from './icons'
 import { useT } from './i18n'
+import { QUOTE, REVIEW_THRESHOLD } from './rateQuote'
 
 // Story scenes shown before the reconciliation: multi-channel intake, phone scan, AI reading the PDF.
 // Everything here is simulated and timed with CSS (animation-delay via --d); the sound cues in sound.ts match these times.
 type L = { en: string; vi: string }
 const d = (s: number) => ({ '--d': `${s}s` }) as CSSProperties
 
-export type Scene = 'channels' | 'scan' | 'extract'
+export type Scene = 'rates' | 'channels' | 'scan' | 'extract'
 
 export default function Stage({ scene, className = '' }: { scene: Scene; className?: string }) {
   const { lang } = useT()
@@ -18,6 +19,7 @@ export default function Stage({ scene, className = '' }: { scene: Scene; classNa
         <span className="chip sim">{tx({ en: 'Simulated', vi: 'Mô phỏng' })}</span>
         <span className="muted mini">{tx(TITLES[scene])}</span>
       </div>
+      {scene === 'rates' && <Rates tx={tx} lang={lang} />}
       {scene === 'channels' && <Channels tx={tx} />}
       {scene === 'scan' && <Scan tx={tx} />}
       {scene === 'extract' && <Extract tx={tx} lang={lang} />}
@@ -26,9 +28,49 @@ export default function Stage({ scene, className = '' }: { scene: Scene; classNa
 }
 
 const TITLES: Record<Scene, L> = {
+  rates: { en: 'Rate card · reading quotation Q-SA-2611', vi: 'Bảng giá · đọc báo giá Q-SA-2611' },
   channels: { en: 'Intake · one inbox for every channel', vi: 'Tiếp nhận · một hộp thư cho mọi kênh' },
   scan: { en: 'Mobile capture · paper copy at the port', vi: 'Chụp bằng điện thoại · bản giấy tại cảng' },
   extract: { en: 'Document AI · reading INV-095, page 1', vi: 'Document AI · đọc INV-095, trang 1' },
+}
+
+function Rates({ tx, lang }: { tx: (x: L) => string; lang: 'en' | 'vi' }) {
+  const n = (x: number) => x.toLocaleString(lang === 'en' ? 'en-US' : 'vi-VN')
+  const at = (i: number) => 2.4 + i * 0.6
+  return (
+    <div className="scene-extract">
+      <div className="doc-wrap" aria-hidden="true">
+        <div className="doc">
+          <div className="doc-head hitrow" style={d(1.2)}>
+            <b>SUPPLIER A · RATE QUOTATION</b>
+            <span className="wm">SIMULATED</span>
+          </div>
+          <div className="doc-meta hitrow" style={d(1.7)}>{QUOTE.quoteNo} · Singapore → Cat Lai · 01–30 Nov 2026 · VND</div>
+          {QUOTE.lines.map((l, i) => (
+            <div key={l.line} className="doc-line hitrow" style={d(at(i))}><span>{l.line}. {l.asWritten} · {l.container}</span><span>{n(l.price)}</span></div>
+          ))}
+          <span className="scanline" />
+        </div>
+      </div>
+      <div className="fields">
+        <div className="fields-head"><span>{tx({ en: 'Rate line', vi: 'Dòng giá' })}</span><span>{tx({ en: 'Value', vi: 'Giá trị' })}</span><span>{tx({ en: 'Conf.', vi: 'Tin cậy' })}</span></div>
+        <ul>
+          {QUOTE.lines.map((l, i) => (
+            <li key={l.line} style={d(at(i))}>
+              <span className="muted">{l.feeCode} · {l.container}<span className="where"> · {tx({ en: 'line', vi: 'dòng' })} {l.line}</span></span>
+              <b className="typed" style={d(at(i) + 0.1)}>{n(l.price)}</b>
+              <span className="conf">{Math.round(l.confidence * 100)}%</span>
+              {l.confidence < REVIEW_THRESHOLD && l.note && <span className="ai-note" style={d(at(i) + 0.3)}>{tx({ en: 'Khoa checks: ', vi: 'Khoa xem lại: ' })}{l.note[lang]}</span>}
+            </li>
+          ))}
+        </ul>
+        <div className="row" style={{ ...d(8.6), gap: 8, marginTop: 10 }}>
+          <span className="status sent hitrow" style={d(8.6)}>{tx({ en: 'Khoa approved 9/9 → RATE-V3 published', vi: 'Khoa duyệt 9/9 → phát hành RATE-V3' })}</span>
+        </div>
+        <p className="muted mini">{tx({ en: 'Simulated: lines come from rateQuote.ts and confidence figures are illustrative. Try it yourself on the Rate cards page.', vi: 'Mô phỏng: các dòng lấy từ rateQuote.ts, độ tin cậy chỉ để minh họa. Tự thử ở trang Bảng giá.' })}</p>
+      </div>
+    </div>
+  )
 }
 
 function Channels({ tx }: { tx: (x: L) => string }) {

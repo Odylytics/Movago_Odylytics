@@ -81,7 +81,9 @@ h1, h2, h3, h4, button, input, select, textarea, th, label, nav, .brand, .status
 .btn.ghost { background: var(--white); color: var(--navy); border-color: var(--hairline); }
 .btn.ghost:hover { border-color: var(--navy); }
 .btn.small { padding: 6px 14px; font-size: 13px; }
-.btn:disabled { opacity: 0.5; cursor: not-allowed; }
+.btn:disabled, .btn.disabled { opacity: 0.5; cursor: not-allowed; }
+.btn.disabled { pointer-events: none; }
+.mail { border: 1px solid var(--hairline); border-radius: var(--r-ui); padding: 14px 16px; background: var(--white); }
 .btn.on-dark { background: var(--white); color: var(--navy); border-color: var(--white); }
 .btn.on-dark:hover { background: var(--ice); }
 .btn.ghost-dark { background: transparent; color: var(--white); border-color: var(--hairline-dark); }

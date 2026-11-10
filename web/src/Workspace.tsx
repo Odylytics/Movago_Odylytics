@@ -33,8 +33,8 @@ async function seedIntake(): Promise<IntakeRecord[]> {
 }
 
 /** story steps 0–2 are the intake scenes; k counts the workspace steps after them */
-const INTRO = 2
-const SCENES: Scene[] = ['channels', 'scan', 'extract']
+const INTRO = 3
+const SCENES: Scene[] = ['rates', 'channels', 'scan', 'extract']
 
 const caseKey = (id: string) => `case_${id.replace(/-/g, '_')}` as Key
 
@@ -247,6 +247,7 @@ export default function Workspace({ story }: { story: boolean }) {
             <SourceCard k={t('srcShipment')} v={c.header.shipmentId} d={data?.shipments[0] ? `${data.shipments[0].origin} → ${data.shipments[0].destination} · ${data.shipments[0].container_type}` : '…'} open={viewer === 'shipment'} onClick={() => setViewer('shipment')} />
             <SourceCard k={t('srcRate')} v={c.rateFile.replace('.csv', '')} d={`${data?.rates.length ?? '…'} ${t('rateRows')}`} open={viewer === 'rate'} onClick={() => setViewer('rate')} />
           </section>
+          <p className="mini" style={{ marginTop: 8, textAlign: 'right' }}><a className="ref" href="#/rates">{t('buildFromQuote')}</a></p>
 
           <section className={`box ${target(1)}`} style={{ marginTop: 16 }} aria-live="polite">
             <div className="box-head">

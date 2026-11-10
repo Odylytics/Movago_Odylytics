@@ -6,6 +6,9 @@
 
 Movago hỗ trợ kế toán công nợ kiểm tra từng khoản cước trước khi thanh toán. Công cụ ghép **chứng từ đề nghị chi, hồ sơ lô và bảng giá đã duyệt**, tính lại các khoản có đủ căn cứ và đưa chênh lệch kèm bằng chứng cho người xác minh. Mục tiêu thử nghiệm là giảm thời gian đối chiếu và giữ chất lượng kiểm soát.
 
+
+Tỷ giá quy đổi: 1 USD = 25.500 đồng, 1 EUR = 1,12 USD (09/11/2026).
+
 ## 1. Bài toán và khách hàng
 
 Giả thuyết ưu tiên là kế toán mất công tìm đủ ba nguồn, rồi phải hỏi lại pricing hoặc operations khi không rõ điều kiện tính phí. Sai loại container, sai phiên bản giá hoặc thiếu phê duyệt bổ sung có thể dẫn đến chênh lệch. Quy trình đối chiếu xuất hiện trong mô tả công việc của Lacco và Flexport tại TP.HCM. Tần suất, tác động và cách phần mềm hiện có xử lý là nội dung pilot. [Nghiên cứu và ma trận bằng chứng](nghien_cuu_tung_slide/colio_ai_business_problems.md)
@@ -26,7 +29,7 @@ Giả thuyết ưu tiên là kế toán mất công tìm đủ ba nguồn, rồi
 3. Kiểm tra phép cộng và đối chiếu mức kỳ vọng theo từng dòng. So tệp gửi lại với lịch sử đã nhập. Xác minh đã chi cần dữ liệu sổ công nợ hoặc bằng chứng thanh toán.
 4. Hiển thị **Khớp trong phạm vi kiểm tra**, **Có chênh lệch** hoặc **Thiếu căn cứ**, kèm nguồn hai phía. Ghi người và lý do xác minh, rồi xuất CSV. Phê duyệt chi thuộc quy trình của doanh nghiệp.
 
-**Nghiệm thu demo.** Chạy ca khớp, lệch giá, thiếu căn cứ và bản gửi lại. Mỗi ca có kết quả dự kiến và nguồn mở được. Ca chính `INV-095` chênh **+800.000 đồng trước thuế** ở phí chứng từ và cần pricing xác minh. Xem [luồng chi tiết và ca kiểm thử](nghien_cuu_tung_slide/colio_ai_hoat_dong_the_nao.md) và [nguồn mẫu chứng từ](nghien_cuu_tung_slide/nguon_du_lieu_chung_tu_colio.md).
+**Nghiệm thu demo.** Chạy ca khớp, lệch giá, thiếu căn cứ và bản gửi lại. Mỗi ca có kết quả dự kiến và nguồn mở được. Ca chính `INV-095` chênh **+$31 (800.000 đồng) trước thuế** ở phí chứng từ và cần pricing xác minh. Xem [luồng chi tiết và ca kiểm thử](nghien_cuu_tung_slide/colio_ai_hoat_dong_the_nao.md) và [nguồn mẫu chứng từ](nghien_cuu_tung_slide/nguon_du_lieu_chung_tu_colio.md).
 
 **Mở rộng sau khi kiểm chứng.** Xem xét XML có cấu trúc, debit note nhiều mẫu, hóa đơn gộp lô, credit note hoặc hóa đơn điều chỉnh, D&D, đối chiếu đa tiền tệ và tích hợp TMS/ERP theo nhu cầu khách hàng. Demo mô phỏng bước kiểm tra nội bộ. Nếu thử XML, xác minh định dạng và liên kết giữa chứng từ gốc, bản điều chỉnh và bản thay thế. [Nghị định 254/2026/NĐ-CP](https://vanban.chinhphu.vn/?classid=1&docid=218689&pageid=27160&typegroupid=4) · [Thông tư 91/2026/TT-BTC](https://congbao.chinhphu.vn/van-ban/thong-tu-so-91-2026-tt-btc-470171.htm)
 
@@ -54,11 +57,11 @@ Phỏng vấn 5–10 người ở AP, operations, pricing và người có ngân
 
 ## 4. Giá trị kinh tế và mô hình bán thử
 
-**Kịch bản minh họa dùng trong pitch.** 1.000 hóa đơn/tháng, trung bình giảm từ 15 còn 9 phút mỗi hóa đơn. Phần thời gian giải phóng là **100 giờ/tháng**. Với 60.000 đồng/giờ, giá trị thời gian là **6 triệu đồng/tháng** trước chi phí. Nếu chỉ giảm 3 phút hoặc giảm tới 9 phút, giá trị tương ứng là 3 hoặc 9 triệu đồng/tháng. Các số là giả định.
+**Kịch bản minh họa dùng trong pitch.** 1.000 hóa đơn/tháng, trung bình giảm từ 15 còn 9 phút mỗi hóa đơn. Phần thời gian giải phóng là **100 giờ/tháng**. Với $2,35/giờ (60.000 đồng), giá trị thời gian là **$235/tháng** trước chi phí. Nếu chỉ giảm 3 phút hoặc giảm tới 9 phút, giá trị tương ứng là $118 hoặc $353/tháng. Các số là giả định.
 
 Giá trị ròng ước tính bằng giá trị thời gian giải phóng cộng khoản tránh chi hoặc thu hồi đã xác nhận, rồi trừ thuê bao, thiết lập, chuẩn hóa giá, tích hợp và chi phí vận hành tăng thêm. Tách lợi ích năng lực xử lý khỏi khoản tiết kiệm tiền mặt. Tránh tính hai lần thời gian duyệt đã nằm trong số phút đo.
 
-**Giả thuyết bán thử.** Thuê bao theo số hóa đơn duy nhất xử lý, với phí thiết lập khi cần cấu hình riêng. Nếu chi phí sử dụng quy đổi là 3 triệu đồng/tháng, kịch bản trên cần giảm trung bình 3 phút/hóa đơn để cân bằng theo giá trị thời gian. Đề nghị pilot có KPI và xác nhận người mua, ngân sách và khả năng trả phí trước khi ước lượng phân khúc có thể phục vụ.
+**Giả thuyết bán thử.** Thuê bao theo số hóa đơn duy nhất xử lý, với phí thiết lập khi cần cấu hình riêng. Nếu chi phí sử dụng quy đổi là $118/tháng, kịch bản trên cần giảm trung bình 3 phút/hóa đơn để cân bằng theo giá trị thời gian. Đề nghị pilot có KPI và xác nhận người mua, ngân sách và khả năng trả phí trước khi ước lượng phân khúc có thể phục vụ.
 
 **Đối chứng cạnh tranh.** So trực tiếp với quy trình TMS/ERP, bảng tính và luồng AP đang dùng. Thử xem Movago có rút ngắn thời gian thiết lập và đối chiếu trên cùng bộ hồ sơ, với nguồn giá và vị trí chứng từ truy được hay không. Ghi riêng phần kiểm tra với giá hợp đồng và phần so với chi phí dự ghi trong TMS. Hai căn cứ có thể khác nhau. [Ma trận cạnh tranh và điều kiện đổi ưu tiên](nghien_cuu_tung_slide/colio_ai_business_problems.md)
 

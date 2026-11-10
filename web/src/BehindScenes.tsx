@@ -20,6 +20,18 @@ const inbox: Actor = { icon: 'inbox', label: 'Movago', tone: 'dark', x: 236, y: 
 
 const VIGNETTES: Vignette[] = [
   {
+    set: 'desk', seconds: 9,
+    place: { en: 'Demo Forwarder · pricing desk', vi: 'Demo Forwarder · bàn pricing' },
+    caption: { en: 'Supplier A’s quotation lands. Movago drafts the rate card; Khoa checks two lines, approves and publishes RATE-V3.', vi: 'Báo giá của nhà cung cấp A đến. Movago dựng nháp bảng giá; Khoa xem hai dòng, duyệt và phát hành RATE-V3.' },
+    actors: [
+      { who: 'khoa', x: 18, y: 92, size: 58, path: bob },
+      { icon: 'laptop', label: 'Movago', tone: 'dark', x: 120, y: 120 },
+      { icon: 'mail', label: 'Q-SA-2611.pdf', x: 230, y: 14, path: [[0, 0, 0, 0], [0.05, 0, 0, 1], [0.3, -96, 92, 0.2], [0.34, -96, 92, 0], [1, -96, 92, 0]] },
+      { icon: 'table', label: { en: '9 lines read · 2 to check', vi: 'Đọc 9 dòng · 2 dòng cần xem' }, tone: 'blue', x: 120, y: 36, path: pop(0.36) },
+      { icon: 'check', label: { en: 'RATE-V3 approved', vi: 'Đã duyệt RATE-V3' }, tone: 'dark', x: 120, y: 76, path: pop(0.62) },
+    ],
+  },
+  {
     set: 'office', seconds: 8,
     place: { en: 'Supplier A · billing desk', vi: 'Nhà cung cấp A · bàn lập hóa đơn' },
     caption: { en: 'Vy prints and stamps INV-095, scans it to PDF and emails it. She snaps a photo for Messenger too.', vi: 'Vy in và đóng dấu INV-095, scan ra PDF rồi gửi email. Vy chụp thêm ảnh gửi qua Messenger.' },

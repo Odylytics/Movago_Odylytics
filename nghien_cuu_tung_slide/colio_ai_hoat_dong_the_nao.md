@@ -20,13 +20,13 @@ Movago là thiết kế đề xuất cho kế toán công nợ của một công
 
 Giả sử kế toán công nợ nhận hóa đơn **INV-095** của nhà cung cấp A cho **lô SHP-001**. Trong bản thử nghiệm, kế toán tải một PDF hóa đơn, một CSV hồ sơ lô và một CSV bảng giá đã duyệt. Dữ liệu ví dụ được bổ sung điều kiện giả lập để thấy vì sao hệ thống chọn đúng dòng giá.
 
-- **Hóa đơn INV-095, trang 1** ghi mã lô SHP-001, cước vận tải 8.000.000 đồng và “Documentation fee” 1.300.000 đồng. Cả hai khoản tính trước thuế.
+- **Hóa đơn INV-095, trang 1** ghi mã lô SHP-001, cước vận tải $314 (8.000.000 đồng) và “Documentation fee” $51 (1.300.000 đồng). Cả hai khoản tính trước thuế.
 - **Hồ sơ SHP-001** ghi nhà cung cấp A, tuyến Singapore → Cát Lái, một container khô 20 feet, một vận đơn và mốc tính giá đã xác nhận là 06/11/2026.
-- **Bảng giá RATE-V3** ghi điều kiện khớp với lô, hiệu lực trong tháng 11/2026 theo mốc tính giá đã thỏa thuận, cước 8.000.000 đồng/container và phí chứng từ 500.000 đồng/vận đơn ở dòng 12. Bảng giá cũng tính trước thuế.
+- **Bảng giá RATE-V3** ghi điều kiện khớp với lô, hiệu lực trong tháng 11/2026 theo mốc tính giá đã thỏa thuận, cước $314 (8.000.000 đồng)/container và phí chứng từ $20 (500.000 đồng)/vận đơn ở dòng 12. Bảng giá cũng tính trước thuế.
 
 ### Bước 2 · AI đọc PDF và giữ vị trí gốc
 
-Document AI nhận dạng chữ và bố cục để lấy số hóa đơn, mã lô, nhà cung cấp, tiền tệ và các dòng phí. Với mỗi trường, thiết kế lưu giá trị đọc được, giá trị chuẩn hóa, trang và vùng trên PDF nếu trích được. Ví dụ, chữ gốc là “Documentation fee”, giá trị là 1.300.000 VND và vị trí là dòng phí ở trang 1. Danh mục phí của doanh nghiệp cho phép gắn tên này với mã **DOC**. Với tên lạ, AI có thể gợi ý mã để người dùng xác nhận. [Microsoft Learn — trích xuất trường và dòng hóa đơn](https://learn.microsoft.com/en-us/azure/ai-services/document-intelligence/prebuilt/invoice?view=doc-intel-4.0.0) · [Microsoft Learn — vị trí trên trang](https://learn.microsoft.com/en-us/azure/ai-services/document-intelligence/concept/analyze-document-response?view=doc-intel-4.0.0).
+Document AI nhận dạng chữ và bố cục để lấy số hóa đơn, mã lô, nhà cung cấp, tiền tệ và các dòng phí. Với mỗi trường, thiết kế lưu giá trị đọc được, giá trị chuẩn hóa, trang và vùng trên PDF nếu trích được. Ví dụ, chữ gốc là “Documentation fee”, giá trị là 1.300.000 VND ($51) và vị trí là dòng phí ở trang 1. Danh mục phí của doanh nghiệp cho phép gắn tên này với mã **DOC**. Với tên lạ, AI có thể gợi ý mã để người dùng xác nhận. [Microsoft Learn — trích xuất trường và dòng hóa đơn](https://learn.microsoft.com/en-us/azure/ai-services/document-intelligence/prebuilt/invoice?view=doc-intel-4.0.0) · [Microsoft Learn — vị trí trên trang](https://learn.microsoft.com/en-us/azure/ai-services/document-intelligence/concept/analyze-document-response?view=doc-intel-4.0.0).
 
 Nếu trường tiền, nhà cung cấp hoặc mã lô mờ hay thiếu nguồn, Movago chuyển trường đó sang kiểm tra. Điểm tin cậy của mô hình giúp ưu tiên việc rà soát. Độ chính xác trên hóa đơn cước Việt–Anh cần đo bằng bộ mẫu của nhóm, kể cả khi công cụ công bố hỗ trợ ngôn ngữ. [Microsoft Learn — ghi chú về năng lực và giới hạn](https://learn.microsoft.com/en-us/azure/foundry/responsible-ai/document-intelligence/transparency-note).
 
@@ -42,15 +42,15 @@ Hệ thống nhân **số lượng × đơn giá đã duyệt**, rồi so với 
 
 | Dòng phí | Hóa đơn | Mức kỳ vọng từ RATE-V3 | Kết quả |
 |---|---:|---:|---|
-| Cước vận tải | 8.000.000 đ | 1 container × 8.000.000 đ | Khớp |
-| Phí chứng từ (DOC) | 1.300.000 đ | 1 vận đơn × 500.000 đ | Chênh **+800.000 đ** |
-| **Tổng trước thuế** | **9.300.000 đ** | **8.500.000 đ** | **Cần xác minh** |
+| Cước vận tải | $314 (8.000.000 đ) | 1 container × $314 | Khớp |
+| Phí chứng từ (DOC) | $51 (1.300.000 đ) | 1 vận đơn × $20 (500.000 đ) | Chênh **+$31** (800.000 đ) |
+| **Tổng trước thuế** | **$365** (9.300.000 đ) | **$333** (8.500.000 đ) | **Cần xác minh** |
 
-**Phép cộng trên hóa đơn vẫn đúng.** 8.000.000 + 1.300.000 bằng 9.300.000 đồng. Chênh lệch xuất hiện khi so dòng DOC với thỏa thuận. Vì vậy, kiểm tra số học của hóa đơn và đối chiếu theo bảng giá là hai phép kiểm riêng.
+**Phép cộng trên hóa đơn vẫn đúng.** $314 + $51 bằng $365 (8.000.000 + 1.300.000 = 9.300.000 đồng). Chênh lệch xuất hiện khi so dòng DOC với thỏa thuận. Vì vậy, kiểm tra số học của hóa đơn và đối chiếu theo bảng giá là hai phép kiểm riêng.
 
 ### Bước 5 · Đưa bằng chứng cho người xác minh
 
-Trên màn hình, kế toán thấy **“Phí chứng từ chênh +800.000 đồng trước thuế”** và mở được hai nguồn, **INV-095 trang 1, dòng DOC** và **RATE-V3 dòng 12**. Kế toán bấm **Yêu cầu xác minh** và gửi câu hỏi cho người phụ trách giá về khoản phát sinh.
+Trên màn hình, kế toán thấy **“Phí chứng từ chênh +800.000 đồng trước thuế”** (+$31) và mở được hai nguồn, **INV-095 trang 1, dòng DOC** và **RATE-V3 dòng 12**. Kế toán bấm **Yêu cầu xác minh** và gửi câu hỏi cho người phụ trách giá về khoản phát sinh.
 
 - **Có phê duyệt bổ sung cho đúng lô.** Đính kèm phê duyệt, chọn lại căn cứ giá đã được xác nhận rồi chạy lại đối chiếu. Giữ lịch sử cảnh báo cũ và lý do thay đổi.
 - **Xác nhận hãng tính sai.** Kế toán dùng chứng từ và phép tính trong báo cáo để yêu cầu nhà cung cấp giải thích hoặc điều chỉnh theo quy trình của họ.
@@ -90,7 +90,7 @@ flowchart TD
 | Ca nghiệm thu | Đáp án dự kiến |
 |---|---|
 | Hóa đơn khớp giá và đúng lô | Khớp trong phạm vi kiểm tra. Hiện căn cứ hai phía. |
-| INV-095 trước khi có phê duyệt bổ sung | Cước chính khớp. Dòng DOC chênh +800.000 đồng trước thuế. Mở được hóa đơn trang 1 và RATE-V3 dòng 12. |
+| INV-095 trước khi có phê duyệt bổ sung | Cước chính khớp. Dòng DOC chênh +$31 (800.000 đồng) trước thuế. Mở được hóa đơn trang 1 và RATE-V3 dòng 12. |
 | Thiếu bảng giá hoặc có hai phiên bản cùng điều kiện | Thiếu căn cứ. Ghi dữ liệu cần bổ sung và để trống mức chênh lệch. |
 | Cùng PDF đổi tên rồi tải lại | Hiện bản đã ghi nhận. Trạng thái thanh toán cần sổ công nợ hoặc bằng chứng chi. |
 | Dòng tiền trên ảnh mờ | Yêu cầu người dùng kiểm tra vùng trích trước khi tính. |
