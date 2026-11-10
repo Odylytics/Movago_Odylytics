@@ -5,6 +5,7 @@
 - Sau mỗi công việc đã hoàn thành có thay đổi tệp trong repo, kiểm tra diff và chạy các kiểm tra phù hợp. Stage đúng phần thuộc công việc, tạo commit có thông điệp rõ ràng, rồi push lên upstream của nhánh đang làm việc. Người dùng đã yêu cầu thực hiện các bước này theo mặc định.
 - Dùng `user.name` và `user.email` đã cấu hình cho danh tính Git của người dùng trên repo này, cho cả author và committer. Giữ nguyên cấu hình Git và để phần tác giả chỉ mang danh tính người dùng. Nếu thiếu danh tính hoặc author hay committer đang bị ghi đè, báo người dùng trước khi commit.
 - Chỉ dùng push thường. Nếu thiếu upstream, bị từ chối push hoặc có xung đột với remote, báo nguyên nhân và trạng thái commit. Sau khi push, xác minh trạng thái với upstream và báo mã commit.
+- Công việc kết thúc ở bước push lên GitHub. Việc deploy lên Vercel do người phụ trách trong đội thực hiện. Khi bản live cần cập nhật, báo người dùng commit nào đang chờ deploy.
 
 ## Website demo
 
