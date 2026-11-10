@@ -5,6 +5,10 @@ export type Lang = 'en' | 'vi'
 const dict = {
   navHow: { en: 'How it works', vi: 'Cách hoạt động' },
   navDemo: { en: 'Open demo', vi: 'Mở demo' },
+  introDemo: { en: 'Watch the 3-minute demo', vi: 'Xem demo 3 phút' },
+  introDemoSub: { en: 'For the judges · plays by itself, with sound', vi: 'Dành cho ban giám khảo · tự chạy, có âm thanh' },
+  introApp: { en: 'Use Movago', vi: 'Dùng ứng dụng' },
+  introAppSub: { en: 'Explore the site, rate cards and the sample case', vi: 'Xem website, bảng giá và tự thử hồ sơ mẫu' },
   navBiz: { en: 'Business case', vi: 'Kinh doanh' },
   bizCta: { en: 'See the business case', vi: 'Xem bài toán kinh doanh' },
   heroTitle: { en: 'Check every freight charge before you pay it.', vi: 'Kiểm tra từng khoản cước trước khi thanh toán.' },

@@ -50,7 +50,7 @@ button, input, select, textarea { font: inherit; color: inherit; }
 /* Main / UI type: headings, navigation, controls, labels, tables and figures */
 h1, h2, h3, h4, button, input, select, textarea, th, label, nav, .brand, .status, .field, .src .k, .src .v, .ev, .ev-amount, .ev-src,
 .stat-tag, .ref, .prio, .roadmap .when, .ch-name, .fields-head, .flow-title, .conf, .col-val, .calc-out dt, .calc-out dd,
-.proof-num, .files a, .lang button, .banner, .intro-slogan, .intro-skip { font-family: var(--f-ui); }
+.proof-num, .files a, .lang button, .banner, .intro-slogan { font-family: var(--f-ui); }
 :focus-visible { outline: 2px solid var(--blue); outline-offset: 2px; }
 ::selection { background: var(--lime); color: var(--navy); }
 .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
@@ -472,7 +472,6 @@ select:disabled { cursor: not-allowed; opacity: 0.6; }
   background: var(--ice); color: var(--navy);
   display: grid; place-items: center; cursor: pointer; transform: translateY(0);
   font-family: var(--f-wordmark);
-  animation: intro-drop 0.72s cubic-bezier(0.7, 0, 0.84, 0) 2.48s forwards;
   will-change: transform;
 }
 .intro::before {
@@ -481,12 +480,10 @@ select:disabled { cursor: not-allowed; opacity: 0.6; }
   pointer-events: none;
 }
 .intro.leaving { animation: intro-skip 0.5s cubic-bezier(0.7, 0, 0.84, 0) forwards; }
-@keyframes intro-drop { to { transform: translateY(105%); } }
 @keyframes intro-skip { to { transform: translateY(105%); } }
 .intro-stage {
   position: relative; display: grid; justify-items: center; gap: clamp(18px, 3vw, 34px); width: 100%;
   transform-origin: 50% 100%;
-  animation: intro-motion-blur 0.72s linear 2.48s both;
   will-change: transform, filter;
 }
 .intro.leaving .intro-stage { animation: intro-motion-blur 0.5s linear both; }
@@ -528,18 +525,30 @@ select:disabled { cursor: not-allowed; opacity: 0.6; }
   opacity: 0; transform: translateY(10px); animation: intro-caption-in 0.38s cubic-bezier(0.16, 1, 0.3, 1) 1.78s forwards;
 }
 @keyframes intro-caption-in { to { opacity: 1; transform: none; } }
-.intro-skip {
-  position: absolute; right: 24px; bottom: 24px; border: 1px solid rgba(11,31,68,0.24); background: rgba(255,255,255,0.45); color: var(--navy);
-  border-radius: var(--r-pill); padding: 6px 14px; font-size: 13px; font-weight: 500; cursor: pointer; opacity: 0.8;
+.intro-choices {
+  display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; margin-top: clamp(8px, 2vw, 20px);
+  opacity: 0; transform: translateY(10px); animation: intro-caption-in 0.42s cubic-bezier(0.16, 1, 0.3, 1) 2.2s forwards;
 }
-.intro-skip:hover { opacity: 1; border-color: var(--navy); }
+.intro-choice {
+  display: grid; gap: 4px; text-align: left; min-width: 260px; max-width: 320px; padding: 16px 22px;
+  border-radius: var(--r-card); border: 1px solid var(--hairline); background: var(--white); color: var(--navy);
+  font-family: var(--f-ui); cursor: pointer; box-shadow: var(--elev-float);
+  transition: border-color 160ms cubic-bezier(0.16, 1, 0.3, 1), transform 160ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+.intro-choice b { font-size: 17px; font-weight: 700; }
+.intro-choice span { font-size: 13px; color: var(--slate); }
+.intro-choice:hover { border-color: var(--navy); transform: translateY(-2px); }
+/* primary CTA — Transit Lime with Deep Navy labels */
+.intro-choice.primary { background: var(--lime); border-color: var(--navy); }
+.intro-choice.primary span { color: var(--navy); }
+.intro-choice.primary:hover { background: var(--lime-hover); }
 @media (max-width: 640px) {
   .intro-brand { gap: 12px; }
   .intro-mark { width: clamp(72px, 22vw, 104px); }
   .intro-word { font-size: clamp(32px, 10.5vw, 58px); }
   @keyframes intro-name-in { to { max-width: 72vw; opacity: 1; } }
 }
-@media (prefers-reduced-motion: reduce) { .intro { display: none; } }
+@media (prefers-reduced-motion: reduce) { .intro, .intro * { animation-duration: 0.01ms !important; animation-delay: 0s !important; } }
 .cast-rows .avatar { flex: none; }
 .cast-rows .who-org { display: block; font-size: 13px; color: var(--slate); margin-bottom: 4px; }
 @media (max-width: 640px) {
