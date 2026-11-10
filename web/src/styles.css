@@ -448,39 +448,79 @@ select:disabled { cursor: not-allowed; opacity: 0.6; }
 }
 .stats > *, .calc-box > * { min-width: 0; }
 
-/* ===== opening intro: MOVAGO → MOV · A · GO → MOVE · AI · GO ===== */
+/* ===== opening intro: logo + MOVAGO → MOVE AI GO → drop into Home ===== */
 .intro {
-  position: fixed; inset: 0; z-index: 100; background: var(--navy); color: var(--white);
-  display: grid; place-items: center; cursor: pointer; clip-path: inset(0);
-  animation: intro-out 0.8s cubic-bezier(0.76, 0, 0.24, 1) 3.1s forwards;
+  position: fixed; inset: 0; z-index: 100; overflow: hidden;
+  background: linear-gradient(135deg, #f1f1ef 0%, #e7e7e7 52%, #dde2e6 100%); color: var(--navy);
+  display: grid; place-items: center; cursor: pointer; transform: translateY(0);
+  font-family: 'hagrid', system-ui, sans-serif;
+  animation: intro-drop 0.72s cubic-bezier(0.7, 0, 0.84, 0) 2.48s forwards;
+  will-change: transform;
 }
-.intro.leaving { animation: intro-skip 0.5s cubic-bezier(0.76, 0, 0.24, 1) forwards; }
-@keyframes intro-out { to { clip-path: inset(0 0 100% 0); } }
-@keyframes intro-skip { from { clip-path: inset(0); } to { clip-path: inset(0 0 100% 0); } }
-.intro-stage { display: grid; justify-items: center; gap: 0.6em; font-size: clamp(40px, 12vw, 168px); }
+.intro::before {
+  content: ''; position: absolute; width: min(720px, 90vw); aspect-ratio: 1; border-radius: 50%;
+  background: radial-gradient(circle, rgba(255,255,255,0.56) 0, rgba(255,255,255,0) 68%);
+  pointer-events: none;
+}
+.intro.leaving { animation: intro-skip 0.5s cubic-bezier(0.7, 0, 0.84, 0) forwards; }
+@keyframes intro-drop { to { transform: translateY(105%); } }
+@keyframes intro-skip { to { transform: translateY(105%); } }
+.intro-stage {
+  position: relative; display: grid; justify-items: center; gap: clamp(18px, 3vw, 34px); width: 100%;
+  transform-origin: 50% 100%;
+  animation: intro-motion-blur 0.72s linear 2.48s both;
+  will-change: transform, filter;
+}
+.intro.leaving .intro-stage { animation: intro-motion-blur 0.5s linear both; }
+@keyframes intro-motion-blur {
+  0%, 12% { filter: blur(0); transform: scaleY(1); }
+  48% { filter: blur(2.5px); transform: scaleY(1.018); }
+  100% { filter: blur(1px); transform: scaleY(1.006); }
+}
+.intro-brand { display: flex; align-items: center; justify-content: center; gap: clamp(16px, 2.4vw, 34px); max-width: 94vw; }
+.intro-mark {
+  display: block; flex: none; width: clamp(92px, 13vw, 174px); height: auto; opacity: 0; transform: scale(0.72);
+  filter: drop-shadow(0 16px 22px rgba(11, 31, 68, 0.2)) drop-shadow(0 4px 8px rgba(11, 31, 68, 0.12));
+  animation: intro-mark-in 0.75s cubic-bezier(0.16, 1, 0.3, 1) 0.12s forwards;
+}
+@keyframes intro-mark-in { to { opacity: 1; transform: scale(1); } }
+.intro-word-wrap {
+  max-width: 0; opacity: 0; overflow: hidden; white-space: nowrap;
+  animation: intro-name-in 1.15s cubic-bezier(0.22, 1, 0.36, 1) 0.9s forwards;
+}
+@keyframes intro-name-in { to { max-width: min(70vw, 1050px); opacity: 1; } }
 .intro-word {
-  display: flex; align-items: baseline; gap: 0; font-weight: 600; line-height: 1; letter-spacing: -0.02em;
-  animation: intro-split 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.85s forwards;
+  display: flex; align-items: baseline; gap: 0; font-size: clamp(42px, 9.2vw, 132px); font-weight: 750;
+  line-height: 1; letter-spacing: 0.012em; padding: 0.04em 0.055em 0.06em 0;
+  text-shadow: none;
+  animation: intro-split 0.38s cubic-bezier(0.16, 1, 0.3, 1) 1.78s forwards;
 }
-@keyframes intro-split { to { gap: 0.32em; } }
-.ig { display: inline-flex; }
-.il { display: inline-block; opacity: 0; transform: translateY(0.35em); animation: intro-letter 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
-@keyframes intro-letter { to { opacity: 1; transform: none; } }
-/* the letters that turn MOV into MOVE and A into AI, in Electric Blue (≥3:1 on navy at display size) */
-.add {
-  display: inline-block; overflow: hidden; max-width: 0; opacity: 0; color: var(--blue); transform: translateY(0.2em);
-  animation: intro-add 0.65s cubic-bezier(0.16, 1, 0.3, 1) 1.45s forwards;
+@keyframes intro-split { to { gap: 0.23em; } }
+.intro-group { display: inline-flex; }
+.intro-add {
+  display: inline-block; overflow: hidden; max-width: 0; opacity: 0; color: #afcf55; transform: translateY(0.16em);
+  -webkit-text-stroke: 0;
+  filter: none;
+  text-shadow: none;
+  animation: intro-add 0.48s cubic-bezier(0.16, 1, 0.3, 1) 1.78s forwards;
 }
-@keyframes intro-add { to { max-width: 1em; opacity: 1; transform: none; } }
+@keyframes intro-add { to { max-width: 0.9em; opacity: 1; transform: none; } }
 .intro-slogan {
-  font-size: clamp(16px, 0.16em, 28px); font-weight: 500; letter-spacing: 0.01em; color: rgba(255, 255, 255, 0.86);
-  opacity: 0; transform: translateY(8px); animation: intro-letter 0.7s cubic-bezier(0.16, 1, 0.3, 1) 2.05s forwards;
+  margin: 0; font-size: clamp(14px, 1.5vw, 20px); font-weight: 600; letter-spacing: 0.035em; color: var(--slate);
+  opacity: 0; transform: translateY(10px); animation: intro-caption-in 0.38s cubic-bezier(0.16, 1, 0.3, 1) 1.78s forwards;
 }
+@keyframes intro-caption-in { to { opacity: 1; transform: none; } }
 .intro-skip {
-  position: absolute; right: 24px; bottom: 24px; border: 1px solid var(--hairline-dark); background: transparent; color: var(--white);
+  position: absolute; right: 24px; bottom: 24px; border: 1px solid rgba(11,31,68,0.24); background: rgba(255,255,255,0.45); color: var(--navy);
   border-radius: var(--r-pill); padding: 6px 14px; font-size: 13px; font-weight: 500; cursor: pointer; opacity: 0.8;
 }
-.intro-skip:hover { opacity: 1; border-color: var(--white); }
+.intro-skip:hover { opacity: 1; border-color: var(--navy); }
+@media (max-width: 640px) {
+  .intro-brand { gap: 12px; }
+  .intro-mark { width: clamp(72px, 22vw, 104px); }
+  .intro-word { font-size: clamp(32px, 10.5vw, 58px); }
+  @keyframes intro-name-in { to { max-width: 72vw; opacity: 1; } }
+}
 @media (prefers-reduced-motion: reduce) { .intro { display: none; } }
 .cast-rows .avatar { flex: none; }
 .cast-rows .who-org { display: block; font-size: 13px; color: var(--slate); margin-bottom: 4px; }
