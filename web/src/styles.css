@@ -5,6 +5,10 @@
   --ice: #eaf2ff;
   --white: #ffffff;
   --slate: #64748b;
+  /* Transit Lime — brand accent for primary CTAs, progress and selected highlights. Never body text on White,
+     never alone for errors; labels on Lime are Deep Navy. */
+  --lime: #c8f65a;
+  --lime-hover: #b9ec43;
   --hairline: rgba(11, 31, 68, 0.12);
   --hairline-dark: rgba(255, 255, 255, 0.22);
   --tint-blue: rgba(40, 120, 255, 0.1);
@@ -25,10 +29,11 @@
   --t-body: 16px;
   --t-sub: 18px;
   --t-heading: 36px;
-  --t-display: 88px;
-  /* Type — DEMO_DESIGN_RULES.md. Hagrid and Acumin Pro are licensed fonts: they render when installed locally
-     or served by a licensed kit; otherwise the stack falls back to Source Sans 3 (Source Sans Pro). */
-  --f-display: 'Hagrid', 'Hagrid Heavy', 'acumin-pro', 'Acumin Pro', 'Source Sans 3', 'Source Sans Pro', system-ui, sans-serif;
+  --t-display: 72px;
+  /* Type — DEMO_DESIGN_RULES.md. Hagrid is the wordmark only. Acumin Pro carries display and UI; it renders when
+     installed locally or served by a licensed kit, otherwise it falls back to Source Sans 3 (Source Sans Pro). */
+  --f-wordmark: 'Hagrid', 'Hagrid Heavy', 'acumin-pro', 'Acumin Pro', 'Source Sans 3', system-ui, sans-serif;
+  --f-display: 'acumin-pro', 'Acumin Pro', 'Source Sans 3', 'Source Sans Pro', system-ui, sans-serif;
   --f-ui: 'acumin-pro', 'Acumin Pro', 'Source Sans 3', 'Source Sans Pro', system-ui, sans-serif;
   --f-body: 'Source Sans 3', 'Source Sans Pro', system-ui, sans-serif;
   font-family: var(--f-body);
@@ -47,7 +52,7 @@ h1, h2, h3, h4, button, input, select, textarea, th, label, nav, .brand, .status
 .stat-tag, .ref, .prio, .roadmap .when, .ch-name, .fields-head, .flow-title, .conf, .col-val, .calc-out dt, .calc-out dd,
 .proof-num, .files a, .lang button, .banner, .intro-slogan, .intro-skip { font-family: var(--f-ui); }
 :focus-visible { outline: 2px solid var(--blue); outline-offset: 2px; }
-::selection { background: var(--navy); color: var(--white); }
+::selection { background: var(--lime); color: var(--navy); }
 .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
 
 .wrap { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
@@ -84,8 +89,9 @@ h1, h2, h3, h4, button, input, select, textarea, th, label, nav, .brand, .status
 .btn:disabled, .btn.disabled { opacity: 0.5; cursor: not-allowed; }
 .btn.disabled { pointer-events: none; }
 .mail { border: 1px solid var(--hairline); border-radius: var(--r-ui); padding: 14px 16px; background: var(--white); }
-.btn.on-dark { background: var(--white); color: var(--navy); border-color: var(--white); }
-.btn.on-dark:hover { background: var(--ice); }
+/* primary CTA on Deep Navy surfaces — Transit Lime with a Deep Navy label */
+.btn.on-dark { background: var(--lime); color: var(--navy); border-color: var(--lime); }
+.btn.on-dark:hover { background: var(--lime-hover); border-color: var(--lime-hover); }
 .btn.ghost-dark { background: transparent; color: var(--white); border-color: var(--hairline-dark); }
 .btn.ghost-dark:hover { border-color: var(--white); }
 .lang { display: inline-flex; border: 1px solid var(--hairline); border-radius: var(--r-pill); padding: 2px; background: var(--white); }
@@ -121,7 +127,7 @@ h1, h2, h3, h4, button, input, select, textarea, th, label, nav, .brand, .status
 }
 .banner:hover { border-color: var(--white); }
 .display {
-  font-size: clamp(40px, 6.5vw, var(--t-display)); line-height: 0.97; letter-spacing: -0.025em; font-weight: 800; font-family: var(--f-display);
+  font-size: clamp(40px, 6.5vw, var(--t-display)); line-height: 0.97; letter-spacing: -0.025em; font-weight: 700; font-family: var(--f-display);
   margin: 28px 0 24px; text-wrap: balance; max-width: 15ch;
 }
 .lead { font-size: var(--t-sub); color: rgba(255, 255, 255, 0.86); max-width: 34rem; }
@@ -250,13 +256,14 @@ textarea { resize: vertical; min-height: 84px; }
 }
 .story h2 { font-size: var(--t-sub); font-weight: 600; margin: 2px 0 4px; }
 .story p { color: rgba(255, 255, 255, 0.88); font-size: 14px; }
-.story .btn { background: var(--white); color: var(--navy); border-color: var(--white); }
+.story .btn { background: var(--lime); color: var(--navy); border-color: var(--lime); }
+.story .btn:hover { background: var(--lime-hover); }
 .story .btn.ghost { background: transparent; color: var(--white); border-color: var(--hairline-dark); }
 .story .btn.ghost:hover { border-color: var(--white); }
 .story-cast { display: flex; gap: 6px; flex-wrap: wrap; }
 .cast-btn { padding: 0; border: 2px solid transparent; border-radius: 50%; background: none; cursor: pointer; opacity: 0.45; transition: opacity 0.25s, border-color 0.25s, transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1); }
 .cast-btn.mentioned { opacity: 0.8; }
-.cast-btn.speaking { opacity: 1; border-color: var(--blue); transform: translateY(-2px) scale(1.06); }
+.cast-btn.speaking { opacity: 1; border-color: var(--lime); transform: translateY(-2px) scale(1.06); }
 .cast-btn:hover:not(:disabled) { opacity: 1; }
 .cast-btn:disabled { cursor: default; }
 .avatar { display: block; border-radius: 50%; background: var(--ice); }
@@ -264,7 +271,7 @@ textarea { resize: vertical; min-height: 84px; }
 .seg-btn { height: 14px; padding: 5px 0; border: 0; background: none; cursor: pointer; display: block; }
 .seg-btn::before { content: ''; display: block; height: 4px; border-radius: var(--r-pill); background: rgba(255, 255, 255, 0.22); }
 .seg-btn { position: relative; }
-.seg-btn i { position: absolute; left: 0; top: 5px; height: 4px; border-radius: var(--r-pill); background: var(--white); transition: width 0.1s linear; }
+.seg-btn i { position: absolute; left: 0; top: 5px; height: 4px; border-radius: var(--r-pill); background: var(--lime); transition: width 0.1s linear; }
 .story-line { display: grid; grid-template-columns: 52px 1fr; gap: 14px; align-items: start; animation: line-in 0.5s cubic-bezier(0.16, 1, 0.3, 1); }
 @keyframes line-in { from { opacity: 0; transform: translateY(6px); } }
 .story-who { font-size: 13px; font-weight: 600; }
@@ -336,7 +343,7 @@ select:disabled { cursor: not-allowed; opacity: 0.6; }
 
 /* ===== business page — statistic cards and motion modelled on Unfound ===== */
 .biz { padding: 120px 0 40px; }
-.biz-head h1 { font-size: clamp(40px, 5vw, 64px); line-height: 0.97; letter-spacing: -0.025em; font-weight: 800; font-family: var(--f-display); max-width: 18ch; text-wrap: balance; }
+.biz-head h1 { font-size: clamp(40px, 5vw, 64px); line-height: 0.97; letter-spacing: -0.025em; font-weight: 700; font-family: var(--f-display); max-width: 18ch; text-wrap: balance; }
 .biz-head .sub { margin-top: 18px; font-size: var(--t-sub); font-weight: 500; max-width: 40rem; }
 .ev-legend { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 20px; }
 .ev { display: inline-flex; align-items: center; gap: 6px; padding: 3px 10px; border-radius: var(--r-ui); font-size: 12px; font-weight: 600; letter-spacing: 0.02em; border: 1px solid var(--hairline); background: var(--white); white-space: nowrap; }
@@ -349,7 +356,7 @@ select:disabled { cursor: not-allowed; opacity: 0.6; }
 .stat-card { background: var(--white); border: 1px solid var(--hairline); border-radius: var(--r-card); padding: var(--pad-card); display: grid; gap: 16px; align-content: start; }
 .stat-top { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
 .stat-tag { font-size: 12px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--slate); }
-.stat-num { font-size: clamp(44px, 5vw, 64px); line-height: 0.97; letter-spacing: -0.025em; font-weight: 800; font-family: var(--f-display); font-variant-numeric: tabular-nums; }
+.stat-num { font-size: clamp(44px, 5vw, 64px); line-height: 0.97; letter-spacing: -0.025em; font-weight: 700; font-family: var(--f-display); font-variant-numeric: tabular-nums; }
 .stat-num small { font-size: 0.45em; letter-spacing: 0; margin-left: 2px; color: var(--slate); }
 .stat-claim { max-width: 46ch; }
 .source { font-size: 12px; color: var(--slate); }
@@ -459,19 +466,12 @@ select:disabled { cursor: not-allowed; opacity: 0.6; }
 }
 .stats > *, .calc-box > * { min-width: 0; }
 
-/* The licensed Hagrid kit has no Vietnamese glyphs (ủ, ế, đ… fall back mid-word), so Vietnamese headings use the UI stack.
-   The intro wordmark is always Latin and keeps Hagrid. */
-:root:lang(vi) { --f-display: var(--f-ui); }
-:root:lang(vi) .intro { --f-display: 'Hagrid', var(--f-ui); }
-/* Hagrid Heavy is 900; match it with Source Sans 3 Black so the Vietnamese hero keeps the same weight. */
-:root:lang(vi) .display { font-weight: 900; }
-
 /* ===== opening intro: logo + MOVAGO → MOVE AI GO → drop into Home ===== */
 .intro {
   position: fixed; inset: 0; z-index: 100; overflow: hidden;
-  background: linear-gradient(135deg, #f1f1ef 0%, #e7e7e7 52%, #dde2e6 100%); color: var(--navy);
+  background: var(--ice); color: var(--navy);
   display: grid; place-items: center; cursor: pointer; transform: translateY(0);
-  font-family: var(--f-display);
+  font-family: var(--f-wordmark);
   animation: intro-drop 0.72s cubic-bezier(0.7, 0, 0.84, 0) 2.48s forwards;
   will-change: transform;
 }
@@ -510,13 +510,13 @@ select:disabled { cursor: not-allowed; opacity: 0.6; }
 .intro-word {
   display: flex; align-items: baseline; gap: 0; font-size: clamp(42px, 9.2vw, 132px); font-weight: 750;
   line-height: 1; letter-spacing: 0.012em; padding: 0.04em 0.055em 0.06em 0;
-  text-shadow: none; font-family: var(--f-display);
+  text-shadow: none; font-family: var(--f-wordmark);
   animation: intro-split 0.38s cubic-bezier(0.16, 1, 0.3, 1) 1.78s forwards;
 }
 @keyframes intro-split { to { gap: 0.23em; } }
 .intro-group { display: inline-flex; }
 .intro-add {
-  display: inline-block; overflow: hidden; max-width: 0; opacity: 0; color: #afcf55; transform: translateY(0.16em);
+  display: inline-block; overflow: hidden; max-width: 0; opacity: 0; color: var(--lime); transform: translateY(0.16em);
   -webkit-text-stroke: 0;
   filter: none;
   text-shadow: none;
