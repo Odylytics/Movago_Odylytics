@@ -1,4 +1,4 @@
-# Kịch bản demo Movago — "One price, many invoices" (~3:00)
+# Kịch bản demo Movago — "One price, many invoices" (khoảng 3:20)
 
 **Soạn ngày 10/11/2026.** Lời thoại (narration) và chữ trên màn hình (on-screen) viết bằng tiếng Anh cho ban giám khảo. Phần mô tả hình và animation viết bằng tiếng Việt cho người dựng demo.
 
@@ -158,9 +158,37 @@
 
 **Narration:** "The chief accountant approves the right amount, and the customer is billed only for what was confirmed."
 
-### Cảnh 12 · Mô phỏng chi phí: trước → sau (2:33–2:50)
+### Cảnh 12 · Mô phỏng giảm tải: công nghệ nào cắt bao nhiêu phút (2:33–3:13)
 
-**Hình:** Hai cột đặt cạnh nhau trên nền navy, ghi rõ ở góc **"Illustrative scenario · not pilot results"**. Bộ số lấy đúng kịch bản minh họa trong brief và trang Business case trên web.
+Cảnh này chia 2 nhịp. Cả cảnh ghi rõ ở góc **"Illustrative scenario · not pilot results"**. Tổng 15 → 9 phút và bộ số 1.000 hóa đơn, 60.000 ₫/giờ, 3 triệu ₫/tháng lấy đúng kịch bản minh họa trong [brief](colio_ai_project_brief.md) và trang Business case trên web. **Cách chia phút theo từng bước là giả định của đội**, pilot sẽ bấm giờ từng bước để thay bằng số đo thật.
+
+#### Nhịp 1 · Từng bước, từng công nghệ (2:33–2:55)
+
+**Hình:** Một thanh ngang dài 15 phút chia thành 5 đoạn màu theo 5 bước kiểm tra một hóa đơn. Lần lượt từng đoạn co lại, và chip công nghệ của bước đó bay vào nằm cạnh đoạn vừa co.
+
+| Bước kiểm tra một hóa đơn | Thủ công | Với Movago | Công nghệ phụ trách | Trạng thái |
+|---|---|---|---|---|
+| 1. Gom chứng từ từ email, Zalo, bản giấy; loại bản gửi trùng | 3 phút | 1,5 phút | Email ingestion (IMAP / Gmail API) · Zalo OA / Messenger webhooks · mobile camera capture · SHA-256 file fingerprint · grouping by supplier + invoice number | SHA-256 đã dựng; các kênh nhận là dự kiến |
+| 2. Đọc hóa đơn, gõ từng dòng phí vào Excel | 4 phút | 2,5 phút | OCR + layout AI (e.g. Azure AI Document Intelligence) · LLM mapping of Vietnamese–English fee names to fee codes · confidence score, low confidence → a person | Dự kiến (demo đang mô phỏng) |
+| 3. Tìm hồ sơ lô và đúng dòng giá theo tuyến, container, đơn vị, ngày | 4 phút | 2,5 phút | Shipment matching by ID or B/L + supplier · rules engine for route, container, unit and validity date · rate card built from the carrier quotation | Đã dựng |
+| 4. So từng dòng, tính chênh lệch, kiểm tra phép cộng | 2 phút | 1 phút | Rules engine (TypeScript, 14 automated tests) · line-by-line and total checks | Đã dựng |
+| 5. Gửi pricing xác minh, theo dõi trả lời, lập báo cáo | 2 phút | 1,5 phút | AI agent drafts the verification request with evidence and follows up · CSV / Excel export with sources, verifier and time · audit log stored in Vietnam · ERP / TMS connectors later | Xuất CSV đã dựng; agent, audit log, ERP là dự kiến |
+| **Tổng** | **15 phút** | **9 phút** | | |
+
+**Animation:**
+
+- Mỗi đoạn co lại trong khoảng 3 giây, số phút đếm ngược ngay trên đoạn (ví dụ `4:00 → 2:30`).
+- Chip công nghệ **đã dựng** có viền liền và chữ đậm; chip **dự kiến** có viền nét đứt và nhãn nhỏ `planned`.
+- Phần còn lại của mỗi đoạn giữ màu nhạt, ghi `human review`, để cho thấy Movago không thay người duyệt.
+- Kết thúc nhịp: thanh 15 phút còn 9 phút, hiện `−6 min per invoice (−40%)`.
+
+**On-screen:** `Each step keeps a person in the loop. The machine does the typing, finding and maths.`
+
+**Narration:** "Here's where the minutes go. Intake and fingerprinting gather every copy once. OCR and layout AI read the lines, and a person confirms anything uncertain. The rules engine finds the right shipment and price and does the maths. An AI agent drafts the request to pricing with the evidence attached. Fifteen minutes becomes nine, and a person still decides."
+
+#### Nhịp 2 · Cộng lại cho một tháng (2:55–3:13)
+
+**Hình:** Hai cột đặt cạnh nhau trên nền navy.
 
 | | Trước (thủ công) | Với Movago |
 |---|---|---|
@@ -177,14 +205,16 @@
 
 **On-screen:** `100 hours a month back to the team. Overcharges stopped, one confirmed case at a time.`
 
-**Narration:** "In our illustrative scenario, a team handling a thousand invoices a month saves six minutes on each, about a hundred hours a month. Money stopped from overcharges is counted separately, and only when it's confirmed. Our pilot measures both."
+**Narration:** "Across a thousand invoices a month, that's about a hundred hours back to the team. It breaks even at three minutes saved per invoice. Money stopped from overcharges is counted separately, and only when it's confirmed. Our pilot measures both."
 
 **Quy tắc khi dựng cảnh này:**
 
 - Thời gian được giải phóng là **năng lực làm việc**, không phải tiền mặt tiết kiệm được. Không ghi "save 6 million".
 - Khoản 800.000 ₫ là tiền thật của ca INV-095 giả lập. Không nhân nó lên thành số "tiết kiệm mỗi tháng" khi chưa có pilot.
+- Không gắn từng phút cho riêng một công nghệ như một kết quả đo. Bảng ở nhịp 1 là giả định để giải thích, nên luôn đi kèm nhãn `Illustrative`.
+- "AI agent" chỉ dùng cho bước 5 và luôn ghi `planned`. Agent soạn yêu cầu và nhắc theo dõi; quyền xác nhận giá và duyệt chi vẫn thuộc người.
 
-### Cảnh 13 · Chốt (2:50–3:00)
+### Cảnh 13 · Chốt (3:13–3:23)
 
 **Hình:** Thẻ tóm tắt trên nền navy, rồi logo và slogan.
 
@@ -205,11 +235,11 @@ Team Odylytics · KTC Ideathon 2026
 ## Ghi chú cho người dựng
 
 - **Khớp số liệu:** báo giá Q-SA-2611 có **9 dòng**; bảng giá RATE-V3 có **12 dòng** (thêm giá đã hết hạn, Supplier B và tuyến chiều ngược lại), phí DOC 20' nằm ở **dòng 12**. Demo hiện tại đúng. Chỉ cần lời thoại cảnh 5 và màn hình nói rõ hai con số này để giám khảo không nhầm.
-- **Thời lượng:** tổng khoảng 3:00, khớp với chữ "3-minute" ở intro. Để giữ 3:00 khi thêm cảnh xử lý và mô phỏng chi phí, đã cắt cảnh hóa đơn gửi lại (tính năng vẫn còn trên web để giám khảo tự thử) và rút cảnh 2, 4, 5. Bảng chọn nhân vật đang ghi "under two minutes", cần đổi thành 3 phút.
+- **Thời lượng:** không cố định 3:00. Bản hiện tại khoảng 3:20; mốc thời gian từng cảnh chỉ để ước lượng, người dựng chỉnh theo bản thu giọng. Nếu muốn, có thể thêm lại cảnh hóa đơn gửi lại (khoảng 8 giây) sau cảnh 9. Khi chốt độ dài, cập nhật chữ "3-minute" ở intro và "under two minutes" ở bảng chọn nhân vật cho khớp, ví dụ "about 3 minutes".
 - **Vai trò cạnh tên:** luôn ghi như *Hà (AP)*, *Khoa (Pricing)*, *Vy (Supplier A)*, *Lan Anh (Chief accountant)* để người nước ngoài theo dõi được.
 - **USD:** dùng tỷ giá chung của dự án **1 USD = 25.500 ₫** (09/11/2026), ghi "~" vì là số làm tròn.
 - **Giả lập:** cảnh 2, 12 và 13 phải ghi rõ là giả lập, không phải kết quả pilot, theo đúng [brief Movago](colio_ai_project_brief.md).
-- **Lời thoại:** mỗi cảnh một câu chính, khoảng 15–25 chữ. Toàn bài khoảng 355 chữ, khoảng 120 chữ/phút, đọc thong thả trong 3 phút và còn chỗ cho nhịp dừng ở cảnh 8.
+- **Lời thoại:** mỗi cảnh một câu chính, khoảng 15–25 chữ. Toàn bài khoảng 415 chữ, khoảng 125 chữ/phút trong 3:20, đọc thong thả và còn chỗ cho nhịp dừng ở cảnh 8. Lời thoại cảnh 12 dài nhất vì phải kể 5 công nghệ.
 - **Màu và font:** theo [quy tắc thiết kế demo](DEMO_DESIGN_RULES.md). Transit Lime cho tiêu đề chiến dịch, tiến trình và điểm nhấn; không dùng Lime một mình để báo lỗi ở cảnh 8.
 
 ## Còn cần gì nữa? (rà ngày 10/11/2026)
@@ -229,13 +259,13 @@ Hạng mục dự thi là Operations & Productivity. Tỷ trọng chấm lấy t
 
 1. **Một câu về khác biệt**, chèn vào cảnh 9 hoặc đọc trên sân khấu: *"Unlike a TMS that compares invoices with its own cost estimates, Movago checks each line against the rate card pricing approved, and shows both sources."* Nội dung lấy từ [phân tích cạnh tranh](nghien_cuu_tung_slide/phan_tich_canh_tranh.md) (G.O.L, Innomation, ShipCheck, Conlio, BravoTran, CargoWise IPP).
 2. **Phụ đề tiếng Anh** cho toàn video. Nhiều giám khảo xem không bật tiếng. Chữ trên màn hình đã có, nhưng lời thoại cũng cần phụ đề.
-3. **Giọng đọc:** khoảng 355 chữ trong 3:00, tức khoảng 120 chữ/phút. Nên thu thử một lần để đo lại thời lượng từng cảnh trước khi dựng animation.
+3. **Giọng đọc:** khoảng 415 chữ trong khoảng 3:20, tức khoảng 125 chữ/phút. Nên thu thử một lần để đo lại thời lượng từng cảnh trước khi dựng animation.
 4. **Câu trả lời sẵn cho 3 câu hỏi giám khảo hay hỏi sau khi xem video.** Video đã gợi ý câu trả lời ở các cảnh tương ứng, phần đầy đủ nằm trong [phụ lục Q&A](nghien_cuu_tung_slide/Movago_Appendix_QA_EN.pptx) và [kịch bản hỏi đáp](colio_ai_pitch_research_vi.md):
    - *Nếu AI đọc sai?* → cảnh 7: dòng tin cậy thấp chuyển cho người.
    - *Dữ liệu tài chính có an toàn không?* → cảnh 5: chip "Stored in Vietnam · audit log", ghi là dự kiến.
    - *Sao không dùng TMS/ERP?* → câu khác biệt ở mục 1.
 5. **Nghị định 254/2026:** mới có bản tóm tắt. Chưa đọc điều khoản phía người mua (nhận, điều chỉnh, thay thế hóa đơn), nên video chỉ nói "new e-invoice rules", không nói nghị định bắt buộc doanh nghiệp phải kiểm tra.
-6. **Hai kịch bản demo song song:** [colio_ai_pitch_research_vi.md](colio_ai_pitch_research_vi.md) giữ kịch bản **demo trực tiếp** (bấm trên web khi thuyết trình), còn tệp này là kịch bản **video dựng sẵn**. Giữ cả hai, nhưng dùng chung số liệu: +800.000 ₫ (~US$31), RATE-V3 dòng 12, 3 phút.
+6. **Hai kịch bản demo song song:** [colio_ai_pitch_research_vi.md](colio_ai_pitch_research_vi.md) giữ kịch bản **demo trực tiếp** (bấm trên web khi thuyết trình), còn tệp này là kịch bản **video dựng sẵn**. Giữ cả hai, nhưng dùng chung số liệu: +800.000 ₫ (~US$31), RATE-V3 dòng 12, và cùng một cách ghi thời lượng ("about 3 minutes").
 7. **Hạn nộp:** brief ghi chốt deck, video và hồ sơ ngày **13/11**. Video cần dựng xong trước 12/11 để còn thời gian tập.
 
 ## Nguồn số liệu
