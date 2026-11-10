@@ -45,7 +45,7 @@ function Money({ n, lang, sign = false }: { n: number; lang: Lang; sign?: boolea
 }
 
 export default function Workspace({ story }: { story: boolean }) {
-  const { t, money, signed, plain, lang } = useT()
+  const { t, money, plain, lang } = useT()
   const [caseId, setCaseId] = useState('INV-095')
   const c = CASES.find((x) => x.id === caseId) as DemoCase
   const [allLines, setAllLines] = useState<Row[] | null>(null)
@@ -463,7 +463,7 @@ export default function Workspace({ story }: { story: boolean }) {
 
         {l.diff !== null && l.unitPrice !== null && (
           <div className="calc">
-            {t('calc')}: {plain(l.invoiced)} − ({l.quantity} × {plain(l.unitPrice)}) = <b>{l.diff > 0 ? '+' : l.diff < 0 ? '−' : ''}{plain(Math.abs(l.diff))}</b> ({t('pretax')})
+            {t('calc')}: {plain(l.invoiced)} − ({l.expectedQty} × {plain(l.unitPrice)}) = <b>{l.diff > 0 ? '+' : l.diff < 0 ? '−' : ''}{plain(Math.abs(l.diff))}</b> ({t('pretax')})
           </div>
         )}
         <p className="callout" style={{ marginTop: 12 }}>{t(why)}</p>

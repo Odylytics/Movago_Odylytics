@@ -37,6 +37,8 @@ export interface LineResult {
   unit: string
   invoiced: number
   expected: number | null
+  /** Quantity the shipment record supports for this unit; null when no rate was applied. */
+  expectedQty: number | null
   unitPrice: number | null
   diff: number | null
   status: LineStatus
@@ -100,23 +102,26 @@ export function reconcile(header: InvoiceHeader, invoiceLines: Row[], shipments:
       invoiceSource: { page: num(l.page), lineLabel: l.line_label, csvLine: num(l._line) },
     }
     const missing = (reasonCode: ReasonCode, reason: string): LineResult => ({
-      ...base, expected: null, unitPrice: null, diff: null, status: 'missing_basis', reasonCode, reason, rateSource: null,
+      ...base, expected: null, expectedQty: null, unitPrice: null, diff: null, status: 'missing_basis', reasonCode, reason, rateSource: null,
     })
     if (!shipment) return missing('no_shipment', issue ?? 'Shipment not matched.')
     const hits = candidateRates(shipment, l.fee_code, l.unit, header.currency, rates)
     if (hits.length === 0) return missing('no_rate', `No approved rate for ${l.fee_code} per ${l.unit} on ${shipment.rating_date}. Add the rate or an approval.`)
     if (hits.length > 1) return missing('ambiguous', `${hits.length} approved rates match ${l.fee_code} with no priority rule; pricing must confirm which applies.`)
     const r = hits[0]
-    const expected = num(l.quantity) * num(r.unit_price)
+    // shortcut: only per-container and per-B/L units are checked against the shipment; other units (per day, per CBM) trust the invoice until event data exists.
+    const expectedQty = l.unit === 'CONTAINER' ? num(shipment.container_count) : l.unit === 'BL' ? num(shipment.bl_count) : num(l.quantity)
+    const expected = expectedQty * num(r.unit_price)
     const diff = num(l.amount) - expected
     return {
       ...base,
       expected,
+      expectedQty,
       unitPrice: num(r.unit_price),
       diff,
       status: diff === 0 ? 'matched' : 'discrepancy',
       reasonCode: diff === 0 ? 'ok' : 'diff',
-      reason: diff === 0 ? 'Matches the approved rate.' : 'Invoiced amount differs from the approved rate; ask pricing whether an extra approval exists.',
+      reason: diff === 0 ? 'Matches the approved rate.' : 'Invoiced amount differs from the shipment quantity at the approved rate; ask pricing whether an extra approval exists.',
       rateSource: { rateCard: r.rate_card, line: num(r._line) },
     }
   })

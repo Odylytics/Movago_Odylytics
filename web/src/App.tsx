@@ -24,9 +24,9 @@ function useHash() {
   return hash
 }
 
-export function Mark() {
+export function Mark({ className = 'brand-mark' }: { className?: string }) {
   return (
-    <svg className="brand-mark" viewBox="0 0 32 32" aria-hidden="true">
+    <svg className={className} viewBox="0 0 32 32" aria-hidden="true">
       <rect width="32" height="32" rx="8" fill="#0B1F44" />
       <path d="M8 21l6-10 4 6 2-3 4 7" fill="none" stroke="#fff" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round" />
       <path d="M21 9h4v4" fill="none" stroke="#2878FF" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round" />

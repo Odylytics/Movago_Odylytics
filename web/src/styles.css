@@ -459,6 +459,11 @@ select:disabled { cursor: not-allowed; opacity: 0.6; }
 }
 .stats > *, .calc-box > * { min-width: 0; }
 
+/* The licensed Hagrid kit has no Vietnamese glyphs (ủ, ế, đ… fall back mid-word), so Vietnamese headings use the UI stack.
+   The intro wordmark is always Latin and keeps Hagrid. */
+:root:lang(vi) { --f-display: var(--f-ui); }
+:root:lang(vi) .intro { --f-display: 'Hagrid', var(--f-ui); }
+
 /* ===== opening intro: logo + MOVAGO → MOVE AI GO → drop into Home ===== */
 .intro {
   position: fixed; inset: 0; z-index: 100; overflow: hidden;

@@ -32,7 +32,7 @@ Deck chính có 15 trang, đúng giới hạn bài nộp. Bốn slide đánh d�
 
 Phụ lục: #1 Dữ liệu tài chính có an toàn không · #2 Nếu AI đọc sai · #3 Sao không dùng TMS/ERP · #4 Đo tác động · #5 Kiến trúc và tech stack · Tài liệu tham khảo.
 
-**Tech stack (phụ lục #5, tóm tắt ở slide 12).** Năm lớp: nhận chứng từ, AI đọc, quy tắc, duyệt và xuất, hạ tầng. Demo chạy React + TypeScript + Vite trên Vercel, rules engine TypeScript có 13 test Vitest, SHA-256 bằng Web Crypto; bước AI đọc là mô phỏng. Pilot dự kiến Azure Document Intelligence hoặc LLM, Gmail/IMAP, webhook Zalo OA, cơ sở dữ liệu lưu tại Việt Nam có audit log, kết nối ERP/TMS.
+**Tech stack (phụ lục #5, tóm tắt ở slide 12).** Năm lớp: nhận chứng từ, AI đọc, quy tắc, duyệt và xuất, hạ tầng. Demo chạy React + TypeScript + Vite trên Vercel, rules engine TypeScript có 14 test Vitest, SHA-256 bằng Web Crypto; bước AI đọc là mô phỏng. Pilot dự kiến Azure Document Intelligence hoặc LLM, Gmail/IMAP, webhook Zalo OA, cơ sở dữ liệu lưu tại Việt Nam có audit log, kết nối ERP/TMS.
 
 > Phần nội dung chi tiết bên dưới giữ đánh số 10 slide cũ. Số slide trong deck đã đổi theo bảng trên.
 

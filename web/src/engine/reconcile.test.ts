@@ -53,9 +53,19 @@ describe('acceptance cases', () => {
     expect(line(r, 'DOC')).toMatchObject({ status: 'missing_basis', diff: null })
   })
 
-  it('expired rate version is not used', () => {
-    const r = run('INV-095')
-    expect(line(r, 'OCEAN').unitPrice).toBe(8_000_000)
+  it('rate version follows the rating date: an October shipment is priced on RATE-V2', () => {
+    const c = CASES.find((x) => x.id === 'INV-095')!
+    const october = csv(c.shipmentFile).map((s) => ({ ...s, rating_date: '2026-10-15' }))
+    const r = reconcile(c.header, csv('invoice-lines.csv'), october, csv(c.rateFile))
+    expect(line(r, 'OCEAN')).toMatchObject({ status: 'discrepancy', unitPrice: 7_500_000, diff: 500_000 })
+  })
+
+  it('quantity comes from the shipment: two containers invoiced on a one-container shipment is a discrepancy', () => {
+    const c = CASES.find((x) => x.id === 'INV-095-MATCH')!
+    const lines = csv('invoice-lines.csv').map((l) => (l.invoice_id === c.id && l.fee_code === 'OCEAN' ? { ...l, quantity: '2', amount: '16000000' } : l))
+    const r = reconcile(c.header, lines, csv(c.shipmentFile), csv(c.rateFile))
+    expect(line(r, 'OCEAN')).toMatchObject({ status: 'discrepancy', expectedQty: 1, expected: 8_000_000, diff: 8_000_000 })
+    expect(r.arithmeticOk).toBe(false) // 16,500,000 on the lines against a stated 8,500,000
   })
 })
 

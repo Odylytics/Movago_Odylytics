@@ -11,7 +11,7 @@ A runnable MVP of Movago: it checks each line of a freight invoice against the s
 ```bash
 npm install
 npm run dev        # http://localhost:5173
-npm test           # 7 reconciliation acceptance cases + 3 ROI cases
+npm test           # 14 tests: 8 reconciliation, 3 rate-card builder, 3 ROI
 npm run build      # static site in dist/
 ```
 

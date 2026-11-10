@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { Mark } from './App'
 
 // Mount on every page load so a browser refresh always replays the intro.
 // Hash navigation does not remount App, so it will not interrupt the user mid-session.
@@ -34,11 +35,7 @@ export default function Intro() {
     >
       <div className="intro-stage">
         <div className="intro-brand">
-          <svg className="intro-mark" viewBox="0 0 32 32" aria-hidden="true">
-            <rect width="32" height="32" rx="8" fill="#0B1F44" />
-            <path d="M8 21l6-10 4 6 2-3 4 7" fill="none" stroke="#fff" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round" />
-            <path d="M21 9h4v4" fill="none" stroke="#2878FF" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round" />
-          </svg>
+          <Mark className="intro-mark" />
 
           <div className="intro-word-wrap">
             <div className="intro-word" aria-label="MOVE AI GO">

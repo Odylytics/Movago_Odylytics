@@ -40,4 +40,4 @@ Hai lối vào *Xem tình huống* và *Tự thử* học theo [Unfound](https:/
 
 ## Trạng thái
 
-Đã dựng xong trong `web/` và chạy tại https://movago-odylytics.vercel.app. `npm test` chạy 10 test (7 ca đối chiếu và 3 ca ROI), `npm run build` tạo web tĩnh. Định tuyến dùng hash nên chạy được trên mọi host tĩnh. Cách chạy và phần nào là mô phỏng: [web/README.md](web/README.md).
+Đã dựng xong trong `web/` và chạy tại https://movago-odylytics.vercel.app. `npm test` chạy 14 test (8 ca đối chiếu, 3 ca dựng bảng giá và 3 ca ROI), `npm run build` tạo web tĩnh. Định tuyến dùng hash nên chạy được trên mọi host tĩnh. Cách chạy và phần nào là mô phỏng: [web/README.md](web/README.md).
