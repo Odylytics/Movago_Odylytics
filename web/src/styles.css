@@ -615,13 +615,13 @@ select:disabled { cursor: not-allowed; opacity: 0.6; }
 
 .scene-extract { display: grid; grid-template-columns: 1fr 1.1fr; gap: 28px; align-items: start; }
 .doc-wrap { background: var(--ice); border-radius: var(--r-ui); padding: 18px; }
-.doc { position: relative; background: var(--white); border: 1px solid var(--hairline); border-radius: var(--r-paper); padding: 18px 16px; display: grid; gap: 8px; font-size: 12px; overflow: hidden; }
+.doc { position: relative; background: var(--white); border: 1px solid var(--hairline); border-radius: var(--r-paper); padding: 14px 12px; display: grid; gap: 6px; font-size: 12px; overflow: hidden; }
 .doc-head { display: flex; justify-content: space-between; gap: 8px; align-items: center; font-size: 13px; }
 .doc .wm { font-size: 10px; font-weight: 800; letter-spacing: 0.08em; border: 1px solid var(--navy); padding: 1px 6px; border-radius: 2px; }
 .doc-meta { color: var(--slate); }
 .doc-line { display: flex; justify-content: space-between; gap: 8px; border-top: 1px solid var(--hairline); padding-top: 8px; font-variant-numeric: tabular-nums; }
 .doc-line span:last-child { font-weight: 700; }
-.hitrow { border-radius: 4px; animation: hit 1.2s ease-out; }
+.hitrow { border-radius: 4px; padding: 7px 10px; animation: hit 1.2s ease-out; }
 @keyframes hit { 0% { box-shadow: 0 0 0 0 transparent; background: transparent; } 20% { box-shadow: 0 0 0 2px var(--blue); background: var(--tint-blue); } 100% { box-shadow: 0 0 0 1px rgba(40, 120, 255, 0.35); background: transparent; } }
 .scanline { position: absolute; left: 0; right: 0; top: 0; height: 36px; background: linear-gradient(180deg, transparent, rgba(40, 120, 255, 0.22) 70%, var(--blue) 100%); transform: translateY(-40px); animation: sweep 2.4s cubic-bezier(0.65, 0, 0.35, 1) 0.4s forwards; pointer-events: none; }
 @keyframes sweep { 0% { transform: translateY(-40px); opacity: 1; } 90% { opacity: 1; } 100% { transform: translateY(260px); opacity: 0; } }
