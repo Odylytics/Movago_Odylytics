@@ -433,7 +433,8 @@ function addItem(form, q) {
   } else if (q.kind === 'grid') {
     var cols = [];
     for (var i = 1; i <= q.n; i++) cols.push(String(i));
-    item = form.addGridItem().setTitle(q.text).setRows(q.options).setColumns(cols).setRequireLimitOneResponsePerColumn(true);
+    item = form.addGridItem().setTitle(q.text).setRows(q.options).setColumns(cols);
+    item.setValidation(FormApp.createGridValidation().requireLimitOneResponsePerColumn().build());
   } else if (q.kind === 'paragraph') {
     item = form.addParagraphTextItem().setTitle(q.text);
   } else if (q.kind === 'number') {
