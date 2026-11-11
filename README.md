@@ -17,6 +17,7 @@
 | So sánh đối thủ, quy mô thị trường và lý do “why now” | [Phân tích cạnh tranh](nghien_cuu_tung_slide/phan_tich_canh_tranh.md) |
 | Khảo sát kế toán công nợ (Google Forms) | [Form khảo sát](nghien_cuu_tung_slide/form_khao_sat.md) |
 | Trả lời câu hỏi của giám khảo | [Phụ lục Q&A](nghien_cuu_tung_slide/Movago_Appendix_QA_EN.pptx) |
+| Đo bằng chứng học thuật cho khách hàng và nhà đầu tư | [Bộ A: khảo sát vấn đề và thị trường](so_lieu_minh_chung/bo_a_khao_sat_van_de_thi_truong.md) · [Bộ B: đánh giá web app](so_lieu_minh_chung/bo_b_danh_gia_web_app.md) |
 | Phỏng vấn kế toán công nợ để lấy số liệu thật | [Kịch bản phỏng vấn](nghien_cuu_tung_slide/phong_van_ke_toan_cong_no.md) |
 | Đo AI đọc hóa đơn thật | [Bộ kiểm thử trích xuất](nghien_cuu_tung_slide/kiem_thu_trich_xuat/README.md) |
 | Tra thông tin đội và hồ sơ công khai | [Đội Odylytics](ODYLYTICS_TEAM.md) |
