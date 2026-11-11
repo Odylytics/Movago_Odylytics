@@ -4,15 +4,15 @@
 // Muốn đẹp hơn: mở form → biểu tượng bảng màu (Customize theme) → chọn ảnh header, màu, font.
 
 function createForm() {
-  var form = FormApp.create('Join Odylytics · Tham gia Odylytics');
+  var form = FormApp.create('Build with Odylytics · Cùng xây dựng với Odylytics');
   form.setDescription(
-    'Odylytics is an AI research and engineering team founded by five students from the UTS – HCMUT collaborative program. ' +
-    'We start from real-world problems and emerging research, and turn them into practical solutions people can actually use, such as AquaGuard. ' +
-    'Have an idea worth building, or want to join us? Leave your details, it takes about 1 minute.\n' +
+    "Hi! 👋 We're Odylytics, an AI research and engineering team started by five students from the UTS – HCMUT program. " +
+    'We turn real-world problems and fresh research into things people can actually use, like AquaGuard.\n' +
+    'Got an idea worth building? Want to join the team or build something together? Tell us a little about yourself, it only takes a minute.\n' +
     '🌐 odylytics.com · ✉️ odylytics@gmail.com\n\n' +
-    'Odylytics là đội ngũ nghiên cứu và phát triển công nghệ AI, do 5 sinh viên chương trình liên kết UTS – ĐH Bách khoa (ĐHQG-HCM) sáng lập. ' +
-    'Chúng tôi bắt đầu từ những vấn đề thực tế và nghiên cứu mới để làm ra giải pháp có giá trị ứng dụng, như AquaGuard. ' +
-    'Bạn có ý tưởng đáng làm, hoặc muốn cùng làm với chúng tôi? Để lại thông tin, chỉ mất khoảng 1 phút.\n' +
+    'Xin chào! 👋 Chúng tôi là Odylytics, đội ngũ nghiên cứu và phát triển công nghệ AI do 5 sinh viên chương trình liên kết UTS – ĐH Bách khoa (ĐHQG-HCM) sáng lập. ' +
+    'Chúng tôi biến những vấn đề thực tế và nghiên cứu mới thành giải pháp người ta thật sự dùng được, như AquaGuard.\n' +
+    'Bạn có ý tưởng đáng làm? Muốn gia nhập đội ngũ hoặc cùng làm một dự án? Hãy giới thiệu đôi chút về bạn, chỉ mất khoảng 1 phút.\n' +
     '🌐 odylytics.com · ✉️ odylytics@gmail.com\n\n' +
     'Odylytics — Engineering Intelligence.'
   );
@@ -22,17 +22,17 @@ function createForm() {
 
   // Page 1: intent (branches to the project page only for "invite us")
   var intent = form.addMultipleChoiceItem()
-    .setTitle('What brings you here? / Bạn đến với Odylytics vì điều gì?')
+    .setTitle('How would you like to be part of Odylytics? / Bạn muốn đồng hành cùng Odylytics như thế nào?')
     .setRequired(true);
 
   // Page 2 (only if inviting Odylytics to a project)
-  var pProject = form.addPageBreakItem().setTitle('Your project · Dự án của bạn');
+  var pProject = form.addPageBreakItem().setTitle('Tell us your idea · Kể chúng tôi nghe ý tưởng của bạn');
   form.addParagraphTextItem()
     .setTitle('Tell us about your project in 2–3 lines / Giới thiệu ngắn dự án của bạn (2–3 dòng)')
     .setRequired(true);
 
   // Page 3: about you
-  var pAbout = form.addPageBreakItem().setTitle('About you · Về bạn');
+  var pAbout = form.addPageBreakItem().setTitle('A little about you · Đôi nét về bạn');
   form.addTextItem().setTitle('Full name / Họ và tên').setRequired(true);
   form.addTextItem().setTitle('Age / Tuổi').setRequired(true)
     .setValidation(FormApp.createTextValidation().requireNumberBetween(10, 99).build());
