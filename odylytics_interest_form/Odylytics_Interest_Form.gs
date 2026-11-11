@@ -6,14 +6,19 @@
 function createForm() {
   var form = FormApp.create('Join Odylytics · Tham gia Odylytics');
   form.setDescription(
-    'Odylytics is a student-founded AI group in Ho Chi Minh City, building products for disaster response and accessibility. ' +
-    'Our AquaGuard won 1st prize at EPICS 8 (2026). Want to build with us? Leave your details, it takes about 1 minute. → odylytics.com\n\n' +
-    'Odylytics là nhóm AI do sinh viên sáng lập tại TP.HCM, làm sản phẩm về ứng phó thiên tai và hỗ trợ tiếp cận. ' +
-    'AquaGuard của tụi mình đạt giải Nhất EPICS 8 (2026). Muốn cùng làm với tụi mình? Để lại thông tin, chỉ mất khoảng 1 phút. → odylytics.com'
+    'Odylytics is an AI research and engineering team founded by five students from the UTS – HCMUT collaborative program. ' +
+    'We start from real-world problems and emerging research, and turn them into practical solutions people can actually use. ' +
+    'Have an idea worth building, or want to join us? Leave your details, it takes about 1 minute.\n' +
+    '🌐 odylytics.com · ✉️ odylytics@gmail.com\n\n' +
+    'Odylytics là đội ngũ nghiên cứu và phát triển công nghệ AI, do 5 sinh viên chương trình liên kết UTS – ĐH Bách khoa (ĐHQG-HCM) sáng lập. ' +
+    'Chúng tôi bắt đầu từ những vấn đề thực tế và nghiên cứu mới để làm ra giải pháp có giá trị ứng dụng. ' +
+    'Bạn có ý tưởng đáng làm, hoặc muốn cùng làm với chúng tôi? Để lại thông tin, chỉ mất khoảng 1 phút.\n' +
+    '🌐 odylytics.com · ✉️ odylytics@gmail.com\n\n' +
+    'Odylytics — Engineering Intelligence.'
   );
   form.setProgressBar(true);
   form.setCollectEmail(false);
-  form.setConfirmationMessage('Thank you! We will be in touch soon. · Cảm ơn bạn! Odylytics sẽ liên hệ sớm.');
+  form.setConfirmationMessage('Thank you! We will be in touch soon. Questions? odylytics@gmail.com\nCảm ơn bạn! Odylytics sẽ liên hệ sớm. Cần hỏi thêm: odylytics@gmail.com');
 
   // Page 1: intent (branches to the project page only for "invite us")
   var intent = form.addMultipleChoiceItem()
