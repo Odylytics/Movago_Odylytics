@@ -4,7 +4,7 @@
 
 ## Quy tắc chung
 
-- **Độ dài:** khoảng 1:20–1:30. Lời thoại khoảng 190 từ, đọc 140 từ/phút là khoảng 80 giây, còn lại là khoảng lặng. Mốc thời gian chỉ để ước lượng, người dựng chỉnh theo bản thu giọng.
+- **Độ dài:** khoảng 1:20–1:30. Lời thoại khoảng 210 từ, đọc 150 từ/phút là khoảng 85 giây. Nếu đọc chậm hơn và vượt 1:30, cắt câu "No guessing where the number came from." ở shot 6 trước. Mốc thời gian chỉ để ước lượng, người dựng chỉnh theo bản thu giọng.
 - **Sản phẩm phải có trên hình từ giây đầu tiên.** Mọi shot đều là giao diện Movago hoặc chứng từ trong demo.
 - **Không nói tính năng dự kiến như đã chạy.** Hai việc demo đang mô phỏng là đọc PDF bằng OCR/AI và nhận chứng từ từ email hay Zalo. Shot nào có hai việc này phải có nhãn góc: `Prototype simulation · planned document AI`.
 - **Phần đã dựng thật:** bảng giá từ báo giá, ghép lô, chọn giá theo tuyến, container, đơn vị và ngày, đối chiếu từng dòng, hiện căn cứ hai phía, gửi xác minh, xuất CSV.
