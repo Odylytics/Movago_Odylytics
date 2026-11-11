@@ -84,7 +84,7 @@ function createForm() {
     intent.createChoice('Join the Odylytics team / Tham gia đội ngũ Odylytics', pAbout),
     intent.createChoice('Collaborate on an upcoming Odylytics project / Cùng làm dự án sắp tới của Odylytics', pAbout),
     intent.createChoice('Invite Odylytics to join my project / Mời Odylytics tham gia dự án của mình', pProject),
-    intent.createChoice('Just say hi / Chỉ muốn làm quen', pAbout)
+    intent.createChoice('Stay updated on Odylytics news / Để lại thông tin để nhận cập nhật từ Odylytics', pAbout)
   ]);
 
   Logger.log('Sửa form: ' + form.getEditUrl());
