@@ -52,7 +52,11 @@ function createForm() {
   form.addTextItem().setTitle('Email').setRequired(true)
     .setValidation(FormApp.createTextValidation().requireTextIsEmail().build());
   form.addTextItem()
-    .setTitle('Phone / Zalo / LinkedIn (optional) · Số điện thoại / Zalo / LinkedIn (không bắt buộc)')
+    .setTitle('Phone number / Zalo (optional) · Số điện thoại / Zalo (không bắt buộc)')
+    .setRequired(false);
+  form.addTextItem()
+    .setTitle('LinkedIn (optional) · LinkedIn (không bắt buộc)')
+    .setHelpText('Profile link · Link trang cá nhân')
     .setRequired(false);
 
   // Page 4: founding team
