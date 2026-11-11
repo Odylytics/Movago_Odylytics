@@ -28,12 +28,12 @@ For each task the observer records **success** (correct, no help), **success wit
 
 | Task | Read to the participant verbatim | Correct result | Case (see [web/README](../web/README.md)) |
 |---|---|---|---|
-| T1 | "Open the invoice case `INV-095` and tell me whether there is a problem with this invoice." | States that the DOC fee is **+800,000 VND over, pre-tax**. | `INV-095` |
+| T1 | "Open the invoice case `INV-095`, run the reconciliation and tell me whether there is a problem with this invoice." | States that the DOC fee is **+800,000 VND over, pre-tax**. | `INV-095` |
 | T2 | "Show me what evidence supports that difference." | Opens both sides of the evidence: the DOC line on the invoice (page 1) and line 12 of the `RATE-V3` rate card. | `INV-095` |
-| T3 | "Request verification for this item and record a reason." | Completes the verification step with a reason. | `INV-095` |
-| T4 | "Export a report you could send to the chief accountant." | Exports the CSV file. | `INV-095` |
-| T5 | "Now open `INV-095-NORATE`. How is this invoice different from the previous one?" | Distinguishes **Missing basis** (no reference rate) from **Discrepancy found**. | `INV-095-NORATE` |
-| T6 | "Upload the file `INV-095-resent.pdf`. How does the system react?" | Notices the system reports the file as already received (same content as `INV-095.pdf`). | resent |
+| T3 | "Request verification for this item and record a reason." | Clicks **Request verification**, picks a recipient, writes a reason and sends; the status changes to **Sent for verification**. | `INV-095` |
+| T4 | "Export a report you could send to the chief accountant." | Clicks **Export CSV** and downloads the file. | `INV-095` |
+| T5 | "Now open `INV-095-NORATE`. How is this invoice different from the previous one?" | Distinguishes **Missing basis** (no reference rate) from **Discrepancy**. The participant notices that the expected amount and difference are left empty. | `INV-095-NORATE` |
+| T6 | "Send the `INV-095` invoice again under a new file name. How does the system react?" | Notices the system reports **Duplicate of an invoice already received** (same content as `INV-095.pdf`). The moderator hands over `INV-095-resent.pdf` (from the sample files list) or lets the participant use the button **Simulate: resend INV-095 under a new name**; record which was used. | resent |
 | T7 | "Open `INV-VN-020` and tell me whether the system agrees with the invoice." | Names the THD line **+1,800,000 VND** over, and the DOF line as matching. | `INV-VN-020` |
 
 Keep T1→T7 in fixed order for the first part, because T1–T4 form the main flow. With 20 or more participants, randomise T5, T6, T7 and record the order used.
@@ -109,7 +109,7 @@ Scale 1–7 as above.
 | X2 | The evidence shown for each line is enough for me to check it myself. |
 | X3 | I trust the system's reconciliation result. |
 | X4 | I would still want to check the alerts myself before deciding to pay. |
-| X5 | I understand the difference between **Matches within the checked scope**, **Discrepancy found** and **Missing basis**. |
+| X5 | I understand the difference between **Matched**, **Discrepancy** and **Missing basis**. |
 | X6 | The **Missing basis** label reassures me more than the system guessing a price. |
 
 X4 and X6 ask about desired behaviour, not only confidence. A high score on X4 is a **good sign**: users understand that the system supports rather than replaces their decision.
@@ -119,7 +119,7 @@ X4 and X6 ask about desired behaviour, not only confidence. A high score on X4 i
 | # | Question | Correct answer |
 |---|---|---|
 | K1 | In case `INV-095`, which fee line holds the discrepancy? | The document fee (DOC). |
-| K2 | What does the label **Missing basis** mean? | The system found no suitable approved rate, so it does not calculate an expected amount. |
+| K2 | What does the label **Missing basis** mean? | No suitable approved rate applies (or several match with no priority rule), so the system leaves the expected amount and difference empty until pricing adds one. |
 
 The share answering K1 and K2 correctly is evidence that the interface communicates accurately, independent of subjective impressions.
 

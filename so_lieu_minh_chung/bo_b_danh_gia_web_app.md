@@ -28,12 +28,12 @@ Mỗi nhiệm vụ có kết quả đúng định trước. Người quan sát g
 
 | Nhiệm vụ | Đọc nguyên văn cho người tham gia | Kết quả đúng | Nguồn ca (theo [web/README](../web/README.md)) |
 |---|---|---|---|
-| T1 | "Hãy mở ca hóa đơn `INV-095` và cho biết hóa đơn này có vấn đề gì không." | Nói được khoản phí DOC lệch **+800.000 đồng trước thuế**. | `INV-095` |
+| T1 | "Hãy mở ca hóa đơn `INV-095`, chạy đối chiếu và cho biết hóa đơn này có vấn đề gì không." | Nói được khoản phí DOC lệch **+800.000 đồng trước thuế**. | `INV-095` |
 | T2 | "Cho tôi biết căn cứ nào chứng minh khoản lệch đó." | Mở được hai phía căn cứ: dòng DOC trên hóa đơn (trang 1) và dòng 12 của bảng giá `RATE-V3`. | `INV-095` |
-| T3 | "Hãy yêu cầu xác minh khoản này và ghi lý do." | Hoàn thành thao tác xác minh có ghi lý do. | `INV-095` |
-| T4 | "Hãy xuất báo cáo để gửi cho kế toán trưởng." | Xuất được tệp CSV. | `INV-095` |
-| T5 | "Bây giờ mở ca `INV-095-NORATE`. Hóa đơn này khác ca trước thế nào?" | Phân biệt được **Thiếu căn cứ** (không có giá tham chiếu), khác với **Có chênh lệch**. | `INV-095-NORATE` |
-| T6 | "Tải lại tệp `INV-095-resent.pdf`. Hệ thống phản ứng thế nào?" | Nhận ra hệ thống báo tệp đã tiếp nhận (trùng nội dung với `INV-095.pdf`). | resent |
+| T3 | "Hãy yêu cầu xác minh khoản này và ghi lý do." | Bấm **Yêu cầu xác minh**, chọn người nhận, ghi lý do và gửi; trạng thái chuyển sang **Đã chuyển xác minh**. | `INV-095` |
+| T4 | "Hãy xuất báo cáo để gửi cho kế toán trưởng." | Bấm **Xuất CSV** và tải được tệp. | `INV-095` |
+| T5 | "Bây giờ mở ca `INV-095-NORATE`. Hóa đơn này khác ca trước thế nào?" | Phân biệt được **Thiếu căn cứ** (không có giá tham chiếu), khác với **Có chênh lệch**. Người tham gia nhận ra mức kỳ vọng và chênh lệch để trống. | `INV-095-NORATE` |
+| T6 | "Hãy gửi lại hóa đơn `INV-095` với tên tệp mới. Hệ thống phản ứng thế nào?" | Nhận ra hệ thống báo **Trùng với hóa đơn đã tiếp nhận** (trùng nội dung với `INV-095.pdf`). Người điều phối đưa sẵn tệp `INV-095-resent.pdf` (tải ở mục tệp mẫu) hoặc cho dùng nút **Mô phỏng: gửi lại INV-095 với tên mới**; ghi lại cách đã dùng. | resent |
 | T7 | "Mở ca `INV-VN-020` và cho biết hệ thống có đồng ý với hóa đơn không." | Nêu được dòng THD lệch **+1.800.000 đồng**, dòng DOF khớp. | `INV-VN-020` |
 
 Thứ tự T1→T7 cố định cho phần đầu, vì T1–T4 là luồng chính. Với mẫu từ 20 người trở lên, đảo T5, T6, T7 ngẫu nhiên và ghi thứ tự đã dùng.
@@ -109,7 +109,7 @@ Thang 1–7 như trên.
 | X2 | Căn cứ hiển thị cho từng dòng đủ để tôi tự kiểm lại. |
 | X3 | Tôi tin kết quả đối chiếu của hệ thống. |
 | X4 | Tôi vẫn muốn tự kiểm tra lại các cảnh báo trước khi quyết định chi. |
-| X5 | Tôi hiểu sự khác nhau giữa **Khớp trong phạm vi kiểm tra**, **Có chênh lệch** và **Thiếu căn cứ**. |
+| X5 | Tôi hiểu sự khác nhau giữa **Khớp**, **Có chênh lệch** và **Thiếu căn cứ**. |
 | X6 | Nhãn **Thiếu căn cứ** khiến tôi yên tâm hơn là hệ thống tự đoán một mức giá. |
 
 Hai câu X4 và X6 hỏi về hành vi mong muốn, không chỉ độ tin. Trả lời cao ở X4 là **tín hiệu tốt**: người dùng hiểu hệ thống hỗ trợ chứ không thay quyết định.
@@ -119,7 +119,7 @@ Hai câu X4 và X6 hỏi về hành vi mong muốn, không chỉ độ tin. Tr�
 | # | Câu | Đáp án đúng |
 |---|---|---|
 | K1 | Ở ca `INV-095`, khoản lệch nằm ở dòng phí nào? | Phí chứng từ (DOC). |
-| K2 | Nhãn **Thiếu căn cứ** nghĩa là gì? | Hệ thống không tìm được giá đã duyệt phù hợp, nên không tính mức kỳ vọng. |
+| K2 | Nhãn **Thiếu căn cứ** nghĩa là gì? | Không có giá đã duyệt phù hợp (hoặc có nhiều giá cùng phù hợp chưa có quy tắc ưu tiên), nên hệ thống để trống mức kỳ vọng và chênh lệch cho đến khi pricing bổ sung. |
 
 Tỷ lệ trả lời đúng K1 và K2 là bằng chứng giao diện truyền đạt đúng, độc lập với cảm nhận chủ quan.
 
