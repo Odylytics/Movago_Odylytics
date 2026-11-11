@@ -2,7 +2,7 @@
 
 Đo **trước khi người trả lời xem demo**. Mục tiêu: chứng minh vấn đề có thật, đủ đau, đã có người tốn tiền để giải quyết, và biết ai quyết định mua. Bộ B ([đánh giá web app](bo_b_danh_gia_web_app.md)) đo phần còn lại sau khi dùng thử.
 
-Thời gian trả lời: 8–10 phút (Google Forms) hoặc 20 phút nếu đi cùng [kịch bản phỏng vấn](../nghien_cuu_tung_slide/phong_van_ke_toan_cong_no.md). Bản rút gọn 3 phút để lấy n lớn là [form_khao_sat.md](../nghien_cuu_tung_slide/form_khao_sat.md).
+Thời gian trả lời: khoảng 12–15 phút (Google Forms), hoặc 20 phút nếu đi cùng [kịch bản phỏng vấn](../nghien_cuu_tung_slide/phong_van_ke_toan_cong_no.md). Bản rút gọn 3 phút để lấy n lớn là [form_khao_sat.md](../nghien_cuu_tung_slide/form_khao_sat.md).
 
 ## Thiết kế nghiên cứu
 
@@ -18,7 +18,7 @@ Thời gian trả lời: 8–10 phút (Google Forms) hoặc 20 phút nếu đi c
 
 ### Lời mở đầu và đồng ý tham gia
 
-> Đội Odylytics (sinh viên) đang nghiên cứu cách kế toán kiểm hóa đơn cước trước khi thanh toán, để dự thi KTC Ideathon và đánh giá khả năng triển khai một công cụ hỗ trợ. Khảo sát mất khoảng 8–10 phút, không thu tên hay tên công ty. Câu trả lời chỉ dùng dạng tổng hợp trong báo cáo và slide. Dữ liệu lưu tối đa 12 tháng, anh/chị có thể yêu cầu xóa phản hồi bằng cách liên hệ đội. Tham gia hoàn toàn tự nguyện, anh/chị có thể dừng bất cứ lúc nào.
+> Đội Odylytics (sinh viên) đang nghiên cứu cách kế toán kiểm hóa đơn cước trước khi thanh toán, để dự thi KTC Ideathon và đánh giá khả năng triển khai một công cụ hỗ trợ. Khảo sát mất khoảng 12–15 phút, không thu tên hay tên công ty. Câu trả lời chỉ dùng dạng tổng hợp trong báo cáo và slide. Dữ liệu lưu tối đa 12 tháng, anh/chị có thể yêu cầu xóa phản hồi bằng cách liên hệ đội. Tham gia hoàn toàn tự nguyện, anh/chị có thể dừng bất cứ lúc nào.
 
 **C0.** Anh/chị đồng ý tham gia với các điều kiện trên? · Một lựa chọn: Đồng ý · Không đồng ý (kết thúc form).
 

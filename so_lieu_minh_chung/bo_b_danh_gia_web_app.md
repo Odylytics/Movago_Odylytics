@@ -4,7 +4,7 @@
 
 Mục tiêu: chứng minh người trong ngành **dùng được**, **hiểu được kết quả**, **tin được căn cứ** và **có ý định dùng thật**. Mọi số đo ở đây là số đo trên **dữ liệu giả lập**. Không báo cáo như hiệu quả trong công việc thật. Hiệu quả thật cần pilot theo [brief](../colio_ai_project_brief.md) mục 3.
 
-Thời gian: 15–20 phút gồm làm nhiệm vụ, 6–8 phút phần bảng hỏi.
+Thời gian: khoảng 25–30 phút gồm làm nhiệm vụ (khoảng 12–15 phút) và phần bảng hỏi (khoảng 10–12 phút).
 
 ## Thiết kế nghiên cứu
 
