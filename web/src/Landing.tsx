@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { Mark } from './App'
 import Avatar from './Avatar'
 import StackSection from './StackSection'
@@ -23,6 +23,7 @@ const PARTNERS: { name: string; src: string }[] = []
 
 export default function Landing() {
   const { t, money, signed, plain, lang } = useT()
+  const [choose, setChoose] = useState(false)
 
   // Everything below the first screen fades in as it scrolls into view; the first screen stays clean.
   useEffect(() => {
@@ -41,12 +42,22 @@ export default function Landing() {
         <div className="home-brand"><Mark className="home-mark" /><span className="home-word">Movago</span></div>
         <p className="home-slogan">Move smarter. Go safer.</p>
         <div className="home-ctas">
-          <a className="btn on-dark big" href="#/demo?story=1" onClick={() => {
-            // the click is the user gesture that lets the story start straight away, with sound
-            unlock()
-            try { sessionStorage.setItem('movago.autostart', '1') } catch { /* private mode */ }
-          }}>{t('introDemo')}</a>
-          <a className="btn ghost big" href="#/demo">{t('ctaTry')}</a>
+          {!choose ? (
+            <button className="btn on-dark big" onClick={() => setChoose(true)}>{t('introDemo')}</button>
+          ) : (
+            <div className="demo-choices" role="group" aria-label={t('introDemo')}>
+              <a className="demo-choice primary" href="#/demo?story=1" autoFocus onClick={() => {
+                // the click is the user gesture that lets the story start straight away, with sound
+                unlock()
+                try { sessionStorage.setItem('movago.autostart', '1') } catch { /* private mode */ }
+              }}>
+                <b>{t('choiceAuto')}</b><span>{t('choiceAutoSub')}</span>
+              </a>
+              <a className="demo-choice" href="#/demo">
+                <b>{t('choiceTry')}</b><span>{t('choiceTrySub')}</span>
+              </a>
+            </div>
+          )}
         </div>
         <p className="powered">{t('poweredBy')} <b>Odylytics</b></p>
         <div className="trust">

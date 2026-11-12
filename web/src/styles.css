@@ -124,6 +124,19 @@ h1, h2, h3, h4, button, input, select, textarea, th, label, nav, .brand, .status
 .home-ctas { display: flex; gap: 14px; flex-wrap: wrap; justify-content: center; margin-top: 40px; }
 .btn.big { padding: 18px 34px; font-size: 18px; font-weight: 700; }
 .btn.on-dark.big { border-color: var(--navy); box-shadow: 0 10px 24px rgba(11, 31, 68, 0.16); }
+.demo-choices { display: flex; gap: 14px; flex-wrap: wrap; justify-content: center; animation: choices-in 0.35s cubic-bezier(0.16, 1, 0.3, 1); }
+@keyframes choices-in { from { opacity: 0; transform: translateY(8px); } }
+.demo-choice {
+  display: flex; flex-direction: column; gap: 4px; min-width: 260px; padding: 18px 26px; text-align: left; text-decoration: none; color: var(--navy);
+  background: var(--white); border: 1px solid var(--hairline); border-radius: var(--r-card); box-shadow: var(--elev-float);
+  transition: border-color 160ms, transform 160ms;
+}
+.demo-choice b { font-family: var(--f-ui); font-size: 18px; font-weight: 700; }
+.demo-choice span { font-size: 14px; color: var(--slate); }
+.demo-choice.primary { background: var(--lime); border-color: var(--navy); }
+.demo-choice.primary span { color: var(--navy); }
+.demo-choice:hover { border-color: var(--navy); transform: translateY(-2px); }
+@media (prefers-reduced-motion: reduce) { .demo-choices { animation: none; } .demo-choice:hover { transform: none; } }
 .home .powered { margin-top: 40px; }
 .home .trust { margin-top: 28px; }
 .scroll-more { margin-top: 40px; font-size: 14px; font-weight: 600; text-decoration: none; color: var(--navy); }
@@ -343,7 +356,7 @@ textarea { resize: vertical; min-height: 84px; }
   .brand { font-size: 16px; }
   .nav .btn.small { padding: 6px 12px; }
   .home { padding: 96px 16px 24px; }
-  .btn.big { width: 100%; justify-content: center; }
+  .btn.big, .demo-choice { width: 100%; }
   .trust-logos li { height: 48px; }
   .hero-dash { padding: 16px; border-radius: var(--r-card); }
   .dash-kpis b { font-size: 19px; }
