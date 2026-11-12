@@ -19,11 +19,13 @@ npm run build      # static site in dist/
 
 | Route | What it shows |
 | --- | --- |
-| `#/` | Landing: hero, the three-sources problem, the fictional cast, the multi-channel data flow and tech stack, the three outcomes. An opening MOVAGO → MOVE · AI · GO intro plays once per tab; add `?intro` to the URL to replay it. |
+| `#/` | Landing in the Movora layout: giant MOVAGO wordmark with the INV-095 result as the hero object, invoice channels, the three-sources problem, the three outcomes as numbered rows, control list with simulated KPIs, the Lime “How it works” band, tech stack, story cards for the fictional cast, FAQ. An opening MOVAGO → MOVE · AI · GO intro plays on every load of the home page; press Esc or click to skip it. |
 | `#/business` | Cited market and rate statistics with count-up and drawn charts, economic problems, business model, ROI scenario with a calculator, Vietnam roadmap, numbered sources. |
 | `#/demo` | Try it yourself: four cases, three sources, reconciliation, evidence, verification, CSV export, resend check. |
 | `#/rates` | Build the approved rate card: receive a carrier quotation (`QUOTE-SA-2611.pdf`), see the rate lines extracted with confidence, approve each line, export the rate card. Low-confidence lines must be approved one by one. |
 | `#/demo?story=1` | Guided story, 9 scenes in about 98 s: rate card built from the carrier quotation, three-channel intake, phone scan, AI reading, reconciliation, evidence, resend, verification, decision. Autoplay with Web Audio cues, pause, jump to any step or character, keyboard ← → K M, and a behind-the-scenes picture-in-picture. The nav's **Open demo** starts it straight away. |
+
+Design: layout from [DESIGN.md](../DESIGN.md) (Movora template), colours, fonts and themes from [DEMO_DESIGN_RULES.md](../DEMO_DESIGN_RULES.md). Dark theme by default; the nav toggle switches to light and stores the choice in `localStorage` (`movago.theme`). Photos are from Unsplash, credited in [public/img/CREDITS.md](public/img/CREDITS.md); line art in `src/art.tsx` is drawn for Movago.
 
 Hash routing, so `dist/` works on any static host. Production is the Vercel project `movago-odylytics`; redeploy from this folder with `npx vercel@latest deploy --prod`.
 

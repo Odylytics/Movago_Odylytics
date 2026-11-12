@@ -14,12 +14,12 @@ Tài liệu nguồn: [Luồng và đáp án](nghien_cuu_tung_slide/colio_ai_hoat
 | Bước "AI đọc PDF" | Mô phỏng: dùng `invoice-lines.csv` đã trích sẵn kèm vị trí trên trang. Giao diện ghi rõ là mô phỏng. |
 | Engine đối chiếu | Hàm TypeScript thuần, có unit test (Vitest) cho mọi ca trong bảng đáp án. |
 | Bản gửi lại | SHA-256 bằng Web Crypto trên byte của tệp; lịch sử tiếp nhận lưu `localStorage`, có nút **Reset demo**. |
-| Màu, font | 5 màu và bộ font Hagrid · Acumin Pro · Source Sans Pro theo `DEMO_DESIGN_RULES.md`; bố cục, bo góc, khoảng cách theo `DESIGN.md`. |
+| Màu, font | Sáu màu MovaGo, theme tối mặc định và theme sáng, font Hagrid (wordmark) · Archivo · Be Vietnam Pro · JetBrains Mono theo `DEMO_DESIGN_RULES.md`; bố cục, góc vuông, khoảng cách theo mẫu Movora trong `DESIGN.md` (đổi ngày 12–13/11/2026). |
 
 ## Màn hình
 
 1. **Intro** — lần đầu mở web trong một tab: MOVAGO tách thành MOV · A · GO rồi thành MOVE · AI · GO và slogan. Thêm `?intro` vào link để xem lại.
-2. **Trang chủ `#/`** — hero có khung thiết bị, vấn đề ba nguồn, sáu nhân vật giả tưởng, sơ đồ "một hộp thư cho mọi kênh" kèm tech stack (đã dựng và dự kiến cho pilot), ba loại kết quả.
+2. **Trang chủ `#/`** — bố cục Movora: wordmark MOVAGO khổng lồ với kết quả INV-095 làm vật thể ở hero, dải kênh chứng từ, vấn đề ba nguồn, ba kết quả dạng hàng đánh số, kiểm soát và số liệu giả lập, dải Lime "Cách hoạt động", tech stack, thẻ câu chuyện của nhân vật giả tưởng, hỏi đáp.
 3. **Business `#/business`** — số liệu có nguồn với hiệu ứng số chạy, vấn đề kinh tế, mô hình kinh doanh, ROI kèm máy tính, định hướng Việt Nam, danh mục nguồn. Mỗi số có nhãn Có nguồn, Giả định hoặc Giả lập.
 4. **Tự thử `#/demo`** — chọn 4 ca, mở ba nguồn, chạy đối chiếu, xem căn cứ hai phía, yêu cầu xác minh, xuất CSV, thử tệp gửi lại.
 5. **Xem tình huống `#/demo?story=1`** (nút Open demo vào thẳng và tự chạy) — 8 cảnh khoảng 85 giây: nhận từ 3 kênh, điện thoại quét bản giấy, AI đọc PDF, đối chiếu, căn cứ +800.000, bản gửi lại, xác minh với pricing, kế toán trưởng quyết định. Có âm thanh Web Audio, tự chạy, tạm dừng, nhảy bước, khung "Hậu trường" ở góc.

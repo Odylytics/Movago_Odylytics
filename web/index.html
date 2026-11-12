@@ -1,17 +1,25 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#EAF2FF" />
+    <meta name="theme-color" content="#071431" />
     <meta name="description" content="Movago checks every freight charge against the shipment file and the approved rate card before payment. Team Odylytics, KTC Ideathon." />
     <title>Movago · Move smarter. Go safer.</title>
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <script>
+      // Theme before first paint (DEMO_DESIGN_RULES.md): dark by default, the nav toggle stores the choice.
+      try {
+        var t = localStorage.getItem('movago.theme')
+        if (t === 'light' || t === 'dark') document.documentElement.dataset.theme = t
+      } catch (e) {}
+    </script>
+    <!-- Hagrid: wordmark only (Adobe Fonts kit). Archivo, Be Vietnam Pro, JetBrains Mono: OFL, with Vietnamese. -->
     <link rel="preconnect" href="https://use.typekit.net" crossorigin />
     <link rel="stylesheet" href="https://use.typekit.net/bao1nxh.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500&family=JetBrains+Mono:wght@500&family=Source+Serif+4:wght@400&family=Source+Sans+3:wght@400;500;600;700;800;900&subset=vietnamese&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=Be+Vietnam+Pro:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&subset=vietnamese&display=swap" rel="stylesheet" />
   </head>
   <body>
     <div id="root"></div>
