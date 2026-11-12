@@ -24,7 +24,6 @@ const cols: { label: L; links: [L, string][] }[] = [
     [{ en: 'Odylytics', vi: 'Odylytics' }, 'https://odylytics.com/'],
     [{ en: 'Blog', vi: 'Blog' }, `${ODY}/blog`],
     [{ en: 'Get in touch', vi: 'Liên hệ' }, `${ODY}/contact`],
-    [{ en: 'Pilot sign-in', vi: 'Đăng nhập pilot' }, '#/login'],
   ] },
   { label: { en: 'Legal', vi: 'Pháp lý' }, links: [
     [{ en: 'Terms of Use', vi: 'Điều khoản sử dụng' }, `${ODY}/legal/terms`],

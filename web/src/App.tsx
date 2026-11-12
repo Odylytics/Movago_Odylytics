@@ -4,8 +4,6 @@ import Business from './Business'
 import Footer from './Footer'
 import Intro from './Intro'
 import Landing from './Landing'
-import { CustomerApp, Login } from './Login'
-import { useSession } from './auth'
 import RateBuilder from './RateBuilder'
 import { unlock } from './sound'
 import Workspace from './Workspace'
@@ -39,7 +37,6 @@ export function Mark({ className = 'brand-mark' }: { className?: string }) {
 
 function Nav() {
   const { t, lang } = useT()
-  const session = useSession()
   return (
     <div className="nav-wrap">
       <nav className="nav" aria-label="Main">
@@ -49,7 +46,6 @@ function Nav() {
           <a className="link" href="#/business">{t('navBiz')}</a>
           <a className="link" href="#/rates">{t('navRates')}</a>
           <LangSwitch lang={lang} />
-          <a className="btn small ghost" href={session ? '#/app' : '#/login'}>{t(session ? 'navApp' : 'navLogin')}</a>
           <a className="btn small" href="#/demo?story=1"
             onClick={() => {
               // the click is the user gesture that lets the story start straight away, with sound
@@ -86,19 +82,17 @@ export default function App() {
   const isDemo = path.startsWith('/demo')
   const isBiz = path.startsWith('/business')
   const isRates = path.startsWith('/rates')
-  const isLogin = path.startsWith('/login')
-  const isApp = path.startsWith('/app')
   const story = new URLSearchParams(query ?? '').get('story') === '1'
 
   useEffect(() => {
-    if (!isDemo && !isBiz && !isRates && !isLogin && !isApp && hash.includes('#how')) document.getElementById('how')?.scrollIntoView()
-  }, [hash, isDemo, isBiz, isRates, isLogin, isApp])
+    if (!isDemo && !isBiz && !isRates && hash.includes('#how')) document.getElementById('how')?.scrollIntoView()
+  }, [hash, isDemo, isBiz, isRates])
 
   return (
     <LangContext.Provider value={{ lang, setLang }}>
       <Intro />
       <Nav />
-      <main>{isDemo ? <Workspace key={String(story)} story={story} /> : isBiz ? <Business /> : isRates ? <RateBuilder /> : isLogin ? <Login /> : isApp ? <CustomerApp /> : <Landing />}</main>
+      <main>{isDemo ? <Workspace key={String(story)} story={story} /> : isBiz ? <Business /> : isRates ? <RateBuilder /> : <Landing />}</main>
       {!isDemo && <Footer />}
     </LangContext.Provider>
   )

@@ -236,7 +236,7 @@ tr.hl td { background: var(--tint-blue); font-weight: 700; }
 .ws-head { display: flex; justify-content: space-between; align-items: flex-end; gap: 16px; flex-wrap: wrap; margin-bottom: 20px; }
 .ws-head h1 { font-size: var(--t-heading); line-height: 1.11; letter-spacing: -0.01em; font-weight: 600; }
 .field { display: flex; flex-direction: column; gap: 6px; font-size: var(--t-caption); font-weight: 600; letter-spacing: 0.02em; }
-select, input[type='text'], input[type='email'], textarea {
+select, input[type='text'], textarea {
   border: 1px solid var(--hairline); border-radius: var(--r-ui); padding: 10px 12px; background: var(--white); font-size: 15px; min-width: 0;
 }
 textarea { resize: vertical; min-height: 84px; }
@@ -762,27 +762,6 @@ select:disabled { cursor: not-allowed; opacity: 0.6; }
   .pip { width: 264px; padding: 8px 10px 10px; }
   .pip-canvas { transform: scale(0.75); transform-origin: top left; margin-bottom: -45px; margin-right: -80px; }
 }
-
-/* customer sign-in (#/login) and signed-in app placeholder (#/app) */
-.login { min-height: 100svh; box-sizing: border-box; padding: 112px 16px 40px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 20px; }
-.login-card { width: 100%; max-width: 420px; box-sizing: border-box; background: var(--white); border: 1px solid var(--hairline); border-radius: var(--r-card); padding: 36px var(--pad-card); box-shadow: var(--elev-float); display: flex; flex-direction: column; gap: 14px; }
-.login-mark { width: 44px; height: 44px; }
-.login-card h1 { font-family: var(--f-display); font-size: 28px; line-height: 1.15; letter-spacing: -0.01em; font-weight: 700; }
-.login-sub { color: var(--slate); margin-top: -6px; }
-.login-form { display: flex; flex-direction: column; gap: 10px; margin-top: 6px; }
-.login-form .btn { margin-top: 4px; }
-.login-card .btn:disabled { opacity: 0.6; cursor: default; }
-.login-or { display: flex; align-items: center; gap: 12px; font-size: 13px; color: var(--slate); }
-.login-or::before, .login-or::after { content: ''; flex: 1; border-top: 1px solid var(--hairline); }
-.login-note { border-radius: var(--r-ui); padding: 12px 14px; background: var(--ice); font-size: 14px; }
-.login-note.ok { border: 1px solid var(--navy); }
-.login-foot { font-size: 13px; color: var(--slate); border-top: 1px solid var(--hairline); padding-top: 14px; margin-top: 4px; }
-.login-back { font-size: 14px; font-weight: 600; color: var(--navy); text-decoration: none; }
-.login-back:hover { text-decoration: underline; }
-.home-login { margin-top: 18px; font-size: 15px; }
-.home-login a { color: var(--navy); font-weight: 700; text-underline-offset: 3px; }
-.home-login a:hover { color: var(--blue); }
-@media (max-width: 640px) { .nav .btn.small.ghost { display: none; } }
 
 /* footer — Odylytics parent-brand layout (Movago is an Odylytics product) */
 .ody-footer { --o-bg: #141413; --o-text: #b7b4ad; --o-muted: #8a8780; --o-hi: #f3f2ee; --o-line: rgba(243, 242, 238, 0.14);
