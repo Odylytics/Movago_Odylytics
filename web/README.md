@@ -19,7 +19,7 @@ npm run build      # static site in dist/
 
 | Route | What it shows |
 | --- | --- |
-| `#/` | Landing in the Movora layout: giant MOVAGO wordmark with the INV-095 result as the hero object, invoice channels, the three-sources problem, the three outcomes as numbered rows, control list with simulated KPIs, the Lime “How it works” band, tech stack, story cards for the fictional cast, FAQ. An opening MOVAGO → MOVE · AI · GO intro plays on every load of the home page; press Esc or click to skip it. |
+| `#/` | Landing in the Movora layout: giant MOVAGO wordmark with a MovaGo container lowered over it on a spring (white box on the dark theme, navy on the light theme) and the INV-095 result card, invoice channels, the three-sources problem, the three outcomes as numbered rows, control list with simulated KPIs, the Lime “How it works” band, tech stack, story cards for the fictional cast, FAQ. An opening MOVAGO → MOVE · AI · GO intro plays on every load of the home page; press Esc or click to skip it. |
 | `#/business` | Cited market and rate statistics with count-up and drawn charts, economic problems, business model, ROI scenario with a calculator, Vietnam roadmap, numbered sources. |
 | `#/demo` | Try it yourself: four cases, three sources, reconciliation, evidence, verification, CSV export, resend check. |
 | `#/rates` | Build the approved rate card: receive a carrier quotation (`QUOTE-SA-2611.pdf`), see the rate lines extracted with confidence, approve each line, export the rate card. Low-confidence lines must be approved one by one. |

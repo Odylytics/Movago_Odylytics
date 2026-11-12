@@ -14,7 +14,7 @@ Chốt ngày 12/11/2026, thay mẫu Dimension. File này quyết định **bố 
 | Bộ nhận diện MovaGo | [Figma](https://www.figma.com/design/iZiC4AnBHGP3baNCUlAcdH/MovaGo?node-id=0-1) |
 
 - Lấy từ Movora: lưới, nhịp khoảng trắng, thang chữ, hình khối, cách dựng viền, cấu trúc nav, nút, nhãn mục, thẻ số liệu, hàng đánh số, dải nhấn tràn viền, FAQ và footer.
-- Không lấy: ảnh, ảnh dựng 3D, logo dấu cộng, chữ “MOVORA”, nội dung chữ và lời chứng thực. Đây là tài sản của template. Movago dùng ảnh giao diện sản phẩm, hình nét SVG tự vẽ và ảnh có giấy phép rõ ràng (ghi nguồn khi dùng).
+- Không lấy: ảnh, ảnh dựng 3D, logo dấu cộng, chữ “MOVORA”, nội dung chữ và lời chứng thực. Đây là tài sản của template. Movago dùng ảnh giao diện sản phẩm, hình nét SVG tự vẽ, ảnh có giấy phép rõ ràng (ghi nguồn khi dùng) và hai ảnh container MovaGo do đội tạo bằng ChatGPT, chỉ dùng ảnh Movora làm tham chiếu góc máy.
 - Không lấy màu đỏ `#E51E31` và font Stack Sans. Màu đỏ đổi sang vai trò Transit Lime. Stack Sans không có các nguyên âm tiếng Việt có dấu thanh (thiếu U+1EA0–1EF1), nên thay bằng font trong quy tắc demo.
 
 ## Tinh thần
@@ -146,15 +146,21 @@ Font cụ thể theo quy tắc demo. Bảng dưới là cỡ và nhịp lấy t�
 ## Chuyển động
 
 - Cuộn mượt cho toàn trang (Movora dùng thành phần Smooth Scroll).
+- **Mở đầu hero**, đo từ bản clone Movora. Chạy mỗi khi vào trang chủ; lần đầu tải trang thì chạy ngay khi intro MOV · A · GO → MOVE · AI · GO rút đi.
+  1. Wordmark rơi từ −250 px và hiện dần, lò xo 1,6 s, độ nảy 0,4.
+  2. Container rơi từ trên màn hình xuống sau 0,4 s, lò xo stiffness 150 · damping 20 · mass 2,8, vượt khoảng 17% rồi nảy về. Sau đó đung đưa ±0,45° quanh móc cẩu.
+  3. Badge, câu chính, nút và dòng đội trượt lên 80 px trong 0,8 s, `cubic-bezier(0.44, 0, 0.56, 1)`, lệch nhau 0,08 s. Thẻ INV-095 vào sau cùng, lúc 1,2 s.
+  4. Khi cuộn qua hero, container trôi xuống thêm 100 px.
+- Lò xo viết bằng `linear()` lấy mẫu từ phương trình lò xo, có `cubic-bezier` dự phòng cho trình duyệt cũ.
+- Nav trượt lên khi cuộn xuống quá 160 px và quay lại khi cuộn lên.
 - Phần tử xuất hiện khi cuộn tới: mờ dần và trượt lên 24 px trong 0,6 s. Các thẻ cùng nhóm lệch nhau 0,08 s.
-- Wordmark hero có thể nối với intro MOV · A · GO → MOVE · AI · GO đang có.
-- Tôn trọng `prefers-reduced-motion`: tắt trượt và cuộn mượt, chỉ giữ đổi độ mờ.
+- Tôn trọng `prefers-reduced-motion`: tắt rơi, đung đưa, trượt và cuộn mượt, chỉ giữ đổi độ mờ.
 
 ## Gợi ý ghép phần cho trang chủ Movago
 
 | Phần Movora | Phần Movago |
 | --- | --- |
-| Hero: wordmark khổng lồ, vật thể 3D, câu chính, nút | Wordmark MOVAGO, ảnh màn hình đối chiếu nổi trên wordmark, slogan, nút “Thử ca mẫu” |
+| Hero: wordmark khổng lồ, vật thể 3D, câu chính, nút | Wordmark MOVAGO, container MovaGo treo đè lên wordmark (trắng ở theme tối, navy ở theme sáng), slogan, nút, thẻ kết quả INV-095 ở góc phải |
 | Dải logo đối tác | Các kênh chứng từ và công nghệ (email, Zalo, PDF, TMS, Vercel…) |
 | About: ba thẻ giới thiệu | Vấn đề ba nguồn: hóa đơn, hồ sơ lô, bảng giá |
 | Services: hàng đánh số | Ba kết quả: Khớp, Có chênh lệch, Thiếu căn cứ |

@@ -76,6 +76,24 @@ function Nav({ path, theme, setTheme }: { path: string; theme: Theme; setTheme: 
   const { t, lang } = useT()
   const [open, setOpen] = useState(false)
   useEffect(() => { setOpen(false) }, [path])
+
+  // Movora's nav slides away while scrolling down and returns on the way up.
+  const [tucked, setTucked] = useState(false)
+  useEffect(() => {
+    let last = window.scrollY
+    let raf = 0
+    const on = () => {
+      cancelAnimationFrame(raf)
+      raf = requestAnimationFrame(() => {
+        const y = window.scrollY
+        if (Math.abs(y - last) < 6) return
+        setTucked(y > 160 && y > last)
+        last = y
+      })
+    }
+    window.addEventListener('scroll', on, { passive: true })
+    return () => { window.removeEventListener('scroll', on); cancelAnimationFrame(raf) }
+  }, [])
   useEffect(() => {
     if (!open) return
     const onKey = (e: KeyboardEvent) => { if (e.key === 'Escape') setOpen(false) }
@@ -91,7 +109,7 @@ function Nav({ path, theme, setTheme }: { path: string; theme: Theme; setTheme: 
   ]
 
   return (
-    <header className="nav-bar">
+    <header className={`nav-bar ${tucked && !open ? 'tucked' : ''}`}>
       <a className="skip" href="#content" onClick={(e) => { e.preventDefault(); document.getElementById('content')?.focus() }}>{L.skip[lang]}</a>
       <nav className="nav" aria-label="Main">
         <a className="brand" href="#/" aria-label="Movago"><Mark /><span className="brand-word">MovaGo</span></a>

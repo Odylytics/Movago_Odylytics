@@ -45,14 +45,20 @@ export function FitText({ text, className = '' }: { text: string; className?: st
     if (!el || !parent) return
     const fit = () => {
       el.style.fontSize = '100px'
-      const w = el.getBoundingClientRect().width
+      const w = el.offsetWidth
       if (w > 0) el.style.fontSize = `${Math.floor((parent.clientWidth / w) * 100 * 100) / 100}px`
     }
+    // Refit when the box resizes and when the text itself changes width, e.g. when the wordmark font
+    // swaps in after layout ran with the fallback font. Stable once the text fills the box, so no loop.
+    const check = () => { if (Math.abs(el.offsetWidth - parent.clientWidth) > 1) fit() }
     fit()
-    const ro = typeof ResizeObserver !== 'undefined' ? new ResizeObserver(fit) : null
+    const ro = typeof ResizeObserver !== 'undefined' ? new ResizeObserver(check) : null
     ro?.observe(parent)
-    document.fonts?.ready.then(fit).catch(() => {})
-    return () => ro?.disconnect()
+    ro?.observe(el)
+    const fonts = document.fonts
+    fonts?.ready.then(check).catch(() => {})
+    fonts?.addEventListener?.('loadingdone', check)
+    return () => { ro?.disconnect(); fonts?.removeEventListener?.('loadingdone', check) }
   }, [text])
   return (
     <span ref={box} className={`fit ${className}`} aria-hidden="true">

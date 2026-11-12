@@ -5,12 +5,22 @@ import { Mark } from './App'
 // A deep link (#/demo, #/business, #/rates) opens its page directly, so judges' links and the nav's Open demo reload skip it.
 const isHome = () => ['', '#', '#/'].includes(window.location.hash)
 
+// The landing hero starts Movora's entrance (wordmark, container drop) when the intro begins to lift away.
+export const INTRO_DONE = 'movago:intro-done'
+let running = isHome()
+export const introRunning = () => running
+const finish = () => {
+  if (!running) return
+  running = false
+  window.dispatchEvent(new Event(INTRO_DONE))
+}
+
 export default function Intro() {
   const [show, setShow] = useState(isHome)
   const [leaving, setLeaving] = useState(false)
 
   useEffect(() => {
-    if (!show) return
+    if (!show) { finish(); return }
     document.documentElement.style.overflow = 'hidden'
     const skip = (event: KeyboardEvent) => { if (event.key === 'Escape') setLeaving(true) }
     window.addEventListener('keydown', skip)
@@ -25,6 +35,7 @@ export default function Intro() {
   // animationend can be skipped (background tab, animations off), so never leave the overlay covering the page
   useEffect(() => {
     if (!leaving) return
+    finish()
     const id = window.setTimeout(() => setShow(false), 700)
     return () => window.clearTimeout(id)
   }, [leaving])
@@ -37,6 +48,7 @@ export default function Intro() {
       role="dialog"
       aria-modal="true"
       aria-label="Movago"
+      onClick={() => setLeaving(true)}
       onAnimationEnd={(event) => {
         if (event.target === event.currentTarget && event.animationName === 'intro-skip') setShow(false)
       }}

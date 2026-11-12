@@ -1,5 +1,6 @@
-import { useState, type CSSProperties, type ComponentType } from 'react'
+import { useEffect, useRef, useState, type CSSProperties, type ComponentType } from 'react'
 import { ArtDecide, ArtMatch, ArtReceive, ArtSources } from './art'
+import { INTRO_DONE, introRunning } from './Intro'
 import { Icon, type IconName } from './icons'
 import { useT } from './i18n'
 import StackSection from './StackSection'
@@ -95,6 +96,35 @@ export default function Landing() {
   const [open, setOpen] = useState(1)
   useReveal(lang)
 
+  // Movora's hero entrance runs on mount; on the first home load it waits until the MOVE · AI · GO intro lifts away.
+  const [go, setGo] = useState(() => !introRunning())
+  useEffect(() => {
+    if (go) return
+    const start = () => setGo(true)
+    window.addEventListener(INTRO_DONE, start)
+    const fallback = window.setTimeout(start, 5000)
+    return () => { window.removeEventListener(INTRO_DONE, start); window.clearTimeout(fallback) }
+  }, [go])
+
+  // Movora lowers the container a further 100 px while the hero scrolls away.
+  const crateRef = useRef<HTMLDivElement>(null)
+  useEffect(() => {
+    const el = crateRef.current
+    if (!el || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
+    let raf = 0
+    const on = () => {
+      cancelAnimationFrame(raf)
+      raf = requestAnimationFrame(() => {
+        const hero = el.parentElement
+        const h = hero ? hero.offsetHeight : window.innerHeight
+        el.style.translate = `0 ${Math.round(Math.min(window.scrollY / h, 1) * 100)}px`
+      })
+    }
+    on()
+    window.addEventListener('scroll', on, { passive: true })
+    return () => { window.removeEventListener('scroll', on); cancelAnimationFrame(raf) }
+  }, [])
+
   const compact = (n: number) => (lang === 'en' ? `${(n / 1e6).toLocaleString('en-US', { maximumFractionDigits: 1 })}M ₫` : `${(n / 1e6).toLocaleString('vi-VN', { maximumFractionDigits: 1 })} tr đ`)
 
   const OUTCOMES = [
@@ -136,42 +166,38 @@ export default function Landing() {
 
   return (
     <>
-      {/* ===== hero ===== */}
-      <section className="hero2" aria-labelledby="hero-title">
-        <div className="wrap hero2-top"><FitText text="MOVAGO" className="wordmark" /></div>
-        <div className="wrap hero2-stage">
-          <div className="hero2-stack">
-            <div className="hero-paper" aria-hidden="true">
-              <div className="hp-head">INV-095<span>Supplier A · {t('page')} 1</span></div>
-              <i /><i className="s" />
-              <div className="hp-line"><span>Ocean freight 20′</span><span>8,000,000</span></div>
-              <div className="hp-line mark"><span>Documentation fee · DOC</span><span>1,300,000</span></div>
-              <div className="hp-line"><span>{t('subtotal')}</span><span>9,300,000</span></div>
-              <i /><i className="s" /><i />
-            </div>
-            <div className="hero-card edge" role="group" aria-label={`INV-095 · ${t('results')}`}>
-              <div className="hc-bar"><b>INV-095 · {t('results')}</b><span className="chip sim">{t('simulated')}</span></div>
-              <div className="hc-rows">
-                <div className="hc-row"><span>Ocean freight</span><span className="muted">{money(8_000_000)}</span><span className="status matched">{t('st_matched')}</span></div>
-                <div className="hc-row"><span>DOC</span><span className="muted">{money(1_300_000)}</span><span className="status discrepancy">{t('st_discrepancy')}</span></div>
-              </div>
-              <div className="hc-diff"><b>{signed(800_000)}</b><span>INV-095 · {t('page')} 1 · DOC<br />RATE-V3 · {t('line')} 12</span></div>
+      {/* ===== hero: Movora's entrance — wordmark drops in, the container is lowered on a spring, the copy rises ===== */}
+      <section className={`hero2 ${go ? 'go' : ''}`} aria-labelledby="hero-title">
+        <div className="wrap hero2-top"><div className="a-word"><FitText text="MOVAGO" className="wordmark" /></div></div>
+        <div className="crate" ref={crateRef} aria-hidden="true">
+          <div className="crate-drop">
+            <div className="crate-sway">
+              {/* white box on the dark theme, navy box on the light theme; only the visible one is fetched */}
+              <img className="crate-img crate-white" src={img('hero-container-white.webp')} alt="" width={1254} height={1254} loading="lazy" decoding="async" />
+              <img className="crate-img crate-navy" src={img('hero-container-navy.webp')} alt="" width={1254} height={1254} loading="lazy" decoding="async" />
             </div>
           </div>
         </div>
         <div className="wrap">
           <div className="hero2-foot">
             <div className="hero2-copy">
-              <Badge>{tx(C.slogan)}</Badge>
-              <h1 className="h3" id="hero-title">{t('heroTitle')}</h1>
-              <div className="hero2-ctas">
+              <div className="a-up"><Badge>{tx(C.slogan)}</Badge></div>
+              <h1 className="h3 a-up" id="hero-title" style={{ '--ad': '0.08s' } as CSSProperties}>{t('heroTitle')}</h1>
+              <div className="hero2-ctas a-up" style={{ '--ad': '0.16s' } as CSSProperties}>
                 <ArrowBtn href="#/demo?choose=1">{t('introDemo')}</ArrowBtn>
                 <ArrowBtn ghost href="#/demo">{t('ctaTry')}</ArrowBtn>
               </div>
+              <p className="hero2-meta a-up" style={{ '--ad': '0.24s' } as CSSProperties}>{t('poweredBy')} <b>Odylytics</b> · {tx(C.team)}</p>
             </div>
-            <div className="hero2-meta">
-              <span>{t('poweredBy')} <b>Odylytics</b></span>
-              <span>{tx(C.team)}</span>
+            <div className="a-up" style={{ '--ad': '1.2s' } as CSSProperties}>
+              <div className="hero-card edge" role="group" aria-label={`INV-095 · ${t('results')}`}>
+                <div className="hc-bar"><b>INV-095 · {t('results')}</b><span className="chip sim">{t('simulated')}</span></div>
+                <div className="hc-rows">
+                  <div className="hc-row"><span>Ocean freight</span><span className="muted">{money(8_000_000)}</span><span className="status matched">{t('st_matched')}</span></div>
+                  <div className="hc-row"><span>DOC</span><span className="muted">{money(1_300_000)}</span><span className="status discrepancy">{t('st_discrepancy')}</span></div>
+                </div>
+                <div className="hc-diff"><b>{signed(800_000)}</b><span>INV-095 · {t('page')} 1 · DOC<br />RATE-V3 · {t('line')} 12</span></div>
+              </div>
             </div>
           </div>
         </div>
