@@ -119,7 +119,8 @@ h1, h2, h3, h4, button, input, select, textarea, th, label, nav, .brand, .status
 .home > * { position: relative; }
 .home-brand { display: flex; align-items: center; gap: clamp(14px, 2vw, 24px); }
 .home-mark { width: clamp(64px, 9vw, 112px); height: auto; filter: drop-shadow(0 18px 30px rgba(11, 31, 68, 0.18)); }
-.home-word { font-family: var(--f-wordmark); font-weight: 900; font-size: clamp(52px, 9vw, 112px); line-height: 1; letter-spacing: -0.02em; }
+/* uppercase like the intro lockup: Hagrid's lowercase g has a cut-off lower loop by design */
+.home-word { font-family: var(--f-wordmark); font-weight: 900; font-size: clamp(44px, 8vw, 100px); line-height: 1; letter-spacing: -0.01em; text-transform: uppercase; }
 .home-slogan { margin-top: 18px; font-family: var(--f-ui); font-size: clamp(18px, 2vw, 24px); font-weight: 600; }
 .home-ctas { display: flex; gap: 14px; flex-wrap: wrap; justify-content: center; margin-top: 40px; }
 .btn.big { padding: 18px 34px; font-size: 18px; font-weight: 700; }
