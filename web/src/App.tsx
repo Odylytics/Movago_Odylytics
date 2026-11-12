@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react'
 import { LangContext, useT, type Lang } from './i18n'
 import Business from './Business'
+import DemoChoice from './DemoChoice'
 import Footer from './Footer'
 import Intro from './Intro'
 import Landing from './Landing'
 import RateBuilder from './RateBuilder'
-import { unlock } from './sound'
 import Workspace from './Workspace'
 
 const store = {
@@ -46,13 +46,7 @@ function Nav() {
           <a className="link" href="#/business">{t('navBiz')}</a>
           <a className="link" href="#/rates">{t('navRates')}</a>
           <LangSwitch lang={lang} />
-          <a className="btn small" href="#/demo?story=1"
-            onClick={() => {
-              // the click is the user gesture that lets the story start straight away, with sound
-              unlock()
-              try { sessionStorage.setItem('movago.autostart', '1') } catch { /* private mode */ }
-              if (window.location.hash === '#/demo?story=1') window.location.reload() // already there: start over
-            }}>{t('navDemo')}</a>
+          <a className="btn small" href="#/demo?choose=1">{t('navDemo')}</a>
         </div>
       </nav>
     </div>
@@ -83,6 +77,7 @@ export default function App() {
   const isBiz = path.startsWith('/business')
   const isRates = path.startsWith('/rates')
   const story = new URLSearchParams(query ?? '').get('story') === '1'
+  const choose = new URLSearchParams(query ?? '').get('choose') === '1'
 
   useEffect(() => {
     if (!isDemo && !isBiz && !isRates && hash.includes('#how')) document.getElementById('how')?.scrollIntoView()
@@ -92,7 +87,7 @@ export default function App() {
     <LangContext.Provider value={{ lang, setLang }}>
       <Intro />
       <Nav />
-      <main>{isDemo ? <Workspace key={String(story)} story={story} /> : isBiz ? <Business /> : isRates ? <RateBuilder /> : <Landing />}</main>
+      <main>{isDemo && choose ? <DemoChoice /> : isDemo ? <Workspace key={String(story)} story={story} /> : isBiz ? <Business /> : isRates ? <RateBuilder /> : <Landing />}</main>
       {!isDemo && <Footer />}
     </LangContext.Provider>
   )
