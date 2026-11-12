@@ -5,6 +5,7 @@ import { findDuplicate, parseCsv, reconcile, sha256Hex, type IntakeRecord, type 
 import { CountUp } from './charts'
 import { useT, type Key, type Lang } from './i18n'
 import { isMuted, play, setMuted, unlock } from './sound'
+import { scrollToY } from './smooth'
 import { STEPS } from './story'
 import Stage, { type Scene } from './Stage'
 import BehindScenes from './BehindScenes'
@@ -204,7 +205,7 @@ export default function Workspace({ story }: { story: boolean }) {
       // fits: centre it in the gap · too tall: show its top, except on the last step where the actions sit at its bottom
       const top = r.height <= gap ? r.top - (navBottom + (gap - r.height) / 2) : k === 5 ? r.bottom - cardTop : r.top - navBottom
       const smooth = !window.matchMedia('(prefers-reduced-motion: reduce)').matches
-      window.scrollTo({ top: Math.max(0, window.scrollY + top), behavior: smooth ? 'smooth' : 'auto' })
+      scrollToY(Math.max(0, window.scrollY + top), smooth)
     }, 120)
     // step 5 (index 4) opens the verification form once the evidence is in view
     const open = k === 4 && !verifications[`${caseId}:DOC`] ? window.setTimeout(() => setVerifyFor((v) => v ?? 'DOC'), 900) : 0

@@ -145,7 +145,7 @@ Font cụ thể theo quy tắc demo. Bảng dưới là cỡ và nhịp lấy t�
 
 ## Chuyển động
 
-- Cuộn mượt cho toàn trang (Movora dùng thành phần Smooth Scroll).
+- Cuộn có quán tính cho toàn trang như thành phần Smooth Scroll của Movora: Lenis với `lerp` 0,1 cho chuột và trackpad. Cảm ứng giữ cuộn gốc của hệ điều hành. Tạm dừng khi intro hoặc menu khoá trang; drawer, modal, menu và bảng tràn ngang vẫn cuộn riêng. Tắt khi bật `prefers-reduced-motion`.
 - **Mở đầu hero**, đo từ bản clone Movora. Chạy mỗi khi vào trang chủ; lần đầu tải trang thì chạy ngay khi intro MOV · A · GO → MOVE · AI · GO rút đi.
   1. Wordmark rơi từ −250 px và hiện dần, lò xo 1,6 s, độ nảy 0,4.
   2. Container rơi từ trên màn hình xuống sau 0,4 s, lò xo stiffness 150 · damping 20 · mass 2,8, vượt khoảng 17% rồi nảy về. Sau đó đung đưa ±0,45° quanh móc cẩu.

@@ -255,6 +255,13 @@ h1, h2, h3, h4, button, th, label, nav, .brand, .status, .field, .src .k, .src .
 .reveal.in { opacity: 1; transform: none; }
 @media (prefers-reduced-motion: reduce) { .reveal { transform: none; transition: opacity 0.3s linear; } html { scroll-behavior: auto !important; } }
 html { scroll-behavior: smooth; scroll-padding-top: calc(var(--nav-h) + 16px); }
+/* Lenis momentum scroll (smooth.ts); rules from lenis/dist/lenis.css. Native smooth scrolling would fight it. */
+html.lenis { scroll-behavior: auto; }
+html.lenis, html.lenis body { height: auto; }
+.lenis.lenis-stopped { overflow: clip; }
+.lenis [data-lenis-prevent] { overscroll-behavior: contain; }
+.lenis.lenis-smooth iframe { pointer-events: none; }
+.choose, .drawer, .menu-sheet { overscroll-behavior: contain; }
 
 /* ===== landing: sections ===== */
 .sec { padding-top: var(--sec-y); padding-bottom: var(--sec-y); position: relative; }

@@ -2,6 +2,7 @@ import { useState, type ReactNode } from 'react'
 import { Bars, Columns, CountUp, Split, Units, useInView } from './charts'
 import { useT, type Lang } from './i18n'
 import { roi } from './roi'
+import { scrollToEl } from './smooth'
 
 type L = { en: string; vi: string }
 type Evidence = 'cited' | 'assumption' | 'simulated'
@@ -31,7 +32,7 @@ const SOURCES: { title: L; url: string }[] = [
 ]
 
 function Ref({ n }: { n: number }) {
-  return <a className="ref" href={`#src-${n}`} onClick={(e) => { e.preventDefault(); document.getElementById(`src-${n}`)?.scrollIntoView({ behavior: 'smooth', block: 'center' }) }}>[{n}]</a>
+  return <a className="ref" href={`#src-${n}`} onClick={(e) => { e.preventDefault(); scrollToEl(document.getElementById(`src-${n}`), { center: true }) }}>[{n}]</a>
 }
 
 function StatCard({ tag, evidence, num, claim, chart, source, wide }: {

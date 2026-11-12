@@ -7,6 +7,7 @@ import Intro from './Intro'
 import Landing from './Landing'
 import RateBuilder from './RateBuilder'
 import Workspace from './Workspace'
+import { scrollToEl, scrollToY, startSmoothScroll } from './smooth'
 import { ArrowBtn, Glyph } from './ui'
 
 const store = {
@@ -21,7 +22,7 @@ type Theme = 'dark' | 'light'
 function useHash() {
   const [hash, setHash] = useState(window.location.hash)
   useEffect(() => {
-    const on = () => { setHash(window.location.hash); if (!window.location.hash.includes('#how')) window.scrollTo(0, 0) }
+    const on = () => { setHash(window.location.hash); if (!window.location.hash.includes('#how')) scrollToY(0, false) }
     window.addEventListener('hashchange', on)
     return () => window.removeEventListener('hashchange', on)
   }, [])
@@ -142,6 +143,7 @@ export default function App() {
   const [lang, setLangState] = useState<Lang>(() => (store.get('movago.lang') === 'vi' ? 'vi' : 'en'))
   const setLang = (l: Lang) => { setLangState(l); store.set('movago.lang', l) }
   useEffect(() => { document.documentElement.lang = lang }, [lang])
+  useEffect(() => { startSmoothScroll() }, [])
 
   // dark by default (DEMO_DESIGN_RULES.md); index.html applies the stored choice before first paint
   const [theme, setThemeState] = useState<Theme>(() => (document.documentElement.dataset.theme === 'light' ? 'light' : 'dark'))
@@ -160,7 +162,7 @@ export default function App() {
   const choose = new URLSearchParams(query ?? '').get('choose') === '1'
 
   useEffect(() => {
-    if (!isDemo && !isBiz && !isRates && hash.includes('#how')) document.getElementById('how')?.scrollIntoView()
+    if (!isDemo && !isBiz && !isRates && hash.includes('#how')) scrollToEl(document.getElementById('how'))
   }, [hash, isDemo, isBiz, isRates])
 
   return (
