@@ -59,6 +59,7 @@ export default function Landing() {
             </div>
           )}
         </div>
+        <p className="home-login">{t('homeLoginLead')} <a href="#/login">{t('navLogin')}</a></p>
         <p className="powered">{t('poweredBy')} <b>Odylytics</b></p>
         <div className="trust">
           <p className="trust-title">{t('trustTitle')}</p>
