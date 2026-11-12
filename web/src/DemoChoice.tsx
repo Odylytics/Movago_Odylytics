@@ -1,7 +1,7 @@
 import { useT } from './i18n'
 import { unlock } from './sound'
 
-// Start of the demo (#/demo?choose=1): the sample-case workspace sits blurred behind two options.
+// Start of the demo (#/demo?choose=1): the sample-case workspace sits dimmed behind two options.
 // Option 2 drops the overlay onto that same workspace; option 1 starts the self-playing story.
 export default function DemoChoice() {
   const { t } = useT()
