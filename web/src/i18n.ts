@@ -26,6 +26,7 @@ const dict = {
   kpiChart: { en: 'Overcharges flagged, cumulative (million ₫)', vi: 'Khoản thu sai cộng dồn (triệu đ)' },
   trustTitle: { en: 'Trusted by partners', vi: 'Đối tác đồng hành' },
   partnerSlot: { en: 'Partner logo', vi: 'Logo đối tác' },
+  chooseTitle: { en: 'How would you like to see Movago?', vi: 'Bạn muốn xem Movago theo cách nào?' },
   choiceAuto: { en: 'Watch it play by itself', vi: 'Xem demo tự chạy' },
   choiceAutoSub: { en: 'About 3 minutes, with sound', vi: 'Khoảng 3 phút, có âm thanh' },
   choiceTry: { en: 'Try the sample case yourself', vi: 'Tự thử hồ sơ mẫu' },

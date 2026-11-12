@@ -1,28 +1,29 @@
 import { useT } from './i18n'
 import { unlock } from './sound'
 
-// Full-screen fork at the start of the demo (#/demo?choose=1): watch the story play by itself, or work the sample case by hand.
+// Start of the demo (#/demo?choose=1): the sample-case workspace sits blurred behind two options.
+// Option 2 drops the overlay onto that same workspace; option 1 starts the self-playing story.
 export default function DemoChoice() {
   const { t } = useT()
   return (
-    <section className="choose" aria-labelledby="choose-title">
-      <h1 id="choose-title" className="sr-only">{t('introDemo')}</h1>
+    <section className="choose" role="dialog" aria-modal="true" aria-labelledby="choose-title">
+      <h1 id="choose-title" className="choose-title">{t('chooseTitle')}</h1>
+      <div className="choose-tiles">
       <a className="choose-tile primary" href="#/demo?story=1" autoFocus onClick={() => {
         // the click is the user gesture that lets the story start straight away, with sound
         unlock()
         try { sessionStorage.setItem('movago.autostart', '1') } catch { /* private mode */ }
       }}>
-        <span className="choose-num" aria-hidden="true">01</span>
         <b>{t('choiceAuto')}</b>
         <span className="choose-sub">{t('choiceAutoSub')}</span>
         <span className="choose-go" aria-hidden="true">▶</span>
       </a>
       <a className="choose-tile" href="#/demo">
-        <span className="choose-num" aria-hidden="true">02</span>
         <b>{t('choiceTry')}</b>
         <span className="choose-sub">{t('choiceTrySub')}</span>
         <span className="choose-go" aria-hidden="true">→</span>
       </a>
+      </div>
     </section>
   )
 }

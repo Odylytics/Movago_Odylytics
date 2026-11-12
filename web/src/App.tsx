@@ -87,7 +87,7 @@ export default function App() {
     <LangContext.Provider value={{ lang, setLang }}>
       <Intro />
       <Nav />
-      <main>{isDemo && choose ? <DemoChoice /> : isDemo ? <Workspace key={String(story)} story={story} /> : isBiz ? <Business /> : isRates ? <RateBuilder /> : <Landing />}</main>
+      <main>{isDemo ? <><Workspace key={String(story)} story={story} />{choose && <DemoChoice />}</> : isBiz ? <Business /> : isRates ? <RateBuilder /> : <Landing />}</main>
       {!isDemo && <Footer />}
     </LangContext.Provider>
   )
