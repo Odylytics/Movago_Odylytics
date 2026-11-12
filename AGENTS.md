@@ -11,6 +11,6 @@
 
 - Dùng tên **Movago** và slogan **Move smarter. Go safer.** theo quy tắc nhận diện của dự án.
 - Ghi **Odylytics** là đội dự thi KTC Ideathon. Khi cần giới thiệu đội hoặc thành viên, tra [hồ sơ đội Odylytics](ODYLYTICS_TEAM.md) và dùng danh sách dự thi đã xác nhận.
-- Trước khi làm việc trên giao diện, đọc [quy tắc thiết kế demo](DEMO_DESIGN_RULES.md) và [mẫu Dimension](DESIGN.md). Quy tắc demo quyết định màu và font. Mẫu Dimension hướng dẫn bố cục, khoảng cách và hình khối.
+- Trước khi làm việc trên giao diện, đọc [quy tắc thiết kế demo](DEMO_DESIGN_RULES.md) và [mẫu Movora](DESIGN.md). Quy tắc demo quyết định màu, font và theme tối/sáng. Mẫu Movora hướng dẫn bố cục, khoảng cách, hình khối và thành phần.
 - Khi viết nội dung về sản phẩm hoặc dựng luồng demo, tra [brief Movago](colio_ai_project_brief.md) để bám sát phạm vi MVP và phân biệt số liệu giả lập với kết quả pilot.
 - Chỉ bắt đầu thiết kế màn hình, viết mã hoặc tạo tài sản giao diện khi người dùng yêu cầu bước đó.

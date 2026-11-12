@@ -2,7 +2,7 @@
 
 Đội **Odylytics** · 08/11/2026 · Hạn nộp 23:59 13/11/2026 (folder `AI4Biz_Tendoi_2026`, slide tiếng Anh ≤ 15 trang, điểm cộng cho Prototype/MVP).
 
-Tài liệu nguồn: [Luồng và đáp án](nghien_cuu_tung_slide/colio_ai_hoat_dong_the_nao.md) · [Quy tắc thiết kế](DEMO_DESIGN_RULES.md) · [Mẫu Dimension](DESIGN.md) · [Brief](colio_ai_project_brief.md).
+Tài liệu nguồn: [Luồng và đáp án](nghien_cuu_tung_slide/colio_ai_hoat_dong_the_nao.md) · [Quy tắc thiết kế](DEMO_DESIGN_RULES.md) · [Mẫu Movora](DESIGN.md) · [Brief](colio_ai_project_brief.md).
 
 ## Quyết định
 
