@@ -8,10 +8,10 @@
   1. Câu "No guessing where the number came from." ở shot 6.
   2. Vế "and every line traces back to the quote" ở shot 5.
 - **Mạch kể:**
-  - Problem (0:00–0:26): chi phí logistics cao, thương mại tăng nhanh, hóa đơn cước vẫn kiểm tay, Việt Nam chưa có số liệu công khai đáng tin cậy về lỗi.
+  - Problem (0:00–0:26): chi phí logistics cao, thương mại tăng nhanh, hóa đơn cước vẫn kiểm tay, lỗi chưa ai đo.
   - Solution (0:26–1:15): Movago bắt lỗi, nêu căn cứ, chuyển cho người xử lý.
   - Result (1:15–1:30): kết quả minh họa và end card.
-- **Movago xuất hiện ở đầu shot 4 (khoảng giây 32)**, sau khi hóa đơn INV-095 được đặt cạnh báo giá đã duyệt 8.500.000 ₫ ở shot 3. Shot 3 dựng bối cảnh: thỏa thuận giá trước, hóa đơn sau, khoản chênh lệch sau cùng. Hai shot đầu là đồ họa số liệu cùng phong cách giao diện, không dùng footage.
+- **Movago xuất hiện ở giây 20**, cuối shot 3, qua chính hóa đơn sai, rồi logo hiện ở shot 4. Hai shot đầu là đồ họa số liệu cùng phong cách giao diện, không dùng footage.
 - **Số liệu thị trường phải có nguồn trên màn hình**, chữ nhỏ ở góc dưới, giữ suốt shot. Chỉ dùng ba số trong bảng nguồn ở cuối file. Câu "8,5 tỷ hóa đơn điện tử" đã bỏ vì chưa có nguồn chính thức.
 - **Không nói tính năng dự kiến như đã chạy.** Demo đang mô phỏng hai việc: đọc PDF bằng OCR/AI và nhận chứng từ từ email hay Zalo. Shot nào có hai việc này phải có nhãn góc: `Prototype simulation · planned document AI`.
 - **Phần đã dựng thật:**
@@ -60,23 +60,17 @@ Target: 12–15% by 2035
 
 **VO:** "Meanwhile, trade passed a trillion dollars in the first ten months of 2026, up thirty-two percent on last year."
 
-### Shot 3 · Kiểm tay, và giá đã duyệt (0:14–0:26)
+### Shot 3 · Kiểm tay, chưa ai đo lỗi (0:14–0:26)
 
 **Hình:**
-1. (0:14–0:20) Chồng hóa đơn trượt vào một màn hình kế toán. Ba khung mở cạnh nhau: hóa đơn PDF, hồ sơ lô, bảng giá trong Excel. Chữ `3–6%` hiện lên, kèm nhãn nhỏ `freight invoices with errors · audits abroad`. Dòng `Vietnam: no public data yet` hiện ra, có dấu hỏi.
-2. (0:20–0:26) Chồng hóa đơn lùi về. Một thẻ báo giá được ghim vào giữa khung, sáng Electric Blue, dán nhãn `Approved · Q-SA-2611`:
-   - Chip `SHP-001 · Singapore → Cat Lai · 20' DRY`
-   - Ocean freight `8,000,000`
-   - Documentation fee `500,000`
-   - Tổng `8,500,000 ₫` đếm lên và đóng dấu **Agreed price**.
+1. Chồng hóa đơn trượt vào một màn hình kế toán. Ba khung mở cạnh nhau: hóa đơn PDF, hồ sơ lô, bảng giá trong Excel. Con trỏ nhảy qua lại giữa ba khung.
+2. Chữ `3–6%` hiện lên, kèm nhãn nhỏ `freight invoices with errors · audits abroad`.
+3. Dòng `Vietnam: not measured` hiện ra, có dấu hỏi.
+4. Cuối shot, một hóa đơn được kéo ra khỏi chồng: tổng `9,300,000 ₫` hiện ✓ "Total adds up".
 
-**Thứ tự animation:** chữ 3–6% → dòng Vietnam → chồng hóa đơn lùi lại → thẻ báo giá bay vào giữa → các dòng hiện từ trên xuống → tổng 8,500,000 đóng dấu.
+**Nguồn:** `Transportation Insight (US)`
 
-**On-screen (đóng dấu cuối shot):** `Agreed price · 8,500,000 ₫`
-
-**Nguồn:** `Transportation Insight (US)` (số 3–6% chỉ áp dụng cho các cuộc kiểm toán ở Mỹ)
-
-**VO:** "Every shipment starts with an approved quote. This one: a twenty-foot container, Singapore to Cat Lai, agreed at eight million five hundred thousand dong. Eight million ocean freight, five hundred thousand documentation. Audits abroad find errors in three to six percent of freight invoices. Vietnam has no public, reliable data yet to size the problem."
+**VO:** "Every shipment ends in a freight invoice that someone checks by hand against the shipment and the agreed price. Audits abroad find errors in three to six percent of freight invoices. In Vietnam, nobody is measuring. This shipment was agreed at eight million five hundred thousand dong. And this one adds up…"
 
 ---
 
@@ -84,17 +78,11 @@ Target: 12–15% by 2035
 
 ### Shot 4 · Giới thiệu Movago (0:26–0:33)
 
-**Hình:**
-1. (0:26–0:28) Thẻ báo giá `8,500,000 ₫` ở shot 3 giữ nguyên bên trái. Hóa đơn **INV-095** trượt vào từ bên phải, đặt cạnh thẻ đó.
-2. (0:28–0:30) Các dòng hóa đơn hiện lên. Ocean freight `8,000,000` khớp với báo giá. Dòng DOC hiện `1,300,000` nằm cạnh `500,000` đã duyệt. Tổng `9,300,000 ₫` có dấu ✓ "Total adds up": phép cộng đúng, nhưng giá sai.
-3. (0:30–0:32) Dòng DOC lật đỏ sang **Discrepancy**. Một thước nối hai tổng, số `+800,000 ₫` đếm lên.
-4. (0:32–0:33) Logo Movago lướt vào góc trên.
+**Hình:** Hóa đơn ở cuối shot 3 bay vào giao diện Movago. Dòng DOC lật đỏ sang **Discrepancy**, số `+800,000 ₫` đếm lên. Logo Movago lướt vào góc trên.
 
-**Nhãn góc bắt buộc:** `Prototype simulation · planned document AI` (vì hóa đơn đang hiện như một PDF đã đọc)
+**On-screen:** `It adds up. It's still wrong.`
 
-**On-screen:** `It adds up. It's still wrong.` (hiện sau bước 2)
-
-**VO:** "Then the invoice arrives: nine million three hundred thousand. The total adds up, but the documentation fee is one point three million, against five hundred thousand agreed. That's eight hundred thousand dong over the price. Movago catches it before anyone pays."
+**VO:** "…but it's still eight hundred thousand dong wrong. Movago catches it before anyone pays."
 
 ### Shot 5 · Bảng giá có căn cứ (0:33–0:43)
 
@@ -166,9 +154,9 @@ Odylytics · KTC Ideathon 2026
 >
 > Meanwhile, trade passed a trillion dollars in the first ten months of 2026, up thirty-two percent on last year.
 >
-> Every shipment starts with an approved quote. This one: a twenty-foot container, Singapore to Cat Lai, agreed at eight million five hundred thousand dong. Eight million ocean freight, five hundred thousand documentation. Audits abroad find errors in three to six percent of freight invoices. Vietnam has no public, reliable data yet to size the problem.
+> Every shipment ends in a freight invoice that someone checks by hand against the shipment and the agreed price. Audits abroad find errors in three to six percent of freight invoices. In Vietnam, nobody is measuring. This shipment was agreed at eight million five hundred thousand dong. And this one adds up… but it's still eight hundred thousand dong wrong.
 >
-> Then the invoice arrives: nine million three hundred thousand. The total adds up, but the documentation fee is one point three million, against five hundred thousand agreed. That's eight hundred thousand dong over the price. Movago catches it before anyone pays.
+> Movago catches it before anyone pays.
 >
 > It starts from the quotation pricing approved: each price becomes a rate card line, and every line traces back to the quote.
 >
@@ -187,7 +175,7 @@ Odylytics · KTC Ideathon 2026
 | Chi phí logistics ≈ 16–17% GDP | [VIR](https://vir.com.vn/vietnam-logistics-costs-account-for-16-per-cent-of-gdp-159581.html) · [Báo cáo Logistics Việt Nam 2025](https://proship.vn/news/bao-cao-logistics-viet-nam-2025/) | Đây là **chi phí** logistics so với GDP, không phải tỷ trọng của ngành trong GDP. Mới đọc qua bài tóm tắt; mở [PDF báo cáo](https://proship.vn/wp-content/uploads/2026/03/Bao-cao-Logistics-Viet-Nam-2025.pdf) để lấy số trang trước khi xuất video. |
 | Mục tiêu 12–15% GDP giai đoạn 2025–2035 | [Quyết định 2229/QĐ-TTg](https://datafiles.chinhphu.vn/cpp/files/vbpq/2025/10/2229-ttg.signed.pdf) | Đã có văn bản gốc. |
 | US$1.010,55 tỷ, tăng 32,3% so với cùng kỳ, 10 tháng 2026 | [Cục Thống kê](https://www.nso.gov.vn/tin-tuc-thong-ke/2026/11/tong-kim-ngach-xuat-nhap-khau-vuot-moc-1-000-ty-usd-dau-moc-lich-su-va-dong-luc-tang-truong-moi/) | Chỉ nói đúng kỳ so sánh này, không nói "tăng hơn 30% mỗi năm". |
-| 3–6% hóa đơn cước có lỗi | [Transportation Insight](https://transportationinsight.com/resources/freight-audit-payment-protect-profit-soft-rates/) | Số đo ở Mỹ. Lời thoại phải giữ chữ "abroad". Trên hình ghi "Vietnam: no public data yet", không ghi "not measured" hay "nobody is measuring", vì chưa thể khẳng định không ai đo. |
+| 3–6% hóa đơn cước có lỗi | [Transportation Insight](https://transportationinsight.com/resources/freight-audit-payment-protect-profit-soft-rates/) | Số đo ở Mỹ. Lời thoại phải giữ chữ "abroad" và trên hình phải ghi "Vietnam: not measured". |
 
 ## Những gì không đưa vào video
 
@@ -203,8 +191,7 @@ Odylytics · KTC Ideathon 2026
 
 - [ ] Shot 1–3 có dòng nguồn ở góc dưới trong suốt shot.
 - [ ] Shot 1 ghi "logistics **costs**", không ghi "logistics is 16% of GDP".
-- [ ] Shot 3 giữ chữ "abroad" trong lời thoại và dòng "Vietnam: no public data yet" trên hình.
-- [ ] Shot 3 đặt thẻ báo giá 8.500.000 ₫ trước khi INV-095 xuất hiện ở shot 4.
+- [ ] Shot 3 giữ chữ "abroad" trong lời thoại và dòng "Vietnam: not measured" trên hình.
 - [ ] Shot 6 có nhãn `Prototype simulation · planned document AI` khi PDF còn trên hình.
 - [ ] Shot 8 có dòng `Illustrative scenario` trên màn hình cùng lúc với các con số.
 - [ ] Không câu thoại hay dòng chữ nào nói Movago "đã đọc" hoặc "đã kéo về" chứng từ từ email hay Zalo.
