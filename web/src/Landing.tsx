@@ -196,10 +196,6 @@ export default function Landing() {
           </div>
         </section>
 
-        <footer className="footer" lang={lang}>
-          <span>{t('footer')}</span>
-          <span className="muted">{t('disclaimer')}</span>
-        </footer>
       </div>
     </>
   )

@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { LangContext, useT, type Lang } from './i18n'
 import Business from './Business'
+import Footer from './Footer'
 import Intro from './Intro'
 import Landing from './Landing'
 import { CustomerApp, Login } from './Login'
@@ -98,6 +99,7 @@ export default function App() {
       <Intro />
       <Nav />
       <main>{isDemo ? <Workspace key={String(story)} story={story} /> : isBiz ? <Business /> : isRates ? <RateBuilder /> : isLogin ? <Login /> : isApp ? <CustomerApp /> : <Landing />}</main>
+      {!isDemo && <Footer />}
     </LangContext.Provider>
   )
 }
