@@ -70,7 +70,7 @@ Target: 12–15% by 2035
 
 **Nguồn:** `Transportation Insight (US)`
 
-**VO:** "Every shipment ends in a freight invoice that someone checks by hand against the shipment and the agreed price. Audits abroad find errors in three to six percent of freight invoices. In Vietnam, nobody is measuring. This shipment was agreed at eight million five hundred thousand dong. And this one adds up…"
+**VO:** "Every shipment ends in a freight invoice that someone checks by hand against the shipment and the agreed price. Audits abroad find errors in three to six percent of freight invoices. In Vietnam, nobody is measuring. For example, this shipment was agreed at eight million five hundred thousand dong. And this one adds up…"
 
 ---
 
@@ -154,7 +154,7 @@ Odylytics · KTC Ideathon 2026
 >
 > Meanwhile, trade passed a trillion dollars in the first ten months of 2026, up thirty-two percent on last year.
 >
-> Every shipment ends in a freight invoice that someone checks by hand against the shipment and the agreed price. Audits abroad find errors in three to six percent of freight invoices. In Vietnam, nobody is measuring. This shipment was agreed at eight million five hundred thousand dong. And this one adds up… but it's still eight hundred thousand dong wrong.
+> Every shipment ends in a freight invoice that someone checks by hand against the shipment and the agreed price. Audits abroad find errors in three to six percent of freight invoices. In Vietnam, nobody is measuring. For example, this shipment was agreed at eight million five hundred thousand dong. And this one adds up… but it's still eight hundred thousand dong wrong.
 >
 > Movago catches it before anyone pays.
 >
