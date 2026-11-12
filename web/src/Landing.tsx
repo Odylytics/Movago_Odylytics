@@ -1,3 +1,5 @@
+import { useEffect } from 'react'
+import { Mark } from './App'
 import Avatar from './Avatar'
 import StackSection from './StackSection'
 import { useT } from './i18n'
@@ -21,21 +23,51 @@ const PARTNERS: { name: string; src: string }[] = []
 
 export default function Landing() {
   const { t, money, signed, plain, lang } = useT()
+
+  // Everything below the first screen fades in as it scrolls into view; the first screen stays clean.
+  useEffect(() => {
+    const els = document.querySelectorAll('.reveal')
+    if (typeof IntersectionObserver === 'undefined') { els.forEach((el) => el.classList.add('in')); return }
+    const io = new IntersectionObserver((entries) => entries.forEach((e) => {
+      if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target) }
+    }), { threshold: 0.15 })
+    els.forEach((el) => io.observe(el))
+    return () => io.disconnect()
+  }, [])
+
   return (
     <>
-      <section className="hero-light">
-        <div className="wrap hero">
+      <section className="home">
+        <div className="home-brand"><Mark className="home-mark" /><span className="home-word">Movago</span></div>
+        <p className="home-slogan">Move smarter. Go safer.</p>
+        <div className="home-ctas">
+          <a className="btn on-dark big" href="#/demo?story=1" onClick={() => {
+            // the click is the user gesture that lets the story start straight away, with sound
+            unlock()
+            try { sessionStorage.setItem('movago.autostart', '1') } catch { /* private mode */ }
+          }}>{t('introDemo')}</a>
+          <a className="btn ghost big" href="#/demo">{t('ctaTry')}</a>
+        </div>
+        <p className="powered">{t('poweredBy')} <b>Odylytics</b></p>
+        <div className="trust">
+          <p className="trust-title">{t('trustTitle')}</p>
+          <ul className="trust-logos">
+            {PARTNERS.length
+              ? PARTNERS.map((p) => <li key={p.name}><img src={p.src} alt={p.name} /></li>)
+              : [1, 2, 3, 4, 5].map((i) => <li key={i} className="slot">{t('partnerSlot')}</li>)}
+          </ul>
+        </div>
+        <a className="scroll-more" href="#/#more" onClick={(e) => { e.preventDefault(); document.getElementById('more')?.scrollIntoView({ behavior: 'smooth' }) }}>
+          {t('scrollMore')} <span aria-hidden="true">↓</span>
+        </a>
+      </section>
+
+      <div className="wrap" id="more">
+        <section className="section hero reveal">
           <div className="hero-copy">
             <h1 className="display">{t('heroTitle')}</h1>
             <p className="lead">{t('heroLead')}</p>
-            <div className="cta-row">
-              <a className="btn on-dark" href="#/demo?story=1" onClick={() => {
-                // the click is the user gesture that lets the story start straight away, with sound
-                unlock()
-                try { sessionStorage.setItem('movago.autostart', '1') } catch { /* private mode */ }
-              }}>{t('introDemo')}</a>
-              <a className="btn ghost" href="#/demo">{t('ctaTry')}</a>
-            </div>
+            <p className="team-line">{t('teamLine')}</p>
           </div>
 
           <div className="hero-dash" aria-label={t('dashTitle')}>
@@ -59,21 +91,11 @@ export default function Landing() {
               <div className="dash-axis">{[1, 2, 3, 4, 5, 6, 7].map((w) => <span key={w}>{lang === 'en' ? 'W' : 'T'}{w}</span>)}</div>
             </div>
           </div>
-        </div>
-
-        <div className="wrap trust">
-          <p className="trust-title">{t('trustTitle')}</p>
-          <ul className="trust-logos">
-            {PARTNERS.length
-              ? PARTNERS.map((p) => <li key={p.name}><img src={p.src} alt={p.name} /></li>)
-              : [1, 2, 3, 4, 5].map((i) => <li key={i} className="slot">{t('partnerSlot')}</li>)}
-          </ul>
-          <p className="powered">{t('poweredBy')} <b>Odylytics</b> · {t('teamLine')}</p>
-        </div>
-      </section>
+        </section>
+      </div>
 
       <div className="wrap">
-        <section className="section split">
+        <section className="section split reveal">
           <div>
             <h2>{t('heroTitleAlt')}</h2>
             <p className="sub">{t('heroBody')}</p>
@@ -109,7 +131,7 @@ export default function Landing() {
           </div>
         </section>
 
-        <section className="section split">
+        <section className="section split reveal">
           <div>
             <h2>{t('problemTitle')}</h2>
             <p className="sub">{t('problemBody')}</p>
@@ -121,7 +143,7 @@ export default function Landing() {
           </ul>
         </section>
 
-        <section className="section split" aria-labelledby="cast">
+        <section className="section split reveal" aria-labelledby="cast">
           <div>
             <h2 id="cast">{t('castTitle')}</h2>
             <p className="sub">{t('castSub')}</p>
@@ -137,7 +159,7 @@ export default function Landing() {
 
         <StackSection />
 
-        <section className="section split">
+        <section className="section split reveal">
           <div>
             <h2>{t('outcomesTitle')}</h2>
             <p className="sub">{t('outcomesSub')}</p>
@@ -149,7 +171,7 @@ export default function Landing() {
           </ul>
         </section>
 
-        <section className="section">
+        <section className="section reveal">
           <div className="panel-dark">
             <div>
               <h2>{t('humanTitle')}</h2>

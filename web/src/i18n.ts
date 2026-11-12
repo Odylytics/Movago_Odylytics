@@ -26,6 +26,7 @@ const dict = {
   kpiChart: { en: 'Overcharges flagged, cumulative (million ₫)', vi: 'Khoản thu sai cộng dồn (triệu đ)' },
   trustTitle: { en: 'Trusted by partners', vi: 'Đối tác đồng hành' },
   partnerSlot: { en: 'Partner logo', vi: 'Logo đối tác' },
+  scrollMore: { en: 'Scroll for more', vi: 'Kéo xuống để xem thêm' },
   poweredBy: { en: 'Powered by', vi: 'Phát triển bởi' },
   ctaStory: { en: 'Play the story', vi: 'Xem tình huống' },
   ctaTry: { en: 'Try the sample case', vi: 'Tự thử hồ sơ mẫu' },
