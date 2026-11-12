@@ -1,14 +1,11 @@
 import { useEffect, useState } from 'react'
 import { Mark } from './App'
-import { useT } from './i18n'
-import { unlock } from './sound'
 
-// Plays on every load of the home page, then waits for a choice: watch the guided demo or use the site.
+// Plays on every load of the home page, then drops into the landing hero, which carries the demo and app CTAs.
 // A deep link (#/demo, #/business, #/rates) opens its page directly, so judges' links and the nav's Open demo reload skip it.
 const isHome = () => ['', '#', '#/'].includes(window.location.hash)
 
 export default function Intro() {
-  const { t } = useT()
   const [show, setShow] = useState(isHome)
   const [leaving, setLeaving] = useState(false)
 
@@ -17,7 +14,9 @@ export default function Intro() {
     document.documentElement.style.overflow = 'hidden'
     const skip = (event: KeyboardEvent) => { if (event.key === 'Escape') setLeaving(true) }
     window.addEventListener('keydown', skip)
+    const done = window.setTimeout(() => setLeaving(true), 3000) // after the slogan has landed
     return () => {
+      window.clearTimeout(done)
       window.removeEventListener('keydown', skip)
       document.documentElement.style.overflow = ''
     }
@@ -31,14 +30,6 @@ export default function Intro() {
   }, [leaving])
 
   if (!show) return null
-
-  const watchDemo = () => {
-    // the click is the user gesture that lets the story start straight away, with sound
-    unlock()
-    try { sessionStorage.setItem('movago.autostart', '1') } catch { /* private mode */ }
-    window.location.hash = '#/demo?story=1'
-    setLeaving(true)
-  }
 
   return (
     <div
@@ -63,16 +54,6 @@ export default function Intro() {
         </div>
         <p className="intro-slogan">Move smarter. Go safer.</p>
 
-        <div className="intro-choices">
-          <button className="intro-choice primary" onClick={watchDemo}>
-            <b>{t('introDemo')}</b>
-            <span>{t('introDemoSub')}</span>
-          </button>
-          <button className="intro-choice" onClick={() => setLeaving(true)}>
-            <b>{t('introApp')}</b>
-            <span>{t('introAppSub')}</span>
-          </button>
-        </div>
       </div>
     </div>
   )
