@@ -185,7 +185,6 @@ export default function Landing() {
               <h1 className="h3 a-up" id="hero-title" style={{ '--ad': '0.08s' } as CSSProperties}>{t('heroTitle')}</h1>
               <div className="hero2-ctas a-up" style={{ '--ad': '0.16s' } as CSSProperties}>
                 <ArrowBtn href="#/demo?choose=1">{t('introDemo')}</ArrowBtn>
-                <ArrowBtn ghost href="#/demo">{t('ctaTry')}</ArrowBtn>
               </div>
               <p className="hero2-meta a-up" style={{ '--ad': '0.24s' } as CSSProperties}>{t('poweredBy')} <b>Odylytics</b> · {tx(C.team)}</p>
             </div>
