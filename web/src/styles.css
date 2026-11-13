@@ -230,7 +230,8 @@ h1, h2, h3, h4, button, th, label, nav, .brand, .status, .field, .src .k, .src .
 .icon-btn:hover { border-color: var(--line-strong); }
 .icon-btn svg { width: 18px; height: 18px; }
 .burger { display: none; }
-.nav .abtn { min-height: 44px; padding: 4px 14px 4px 4px; font-size: 13px; }
+/* same width in EN ("Open demo") and VI ("Mở demo"), so switching language doesn't shift the nav */
+.nav .abtn { min-height: 44px; min-width: 150px; padding: 4px 14px 4px 4px; font-size: 13px; }
 .nav .abtn .abtn-ico { width: 34px; height: 34px; }
 .menu-sheet {
   position: fixed; inset: var(--nav-h) 0 0 0; z-index: 19; background: var(--surface); padding: 32px var(--gutter) 40px;
@@ -246,7 +247,7 @@ h1, h2, h3, h4, button, th, label, nav, .brand, .status, .field, .src .k, .src .
 @media (max-width: 640px) {
   .nav-tools .lang, .nav-tools .theme-btn { display: none; }
   .nav .abtn .abtn-label { display: none; }
-  .nav .abtn { padding: 4px; }
+  .nav .abtn { padding: 4px; min-width: 0; }
   .nav-right { gap: 10px; }
 }
 
