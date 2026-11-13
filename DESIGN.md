@@ -40,15 +40,15 @@ Chốt ngày 12/11/2026, thay mẫu Dimension. File này quyết định **bố 
 
 | Vị trí | Desktop | Tablet | Phone |
 | --- | --- | --- | --- |
-| Padding trên và dưới của phần | 120 px | 96 px | 72 px |
-| Khoảng từ cụm tiêu đề tới nội dung | 120 px | 80 px | 48 px |
+| Padding trên và dưới của phần | 72 px | 64 px | 56 px |
+| Khoảng từ cụm tiêu đề tới nội dung | 40 px | 36 px | 32 px |
 | Hero | 80 px trên, 40 px dưới, khoảng 250 px giữa wordmark và cụm chữ đáy | 64 px khoảng giữa | 40 px khoảng giữa |
 | Padding thẻ lớn (hàng đánh số, footer) | 40 px | 32 px | 20 px |
 | Padding thẻ nhỏ (số liệu, quy trình) | 20 px | 20 px | 16 px |
 | Khoảng giữa các thẻ cùng nhóm | 20 px | 20 px | 12 px |
 | Khoảng trong thành phần | 10, 12, 20, 40 px | như desktop | 8, 10, 16, 24 px |
 
-Chỉ dùng các giá trị trong bảng. Khi cần giá trị mới, thêm vào bảng trước.
+Chỉ dùng các giá trị trong bảng. Khi cần giá trị mới, thêm vào bảng trước. Ngày 13/11/2026 nhịp phần được thu gọn so với Movora (120 px) để trên laptop một màn hình thấy trọn một phần; hero cần cẩu giữ nguyên.
 
 ## Hình khối và viền
 
@@ -75,7 +75,7 @@ Font cụ thể theo quy tắc demo. Bảng dưới là cỡ và nhịp lấy t�
 | Vai trò | Desktop | Tablet | Phone | Line-height | Tracking | Kiểu |
 | --- | --- | --- | --- | --- | --- | --- |
 | Display (H1) | 150 px | 100 px | 60 px | 1,0 | −0,04em (phone −0,02em) | In hoa, đậm |
-| Heading (H2) | 80 px | 60 px | 40 px | 1,1 | −0,03em | In hoa, đậm |
+| Heading (H2) | 52 px | 44 px | 30 px | 1,1 | −0,03em | In hoa, đậm |
 | Title (H3) | 32 px | 26 px | 20 px | 1,2 | −0,01em | In hoa, đậm |
 | Body lớn | 20 px | 18 px | 16 px | 1,4 | 0 | Thường |
 | Body | 16 px | 16 px | 14 px | 1,5 | 0 | Thường |

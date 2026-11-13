@@ -2,7 +2,7 @@ import { createContext, useContext } from 'react'
 
 export type Lang = 'en' | 'vi'
 
-const dict = {
+export const dict = {
   navHow: { en: 'How it works', vi: 'Cách hoạt động' },
   navDemo: { en: 'Open demo', vi: 'Mở demo' },
   introDemo: { en: 'Watch the 3-minute demo', vi: 'Xem demo 3 phút' },

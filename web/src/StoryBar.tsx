@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { T } from './ui'
 import Avatar from './Avatar'
 import { useT } from './i18n'
 import { play } from './sound'
@@ -83,14 +84,14 @@ export function StoryBar({ step, goto, playing, setPlaying, muted, toggleMute, h
       </div>
 
       <div className="story-controls">
-        <button className="btn ghost small" onClick={click(onExit)}>{t('exit')}</button>
+        <button className="btn ghost small" onClick={click(onExit)}><T k="exit" /></button>
         <div className="row">
           <button className="btn ghost small" onClick={click(toggleMute)} aria-pressed={!muted}>{muted ? t('soundOff') : t('soundOn')}</button>
-          <button className="btn ghost small" onClick={click(() => goto(step - 1))} disabled={step === 0}>{t('back')}</button>
+          <button className="btn ghost small" onClick={click(() => goto(step - 1))} disabled={step === 0}><T k="back" /></button>
           <button className="btn small" onClick={click(() => (last && !playing && elapsed >= s.seconds ? goto(0) : setPlaying(!playing)))}>
             {playing ? t('pause') : last && elapsed >= s.seconds ? t('replay') : t('play')}
           </button>
-          <button className="btn ghost small" onClick={click(() => goto(step + 1))} disabled={last}>{t('next')}</button>
+          <button className="btn ghost small" onClick={click(() => goto(step + 1))} disabled={last}><T k="next" /></button>
         </div>
       </div>
     </div>
@@ -103,20 +104,20 @@ export function StoryStart({ onStart }: { onStart: (withSound: boolean) => void 
   return (
     <div className="modal-c story-start">
       <div className="modal start-card" role="dialog" aria-modal="true" aria-labelledby="start-title">
-        <span className="chip sim">{t('fictional')}</span>
-        <h2 id="start-title">{t('startTitle')}</h2>
-        <p className="muted">{t('startSub')}</p>
+        <span className="chip sim"><T k="fictional" /></span>
+        <h2 id="start-title"><T k="startTitle" /></h2>
+        <p className="muted"><T k="startSub" /></p>
         <ul className="start-cast">
           {PERSONAS.map((p) => (
             <li key={p.id}><Avatar p={p} size={44} /><span><b>{p.name}</b><span>{p.role[lang]}</span></span></li>
           ))}
         </ul>
         <div className="row">
-          <button className="btn" autoFocus onClick={() => onStart(true)}>{t('playSound')}</button>
-          <button className="btn ghost" onClick={() => onStart(false)}>{t('playMuted')}</button>
-          <a className="btn ghost" href="#/demo">{t('exploreSelf')}</a>
+          <button className="btn" autoFocus onClick={() => onStart(true)}><T k="playSound" /></button>
+          <button className="btn ghost" onClick={() => onStart(false)}><T k="playMuted" /></button>
+          <a className="btn ghost" href="#/demo"><T k="exploreSelf" /></a>
         </div>
-        <p className="muted mini">{t('avatarCredit')}</p>
+        <p className="muted mini"><T k="avatarCredit" /></p>
       </div>
     </div>
   )

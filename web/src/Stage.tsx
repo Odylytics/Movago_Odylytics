@@ -1,4 +1,5 @@
 import type { CSSProperties, ReactNode } from 'react'
+import { Tx } from './ui'
 import { Icon, type IconName } from './icons'
 import { useT } from './i18n'
 import { QUOTE, REVIEW_THRESHOLD } from './rateQuote'
@@ -16,8 +17,8 @@ export default function Stage({ scene, className = '' }: { scene: Scene; classNa
   return (
     <section className={`box stage ${className}`} aria-label={tx({ en: 'Story scene', vi: 'Cảnh minh họa' })}>
       <div className="stage-head">
-        <span className="chip sim">{tx({ en: 'Simulated', vi: 'Mô phỏng' })}</span>
-        <span className="muted mini">{tx(TITLES[scene])}</span>
+        <span className="chip sim"><Tx v={{ en: 'Simulated', vi: 'Mô phỏng' }} /></span>
+        <span className="muted mini"><Tx v={TITLES[scene]} /></span>
       </div>
       {scene === 'rates' && <Rates tx={tx} lang={lang} />}
       {scene === 'channels' && <Channels tx={tx} />}
@@ -53,21 +54,21 @@ function Rates({ tx, lang }: { tx: (x: L) => string; lang: 'en' | 'vi' }) {
         </div>
       </div>
       <div className="fields">
-        <div className="fields-head"><span>{tx({ en: 'Rate line', vi: 'Dòng giá' })}</span><span>{tx({ en: 'Value', vi: 'Giá trị' })}</span><span>{tx({ en: 'Conf.', vi: 'Tin cậy' })}</span></div>
+        <div className="fields-head"><span><Tx v={{ en: 'Rate line', vi: 'Dòng giá' }} /></span><span><Tx v={{ en: 'Value', vi: 'Giá trị' }} /></span><span><Tx v={{ en: 'Conf.', vi: 'Tin cậy' }} /></span></div>
         <ul>
           {QUOTE.lines.map((l, i) => (
             <li key={l.line} style={d(at(i))}>
-              <span className="muted">{l.feeCode} · {l.container}<span className="where"> · {tx({ en: 'line', vi: 'dòng' })} {l.line}</span></span>
+              <span className="muted">{l.feeCode} · {l.container}<span className="where"> · <Tx v={{ en: 'line', vi: 'dòng' }} /> {l.line}</span></span>
               <b className="typed" style={d(at(i) + 0.1)}>{n(l.price)}</b>
               <span className="conf">{Math.round(l.confidence * 100)}%</span>
-              {l.confidence < REVIEW_THRESHOLD && l.note && <span className="ai-note" style={d(at(i) + 0.3)}>{tx({ en: 'Khoa checks: ', vi: 'Khoa xem lại: ' })}{l.note[lang]}</span>}
+              {l.confidence < REVIEW_THRESHOLD && l.note && <span className="ai-note" style={d(at(i) + 0.3)}><Tx v={{ en: 'Khoa checks: ', vi: 'Khoa xem lại: ' }} />{l.note[lang]}</span>}
             </li>
           ))}
         </ul>
         <div className="row" style={{ ...d(8.6), gap: 8, marginTop: 10 }}>
-          <span className="status sent hitrow" style={d(8.6)}>{tx({ en: 'Khoa approved 9/9 → RATE-V3 published', vi: 'Khoa duyệt 9/9 → phát hành RATE-V3' })}</span>
+          <span className="status sent hitrow" style={d(8.6)}><Tx v={{ en: 'Khoa approved 9/9 → RATE-V3 published', vi: 'Khoa duyệt 9/9 → phát hành RATE-V3' }} /></span>
         </div>
-        <p className="muted mini">{tx({ en: 'Simulated: lines come from rateQuote.ts and confidence figures are illustrative. Try it yourself on the Rate cards page.', vi: 'Mô phỏng: các dòng lấy từ rateQuote.ts, độ tin cậy chỉ để minh họa. Tự thử ở trang Bảng giá.' })}</p>
+        <p className="muted mini"><Tx v={{ en: 'Simulated: lines come from rateQuote.ts and confidence figures are illustrative. Try it yourself on the Rate cards page.', vi: 'Mô phỏng: các dòng lấy từ rateQuote.ts, độ tin cậy chỉ để minh họa. Tự thử ở trang Bảng giá.' }} /></p>
       </div>
     </div>
   )
@@ -86,16 +87,16 @@ function Channels({ tx }: { tx: (x: L) => string }) {
           <li key={it.file} className="ch-item" style={d(it.at)}>
             <span className="ch-icon"><Icon name={it.icon} /></span>
             <div>
-              <span className="ch-name">{tx(it.ch)}</span>
+              <span className="ch-name"><Tx v={it.ch} /></span>
               <b>{it.from}</b>
-              <span className="muted mini">{tx(it.text)} · {it.file}</span>
+              <span className="muted mini"><Tx v={it.text} /> · {it.file}</span>
             </div>
             <span className="ch-flow" style={d(it.at + 0.5)} aria-hidden="true" />
           </li>
         ))}
       </ol>
       <div className="inbox">
-        <div className="inbox-head"><Icon name="inbox" /> {tx({ en: 'Movago inbox', vi: 'Hộp thư Movago' })}</div>
+        <div className="inbox-head"><Icon name="inbox" /> <Tx v={{ en: 'Movago inbox', vi: 'Hộp thư Movago' }} /></div>
         <ul className="inbox-rows">
           {items.map((it) => (
             <li key={it.file} style={d(it.at + 0.9)}><Icon name={it.icon} /> <span>{it.file}</span><span className="muted mini">Supplier A</span></li>
@@ -104,14 +105,14 @@ function Channels({ tx }: { tx: (x: L) => string }) {
         <div className="inbox-group" style={d(6)}>
           <div className="row" style={{ justifyContent: 'space-between' }}>
             <b>INV-095 · Supplier A · SHP-001</b>
-            <span className="status sent">{tx({ en: '3 copies → 1 invoice', vi: '3 bản → 1 hóa đơn' })}</span>
+            <span className="status sent"><Tx v={{ en: '3 copies → 1 invoice', vi: '3 bản → 1 hóa đơn' }} /></span>
           </div>
           <div className="row" style={{ gap: 6, marginTop: 8 }}>
-            <span className="chip">PDF · {tx({ en: 'source', vi: 'bản gốc' })}</span>
-            <span className="chip">{tx({ en: 'Photo', vi: 'Ảnh' })}</span>
-            <span className="chip">{tx({ en: 'Scan', vi: 'Bản quét' })}</span>
+            <span className="chip">PDF · <Tx v={{ en: 'source', vi: 'bản gốc' }} /></span>
+            <span className="chip"><Tx v={{ en: 'Photo', vi: 'Ảnh' }} /></span>
+            <span className="chip"><Tx v={{ en: 'Scan', vi: 'Bản quét' }} /></span>
           </div>
-          <p className="muted mini" style={{ marginTop: 8 }}>{tx({ en: 'Grouped by supplier + invoice number. Different files, same invoice: nothing is entered twice.', vi: 'Gộp theo nhà cung cấp + số hóa đơn. Khác tệp nhưng cùng hóa đơn: không nhập hai lần.' })}</p>
+          <p className="muted mini" style={{ marginTop: 8 }}><Tx v={{ en: 'Grouped by supplier + invoice number. Different files, same invoice: nothing is entered twice.', vi: 'Gộp theo nhà cung cấp + số hóa đơn. Khác tệp nhưng cùng hóa đơn: không nhập hai lần.' }} /></p>
         </div>
       </div>
     </div>
@@ -143,12 +144,12 @@ function Scan({ tx }: { tx: (x: L) => string }) {
       <div className="phone" aria-hidden="true">
         <div className="phone-notch" />
         <div className="phone-screen">
-          <span className="cam-label">{tx({ en: 'Scan invoice', vi: 'Quét hóa đơn' })}</span>
+          <span className="cam-label"><Tx v={{ en: 'Scan invoice', vi: 'Quét hóa đơn' }} /></span>
           <Paper className="tilted" />
           <span className="frame" style={d(0.8)}><i /><i /><i /><i /></span>
           <span className="flash" style={d(3)} />
           <div className="upload" style={d(3.8)}>
-            <span>{tx({ en: 'Sending to Movago', vi: 'Đang gửi tới Movago' })}</span>
+            <span><Tx v={{ en: 'Sending to Movago', vi: 'Đang gửi tới Movago' }} /></span>
             <span className="upload-bar"><i style={d(3.9)} /></span>
           </div>
           <span className="shutter" />
@@ -156,9 +157,9 @@ function Scan({ tx }: { tx: (x: L) => string }) {
       </div>
       <ol className="scan-checks">
         {checks.map((c) => (
-          <li key={c.t.en} style={d(c.at)}><span className="ico dark"><Icon name="check" /></span>{tx(c.t)}</li>
+          <li key={c.t.en} style={d(c.at)}><span className="ico dark"><Icon name="check" /></span><Tx v={c.t} /></li>
         ))}
-        <li className="muted mini" style={d(6)}>{tx({ en: 'In the MVP, invoices arrive as PDF; phone capture is for paper copies and is part of the roadmap.', vi: 'Trong MVP, hóa đơn đến dưới dạng PDF; chụp bằng điện thoại dành cho bản giấy và nằm trong lộ trình.' })}</li>
+        <li className="muted mini" style={d(6)}><Tx v={{ en: 'In the MVP, invoices arrive as PDF; phone capture is for paper copies and is part of the roadmap.', vi: 'Trong MVP, hóa đơn đến dưới dạng PDF; chụp bằng điện thoại dành cho bản giấy và nằm trong lộ trình.' }} /></li>
       </ol>
     </div>
   )
@@ -193,18 +194,18 @@ function Extract({ tx, lang }: { tx: (x: L) => string; lang: 'en' | 'vi' }) {
         </div>
       </div>
       <div className="fields">
-        <div className="fields-head"><span>{tx({ en: 'Extracted field', vi: 'Trường trích xuất' })}</span><span>{tx({ en: 'Value', vi: 'Giá trị' })}</span><span>{tx({ en: 'Conf.', vi: 'Tin cậy' })}</span></div>
+        <div className="fields-head"><span><Tx v={{ en: 'Extracted field', vi: 'Trường trích xuất' }} /></span><span><Tx v={{ en: 'Value', vi: 'Giá trị' }} /></span><span><Tx v={{ en: 'Conf.', vi: 'Tin cậy' }} /></span></div>
         <ul>
           {fields.map((f, i) => (
             <li key={i} style={d(3 + i * 0.55)}>
-              <span className="muted">{tx(f.k)}<span className="where"> · p.1</span></span>
+              <span className="muted"><Tx v={f.k} /><span className="where"> · p.1</span></span>
               <b className="typed" style={d(3.1 + i * 0.55)}>{f.v}</b>
               <span className="conf">{f.conf}%</span>
-              {f.ai && <span className="ai-note" style={d(3.4 + i * 0.55)}>{tx(f.ai)}</span>}
+              {f.ai && <span className="ai-note" style={d(3.4 + i * 0.55)}><Tx v={f.ai} /></span>}
             </li>
           ))}
         </ul>
-        <p className="muted mini">{tx({ en: 'Simulated: values come from invoice-lines.csv and confidence figures are illustrative. A pilot measures real accuracy on Vietnamese–English invoices.', vi: 'Mô phỏng: giá trị lấy từ invoice-lines.csv, độ tin cậy chỉ để minh họa. Pilot sẽ đo độ chính xác thật trên hóa đơn Việt–Anh.' })}</p>
+        <p className="muted mini"><Tx v={{ en: 'Simulated: values come from invoice-lines.csv and confidence figures are illustrative. A pilot measures real accuracy on Vietnamese–English invoices.', vi: 'Mô phỏng: giá trị lấy từ invoice-lines.csv, độ tin cậy chỉ để minh họa. Pilot sẽ đo độ chính xác thật trên hóa đơn Việt–Anh.' }} /></p>
       </div>
     </div>
   )

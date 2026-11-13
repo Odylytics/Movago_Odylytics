@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { LangContext, useT, type Lang } from './i18n'
+import { LangContext, dict, useT, type Lang } from './i18n'
 import Business from './Business'
 import DemoChoice from './DemoChoice'
 import Footer from './Footer'
@@ -8,7 +8,7 @@ import Landing from './Landing'
 import RateBuilder from './RateBuilder'
 import Workspace from './Workspace'
 import { scrollToEl, scrollToY, startSmoothScroll } from './smooth'
-import { ArrowBtn, Glyph } from './ui'
+import { ArrowBtn, Glyph, T } from './ui'
 
 const store = {
   get: (k: string) => { try { return localStorage.getItem(k) } catch { return null } },
@@ -103,10 +103,11 @@ function Nav({ path, theme, setTheme }: { path: string; theme: Theme; setTheme: 
     return () => { window.removeEventListener('keydown', onKey); document.documentElement.style.overflow = '' }
   }, [open])
 
+  const other: Lang = lang === 'en' ? 'vi' : 'en'
   const links = [
-    { href: '#/#how', label: L.how[lang], current: false },
-    { href: '#/business', label: t('navBiz'), current: path.startsWith('/business') },
-    { href: '#/rates', label: t('navRates'), current: path.startsWith('/rates') },
+    { href: '#/#how', label: L.how[lang], alt: L.how[other], current: false },
+    { href: '#/business', label: t('navBiz'), alt: dict.navBiz[other], current: path.startsWith('/business') },
+    { href: '#/rates', label: t('navRates'), alt: dict.navRates[other], current: path.startsWith('/rates') },
   ]
 
   return (
@@ -116,12 +117,18 @@ function Nav({ path, theme, setTheme }: { path: string; theme: Theme; setTheme: 
         <a className="brand" href="#/" aria-label="Movago"><Mark /><span className="brand-word">MovaGo</span></a>
         <div className="nav-right">
           <div className="nav-links">
-            {links.map((l) => <a key={l.href} href={l.href} aria-current={l.current ? 'page' : undefined}>{l.label}</a>)}
+            {links.map((l) => (
+              <a key={l.href} href={l.href} aria-current={l.current ? 'page' : undefined}>
+                <span className="nl">{l.label}</span>
+                {/* the other language's label holds the width, so switching language never moves the links */}
+                <span className="nl-ghost" aria-hidden="true">{l.alt}</span>
+              </a>
+            ))}
           </div>
           <div className="nav-tools">
             <LangSwitch />
             <ThemeSwitch theme={theme} setTheme={setTheme} />
-            <ArrowBtn href="#/demo?choose=1">{t('navDemo')}</ArrowBtn>
+            <ArrowBtn href="#/demo?choose=1"><T k="navDemo" /></ArrowBtn>
             <button className="icon-btn burger" aria-expanded={open} aria-controls="menu-sheet" aria-label={open ? L.closeMenu[lang] : L.menu[lang]} onClick={() => setOpen(!open)}>
               <Glyph name={open ? 'close' : 'menu'} />
             </button>
@@ -131,7 +138,7 @@ function Nav({ path, theme, setTheme }: { path: string; theme: Theme; setTheme: 
       {open && (
         <div className="menu-sheet" id="menu-sheet">
           {links.map((l) => <a key={l.href} className="m-link" href={l.href} onClick={() => setOpen(false)}>{l.label}</a>)}
-          <a className="m-link" href="#/demo?choose=1" onClick={() => setOpen(false)}>{t('navDemo')}</a>
+          <a className="m-link" href="#/demo?choose=1" onClick={() => setOpen(false)}><T k="navDemo" /></a>
           <div className="menu-tools"><LangSwitch /><ThemeSwitch theme={theme} setTheme={setTheme} /></div>
         </div>
       )}

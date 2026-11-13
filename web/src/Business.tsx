@@ -1,4 +1,5 @@
 import { useState, type ReactNode } from 'react'
+import { Tx } from './ui'
 import { Bars, Columns, CountUp, Split, Units, useInView } from './charts'
 import { useT, type Lang } from './i18n'
 import { roi } from './roi'
@@ -61,7 +62,7 @@ export default function Business() {
   return (
     <div className="biz">
       <header className="wrap biz-head">
-        <h1>{tx({ en: 'The business case for Movago', vi: 'Bài toán kinh doanh của Movago' })}</h1>
+        <h1><Tx v={{ en: 'The business case for Movago', vi: 'Bài toán kinh doanh của Movago' }} /></h1>
         <p className="sub">
           {tx({
             en: 'Where freight money leaks, what Movago charges, when it pays back, and how we start in Vietnam. Market and rate figures are cited; ROI figures are stated assumptions that a pilot must measure.',
@@ -69,19 +70,19 @@ export default function Business() {
           })}
         </p>
         <div className="ev-legend">
-          {(['cited', 'assumption', 'simulated'] as const).map((e) => <span key={e} className={`ev ev-${e}`}>{tx(EVIDENCE[e])}</span>)}
+          {(['cited', 'assumption', 'simulated'] as const).map((e) => <span key={e} className={`ev ev-${e}`}><Tx v={EVIDENCE[e]} /></span>)}
         </div>
       </header>
 
       {/* 1 · numbers */}
       <section className="wrap section" aria-labelledby="b-num">
-        <h2 id="b-num">{tx({ en: 'The problem in numbers', vi: 'Bài toán qua con số' })}</h2>
+        <h2 id="b-num"><Tx v={{ en: 'The problem in numbers', vi: 'Bài toán qua con số' }} /></h2>
         <div className="stats">
           <StatCard
             tag={tx({ en: 'VN · Market', vi: 'VN · Thị trường' })} evidence="cited"
             num={(s) => <>{lang === 'en' ? '4,000–' : '4.000–'}<CountUp from={4000} to={4500} locale={loc} start={s} /></>}
             claim={tx({ en: 'freight-forwarding companies operate in Vietnam, with Ho Chi Minh City a main hub. Each pays carriers and agents against invoices someone has to check.', vi: 'doanh nghiệp giao nhận đang hoạt động tại Việt Nam, TP.HCM là địa bàn tập trung. Mỗi doanh nghiệp trả cước cho hãng tàu và đại lý theo hóa đơn cần có người kiểm tra.' })}
-            source={<>{tx({ en: 'VLA estimate cited in MOIT, Vietnam Logistics Report 2025, p. 74–75.', vi: 'Ước tính của VLA trong Báo cáo Logistics Việt Nam 2025, tr. 74–75.' })} <Ref n={1} /></>}
+            source={<><Tx v={{ en: 'VLA estimate cited in MOIT, Vietnam Logistics Report 2025, p. 74–75.', vi: 'Ước tính của VLA trong Báo cáo Logistics Việt Nam 2025, tr. 74–75.' }} /> <Ref n={1} /></>}
           />
           <StatCard
             tag={tx({ en: 'VN · Cost pressure', vi: 'VN · Áp lực chi phí' })} evidence="cited"
@@ -95,11 +96,11 @@ export default function Business() {
                   parts={[{ label: tx({ en: '161 logistics users', vi: '161 bên sử dụng' }), pct: 79.7, tone: 'navy' }, { label: tx({ en: '41 providers', vi: '41 bên cung cấp' }), pct: 20.3, tone: 'muted' }]} />
               </>
             )}
-            source={<>{tx({ en: 'MOIT, Vietnam Logistics Report 2025, p. 94–98.', vi: 'Bộ Công Thương, Báo cáo Logistics Việt Nam 2025, tr. 94–98.' })} <Ref n={1} /></>}
+            source={<><Tx v={{ en: 'MOIT, Vietnam Logistics Report 2025, p. 94–98.', vi: 'Bộ Công Thương, Báo cáo Logistics Việt Nam 2025, tr. 94–98.' }} /> <Ref n={1} /></>}
           />
           <StatCard
             tag={tx({ en: 'VN · Trade', vi: 'VN · Thương mại' })} evidence="cited"
-            num={(s) => <><CountUp to={1010.55} decimals={2} prefix="$" locale={loc} start={s} /><small>{tx({ en: 'B', vi: ' tỷ' })}</small></>}
+            num={(s) => <><CountUp to={1010.55} decimals={2} prefix="$" locale={loc} start={s} /><small><Tx v={{ en: 'B', vi: ' tỷ' }} /></small></>}
             claim={tx({ en: 'of goods imported and exported in the first ten months of 2026, up 32.3% on a year earlier. More trade means more freight invoices to check before payment.', vi: 'kim ngạch xuất nhập khẩu hàng hóa 10 tháng năm 2026, tăng 32,3% so với cùng kỳ. Thương mại tăng kéo theo nhiều hóa đơn cước cần kiểm tra trước khi chi.' })}
             chart={(s) => (
               <Bars show={s} label="Ten-month trade value 2026 versus 2025" axis={['0', '300', '600', '900', '1,200']}
@@ -108,7 +109,7 @@ export default function Business() {
                   { label: tx({ en: 'Jan–Oct 2025 (derived from +32.3%)', vi: '10 tháng 2025 (suy từ +32,3%)' }), value: `≈ $${m(763.8)}B`, pct: 63.7, tone: 'muted' },
                 ]} />
             )}
-            source={<>{tx({ en: 'General Statistics Office, October 2026 report. The 2025 bar is computed from the growth rate.', vi: 'Cục Thống kê, báo cáo tháng 10/2026. Cột 2025 được tính từ tốc độ tăng.' })} <Ref n={2} /></>}
+            source={<><Tx v={{ en: 'General Statistics Office, October 2026 report. The 2025 bar is computed from the growth rate.', vi: 'Cục Thống kê, báo cáo tháng 10/2026. Cột 2025 được tính từ tốc độ tăng.' }} /> <Ref n={2} /></>}
           />
           <StatCard
             tag={tx({ en: 'VN · Same fee code', vi: 'VN · Cùng mã phí' })} evidence="cited"
@@ -123,7 +124,7 @@ export default function Business() {
                   { label: "Maersk DHC · 40' DRY", value: mil(5), pct: 83.3, tone: 'blue' },
                 ]} />
             )}
-            source={<>{tx({ en: 'ONE Vietnam advisory from 01/04/2026; Maersk DHC Vietnam from 01/05/2026.', vi: 'Thông báo ONE Việt Nam từ 01/04/2026; DHC Maersk Việt Nam từ 01/05/2026.' })} <Ref n={3} /> <Ref n={4} /></>}
+            source={<><Tx v={{ en: 'ONE Vietnam advisory from 01/04/2026; Maersk DHC Vietnam from 01/05/2026.', vi: 'Thông báo ONE Việt Nam từ 01/04/2026; DHC Maersk Việt Nam từ 01/05/2026.' }} /> <Ref n={3} /> <Ref n={4} /></>}
           />
           <StatCard
             tag={tx({ en: 'Demo · INV-095', vi: 'Demo · INV-095' })} evidence="simulated"
@@ -143,7 +144,7 @@ export default function Business() {
                   { label: tx({ en: 'Illustrative scenario · 15 → 9 min', vi: 'Kịch bản minh họa · 15 → 9 phút' }), value: '40%', pct: 80, tone: 'blue' },
                 ]} />
             )}
-            source={<>{tx({ en: 'Movago project brief, pilot section.', vi: 'Brief dự án Movago, mục pilot.' })} <Ref n={10} /></>}
+            source={<><Tx v={{ en: 'Movago project brief, pilot section.', vi: 'Brief dự án Movago, mục pilot.' }} /> <Ref n={10} /></>}
           />
         </div>
       </section>
@@ -151,17 +152,17 @@ export default function Business() {
       {/* 2 · economic problems */}
       <section className="wrap section split" aria-labelledby="b-econ">
         <div>
-          <h2 id="b-econ">{tx({ en: 'Economic problems Movago addresses', vi: 'Vấn đề kinh tế Movago giải quyết' })}</h2>
-          <p className="sub">{tx({ en: 'Ranked by what we test first. Each one names its cost, what Movago does, and how a pilot proves it.', vi: 'Xếp theo thứ tự kiểm chứng. Mỗi vấn đề nêu chi phí, việc Movago làm và cách pilot chứng minh.' })}</p>
+          <h2 id="b-econ"><Tx v={{ en: 'Economic problems Movago addresses', vi: 'Vấn đề kinh tế Movago giải quyết' }} /></h2>
+          <p className="sub"><Tx v={{ en: 'Ranked by what we test first. Each one names its cost, what Movago does, and how a pilot proves it.', vi: 'Xếp theo thứ tự kiểm chứng. Mỗi vấn đề nêu chi phí, việc Movago làm và cách pilot chứng minh.' }} /></p>
         </div>
         <ol className="econ">
           {ECON.map((e) => (
             <li key={e.title.en}>
-              <div className="econ-head"><span className={`prio prio-${e.prio}`}>{e.prio === 'x' ? tx({ en: 'Expansion', vi: 'Mở rộng' }) : e.prio.toUpperCase()}</span><h3>{tx(e.title)}</h3></div>
+              <div className="econ-head"><span className={`prio prio-${e.prio}`}>{e.prio === 'x' ? tx({ en: 'Expansion', vi: 'Mở rộng' }) : e.prio.toUpperCase()}</span><h3><Tx v={e.title} /></h3></div>
               <dl>
-                <dt>{tx({ en: 'Cost', vi: 'Chi phí' })}</dt><dd>{tx(e.cost)} {e.refs.map((r) => <Ref key={r} n={r} />)}</dd>
-                <dt>Movago</dt><dd>{tx(e.does)}</dd>
-                <dt>{tx({ en: 'Measured by', vi: 'Đo bằng' })}</dt><dd>{tx(e.measure)}</dd>
+                <dt><Tx v={{ en: 'Cost', vi: 'Chi phí' }} /></dt><dd><Tx v={e.cost} /> {e.refs.map((r) => <Ref key={r} n={r} />)}</dd>
+                <dt>Movago</dt><dd><Tx v={e.does} /></dd>
+                <dt><Tx v={{ en: 'Measured by', vi: 'Đo bằng' }} /></dt><dd><Tx v={e.measure} /></dd>
               </dl>
             </li>
           ))}
@@ -171,13 +172,13 @@ export default function Business() {
       {/* 3 · business model */}
       <section className="wrap section split" aria-labelledby="b-model">
         <div>
-          <h2 id="b-model">{tx({ en: 'Business model', vi: 'Mô hình kinh doanh' })}</h2>
-          <p className="sub">{tx({ en: 'A hypothesis to validate with buyers, not a price list. We pilot before we price.', vi: 'Giả thuyết cần kiểm chứng với người mua, chưa phải bảng giá. Pilot trước, định giá sau.' })}</p>
-          <span className="ev ev-assumption" style={{ marginTop: 16 }}>{tx(EVIDENCE.assumption)}</span>
+          <h2 id="b-model"><Tx v={{ en: 'Business model', vi: 'Mô hình kinh doanh' }} /></h2>
+          <p className="sub"><Tx v={{ en: 'A hypothesis to validate with buyers, not a price list. We pilot before we price.', vi: 'Giả thuyết cần kiểm chứng với người mua, chưa phải bảng giá. Pilot trước, định giá sau.' }} /></p>
+          <span className="ev ev-assumption" style={{ marginTop: 16 }}><Tx v={EVIDENCE.assumption} /></span>
         </div>
         <ul className="rows model">
           {MODEL.map((r) => (
-            <li key={r.k.en}><div><h3>{tx(r.k)}</h3><p>{tx(r.v)} {r.refs?.map((n) => <Ref key={n} n={n} />)}</p></div></li>
+            <li key={r.k.en}><div><h3><Tx v={r.k} /></h3><p><Tx v={r.v} /> {r.refs?.map((n) => <Ref key={n} n={n} />)}</p></div></li>
           ))}
         </ul>
       </section>
@@ -188,24 +189,24 @@ export default function Business() {
       {/* 5 · Vietnam roadmap */}
       <section className="wrap section split" aria-labelledby="b-vn">
         <div>
-          <h2 id="b-vn">{tx({ en: 'Direction in Vietnam', vi: 'Định hướng tại Việt Nam' })}</h2>
-          <p className="sub">{tx({ en: 'Start narrow in Ho Chi Minh City, prove it on real files, then widen document types and integrations as customers ask.', vi: 'Bắt đầu hẹp tại TP.HCM, chứng minh trên hồ sơ thật, rồi mở rộng loại chứng từ và tích hợp theo nhu cầu khách hàng.' })}</p>
-          <p className="note">{tx({ en: 'Why Vietnam first: VND invoices with Vietnamese–English fee names, carriers that publish local rate notices, and a dense forwarder base in HCMC.', vi: 'Vì sao bắt đầu ở Việt Nam: hóa đơn VND với tên phí Việt–Anh, hãng tàu công bố biểu phí địa phương và mật độ forwarder cao ở TP.HCM.' })}</p>
+          <h2 id="b-vn"><Tx v={{ en: 'Direction in Vietnam', vi: 'Định hướng tại Việt Nam' }} /></h2>
+          <p className="sub"><Tx v={{ en: 'Start narrow in Ho Chi Minh City, prove it on real files, then widen document types and integrations as customers ask.', vi: 'Bắt đầu hẹp tại TP.HCM, chứng minh trên hồ sơ thật, rồi mở rộng loại chứng từ và tích hợp theo nhu cầu khách hàng.' }} /></p>
+          <p className="note"><Tx v={{ en: 'Why Vietnam first: VND invoices with Vietnamese–English fee names, carriers that publish local rate notices, and a dense forwarder base in HCMC.', vi: 'Vì sao bắt đầu ở Việt Nam: hóa đơn VND với tên phí Việt–Anh, hãng tàu công bố biểu phí địa phương và mật độ forwarder cao ở TP.HCM.' }} /></p>
         </div>
         <ol className="numbered roadmap">
           {ROADMAP.map((r) => (
-            <li key={r.t.en}><div><span className="when">{tx(r.when)}</span><strong>{tx(r.t)}</strong><span>{tx(r.b)} {r.refs?.map((n) => <Ref key={n} n={n} />)}</span></div></li>
+            <li key={r.t.en}><div><span className="when"><Tx v={r.when} /></span><strong><Tx v={r.t} /></strong><span><Tx v={r.b} /> {r.refs?.map((n) => <Ref key={n} n={n} />)}</span></div></li>
           ))}
         </ol>
       </section>
 
       {/* 6 · sources */}
       <section className="wrap section" aria-labelledby="b-src">
-        <h2 id="b-src">{tx({ en: 'Sources', vi: 'Nguồn' })}</h2>
-        <p className="sub">{tx({ en: 'Links accessed 8 November 2026. Figures were checked against the documents cited in the project research files.', vi: 'Truy cập ngày 08/11/2026. Số liệu đối chiếu với tài liệu được dẫn trong hồ sơ nghiên cứu của dự án.' })}</p>
+        <h2 id="b-src"><Tx v={{ en: 'Sources', vi: 'Nguồn' }} /></h2>
+        <p className="sub"><Tx v={{ en: 'Links accessed 8 November 2026. Figures were checked against the documents cited in the project research files.', vi: 'Truy cập ngày 08/11/2026. Số liệu đối chiếu với tài liệu được dẫn trong hồ sơ nghiên cứu của dự án.' }} /></p>
         <ol className="refs">
           {SOURCES.map((s, i) => (
-            <li key={i} id={`src-${i + 1}`}><span className="ref-n">{String(i + 1).padStart(2, '0')}</span>{s.url ? <a href={s.url} target="_blank" rel="noreferrer">{tx(s.title)}</a> : <span>{tx(s.title)}</span>}</li>
+            <li key={i} id={`src-${i + 1}`}><span className="ref-n">{String(i + 1).padStart(2, '0')}</span>{s.url ? <a href={s.url} target="_blank" rel="noreferrer"><Tx v={s.title} /></a> : <span><Tx v={s.title} /></span>}</li>
           ))}
         </ol>
       </section>
@@ -229,45 +230,45 @@ function RoiSection({ tx, loc, money, lang }: { tx: (x: L) => string; loc: strin
     <section className="wrap section" aria-labelledby="b-roi">
       <div className="split">
         <div>
-          <h2 id="b-roi">{tx({ en: 'ROI when a forwarder uses Movago', vi: 'ROI khi doanh nghiệp dùng Movago' })}</h2>
-          <p className="sub">{tx({ en: 'The illustrative scenario from our brief. Time value is capacity freed, not cash saved; confirmed avoided or recovered payments are tracked separately and never double-counted.', vi: 'Kịch bản minh họa trong brief. Giá trị thời gian là năng lực được giải phóng, không phải tiền mặt tiết kiệm; khoản tránh chi hoặc thu hồi đã xác nhận được theo dõi riêng, không tính hai lần.' })}</p>
-          <span className="ev ev-assumption" style={{ marginTop: 16 }}>{tx(EVIDENCE.assumption)}</span>
+          <h2 id="b-roi"><Tx v={{ en: 'ROI when a forwarder uses Movago', vi: 'ROI khi doanh nghiệp dùng Movago' }} /></h2>
+          <p className="sub"><Tx v={{ en: 'The illustrative scenario from our brief. Time value is capacity freed, not cash saved; confirmed avoided or recovered payments are tracked separately and never double-counted.', vi: 'Kịch bản minh họa trong brief. Giá trị thời gian là năng lực được giải phóng, không phải tiền mặt tiết kiệm; khoản tránh chi hoặc thu hồi đã xác nhận được theo dõi riêng, không tính hai lần.' }} /></p>
+          <span className="ev ev-assumption" style={{ marginTop: 16 }}><Tx v={EVIDENCE.assumption} /></span>
         </div>
         <div ref={chartRef} className="roi-chart">
-          <h3>{tx({ en: 'Monthly time value by minutes saved per invoice', vi: 'Giá trị thời gian mỗi tháng theo số phút giảm trên một hóa đơn' })}</h3>
+          <h3><Tx v={{ en: 'Monthly time value by minutes saved per invoice', vi: 'Giá trị thời gian mỗi tháng theo số phút giảm trên một hóa đơn' }} /></h3>
           <Columns show={chartShow} max={10} label="3, 6 and 9 minutes saved give 3, 6 and 9 million dong per month; 3 million dong usage cost is the break-even line"
             refLine={{ amount: 3, label: tx({ en: 'Usage cost 3M ₫ = break-even', vi: 'Chi phí sử dụng 3 triệu = hòa vốn' }) }}
             cols={[3, 6, 9].map((x) => ({ label: tx({ en: `−${x} min`, vi: `−${x} phút` }), value: `${n(x)}${mUnit}`, amount: x }))} />
-          <p className="source">{tx({ en: '1,000 invoices a month × minutes saved ÷ 60 × 60,000 ₫ per hour.', vi: '1.000 hóa đơn/tháng × số phút giảm ÷ 60 × 60.000 đ/giờ.' })}</p>
+          <p className="source"><Tx v={{ en: '1,000 invoices a month × minutes saved ÷ 60 × 60,000 ₫ per hour.', vi: '1.000 hóa đơn/tháng × số phút giảm ÷ 60 × 60.000 đ/giờ.' }} /></p>
         </div>
       </div>
 
       <ul ref={ref} className="proof">
-        <li><span className="proof-num"><CountUp to={1000} locale={loc} start={show} /></span><b>{tx({ en: 'invoices a month', vi: 'hóa đơn mỗi tháng' })}</b><span className="muted">{tx({ en: 'scenario volume', vi: 'sản lượng giả định' })}</span></li>
-        <li><span className="proof-num">15 → <CountUp to={9} locale={loc} start={show} /></span><b>{tx({ en: 'minutes per invoice', vi: 'phút mỗi hóa đơn' })}</b><span className="muted">{tx({ en: 'before → with Movago', vi: 'trước → khi có Movago' })}</span></li>
-        <li><span className="proof-num"><CountUp to={100} locale={loc} start={show} /> h</span><b>{tx({ en: 'freed each month', vi: 'giải phóng mỗi tháng' })}</b><span className="muted">1,000 × 6 ÷ 60</span></li>
-        <li><span className="proof-num"><CountUp to={6} locale={loc} start={show} />{mUnit}</span><b>{tx({ en: 'time value a month', vi: 'giá trị thời gian mỗi tháng' })}</b><span className="muted">{tx({ en: '100 h × 60,000 ₫, before costs', vi: '100 giờ × 60.000 đ, trước chi phí' })}</span></li>
-        <li><span className="proof-num"><CountUp to={3} locale={loc} start={show} /> {tx({ en: 'min', vi: 'phút' })}</span><b>{tx({ en: 'saved per invoice to break even', vi: 'cần giảm mỗi hóa đơn để hòa vốn' })}</b><span className="muted">{tx({ en: 'at 3M ₫ monthly usage cost', vi: 'với chi phí sử dụng 3 triệu/tháng' })}</span></li>
-        <li><span className="proof-num"><CountUp to={3} locale={loc} start={show} />–<CountUp to={9} locale={loc} start={show} />{mUnit}</span><b>{tx({ en: 'range if savings are 3–9 min', vi: 'khoảng giá trị nếu giảm 3–9 phút' })}</b><span className="muted">{tx({ en: 'sensitivity, per month', vi: 'độ nhạy, mỗi tháng' })}</span></li>
+        <li><span className="proof-num"><CountUp to={1000} locale={loc} start={show} /></span><b><Tx v={{ en: 'invoices a month', vi: 'hóa đơn mỗi tháng' }} /></b><span className="muted"><Tx v={{ en: 'scenario volume', vi: 'sản lượng giả định' }} /></span></li>
+        <li><span className="proof-num">15 → <CountUp to={9} locale={loc} start={show} /></span><b><Tx v={{ en: 'minutes per invoice', vi: 'phút mỗi hóa đơn' }} /></b><span className="muted"><Tx v={{ en: 'before → with Movago', vi: 'trước → khi có Movago' }} /></span></li>
+        <li><span className="proof-num"><CountUp to={100} locale={loc} start={show} /> h</span><b><Tx v={{ en: 'freed each month', vi: 'giải phóng mỗi tháng' }} /></b><span className="muted">1,000 × 6 ÷ 60</span></li>
+        <li><span className="proof-num"><CountUp to={6} locale={loc} start={show} />{mUnit}</span><b><Tx v={{ en: 'time value a month', vi: 'giá trị thời gian mỗi tháng' }} /></b><span className="muted"><Tx v={{ en: '100 h × 60,000 ₫, before costs', vi: '100 giờ × 60.000 đ, trước chi phí' }} /></span></li>
+        <li><span className="proof-num"><CountUp to={3} locale={loc} start={show} /> <Tx v={{ en: 'min', vi: 'phút' }} /></span><b><Tx v={{ en: 'saved per invoice to break even', vi: 'cần giảm mỗi hóa đơn để hòa vốn' }} /></b><span className="muted"><Tx v={{ en: 'at 3M ₫ monthly usage cost', vi: 'với chi phí sử dụng 3 triệu/tháng' }} /></span></li>
+        <li><span className="proof-num"><CountUp to={3} locale={loc} start={show} />–<CountUp to={9} locale={loc} start={show} />{mUnit}</span><b><Tx v={{ en: 'range if savings are 3–9 min', vi: 'khoảng giá trị nếu giảm 3–9 phút' }} /></b><span className="muted"><Tx v={{ en: 'sensitivity, per month', vi: 'độ nhạy, mỗi tháng' }} /></span></li>
       </ul>
 
       <div className="calc-box">
         <div>
-          <h3>{tx({ en: 'Try your own numbers', vi: 'Thử với số của bạn' })}</h3>
-          <p className="muted">{tx({ en: 'Edit any field. Nothing is sent anywhere.', vi: 'Sửa bất kỳ ô nào. Không có dữ liệu nào được gửi đi.' })}</p>
+          <h3><Tx v={{ en: 'Try your own numbers', vi: 'Thử với số của bạn' }} /></h3>
+          <p className="muted"><Tx v={{ en: 'Edit any field. Nothing is sent anywhere.', vi: 'Sửa bất kỳ ô nào. Không có dữ liệu nào được gửi đi.' }} /></p>
           <div className="calc-grid">
-            <label className="field">{tx({ en: 'Invoices per month', vi: 'Hóa đơn mỗi tháng' })}<input type="number" min={0} step={50} value={inp.invoices} onChange={set('invoices')} /></label>
-            <label className="field">{tx({ en: 'Minutes per invoice today', vi: 'Phút mỗi hóa đơn hiện tại' })}<input type="number" min={0} step={1} value={inp.minBefore} onChange={set('minBefore')} /></label>
-            <label className="field">{tx({ en: 'Minutes with Movago', vi: 'Phút khi có Movago' })}<input type="number" min={0} step={1} value={inp.minAfter} onChange={set('minAfter')} /></label>
+            <label className="field"><Tx v={{ en: 'Invoices per month', vi: 'Hóa đơn mỗi tháng' }} /><input type="number" min={0} step={50} value={inp.invoices} onChange={set('invoices')} /></label>
+            <label className="field"><Tx v={{ en: 'Minutes per invoice today', vi: 'Phút mỗi hóa đơn hiện tại' }} /><input type="number" min={0} step={1} value={inp.minBefore} onChange={set('minBefore')} /></label>
+            <label className="field"><Tx v={{ en: 'Minutes with Movago', vi: 'Phút khi có Movago' }} /><input type="number" min={0} step={1} value={inp.minAfter} onChange={set('minAfter')} /></label>
             <label className="field">{tx({ en: 'Staff cost per hour (₫)', vi: 'Chi phí nhân sự mỗi giờ (đ)' })}<input type="number" min={0} step={5000} value={inp.hourly} onChange={set('hourly')} /></label>
             <label className="field">{tx({ en: 'Movago cost per month (₫)', vi: 'Chi phí Movago mỗi tháng (đ)' })}<input type="number" min={0} step={500000} value={inp.fee} onChange={set('fee')} /></label>
           </div>
         </div>
         <dl className="calc-out" aria-live="polite">
-          <div><dt>{tx({ en: 'Hours freed / month', vi: 'Giờ giải phóng / tháng' })}</dt><dd>{n(r.hours, 1)} h</dd></div>
-          <div><dt>{tx({ en: 'Time value / month', vi: 'Giá trị thời gian / tháng' })}</dt><dd>{money(Math.round(r.timeValue))}</dd></div>
-          <div className={r.net >= 0 ? 'pos' : 'neg'}><dt>{tx({ en: 'Net after Movago cost', vi: 'Còn lại sau chi phí Movago' })}</dt><dd>{r.net < 0 ? '−' : ''}{money(Math.round(Math.abs(r.net)))}</dd></div>
-          <div><dt>{tx({ en: 'Break-even saving', vi: 'Mức giảm để hòa vốn' })}</dt><dd>{r.breakEvenMin === null ? '—' : `${n(r.breakEvenMin, 1)} ${tx({ en: 'min / invoice', vi: 'phút / hóa đơn' })}`}</dd></div>
+          <div><dt><Tx v={{ en: 'Hours freed / month', vi: 'Giờ giải phóng / tháng' }} /></dt><dd>{n(r.hours, 1)} h</dd></div>
+          <div><dt><Tx v={{ en: 'Time value / month', vi: 'Giá trị thời gian / tháng' }} /></dt><dd>{money(Math.round(r.timeValue))}</dd></div>
+          <div className={r.net >= 0 ? 'pos' : 'neg'}><dt><Tx v={{ en: 'Net after Movago cost', vi: 'Còn lại sau chi phí Movago' }} /></dt><dd>{r.net < 0 ? '−' : ''}{money(Math.round(Math.abs(r.net)))}</dd></div>
+          <div><dt><Tx v={{ en: 'Break-even saving', vi: 'Mức giảm để hòa vốn' }} /></dt><dd>{r.breakEvenMin === null ? '—' : `${n(r.breakEvenMin, 1)} ${tx({ en: 'min / invoice', vi: 'phút / hóa đơn' })}`}</dd></div>
         </dl>
       </div>
     </section>

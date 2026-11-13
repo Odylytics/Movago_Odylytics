@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { T } from './ui'
 import { useT } from './i18n'
 import { QUOTE, REVIEW_THRESHOLD, toRateCsv } from './rateQuote'
 
@@ -33,24 +34,24 @@ export default function RateBuilder() {
     <div className="wrap ws">
       <div className="ws-head">
         <div>
-          <div className="row" style={{ marginBottom: 8 }}><span className="chip sim">{t('simulated')}</span></div>
-          <h1>{t('rbTitle')}</h1>
-          <p className="muted" style={{ maxWidth: '44rem', marginTop: 8 }}>{t('rbSub')}</p>
+          <div className="row" style={{ marginBottom: 8 }}><span className="chip sim"><T k="simulated" /></span></div>
+          <h1><T k="rbTitle" /></h1>
+          <p className="muted" style={{ maxWidth: '44rem', marginTop: 8 }}><T k="rbSub" /></p>
         </div>
-        <button className="btn ghost" style={{ alignSelf: 'flex-end' }} onClick={reset}>{t('reset')}</button>
+        <button className="btn ghost" style={{ alignSelf: 'flex-end' }} onClick={reset}><T k="reset" /></button>
       </div>
 
       <section className="box" aria-labelledby="rb1">
         <div className="box-head">
           <div>
-            <span className="chip">{t('rbStep')} 1</span>
-            <h2 id="rb1" style={{ marginTop: 6 }}>{t('rbStep1')}</h2>
+            <span className="chip"><T k="rbStep" /> 1</span>
+            <h2 id="rb1" style={{ marginTop: 6 }}><T k="rbStep1" /></h2>
           </div>
           <button className="btn" onClick={() => setReading(true)} disabled={reading || extracted}>{reading ? t('rbReading') : t('rbRead')}</button>
         </div>
         <div className="mail">
-          <div className="muted mini">{t('rbFrom')} <b>pricing@supplier-a.example</b> · {t('rbTo')} <b>pricing@demo-forwarder.example</b></div>
-          <div style={{ fontWeight: 600, margin: '6px 0' }}>{t('rbSubject')}</div>
+          <div className="muted mini"><T k="rbFrom" /> <b>pricing@supplier-a.example</b> · <T k="rbTo" /> <b>pricing@demo-forwarder.example</b></div>
+          <div style={{ fontWeight: 600, margin: '6px 0' }}><T k="rbSubject" /></div>
           <a className="ref" href={SAMPLES + QUOTE.file} target="_blank" rel="noreferrer">{QUOTE.file}</a>
           <span className="muted mini"> · {QUOTE.quoteNo} · {QUOTE.origin} → {QUOTE.destination} · {QUOTE.validFrom} → {QUOTE.validTo}</span>
         </div>
@@ -59,24 +60,24 @@ export default function RateBuilder() {
       <section className="box" style={{ marginTop: 16 }} aria-labelledby="rb2" aria-live="polite">
         <div className="box-head">
           <div>
-            <span className="chip">{t('rbStep')} 2</span>
-            <h2 id="rb2" style={{ marginTop: 6 }}>{t('rbStep2')}</h2>
-            <p className="muted mini">{t('rbSimNote')}</p>
+            <span className="chip"><T k="rbStep" /> 2</span>
+            <h2 id="rb2" style={{ marginTop: 6 }}><T k="rbStep2" /></h2>
+            <p className="muted mini"><T k="rbSimNote" /></p>
           </div>
-          {extracted && <button className="btn ghost" onClick={approveConfident}>{t('rbApproveConfident')}</button>}
+          {extracted && <button className="btn ghost" onClick={approveConfident}><T k="rbApproveConfident" /></button>}
         </div>
         {!extracted ? (
-          <p className="muted">{t('rbNotRead')}</p>
+          <p className="muted"><T k="rbNotRead" /></p>
         ) : (
           <div className="table-scroll">
             <table>
               <thead>
-                <tr><th>{t('rbColLine')}</th><th>{t('rbColWritten')}</th><th>{t('rbColCode')}</th><th>{t('rbColEquip')}</th><th className="n">{t('rbColPrice')}</th><th className="n">{t('rbColConf')}</th><th>{t('rbColApprove')}</th></tr>
+                <tr><th><T k="rbColLine" /></th><th><T k="rbColWritten" /></th><th><T k="rbColCode" /></th><th><T k="rbColEquip" /></th><th className="n"><T k="rbColPrice" /></th><th className="n"><T k="rbColConf" /></th><th><T k="rbColApprove" /></th></tr>
               </thead>
               <tbody>
                 {QUOTE.lines.map((l) => (
                   <tr key={l.line} className={approved.has(l.line) ? 'selected' : ''}>
-                    <td className="mini">{t('rbPage')} 1 · {t('rbLine')} {l.line}</td>
+                    <td className="mini"><T k="rbPage" /> 1 · <T k="rbLine" /> {l.line}</td>
                     <td>
                       {l.asWritten}
                       {l.note && <div className="mini muted" style={{ maxWidth: 280 }}>{l.note[lang]}</div>}
@@ -85,7 +86,7 @@ export default function RateBuilder() {
                     <td className="mini">{l.container} · {l.unit === 'BL' ? 'B/L' : l.unit}</td>
                     <td className="n">{plain(l.price)}</td>
                     <td className="n">
-                      {low(l.confidence) ? <span className="status missing_basis">{Math.round(l.confidence * 100)}% · {t('rbCheck')}</span> : <span className="mini">{Math.round(l.confidence * 100)}%</span>}
+                      {low(l.confidence) ? <span className="status missing_basis">{Math.round(l.confidence * 100)}% · <T k="rbCheck" /></span> : <span className="mini">{Math.round(l.confidence * 100)}%</span>}
                     </td>
                     <td>
                       <label className="row" style={{ gap: 6, cursor: 'pointer' }}>
@@ -104,13 +105,13 @@ export default function RateBuilder() {
       <section className="box" style={{ marginTop: 16 }} aria-labelledby="rb3">
         <div className="box-head">
           <div>
-            <span className="chip">{t('rbStep')} 3</span>
-            <h2 id="rb3" style={{ marginTop: 6 }}>{t('rbStep3')}</h2>
-            <p className="muted">{approved.size}/{QUOTE.lines.length} {t('rbCount')} · {t('rbApprover')}</p>
+            <span className="chip"><T k="rbStep" /> 3</span>
+            <h2 id="rb3" style={{ marginTop: 6 }}><T k="rbStep3" /></h2>
+            <p className="muted">{approved.size}/{QUOTE.lines.length} <T k="rbCount" /> · <T k="rbApprover" /></p>
           </div>
           <div className="row">
-            <button className="btn" onClick={exportCsv} disabled={!allApproved}>{t('rbExport')} {QUOTE.rateCard}.csv</button>
-            <a className={`btn ghost ${allApproved ? '' : 'disabled'}`} href="#/demo" aria-disabled={!allApproved}>{t('rbUse')}</a>
+            <button className="btn" onClick={exportCsv} disabled={!allApproved}><T k="rbExport" /> {QUOTE.rateCard}.csv</button>
+            <a className={`btn ghost ${allApproved ? '' : 'disabled'}`} href="#/demo" aria-disabled={!allApproved}><T k="rbUse" /></a>
           </div>
         </div>
         <p className="muted mini">{allApproved ? t('rbReady') : t('rbBlocked')}</p>

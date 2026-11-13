@@ -1,4 +1,5 @@
-import { useEffect, useLayoutEffect, useRef, type MouseEvent, type ReactNode } from 'react'
+import { useContext, useEffect, useLayoutEffect, useRef, type MouseEvent, type ReactNode } from 'react'
+import { LangContext, dict, type Key } from './i18n'
 
 // Shared Movora-style building blocks (DESIGN.md): arrow button, section badge, auto-fit wordmark, reveal on scroll.
 
@@ -79,3 +80,17 @@ export function useReveal(dep?: unknown) {
     return () => io.disconnect()
   }, [dep])
 }
+
+// Renders the text in the current language and keeps the other language's text, hidden, in the same grid cell,
+// so every label takes the room of the longer translation and switching language never moves the layout.
+export function Hold({ en, vi }: { en: string; vi: string }) {
+  const { lang } = useContext(LangContext)
+  return (
+    <span className="hold">
+      <span>{lang === 'en' ? en : vi}</span>
+      <span className="hold-ghost" aria-hidden="true">{lang === 'en' ? vi : en}</span>
+    </span>
+  )
+}
+export const T = ({ k }: { k: Key }) => <Hold {...dict[k]} />
+export const Tx = ({ v }: { v: { en: string; vi: string } }) => <Hold {...v} />

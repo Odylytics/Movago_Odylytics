@@ -1,6 +1,6 @@
 import { Icon, type IconName } from './icons'
 import { useT } from './i18n'
-import { Badge } from './ui'
+import { Badge, Tx } from './ui'
 
 type L = { en: string; vi: string }
 
@@ -37,38 +37,38 @@ export default function StackSection() {
     <section className="sec" aria-labelledby="stack">
       <div className="wrap">
       <div className="sec-head sec-tight reveal">
-        <Badge>{tx({ en: 'Under the hood', vi: 'Bên trong Movago' })}</Badge>
-        <h2 className="h2" id="stack">{tx({ en: 'One inbox for every channel', vi: 'Một hộp thư cho mọi kênh' })}</h2>
-        <p className="sub lg">{tx({ en: 'Invoices reach a forwarder by email, chat, paper and portals. Movago pulls them into one place before any checking starts, so the same invoice is never checked or paid twice.', vi: 'Hóa đơn đến forwarder qua email, chat, giấy và cổng hãng. Movago gom về một chỗ trước khi kiểm tra, để cùng một hóa đơn không bị kiểm hay chi hai lần.' })}</p>
+        <Badge><Tx v={{ en: 'Under the hood', vi: 'Bên trong Movago' }} /></Badge>
+        <h2 className="h2" id="stack"><Tx v={{ en: 'One inbox for every channel', vi: 'Một hộp thư cho mọi kênh' }} /></h2>
+        <p className="sub lg"><Tx v={{ en: 'Invoices reach a forwarder by email, chat, paper and portals. Movago pulls them into one place before any checking starts, so the same invoice is never checked or paid twice.', vi: 'Hóa đơn đến forwarder qua email, chat, giấy và cổng hãng. Movago gom về một chỗ trước khi kiểm tra, để cùng một hóa đơn không bị kiểm hay chi hai lần.' }} /></p>
       </div>
 
       <div className="flow reveal" role="img" aria-label={tx({ en: 'Five sources flow into the Movago pipeline of five stages', vi: 'Năm nguồn đi vào năm bước xử lý của Movago' })}>
         <ul className="flow-col">
-          <li className="flow-title">{tx({ en: 'Sources', vi: 'Nguồn' })}</li>
+          <li className="flow-title"><Tx v={{ en: 'Sources', vi: 'Nguồn' }} /></li>
           {SOURCES.map((s) => (
-            <li key={s.t.en} className="flow-item"><span className="ch-icon"><Icon name={s.icon} /></span><div><b>{tx(s.t)}</b><span>{tx(s.d)}</span></div></li>
+            <li key={s.t.en} className="flow-item"><span className="ch-icon"><Icon name={s.icon} /></span><div><b><Tx v={s.t} /></b><span><Tx v={s.d} /></span></div></li>
           ))}
         </ul>
         <div className="flow-arrow" aria-hidden="true"><i /><i /><i /></div>
         <ol className="flow-col pipe">
           <li className="flow-title">Movago</li>
           {PIPE.map((s, i) => (
-            <li key={s.t.en} className="flow-item"><span className="ch-icon light"><Icon name={s.icon} /></span><div><b>{String(i + 1).padStart(2, '0')} · {tx(s.t)}</b><span>{tx(s.d)}</span></div></li>
+            <li key={s.t.en} className="flow-item"><span className="ch-icon light"><Icon name={s.icon} /></span><div><b>{String(i + 1).padStart(2, '0')} · <Tx v={s.t} /></b><span><Tx v={s.d} /></span></div></li>
           ))}
         </ol>
       </div>
 
       <div className="stack-lists">
         <div>
-          <h3>{tx({ en: 'In this demo', vi: 'Đã dựng trong demo' })}</h3>
+          <h3><Tx v={{ en: 'In this demo', vi: 'Đã dựng trong demo' }} /></h3>
           <ul className="chips">{BUILT.map((b) => <li key={b} className="chip">{b}</li>)}</ul>
         </div>
         <div>
-          <h3>{tx({ en: 'Planned for the pilot', vi: 'Dự kiến cho pilot' })}</h3>
-          <ul className="chips">{PLANNED.map((b) => <li key={b.en} className="chip planned">{tx(b)}</li>)}</ul>
+          <h3><Tx v={{ en: 'Planned for the pilot', vi: 'Dự kiến cho pilot' }} /></h3>
+          <ul className="chips">{PLANNED.map((b) => <li key={b.en} className="chip planned"><Tx v={b} /></li>)}</ul>
         </div>
       </div>
-      <p className="muted mini" style={{ marginTop: 16 }}>{tx({ en: 'In the demo, the channels, phone capture and AI reading are simulated; matching, rate rules, fingerprinting and export run live in the browser.', vi: 'Trong demo, các kênh, chụp điện thoại và AI đọc chứng từ là mô phỏng; ghép lô, quy tắc giá, dấu vân tay và xuất báo cáo chạy thật trên trình duyệt.' })}</p>
+      <p className="muted mini" style={{ marginTop: 16 }}><Tx v={{ en: 'In the demo, the channels, phone capture and AI reading are simulated; matching, rate rules, fingerprinting and export run live in the browser.', vi: 'Trong demo, các kênh, chụp điện thoại và AI đọc chứng từ là mô phỏng; ghép lô, quy tắc giá, dấu vân tay và xuất báo cáo chạy thật trên trình duyệt.' }} /></p>
       </div>
     </section>
   )

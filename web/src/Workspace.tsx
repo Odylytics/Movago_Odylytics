@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useMemo, useRef, useState, type DragEvent } from 'react'
+import { T } from './ui'
 import { store } from './App'
 import { CASES, SAMPLE_FILES, type DemoCase } from './cases'
 import { findDuplicate, parseCsv, reconcile, sha256Hex, type IntakeRecord, type LineResult, type ReconcileResult, type Row } from './engine/reconcile'
@@ -221,19 +222,19 @@ export default function Workspace({ story }: { story: boolean }) {
       <div className="ws-head">
         <div>
           <div className="row" style={{ marginBottom: 8 }}>
-            <span className="chip sim">{t('simulated')}</span>
-            {story && <span className="chip">{t('storyLabel')}</span>}
+            <span className="chip sim"><T k="simulated" /></span>
+            {story && <span className="chip"><T k="storyLabel" /></span>}
           </div>
-          <h1>{t('wsTitle')}</h1>
+          <h1><T k="wsTitle" /></h1>
         </div>
         <div className="row">
           <label className="field">
-            {t('wsCase')}
+            <T k="wsCase" />
             <select value={caseId} onChange={(e) => { setCaseId(e.target.value); setVerifyFor(null) }} disabled={story && step >= 0}>
               {CASES.map((x) => <option key={x.id} value={x.id}>{t(caseKey(x.id))}</option>)}
             </select>
           </label>
-          <button className="btn ghost" style={{ alignSelf: 'flex-end' }} onClick={reset}>{t('reset')}</button>
+          <button className="btn ghost" style={{ alignSelf: 'flex-end' }} onClick={reset}><T k="reset" /></button>
         </div>
       </div>
 
@@ -248,30 +249,30 @@ export default function Workspace({ story }: { story: boolean }) {
             <SourceCard k={t('srcShipment')} v={c.header.shipmentId} d={data?.shipments[0] ? `${data.shipments[0].origin} → ${data.shipments[0].destination} · ${data.shipments[0].container_type}` : '…'} open={viewer === 'shipment'} onClick={() => setViewer('shipment')} />
             <SourceCard k={t('srcRate')} v={c.rateFile.replace('.csv', '')} d={`${data?.rates.length ?? '…'} ${t('rateRows')}`} open={viewer === 'rate'} onClick={() => setViewer('rate')} />
           </section>
-          <p className="mini" style={{ marginTop: 8, textAlign: 'right' }}><a className="ref" href="#/rates">{t('buildFromQuote')}</a></p>
+          <p className="mini" style={{ marginTop: 8, textAlign: 'right' }}><a className="ref" href="#/rates"><T k="buildFromQuote" /></a></p>
 
           <section className={`box ${target(1)}`} style={{ marginTop: 16 }} aria-live="polite">
             <div className="box-head">
               <div>
-                <h2>{t('results')}</h2>
+                <h2><T k="results" /></h2>
                 {result?.shipment && (
-                  <p className="muted">{t('matchedShipment')} <b>{result.shipment.shipment_id}</b> · {result.shipment.bl_number} · {t('ratingDate')} {result.shipment.rating_date}</p>
+                  <p className="muted"><T k="matchedShipment" /> <b>{result.shipment.shipment_id}</b> · {result.shipment.bl_number} · <T k="ratingDate" /> {result.shipment.rating_date}</p>
                 )}
               </div>
               <div className="row">
                 <button className="btn" onClick={() => { run(); setSelected(null) }} disabled={!data}>{result ? t('rerun') : t('run')}</button>
-                <button className="btn ghost" onClick={exportCsv} disabled={!result}>{t('export')}</button>
+                <button className="btn ghost" onClick={exportCsv} disabled={!result}><T k="export" /></button>
               </div>
             </div>
 
             {!result ? (
-              <p className="muted">{t('notRun')}</p>
+              <p className="muted"><T k="notRun" /></p>
             ) : (
               <>
                 <div className="table-scroll">
                   <table>
                     <thead>
-                      <tr><th>{t('colFee')}</th><th className="n">{t('colInvoiced')}</th><th className="n">{t('colExpected')}</th><th className="n">{t('colDiff')}</th><th>{t('colStatus')}</th></tr>
+                      <tr><th><T k="colFee" /></th><th className="n"><T k="colInvoiced" /></th><th className="n"><T k="colExpected" /></th><th className="n"><T k="colDiff" /></th><th><T k="colStatus" /></th></tr>
                     </thead>
                     <tbody>
                       {result.lines.map((l) => (
@@ -287,13 +288,13 @@ export default function Workspace({ story }: { story: boolean }) {
                             <div className="row" style={{ gap: 6 }}>
                               <span className={`status ${l.status}`}>{t(`st_${l.status}`)}</span>
                               {verifications[vKey(l.feeCode)] && <span className="status sent">{t('st_sent')}</span>}
-                              <button className="btn ghost small" onClick={(e) => { e.stopPropagation(); setSelected(l.feeCode) }}>{t('viewEvidence')}</button>
+                              <button className="btn ghost small" onClick={(e) => { e.stopPropagation(); setSelected(l.feeCode) }}><T k="viewEvidence" /></button>
                             </div>
                           </td>
                         </tr>
                       ))}
                       <tr className="total">
-                        <td>{t('total')}</td>
+                        <td><T k="total" /></td>
                         <td className="n"><Money key={runId} n={result.invoicedTotal} lang={lang} /></td>
                         <td className="n">{result.expectedTotal === null ? '—' : <Money key={runId} n={result.expectedTotal} lang={lang} />}</td>
                         <td className="n">{result.expectedTotal === null ? '—' : <Money key={runId} n={result.invoicedTotal - result.expectedTotal} sign lang={lang} />}</td>
@@ -302,7 +303,7 @@ export default function Workspace({ story }: { story: boolean }) {
                     </tbody>
                   </table>
                 </div>
-                <p className="muted mini" style={{ marginTop: 10 }}>{result.arithmeticOk ? t('arithmeticOk') : t('arithmeticBad')} · {t('pretax')}</p>
+                <p className="muted mini" style={{ marginTop: 10 }}>{result.arithmeticOk ? t('arithmeticOk') : t('arithmeticBad')} · <T k="pretax" /></p>
               </>
             )}
           </section>
@@ -318,8 +319,8 @@ export default function Workspace({ story }: { story: boolean }) {
 
         <aside className="stack">
           <section className={`box ${target(3)}`}>
-            <h2>{t('intakeTitle')}</h2>
-            <p className="muted" style={{ marginBottom: 12 }}>{t('intakeBody')}</p>
+            <h2><T k="intakeTitle" /></h2>
+            <p className="muted" style={{ marginBottom: 12 }}><T k="intakeBody" /></p>
             <label
               className={`drop ${over ? 'over' : ''}`}
               onDragOver={(e) => { e.preventDefault(); setOver(true) }}
@@ -328,27 +329,27 @@ export default function Workspace({ story }: { story: boolean }) {
               style={{ display: 'block', cursor: 'pointer' }}
             >
               <input type="file" accept="application/pdf,.pdf" className="sr-only" onChange={async (e) => { const f = e.target.files?.[0]; if (f) await receive(await f.arrayBuffer(), f.name); e.target.value = '' }} />
-              <span className="btn ghost small">{t('chooseFile')}</span>
+              <span className="btn ghost small"><T k="chooseFile" /></span>
             </label>
-            <button className="btn ghost small" style={{ marginTop: 10, width: '100%', whiteSpace: 'normal' }} onClick={simulateResend}>{t('tryResent')}</button>
+            <button className="btn ghost small" style={{ marginTop: 10, width: '100%', whiteSpace: 'normal' }} onClick={simulateResend}><T k="tryResent" /></button>
 
             {intakeMsg && (
               <div className={`callout ${intakeMsg.kind === 'dup' ? 'strong' : ''}`} style={{ marginTop: 12 }} role="status">
                 {intakeMsg.kind === 'dup' ? (
                   <>
-                    <b>{t('dupFound')}: {intakeMsg.rec.invoiceId}</b>
+                    <b><T k="dupFound" />: {intakeMsg.rec.invoiceId}</b>
                     <div className="mini" style={{ marginTop: 4 }}>
-                      “{intakeMsg.fileName}” = {t('asFile')} “{intakeMsg.rec.fileName}”, {t('receivedAt')} {time(intakeMsg.rec.receivedAt)}. {t('paidNote')}
+                      “{intakeMsg.fileName}” = <T k="asFile" /> “{intakeMsg.rec.fileName}”, <T k="receivedAt" /> {time(intakeMsg.rec.receivedAt)}. <T k="paidNote" />
                     </div>
                   </>
                 ) : (
-                  <>{t('newFile')} <span className="mini">“{intakeMsg.fileName}”</span></>
+                  <><T k="newFile" /> <span className="mini">“{intakeMsg.fileName}”</span></>
                 )}
-                <div className="hash" style={{ marginTop: 6, color: 'inherit', opacity: 0.8 }}>{t('fingerprint')}: {intakeMsg.hash.slice(0, 32)}…</div>
+                <div className="hash" style={{ marginTop: 6, color: 'inherit', opacity: 0.8 }}><T k="fingerprint" />: {intakeMsg.hash.slice(0, 32)}…</div>
               </div>
             )}
 
-            <h3 className="muted mini" style={{ margin: '14px 0 6px', textTransform: 'uppercase', fontWeight: 600, letterSpacing: '0.05em' }}>{t('history')}</h3>
+            <h3 className="muted mini" style={{ margin: '14px 0 6px', textTransform: 'uppercase', fontWeight: 600, letterSpacing: '0.05em' }}><T k="history" /></h3>
             <ul className="log">
               {intake.map((r) => (
                 <li key={r.hash + r.receivedAt}><time>{time(r.receivedAt)}</time><span><b>{r.fileName}</b> <span className="hash">{r.hash.slice(0, 12)}…</span></span></li>
@@ -357,14 +358,14 @@ export default function Workspace({ story }: { story: boolean }) {
           </section>
 
           <section className="box">
-            <h2>{t('samples')}</h2>
+            <h2><T k="samples" /></h2>
             <ul className="files" style={{ marginTop: 10 }}>
               {SAMPLE_FILES.map((f) => <li key={f}><a href={SAMPLES + f} download>{f}</a></li>)}
             </ul>
           </section>
 
           <section className="box">
-            <h2>{t('activity')}</h2>
+            <h2><T k="activity" /></h2>
             {log.length === 0 ? <p className="muted">—</p> : (
               <ul className="log" style={{ marginTop: 10 }}>
                 {log.map((x) => <li key={x.at + x.text}><time>{time(x.at)}</time><span>{x.text}</span></li>)}
@@ -414,7 +415,7 @@ export default function Workspace({ story }: { story: boolean }) {
         <span className="k">{p.k}</span>
         <span className="v">{p.v}</span>
         <span className="d">{p.d}</span>
-        <span className="mini" style={{ fontWeight: 700, marginTop: 4 }}>{t('open')} →</span>
+        <span className="mini" style={{ fontWeight: 700, marginTop: 4 }}><T k="open" /> →</span>
       </button>
     )
   }
@@ -427,7 +428,7 @@ export default function Workspace({ story }: { story: boolean }) {
       <section className={`box ${p.className}`} style={{ marginTop: 16 }} aria-label={t('evidence')}>
         <div className="box-head">
           <div>
-            <h2>{t('evidence')} · {l.feeCode}</h2>
+            <h2><T k="evidence" /> · {l.feeCode}</h2>
             <p className="muted">{l.description} · {l.quantity} × {l.unit}</p>
           </div>
           <div className="row" style={{ gap: 6 }}>
@@ -438,25 +439,25 @@ export default function Workspace({ story }: { story: boolean }) {
 
         <div className="evidence">
           <div className="ev-side">
-            <h3>{t('invoiceSide')}</h3>
+            <h3><T k="invoiceSide" /></h3>
             <div className="ev-amount">{money(l.invoiced)}</div>
-            <div className="ev-src">{p.c.header.invoiceId} · {t('page')} {l.invoiceSource.page} · {t('line')} {l.invoiceSource.lineLabel}</div>
-            <button className="btn ghost small" style={{ marginTop: 10 }} onClick={() => p.onOpen('invoice')}>{t('open')} {p.c.header.invoiceId}</button>
+            <div className="ev-src">{p.c.header.invoiceId} · <T k="page" /> {l.invoiceSource.page} · <T k="line" /> {l.invoiceSource.lineLabel}</div>
+            <button className="btn ghost small" style={{ marginTop: 10 }} onClick={() => p.onOpen('invoice')}><T k="open" /> {p.c.header.invoiceId}</button>
           </div>
           <div className="ev-side">
-            <h3>{t('rateSide')}</h3>
+            <h3><T k="rateSide" /></h3>
             {l.expected !== null && l.rateSource ? (
               <>
                 <div className="ev-amount">{money(l.expected)}</div>
-                <div className="ev-src">{l.rateSource.rateCard} · {t('line')} {l.rateSource.line}</div>
+                <div className="ev-src">{l.rateSource.rateCard} · <T k="line" /> {l.rateSource.line}</div>
                 {rateRow && <div className="mini muted" style={{ marginTop: 4 }}>{rateRow.fee_code} · {rateRow.container_type} · {rateRow.unit} · {rateRow.effective_from} → {rateRow.effective_to}</div>}
-                <button className="btn ghost small" style={{ marginTop: 10 }} onClick={() => p.onOpen('rate')}>{t('open')} {l.rateSource.rateCard}</button>
+                <button className="btn ghost small" style={{ marginTop: 10 }} onClick={() => p.onOpen('rate')}><T k="open" /> {l.rateSource.rateCard}</button>
               </>
             ) : (
               <>
                 <div className="ev-amount">—</div>
                 <div className="ev-src">{t('st_missing_basis')}</div>
-                <button className="btn ghost small" style={{ marginTop: 10 }} onClick={() => p.onOpen('rate')}>{t('open')} {p.c.rateFile.replace('.csv', '')}</button>
+                <button className="btn ghost small" style={{ marginTop: 10 }} onClick={() => p.onOpen('rate')}><T k="open" /> {p.c.rateFile.replace('.csv', '')}</button>
               </>
             )}
           </div>
@@ -464,24 +465,24 @@ export default function Workspace({ story }: { story: boolean }) {
 
         {l.diff !== null && l.unitPrice !== null && (
           <div className="calc">
-            {t('calc')}: {plain(l.invoiced)} − ({l.expectedQty} × {plain(l.unitPrice)}) = <b>{l.diff > 0 ? '+' : l.diff < 0 ? '−' : ''}{plain(Math.abs(l.diff))}</b> ({t('pretax')})
+            <T k="calc" />: {plain(l.invoiced)} − ({l.expectedQty} × {plain(l.unitPrice)}) = <b>{l.diff > 0 ? '+' : l.diff < 0 ? '−' : ''}{plain(Math.abs(l.diff))}</b> (<T k="pretax" />)
           </div>
         )}
         <p className="callout" style={{ marginTop: 12 }}>{t(why)}</p>
-        {p.c.id === 'INV-VN-020' && l.feeCode === 'THD' && <p className="muted mini" style={{ marginTop: 8 }}>{t('vn020Note')}</p>}
+        {p.c.id === 'INV-VN-020' && l.feeCode === 'THD' && <p className="muted mini" style={{ marginTop: 8 }}><T k="vn020Note" /></p>}
 
         {p.verification ? (
           <p className="callout" style={{ marginTop: 12 }}>
-            <b>{t('sentTo')} {p.verification.assignee}</b> · {p.time(p.verification.at)}<br />{p.verification.reason}
+            <b><T k="sentTo" /> {p.verification.assignee}</b> · {p.time(p.verification.at)}<br />{p.verification.reason}
           </p>
         ) : null}
         {p.verification ? (
           <div className="row" style={{ marginTop: 14 }}>
-            <button className={`btn ${story && k === 5 ? 'spot' : ''}`} onClick={exportCsv}>{t('export')}</button>
+            <button className={`btn ${story && k === 5 ? 'spot' : ''}`} onClick={exportCsv}><T k="export" /></button>
           </div>
         ) : l.status !== 'matched' && (
           <div className="row" style={{ marginTop: 14 }}>
-            <button className="btn" onClick={p.onVerify}>{t('requestVerify')}</button>
+            <button className="btn" onClick={p.onVerify}><T k="requestVerify" /></button>
           </div>
         )}
       </section>
@@ -503,17 +504,17 @@ function SourceViewer(p: { viewer: Exclude<Viewer, null>; c: DemoCase; data: Cas
     <div className="overlay" onClick={p.onClose}>
       <div className="drawer" role="dialog" aria-modal="true" aria-label={title} onClick={(e) => e.stopPropagation()}>
         <div className="box-head">
-          <div className="row"><h2 style={{ fontSize: 24, fontWeight: 500, letterSpacing: '-0.01em' }}>{title}</h2><span className="chip sim">{t('simulated')}</span></div>
-          <button className="btn ghost small" onClick={p.onClose} autoFocus>{t('close')}</button>
+          <div className="row"><h2 style={{ fontSize: 24, fontWeight: 500, letterSpacing: '-0.01em' }}>{title}</h2><span className="chip sim"><T k="simulated" /></span></div>
+          <button className="btn ghost small" onClick={p.onClose} autoFocus><T k="close" /></button>
         </div>
 
         {p.viewer === 'invoice' && (
           <div className="box">
-            <p className="muted mini" style={{ marginBottom: 10 }}>{t('extractedNote')}</p>
+            <p className="muted mini" style={{ marginBottom: 10 }}><T k="extractedNote" /></p>
             <div className="invoice">
               <span className="wm">SIMULATED</span>
               <h3>{p.c.header.supplier}</h3>
-              <div className="muted mini">Freight invoice · {t('page')} 1</div>
+              <div className="muted mini">Freight invoice · <T k="page" /> 1</div>
               <div className="inv-meta mini">
                 <span>Invoice no: <b>{p.c.header.invoiceId}</b></span><span>Date: <b>{p.c.invoiceDate}</b></span>
                 <span>Shipment: <b>{p.c.header.shipmentId}</b></span><span>B/L: <b>{p.c.header.blNumber}</b></span>
@@ -526,15 +527,15 @@ function SourceViewer(p: { viewer: Exclude<Viewer, null>; c: DemoCase; data: Cas
                       <td>{l.description} ({l.fee_code})</td><td>{l.quantity} × {l.unit}</td><td className="n">{plain(Number(l.amount))}</td>
                     </tr>
                   ))}
-                  <tr><td colSpan={2}>{t('subtotal')}</td><td className="n">{plain(p.c.header.statedSubtotal)}</td></tr>
-                  <tr><td colSpan={2}>{t('vat')} ({Math.round(p.c.vatRate * 100)}%)</td><td className="n">{plain(vat)}</td></tr>
-                  <tr className="total"><td colSpan={2}>{t('grand')}</td><td className="n">{plain(p.c.header.statedSubtotal + vat)}</td></tr>
+                  <tr><td colSpan={2}><T k="subtotal" /></td><td className="n">{plain(p.c.header.statedSubtotal)}</td></tr>
+                  <tr><td colSpan={2}><T k="vat" /> ({Math.round(p.c.vatRate * 100)}%)</td><td className="n">{plain(vat)}</td></tr>
+                  <tr className="total"><td colSpan={2}><T k="grand" /></td><td className="n">{plain(p.c.header.statedSubtotal + vat)}</td></tr>
                 </tbody>
               </table>
             </div>
             {p.c.pdfFile
-              ? <a className="btn ghost small" style={{ marginTop: 12 }} href={SAMPLES + p.c.pdfFile} target="_blank" rel="noreferrer">{t('openPdf')} ↗</a>
-              : <p className="muted mini" style={{ marginTop: 10 }}>{t('noPdf')}</p>}
+              ? <a className="btn ghost small" style={{ marginTop: 12 }} href={SAMPLES + p.c.pdfFile} target="_blank" rel="noreferrer"><T k="openPdf" /> ↗</a>
+              : <p className="muted mini" style={{ marginTop: 10 }}><T k="noPdf" /></p>}
           </div>
         )}
 
@@ -577,16 +578,16 @@ function VerifyModal(p: { line: LineResult; caseId: string; auto?: boolean; onCa
     <div className="modal-c" onClick={p.onCancel}>
       <form className="modal" role="dialog" aria-modal="true" aria-label={t('requestVerify')} onClick={(e) => e.stopPropagation()}
         onSubmit={(e) => { e.preventDefault(); if (reason.trim()) p.onSubmit({ assignee, reason: reason.trim(), at: new Date().toISOString() }) }}>
-        <h2 style={{ fontSize: 24, fontWeight: 500, letterSpacing: '-0.01em' }}>{t('requestVerify')} · {p.line.feeCode}</h2>
-        <label className="field">{t('assignee')}
+        <h2 style={{ fontSize: 24, fontWeight: 500, letterSpacing: '-0.01em' }}><T k="requestVerify" /> · {p.line.feeCode}</h2>
+        <label className="field"><T k="assignee" />
           <select value={assignee} onChange={(e) => setAssignee(e.target.value)}>{roles.map((r) => <option key={r}>{r}</option>)}</select>
         </label>
-        <label className="field">{t('reason')}
+        <label className="field"><T k="reason" />
           <textarea value={reason} onChange={(e) => setReason(e.target.value)} required />
         </label>
         <div className="row" style={{ justifyContent: 'flex-end' }}>
-          <button type="button" className="btn ghost" onClick={p.onCancel}>{t('cancel')}</button>
-          <button type="submit" className="btn" autoFocus>{t('submit')}</button>
+          <button type="button" className="btn ghost" onClick={p.onCancel}><T k="cancel" /></button>
+          <button type="submit" className="btn" autoFocus><T k="submit" /></button>
         </div>
       </form>
     </div>

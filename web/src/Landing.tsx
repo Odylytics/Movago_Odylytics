@@ -5,7 +5,7 @@ import { Icon, type IconName } from './icons'
 import { useT } from './i18n'
 import StackSection from './StackSection'
 import { PERSONAS, type PersonaId } from './story'
-import { ArrowBtn, Badge, FitText, Glyph, useReveal } from './ui'
+import { ArrowBtn, Badge, FitText, Glyph, useReveal, T, Tx } from './ui'
 
 // Landing in the Movora layout (DESIGN.md): hero wordmark, channel strip, problem, numbered outcomes, control + KPIs,
 // the Lime process band, stack, story cards, FAQ. Every figure here is simulated and labelled as such.
@@ -181,21 +181,21 @@ export default function Landing() {
         <div className="wrap">
           <div className="hero2-foot">
             <div className="hero2-copy">
-              <div className="a-up"><Badge>{tx(C.slogan)}</Badge></div>
-              <h1 className="h3 a-up" id="hero-title" style={{ '--ad': '0.08s' } as CSSProperties}>{t('heroTitle')}</h1>
+              <div className="a-up"><Badge><Tx v={C.slogan} /></Badge></div>
+              <h1 className="h3 a-up" id="hero-title" style={{ '--ad': '0.08s' } as CSSProperties}><T k="heroTitle" /></h1>
               <div className="hero2-ctas a-up" style={{ '--ad': '0.16s' } as CSSProperties}>
-                <ArrowBtn href="#/demo?choose=1">{t('introDemo')}</ArrowBtn>
+                <ArrowBtn href="#/demo?choose=1"><T k="introDemo" /></ArrowBtn>
               </div>
-              <p className="hero2-meta a-up" style={{ '--ad': '0.24s' } as CSSProperties}>{t('poweredBy')} <b>Odylytics</b> · {tx(C.team)}</p>
+              <p className="hero2-meta a-up" style={{ '--ad': '0.24s' } as CSSProperties}><T k="poweredBy" /> <b>Odylytics</b> · <Tx v={C.team} /></p>
             </div>
             <div className="a-up" style={{ '--ad': '1.2s' } as CSSProperties}>
               <div className="hero-card edge" role="group" aria-label={`INV-095 · ${t('results')}`}>
-                <div className="hc-bar"><b>INV-095 · {t('results')}</b><span className="chip sim">{t('simulated')}</span></div>
+                <div className="hc-bar"><b>INV-095 · <T k="results" /></b><span className="chip sim"><T k="simulated" /></span></div>
                 <div className="hc-rows">
                   <div className="hc-row"><span>Ocean freight</span><span className="muted">{money(8_000_000)}</span><span className="status matched">{t('st_matched')}</span></div>
                   <div className="hc-row"><span>DOC</span><span className="muted">{money(1_300_000)}</span><span className="status discrepancy">{t('st_discrepancy')}</span></div>
                 </div>
-                <div className="hc-diff"><b>{signed(800_000)}</b><span>INV-095 · {t('page')} 1 · DOC<br />RATE-V3 · {t('line')} 12</span></div>
+                <div className="hc-diff"><b>{signed(800_000)}</b><span>INV-095 · <T k="page" /> 1 · DOC<br />RATE-V3 · <T k="line" /> 12</span></div>
               </div>
             </div>
           </div>
@@ -205,7 +205,7 @@ export default function Landing() {
       {/* ===== channels (Movora's logo strip) ===== */}
       <section className="wrap" aria-label={tx(C.channels)}>
         <ul className="strip" style={{ listStyle: 'none', margin: 0 }}>
-          {CHANNELS.map((c) => <li key={c.t.en} className="strip-cell edge"><Icon name={c.icon} size={20} />{tx(c.t)}</li>)}
+          {CHANNELS.map((c) => <li key={c.t.en} className="strip-cell edge"><Icon name={c.icon} size={20} /><Tx v={c.t} /></li>)}
         </ul>
       </section>
 
@@ -213,13 +213,13 @@ export default function Landing() {
       <section className="sec" aria-labelledby="problem-title">
         <div className="wrap">
           <div className="about-head reveal">
-            <Badge>{tx(C.problem)}</Badge>
-            <h2 className="statement" id="problem-title">{t('problemTitle')}</h2>
+            <Badge><Tx v={C.problem} /></Badge>
+            <h2 className="statement" id="problem-title"><T k="problemTitle" /></h2>
           </div>
           <div className="about-grid">
             <article className="photo-card edge reveal">
               <img src={img('port-aerial.jpg')} alt="" width={1800} height={1125} loading="lazy" />
-              <h3 className="h3">{tx(C.threeSources)}</h3>
+              <h3 className="h3"><Tx v={C.threeSources} /></h3>
               <ol className="plist">
                 {([['src1Title', 'src1Body'], ['src2Title', 'src2Body'], ['src3Title', 'src3Body']] as const).map(([h, b], i) => (
                   <li key={h}><b>(0{i + 1}) {t(h)}</b><span>{t(b)}</span></li>
@@ -228,13 +228,13 @@ export default function Landing() {
             </article>
             <article className="mid-card reveal" style={{ '--rd': '0.08s' } as CSSProperties}>
               <div className="photo"><img src={img('office-night.jpg')} alt="" width={1200} height={675} loading="lazy" /></div>
-              <p className="pretty">{t('problemBody')}</p>
-              <ArrowBtn href="#/demo?story=1">{t('ctaStory')}</ArrowBtn>
+              <p className="pretty"><T k="problemBody" /></p>
+              <ArrowBtn href="#/demo?story=1"><T k="ctaStory" /></ArrowBtn>
             </article>
             <article className="art-card edge reveal" style={{ '--rd': '0.16s' } as CSSProperties}>
-              <h3 className="h3">{tx(C.wrong)}</h3>
+              <h3 className="h3"><Tx v={C.wrong} /></h3>
               <div className="art"><ArtSources /></div>
-              <p className="pretty">{tx(C.wrongBody)}</p>
+              <p className="pretty"><Tx v={C.wrongBody} /></p>
             </article>
           </div>
         </div>
@@ -244,9 +244,9 @@ export default function Landing() {
       <section className="sec" aria-labelledby="outcomes-title">
         <div className="wrap">
           <div className="sec-head reveal">
-            <Badge>{tx(C.outcomes)}</Badge>
-            <h2 className="h2" id="outcomes-title">{t('outcomesTitle')}</h2>
-            <p className="sub lg">{t('outcomesSub')}</p>
+            <Badge><Tx v={C.outcomes} /></Badge>
+            <h2 className="h2" id="outcomes-title"><T k="outcomesTitle" /></h2>
+            <p className="sub lg"><T k="outcomesSub" /></p>
           </div>
           <div className="nrows">
             {OUTCOMES.map((o, i) => {
@@ -267,7 +267,7 @@ export default function Landing() {
                       <div className="nrow-copy">
                         <p className="pretty">{o.body}</p>
                         <ul className="pills">{o.pills.map((p) => <li key={p}>{p}</li>)}</ul>
-                        <div><ArrowBtn href="#/demo">{t('ctaTry')}</ArrowBtn></div>
+                        <div><ArrowBtn href="#/demo"><T k="ctaTry" /></ArrowBtn></div>
                       </div>
                     </div>
                   )}
@@ -282,30 +282,30 @@ export default function Landing() {
       <section className="sec" aria-labelledby="control-title">
         <div className="wrap">
           <div className="sec-head reveal">
-            <Badge>{tx(C.control)}</Badge>
-            <h2 className="h2" id="control-title">{tx(C.controlTitle)}</h2>
+            <Badge><Tx v={C.control} /></Badge>
+            <h2 className="h2" id="control-title"><Tx v={C.controlTitle} /></h2>
           </div>
           <div className="ctl">
             <ul className="ctl-list reveal">
               {(['feat1', 'feat2', 'feat3', 'feat4'] as const).map((k) => <li key={k}>{t(k)}</li>)}
-              <li>{tx(C.feat5)}</li>
+              <li><Tx v={C.feat5} /></li>
             </ul>
             <div className="device edge reveal" aria-label="Movago workspace preview, INV-095">
-              <div className="device-bar"><span>INV-095 · SHP-001 · RATE-V3</span><span className="chip sim">{t('simulated')}</span></div>
+              <div className="device-bar"><span>INV-095 · SHP-001 · RATE-V3</span><span className="chip sim"><T k="simulated" /></span></div>
               <div className="device-body">
                 <div className="table-scroll">
                   <table>
-                    <thead><tr><th>{t('colFee')}</th><th className="n">{t('colInvoiced')}</th><th className="n">{t('colExpected')}</th><th>{t('colStatus')}</th></tr></thead>
+                    <thead><tr><th><T k="colFee" /></th><th className="n"><T k="colInvoiced" /></th><th className="n"><T k="colExpected" /></th><th><T k="colStatus" /></th></tr></thead>
                     <tbody>
                       <tr><td>Ocean freight</td><td className="n">{money(8_000_000)}</td><td className="n">{money(8_000_000)}</td><td><span className="status matched">{t('st_matched')}</span></td></tr>
                       <tr className="hl"><td>DOC</td><td className="n">{money(1_300_000)}</td><td className="n">{money(500_000)}</td><td><span className="status discrepancy">{signed(800_000)}</span></td></tr>
-                      <tr className="total"><td>{t('total')}</td><td className="n">{money(9_300_000)}</td><td className="n">{money(8_500_000)}</td><td><span className="status sent">{t('needsReview')}</span></td></tr>
+                      <tr className="total"><td><T k="total" /></td><td className="n">{money(9_300_000)}</td><td className="n">{money(8_500_000)}</td><td><span className="status sent"><T k="needsReview" /></span></td></tr>
                     </tbody>
                   </table>
                 </div>
                 <div className="ev-mini">
-                  <div><span className="muted mono">INV-095 · {t('page')} 1 · DOC</span><b>{money(1_300_000)}</b></div>
-                  <div><span className="muted mono">RATE-V3 · {t('line')} 12</span><b>{money(500_000)}</b></div>
+                  <div><span className="muted mono">INV-095 · <T k="page" /> 1 · DOC</span><b>{money(1_300_000)}</b></div>
+                  <div><span className="muted mono">RATE-V3 · <T k="line" /> 12</span><b>{money(500_000)}</b></div>
                 </div>
               </div>
             </div>
@@ -320,11 +320,11 @@ export default function Landing() {
               <div key={k.l} className="kpi edge reveal" style={{ '--rd': `${i * 0.08}s` } as CSSProperties}>
                 <span className="kpi-label">{k.l}</span>
                 <span className="kpi-value"><span className="mk">{k.v}</span></span>
-                <span className="kpi-tag">{t('simulated')}</span>
+                <span className="kpi-tag"><T k="simulated" /></span>
               </div>
             ))}
           </div>
-          <p className="kpi-note">{tx(C.kpiNote)}</p>
+          <p className="kpi-note"><Tx v={C.kpiNote} /></p>
         </div>
       </section>
 
@@ -332,8 +332,8 @@ export default function Landing() {
       <section className="sec band" id="how" aria-labelledby="how-title">
         <div className="wrap">
           <div className="sec-head center reveal">
-            <Badge>{t('navHow')}</Badge>
-            <h2 className="h2" id="how-title">{tx(C.howTitle)}</h2>
+            <Badge><T k="navHow" /></Badge>
+            <h2 className="h2" id="how-title"><Tx v={C.howTitle} /></h2>
           </div>
           <div className="pcards">
             {STEPS.map((s, i) => (
@@ -341,8 +341,8 @@ export default function Landing() {
                 <div className="pcard-art"><s.art /></div>
                 <div className="pcard-copy">
                   <span className="pcard-num">0{i + 1}</span>
-                  <h3 className="h3">{tx(s.t)}</h3>
-                  <p className="pretty">{tx(s.d)}</p>
+                  <h3 className="h3"><Tx v={s.t} /></h3>
+                  <p className="pretty"><Tx v={s.d} /></p>
                 </div>
               </article>
             ))}
@@ -356,9 +356,9 @@ export default function Landing() {
       <section className="sec" aria-labelledby="cast">
         <div className="wrap">
           <div className="sec-head reveal">
-            <Badge>{tx(C.storyBadge)}</Badge>
-            <h2 className="h2" id="cast">{t('castTitle')}</h2>
-            <p className="sub lg">{t('castSub')}</p>
+            <Badge><Tx v={C.storyBadge} /></Badge>
+            <h2 className="h2" id="cast"><T k="castTitle" /></h2>
+            <p className="sub lg"><T k="castSub" /></p>
           </div>
           <div className="tcards">
             {STORIES.map((s) => (
@@ -368,7 +368,7 @@ export default function Landing() {
                   <div>
                     <div className="tcard-name">{s.p.name}</div>
                     <div className="tcard-role">{s.p.role[lang]}</div>
-                    <div className="tcard-role">{tx(C.fictional1)}</div>
+                    <div className="tcard-role"><Tx v={C.fictional1} /></div>
                   </div>
                 </div>
                 <div className="tcard-side">
@@ -395,8 +395,8 @@ export default function Landing() {
             ))}
           </ul>
           <div className="cast-foot">
-            <p>{t('avatarCredit')}</p>
-            <ArrowBtn href="#/demo?story=1">{t('ctaStory')}</ArrowBtn>
+            <p><T k="avatarCredit" /></p>
+            <ArrowBtn href="#/demo?story=1"><T k="ctaStory" /></ArrowBtn>
           </div>
         </div>
       </section>
@@ -405,19 +405,19 @@ export default function Landing() {
       <section className="sec" aria-labelledby="faq-title">
         <div className="wrap">
           <div className="sec-head center reveal sec-tight">
-            <Badge>{tx(C.faqBadge)}</Badge>
-            <h2 className="h2" id="faq-title">{tx(C.faqTitle)}</h2>
+            <Badge><Tx v={C.faqBadge} /></Badge>
+            <h2 className="h2" id="faq-title"><Tx v={C.faqTitle} /></h2>
           </div>
           <div className="faq">
             {FAQ.map((f, i) => (
               <details key={f.q.en} className="edge reveal" open={i === 0}>
-                <summary>{tx(f.q)}<span className="q-ico" aria-hidden="true"><Glyph name="plus" /></span></summary>
-                <p className="ans pretty">{tx(f.a)}</p>
+                <summary><Tx v={f.q} /><span className="q-ico" aria-hidden="true"><Glyph name="plus" /></span></summary>
+                <p className="ans pretty"><Tx v={f.a} /></p>
               </details>
             ))}
             <div className="faq-cta reveal">
-              <div><b>{tx(C.faqMore)}</b><span>{tx(C.faqMoreSub)}</span></div>
-              <ArrowBtn href="#/business">{t('bizCta')}</ArrowBtn>
+              <div><b><Tx v={C.faqMore} /></b><span><Tx v={C.faqMoreSub} /></span></div>
+              <ArrowBtn href="#/business"><T k="bizCta" /></ArrowBtn>
             </div>
           </div>
         </div>
