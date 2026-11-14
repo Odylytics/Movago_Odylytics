@@ -15,7 +15,6 @@ const avatar = (id: PersonaId) => `${import.meta.env.BASE_URL}avatars/${id}.svg`
 
 const C = {
   slogan: { en: 'Move smarter. Go safer.', vi: 'Move smarter. Go safer.' },
-  team: { en: 'Team Odylytics', vi: 'Đội Odylytics' },
   channels: { en: 'Where freight invoices arrive', vi: 'Nơi hóa đơn cước gửi đến' },
   problem: { en: 'The problem', vi: 'Vấn đề' },
   threeSources: { en: 'Three sources', vi: 'Ba nguồn' },
@@ -186,7 +185,7 @@ export default function Landing() {
               <div className="hero2-ctas a-up" style={{ '--ad': '0.16s' } as CSSProperties}>
                 <ArrowBtn href="#/demo?choose=1"><T k="introDemo" /></ArrowBtn>
               </div>
-              <p className="hero2-meta a-up" style={{ '--ad': '0.24s' } as CSSProperties}><T k="poweredBy" /> <b>Odylytics</b> · <Tx v={C.team} /></p>
+              <p className="hero2-meta a-up" style={{ '--ad': '0.24s' } as CSSProperties}><T k="poweredBy" /> <b>Odylytics</b></p>
             </div>
             <div className="a-up" style={{ '--ad': '1.2s' } as CSSProperties}>
               <div className="hero-card edge" role="group" aria-label={`INV-095 · ${t('results')}`}>

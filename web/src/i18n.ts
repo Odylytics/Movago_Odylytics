@@ -70,7 +70,6 @@ export const dict = {
     en: 'All invoices, shipments and customers in this demo are simulated. Time savings and error rates will be measured in a pilot.',
     vi: 'Hóa đơn, lô hàng và khách hàng trong demo đều là giả lập. Thời gian tiết kiệm và tỷ lệ sai lệch sẽ được đo trong pilot.',
   },
-  footer: { en: 'Team Odylytics', vi: 'Đội Odylytics' },
 
   // workspace
   wsTitle: { en: 'Reconciliation workspace', vi: 'Màn hình đối chiếu' },
