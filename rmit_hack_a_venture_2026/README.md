@@ -25,7 +25,7 @@ Thư mục chuẩn bị hồ sơ dự thi RMIT Hack-A-Venture 2026. Chủ đề 
 - [ ] Đọc thách thức chi tiết của vòng 1 khi BTC công bố. Chọn trụ cột theo đúng tên trong danh sách đó.
 - [ ] Kiểm tra mục **Eligibility**: thành phần đội, và việc dự án đã dự thi KTC Ideathon có được phép dùng lại không.
 - [ ] Bổ sung số liệu có nguồn về gian lận hoặc sai sót thanh toán B2B tại Việt Nam. Không dùng số không có nguồn.
-- [ ] Viết bài theo [khung Idea Proposal](vong1_idea_proposal.md), giữ dưới 1.500 từ.
+- [x] Viết bản nháp: [vong1_idea_proposal_draft.md](vong1_idea_proposal_draft.md) và file Word [Movago_RMIT_HAV2026_Idea_Proposal.docx](Movago_RMIT_HAV2026_Idea_Proposal.docx), khoảng 1.460 từ kể cả tài liệu tham khảo. Khung gốc: [vong1_idea_proposal.md](vong1_idea_proposal.md).
 - [ ] Chuyển sang .docx. Kiểm tra số từ trong Word.
 - [ ] Đặt link prototype https://movago.odylytics.com và [tài liệu hướng dẫn dùng prototype](https://docs.google.com/document/d/1GHJaJQgfQMNODwn2Mi6oo6TlpxobigB70ynNizR9qro/edit?usp=drivesdk) trong bài.
 
