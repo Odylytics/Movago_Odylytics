@@ -15,7 +15,7 @@ const avatar = (id: PersonaId) => `${import.meta.env.BASE_URL}avatars/${id}.svg`
 
 const C = {
   slogan: { en: 'Move smarter. Go safer.', vi: 'Move smarter. Go safer.' },
-  team: { en: 'Team Odylytics · KTC Ideathon 2026', vi: 'Đội Odylytics · KTC Ideathon 2026' },
+  team: { en: 'Team Odylytics', vi: 'Đội Odylytics' },
   channels: { en: 'Where freight invoices arrive', vi: 'Nơi hóa đơn cước gửi đến' },
   problem: { en: 'The problem', vi: 'Vấn đề' },
   threeSources: { en: 'Three sources', vi: 'Ba nguồn' },

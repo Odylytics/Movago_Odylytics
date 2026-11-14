@@ -57,8 +57,8 @@ export default function Footer() {
 
         <p className="foot-statement">
           {lang === 'en'
-            ? 'Movago is a product of Odylytics, built for KTC Ideathon 2026. All invoices, shipments, customers and figures on this site are simulated; time savings and error rates will be measured in a pilot. Movago supports accounts-payable checks and does not approve or make payments. Photos: Unsplash.'
-            : 'Movago là sản phẩm của Odylytics, xây dựng cho KTC Ideathon 2026. Mọi hóa đơn, lô hàng, khách hàng và số liệu trên trang này là giả lập; thời gian tiết kiệm và tỷ lệ sai sót sẽ được đo trong pilot. Movago hỗ trợ kế toán công nợ kiểm tra, không phê duyệt hay thực hiện thanh toán. Ảnh: Unsplash.'}
+            ? 'Movago is a product of Odylytics. All invoices, shipments, customers and figures on this site are simulated; time savings and error rates will be measured in a pilot. Movago supports accounts-payable checks and does not approve or make payments. Photos: Unsplash.'
+            : 'Movago là sản phẩm của Odylytics. Mọi hóa đơn, lô hàng, khách hàng và số liệu trên trang này là giả lập; thời gian tiết kiệm và tỷ lệ sai sót sẽ được đo trong pilot. Movago hỗ trợ kế toán công nợ kiểm tra, không phê duyệt hay thực hiện thanh toán. Ảnh: Unsplash.'}
         </p>
 
         <div className="foot-word"><FitText text="MOVAGO" className="wordmark" /></div>

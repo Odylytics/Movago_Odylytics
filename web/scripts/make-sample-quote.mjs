@@ -32,7 +32,7 @@ rows.forEach(([charge, eq, unit, rate], i) => {
 })
 stream += '0.04 0.12 0.27 RG 0.8 w 65 330 m 530 330 l S\n'
 stream += text(66, 300, 10, 'Rates subject to the carrier tariff in force on the rating date. Surcharges not listed are quoted separately.')
-stream += text(66, 120, 10, 'All amounts are simulated for the Movago KTC Ideathon demo.')
+stream += text(66, 120, 10, 'All amounts are simulated for the Movago demo.')
 
 const objects = [
   '<< /Type /Catalog /Pages 2 0 R >>',

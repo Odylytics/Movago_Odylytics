@@ -1,6 +1,6 @@
 # Movago web demo
 
-> Move smarter. Go safer. · Team Odylytics · KTC Ideathon 2026
+> Move smarter. Go safer. · Team Odylytics
 
 **Live demo:** https://movago-odylytics.vercel.app
 

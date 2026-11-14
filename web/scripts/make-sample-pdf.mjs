@@ -18,7 +18,7 @@ const stream = [
   text(360, 435, 11, 'Subtotal:'), text(470, 435, 11, '9,300,000'),
   text(360, 412, 11, 'VAT (10%):'), text(470, 412, 11, '930,000'),
   text(360, 380, 13, 'Total:', 'F2'), text(470, 380, 13, '10,230,000', 'F2'),
-  text(66, 120, 10, 'All amounts are simulated for the Movago KTC Ideathon demo.'),
+  text(66, 120, 10, 'All amounts are simulated for the Movago demo.'),
 ].join('')
 const objects = [
   '<< /Type /Catalog /Pages 2 0 R >>',

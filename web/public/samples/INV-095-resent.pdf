@@ -9,7 +9,7 @@ endobj
 << /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 5 0 R /F2 6 0 R >> >> /Contents 4 0 R >>
 endobj
 4 0 obj
-<< /Length 1327 >>
+<< /Length 1314 >>
 stream
 q 0.90 0.95 1 rg 0 0 595 842 re f Q
 q 0.82 0.87 0.96 rg 50 675 495 95 re f Q
@@ -37,7 +37,7 @@ BT /F1 11 Tf 360 412 Td (VAT \(10%\):) Tj ET
 BT /F1 11 Tf 470 412 Td (930,000) Tj ET
 BT /F2 13 Tf 360 380 Td (Total:) Tj ET
 BT /F2 13 Tf 470 380 Td (10,230,000) Tj ET
-BT /F1 10 Tf 66 120 Td (All amounts are simulated for the Movago KTC Ideathon demo.) Tj ET
+BT /F1 10 Tf 66 120 Td (All amounts are simulated for the Movago demo.) Tj ET
 endstream
 endobj
 5 0 obj
@@ -53,10 +53,10 @@ xref
 0000000058 00000 n 
 0000000115 00000 n 
 0000000251 00000 n 
-0000001629 00000 n 
-0000001699 00000 n 
+0000001616 00000 n 
+0000001686 00000 n 
 trailer
 << /Size 7 /Root 1 0 R >>
 startxref
-1774
+1761
 %%EOF

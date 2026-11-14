@@ -36,8 +36,8 @@ export const dict = {
   ctaStory: { en: 'Play the story', vi: 'Xem tình huống' },
   ctaTry: { en: 'Try the sample case', vi: 'Tự thử hồ sơ mẫu' },
   teamLine: {
-    en: 'Movago is the freight-cost reconciliation project of team Odylytics at KTC Ideathon.',
-    vi: 'Movago là dự án đối chiếu cước vận tải của đội Odylytics tại KTC Ideathon.',
+    en: 'Movago is the freight-cost reconciliation project of team Odylytics.',
+    vi: 'Movago là dự án đối chiếu cước vận tải của đội Odylytics.',
   },
   bannerText: { en: 'Move smarter. Go safer. · Play the 3-minute story', vi: 'Move smarter. Go safer. · Xem tình huống 3 phút' },
   feat1: { en: 'Matches each invoice to its shipment and B/L', vi: 'Ghép từng hóa đơn với đúng lô và vận đơn' },
@@ -70,7 +70,7 @@ export const dict = {
     en: 'All invoices, shipments and customers in this demo are simulated. Time savings and error rates will be measured in a pilot.',
     vi: 'Hóa đơn, lô hàng và khách hàng trong demo đều là giả lập. Thời gian tiết kiệm và tỷ lệ sai lệch sẽ được đo trong pilot.',
   },
-  footer: { en: 'Team Odylytics · KTC Ideathon 2026', vi: 'Đội Odylytics · KTC Ideathon 2026' },
+  footer: { en: 'Team Odylytics', vi: 'Đội Odylytics' },
 
   // workspace
   wsTitle: { en: 'Reconciliation workspace', vi: 'Màn hình đối chiếu' },
