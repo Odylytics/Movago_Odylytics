@@ -39,7 +39,7 @@ Phần được chấm điểm có khoảng 1.760 từ, đếm từ Executive Su
 - [ ] Xác nhận tên chính xác của lab UTS trong mục *Delivery capacity* (bài đang ghi "AI Intelligence Drone Lab at UTS").
 - [ ] Mở file .docx bằng Word để xem bố cục và số từ.
 - [ ] Tên đội trong form phải trùng với tên đã đăng ký.
-- [ ] Con số "16% GDP" chưa đối chiếu với PDF gốc của Báo cáo Logistics Việt Nam 2025.
+- [x] Đã xác minh "16% GDP" (VIR, 28/8/2026) và tin tuyển dụng Flexport tại TP.HCM ngày 15/11
 
 ## Nguồn trong repo
 

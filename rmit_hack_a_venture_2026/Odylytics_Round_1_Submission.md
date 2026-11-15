@@ -34,7 +34,7 @@ Vietnam's payment rails are becoming faster and safer, but in business-to-busine
 
 Cashless transactions passed 15 billion in the first half of 2026, up 34.3% year on year, and by the end of July 2026 the State Bank's SIMO system had helped about 1.6 million customers stop suspicious transfers worth around VND 5.5 trillion (VnEconomy, 2026; VietNamNet, 2026). SIMO protects the transfer. When an accountant approves an incorrect supplier invoice, the bank executes a payment that is valid in form but wrong in substance.
 
-Freight is where this gap is widest. Goods trade reached USD 1,010.55 billion in the first ten months of 2026, up 32.3% (National Statistics Office, 2026), and logistics costs equal about 16% of GDP against a national target of 12–15% by 2035 (Ministry of Industry and Trade, 2026; Decision No. 2229/QĐ-TTg, 2025). New e-invoice rules under Decree 254/2026/NĐ-CP are changing how these invoices are issued and corrected, so control processes have to change with them.
+Freight is where this gap is widest. Goods trade reached USD 1,010.55 billion in the first ten months of 2026, up 32.3% (National Statistics Office, 2026), and logistics costs equal about 16% of GDP against a national target of 12–15% by 2035 (Vietnam Investment Review, 2026; Decision No. 2229/QĐ-TTg, 2025). New e-invoice rules under Decree 254/2026/NĐ-CP are changing how these invoices are issued and corrected, so control processes have to change with them.
 
 ### Root causes
 
@@ -47,7 +47,7 @@ In our test case, invoice INV-095 sums correctly to VND 9,300,000, yet its docum
 
 ### Groups affected
 
-Accounts-payable (AP) accountants carry the manual work; chief accountants and CFOs carry the payment risk; pricing and operations teams are pulled into repeated queries; and forwarders' own customers may be re-billed for charges that were never confirmed. Reconciliation of this kind appears in AP job descriptions at forwarders in Ho Chi Minh City such as Flexport (Flexport, 2026).
+Accounts-payable (AP) accountants carry the manual work; chief accountants and CFOs carry the payment risk; pricing and operations teams are pulled into repeated queries; and forwarders' own customers may be re-billed for charges that were never confirmed. The work is real enough to be a job in its own right: Flexport is hiring an *Auditor, Accounts Payable & Freight Audit* in Ho Chi Minh City to validate freight invoices against contracts, rate agreements and shipment records (Flexport, 2026).
 
 ### Evidence of scale
 
@@ -193,7 +193,7 @@ APQC. (n.d.). *What is the average cost to process an invoice?* https://www.apqc
 
 Decision No. 2229/QĐ-TTg. (2025). Prime Minister of Vietnam. https://datafiles.chinhphu.vn/cpp/files/vbpq/2025/10/2229-ttg.signed.pdf
 
-Flexport. (2026). *Accounts payable job description, Ho Chi Minh City*. https://job-boards.greenhouse.io/flexport/jobs/7660304
+Flexport. (2026). *Auditor, Accounts Payable & Freight Audit* [Job posting, Ho Chi Minh City]. https://job-boards.greenhouse.io/flexport/jobs/7660304
 
 Knowledge Sourcing Intelligence. (2025). *Freight audit and payment market: Forecasts 2025–2030*. Research and Markets. https://www.researchandmarkets.com/reports/6176216/freight-audit-payment-market-forecasts
 
@@ -206,6 +206,8 @@ Mordor Intelligence. (n.d.). *Freight audit and payment market*. https://www.mor
 National Statistics Office. (2026, November). *Socio-economic situation in October and the first ten months of 2026*. https://www.nso.gov.vn/bai-top/2026/11/mot-so-net-chinh-tinh-hinh-kinh-te-xa-hoi-thang-10-va-10-thang-nam-2026/
 
 Transportation Insight. (n.d.). *Freight audit and payment: Protect profit from soft rates*. https://transportationinsight.com/resources/freight-audit-payment-protect-profit-soft-rates/
+
+Vietnam Investment Review. (2026, August 28). Vietnam logistics costs account for 16 per cent of GDP. https://vir.com.vn/vietnam-logistics-costs-account-for-16-per-cent-of-gdp-159581.html
 
 VietNamNet. (2026, August 13). Vietnam bank alerts stop 1.6 million suspected scam transactions. https://vietnamnet.vn/en/vietnam-bank-alerts-stop-1-6-million-suspected-scam-transactions-2545014.html
 
