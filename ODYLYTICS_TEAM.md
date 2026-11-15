@@ -20,3 +20,13 @@ Hai hồ sơ Nguyễn Minh Quân có vai trò, ảnh và liên kết LinkedIn ri
 
 - Dùng **Đội Odylytics** làm tên đội. Danh sách đăng ký KTC Ideathon và phân công trên Movago cần xác nhận trước khi đưa từng người lên web hoặc slide.
 - Nếu cần một dẫn chứng về kinh nghiệm của đội, có thể nêu **AquaGuard giành giải Nhất EPICS 8 năm 2026** và ghi rõ tên dự án AquaGuard. [Công bố của ĐHQG-HCM](https://vnuhcm.edu.vn/bai-viet/sinh-vien-truong-dh-bach-khoa-gianh-giai-nhat-va-giai-ba-cuoc-thi-epics-8)
+
+## Kinh nghiệm dùng cho hồ sơ dự thi
+
+Tra trên odylytics.com ngày 15/11/2026. Chỉ dùng các mục dưới đây khi cần nêu năng lực đội; mục nào chưa có trên trang thì xác nhận với người dùng trước.
+
+- **TECH PLANTER Vietnam 2026 Demo Day** (Leave a Nest Group): đội trình bày Lightning Talk về AquaGuard. [Blog Odylytics](https://odylytics.com/#/blog)
+- **RMIT ADC Hackathon 2026**: đội dựng Includio, nền tảng luyện phỏng vấn bằng AI cho ứng viên tự kỷ, thành MVP chạy được. [Blog Odylytics](https://odylytics.com/#/blog)
+- **Kinh doanh và gọi vốn**: CEO Nguyễn Minh Quân là Venture Analyst tại B71 (NUS Enterprise), phụ trách gọi vốn và quan hệ nhà đầu tư của Odylytics. [Hồ sơ CEO](https://odylytics.com/#/team/quan-ceo)
+- **Giải thưởng**: bốn giải trong một năm (OISP Presentation Contest 2025, EPICS 8 2026, Bach Khoa Innovation 2026, Fessior DevCamp 2026 Prometheus). Khi người dùng yêu cầu viết chung, ghi "has won several AI and innovation competitions" và không nêu tên giải.
+- **Hợp tác**: làm việc với các trường đại học tại Việt Nam, Úc, Mỹ, Pháp và Canada. AquaGuard đã được cộng đồng dùng trong mùa lũ.

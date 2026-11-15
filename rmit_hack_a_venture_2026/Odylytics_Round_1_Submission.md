@@ -185,7 +185,7 @@ New fee categories such as trucking, warehousing and customs need new rate rules
 
 ### Delivery capacity
 
-Odylytics is a student-founded AI team in Ho Chi Minh City. The team works with the AI Intelligence Drone Lab at UTS and other ecosystem partners, and has delivered projects such as AquaGuard (aquaguard.vn), a smart flood-rescue management system.
+Odylytics is a student-founded AI firm in Ho Chi Minh City that turns research into working products. Its first platform, AquaGuard (aquaguard.vn), coordinates flood victims, rescue teams and coordinators and is already used by communities in flood season; the team presented it at the TECH PLANTER Vietnam 2026 Demo Day organised by Leave a Nest Group. The team has repeatedly taken ideas to working MVPs under competition conditions, including Includio at the RMIT ADC Hackathon 2026, and has won several AI and innovation competitions. On the business side, the CEO works as a venture analyst at B71 (NUS Enterprise) and leads fundraising and investor relations, and the team collaborates with universities in Vietnam, Australia, the United States, France and Canada.
 
 ## References
 

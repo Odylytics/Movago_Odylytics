@@ -20,12 +20,12 @@ Văn bản gốc: [đề bài](de_bai_vong1.md) · [hướng dẫn nộp bài](h
 
 | File | Dùng để |
 | --- | --- |
-| [Odylytics_Round_1_Submission.docx](Odylytics_Round_1_Submission.docx) | **Nộp qua form** |
+| [ban_nop/Odylytics_Round_1_Submission.docx](ban_nop/Odylytics_Round_1_Submission.docx) | **Nộp qua form.** Bản mới nhất. File cùng tên ở thư mục này là bản cũ, đang bị Word khóa nên chưa thay được. |
 | [Odylytics_Round_1_Submission.pdf](Odylytics_Round_1_Submission.pdf) | Đọc, gửi nội bộ |
 | [Odylytics_Round_1_Submission.md](Odylytics_Round_1_Submission.md) | Bản nguồn để sửa. Sửa xong thì xuất lại cả .docx và .pdf. |
 | [movago_topology.png](movago_topology.png) | Hình 1, sơ đồ topology |
 
-Phần được chấm điểm có khoảng 1.760 từ, đếm từ Executive Summary tới hết mục 6.
+Phần được chấm điểm có khoảng 1.855 từ, đếm từ Executive Summary tới hết mục 6.
 
 ## Định vị
 
@@ -36,7 +36,7 @@ Phần được chấm điểm có khoảng 1.760 từ, đếm từ Executive Su
 ## Việc cần làm trước khi nộp
 
 - [ ] Kiểm tra mục **Eligibility**: mọi thành viên đang là sinh viên, và dự án đã dự thi nơi khác có được dùng lại không.
-- [ ] Xác nhận tên chính xác của lab UTS trong mục *Delivery capacity* (bài đang ghi "AI Intelligence Drone Lab at UTS").
+- [x] Mục *Delivery capacity* dùng kinh nghiệm đã kiểm tra trên odylytics.com (TECH PLANTER, RMIT ADC Hackathon, B71 NUS Enterprise). Không nêu tên giải.
 - [ ] Mở file .docx bằng Word để xem bố cục và số từ.
 - [ ] Tên đội trong form phải trùng với tên đã đăng ký.
 - [x] Đã xác minh "16% GDP" (VIR, 28/8/2026) và tin tuyển dụng Flexport tại TP.HCM ngày 15/11
