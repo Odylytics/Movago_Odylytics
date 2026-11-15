@@ -6,28 +6,40 @@ Thư mục chuẩn bị hồ sơ dự thi RMIT Hack-A-Venture 2026. Chủ đề 
 
 | Mục | Yêu cầu |
 | --- | --- |
-| Hạn nộp | Tối 15/11/2026. Kiểm tra giờ chính xác trong Timeline của handbook. |
-| Định dạng | Microsoft Word (.docx) |
-| Giới hạn | 1.500 từ |
-| Nội dung | Ý tưởng giải quyết một thách thức trong hệ thống tài chính Việt Nam bằng công nghệ mới (AI, Data Analytics, Blockchain, Distributed Systems…) |
-| Trụ cột | Chọn một trụ chính, hoặc kết hợp hai trụ. Chọn từ danh sách thách thức BTC công bố khi vòng 1 bắt đầu. |
-| Tiêu chí phải chứng minh | Innovation, feasibility, scalability, competitiveness, sustainability, anticipated impact |
-| Yêu cầu chung | MVP có chức năng cốt lõi, kế hoạch kinh doanh khả thi, đóng góp cho chuẩn ESG |
+| Hạn nộp | **23:59 ngày 15/11/2026**. Form đóng lúc 0:00 ngày 16/11/2026. |
+| Link nộp | https://forms.gle/LEVmisEVjHzsn1Bx5, đăng nhập bằng email đã đăng ký |
+| Định dạng | Chỉ nhận Microsoft Word (.docx) |
+| Tên file | `[Team Name]_Round_1_Submission`, của đội là **Odylytics_Round_1_Submission.docx** |
+| Giới hạn | 2.000 từ, không tính trang bìa, tài liệu tham khảo và phụ lục |
+| Cấu trúc bắt buộc | Executive Summary · Problem Statement & Market Pain · Solution Architecture & FinTech Integration · Market Size & Competitive Analysis · Strategic Contribution & Expected Impact · Implementation Roadmap & Scalability · References |
+| Bắt buộc có | Sơ đồ topology hoặc flowchart end-to-end; lộ trình theo quý dạng trực quan |
 
-## Định vị đề xuất
+Văn bản gốc: [đề bài](de_bai_vong1.md) · [hướng dẫn nộp bài](huong_dan_nop_vong1.md).
 
-- **Trụ chính:** Pillar 5, Trust Architecture & Financial Integrity. Movago là lớp kiểm chứng trước thanh toán B2B: mỗi khoản chi cho nhà cung cấp có căn cứ đối chiếu được.
-- **Trụ phụ:** Pillar 2, Financial Infrastructure & Ecosystem Interoperability. Movago ghép dữ liệu đang tách rời giữa hóa đơn, hồ sơ lô, bảng giá, hóa đơn điện tử và file ERP/TMS.
-- **SDG:** 8, 9, 16.6.
+## File bài nộp
+
+| File | Dùng để |
+| --- | --- |
+| [Odylytics_Round_1_Submission.docx](Odylytics_Round_1_Submission.docx) | **Nộp qua form** |
+| [Odylytics_Round_1_Submission.pdf](Odylytics_Round_1_Submission.pdf) | Đọc, gửi nội bộ |
+| [Odylytics_Round_1_Submission.md](Odylytics_Round_1_Submission.md) | Bản nguồn để sửa. Sửa xong thì xuất lại cả .docx và .pdf. |
+| [movago_topology.png](movago_topology.png) | Hình 1, sơ đồ topology |
+
+Phần được chấm điểm có khoảng 1.760 từ, đếm từ Executive Summary tới hết mục 6.
+
+## Định vị
+
+- **Trụ chính:** Pillar 5, Trust Architecture & Financial Integrity.
+- **Trụ phụ:** Pillar 2, Financial Infrastructure & Ecosystem Interoperability.
+- **SDG:** 8, 9, 16 (target 16.6), mỗi SDG có lý do đi kèm.
 
 ## Việc cần làm trước khi nộp
 
-- [x] Đề bài vòng 1: [de_bai_vong1.md](de_bai_vong1.md). Năm trụ cột giữ nguyên tên như trên; Movago chọn Pillar 5 làm trụ chính.
-- [ ] Kiểm tra mục **Eligibility**: thành phần đội, và việc dự án đã dự thi KTC Ideathon có được phép dùng lại không.
-- [ ] Bổ sung số liệu có nguồn về gian lận hoặc sai sót thanh toán B2B tại Việt Nam. Không dùng số không có nguồn.
-- [x] Viết bản nháp: [vong1_idea_proposal_draft.md](vong1_idea_proposal_draft.md) và file Word [Movago_RMIT_HAV2026_Idea_Proposal.docx](Movago_RMIT_HAV2026_Idea_Proposal.docx), khoảng 1.480 từ kể cả tài liệu tham khảo (APA), đã sửa theo review ngày 14/11. Khung gốc: [vong1_idea_proposal.md](vong1_idea_proposal.md).
-- [ ] Chuyển sang .docx. Kiểm tra số từ trong Word.
-- [ ] Đặt link prototype https://movago.odylytics.com và [tài liệu hướng dẫn dùng prototype](https://docs.google.com/document/d/1GHJaJQgfQMNODwn2Mi6oo6TlpxobigB70ynNizR9qro/edit?usp=drivesdk) trong bài.
+- [ ] Kiểm tra mục **Eligibility**: mọi thành viên đang là sinh viên, và dự án đã dự thi nơi khác có được dùng lại không.
+- [ ] Xác nhận tên chính xác của lab UTS trong mục *Delivery capacity* (bài đang ghi "AI Intelligence Drone Lab at UTS").
+- [ ] Mở file .docx bằng Word để xem bố cục và số từ.
+- [ ] Tên đội trong form phải trùng với tên đã đăng ký.
+- [ ] Con số "16% GDP" chưa đối chiếu với PDF gốc của Báo cáo Logistics Việt Nam 2025.
 
 ## Nguồn trong repo
 
