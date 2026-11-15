@@ -212,3 +212,94 @@ Vietnam Investment Review. (2026, August 28). Vietnam logistics costs account fo
 VietNamNet. (2026, August 13). Vietnam bank alerts stop 1.6 million suspected scam transactions. https://vietnamnet.vn/en/vietnam-bank-alerts-stop-1-6-million-suspected-scam-transactions-2545014.html
 
 VnEconomy. (2026, August 12). Vietnam's cashless payment transactions rise 34.3% in first half. https://en.vneconomy.vn/vietnams-cashless-payment-transactions-rise-343-in-first-half.htm
+
+## Appendix
+
+Supplementary material. It is not scored and is not needed to follow the main report.
+
+### A. Working prototype
+
+The prototype runs at https://movago.odylytics.com without login. A step-by-step guide is at https://docs.google.com/document/d/1GHJaJQgfQMNODwn2Mi6oo6TlpxobigB70ynNizR9qro/edit?usp=drivesdk. All data in the prototype is simulated.
+
+![Figure A1. Landing page](appendix/fig_a1_landing.png)
+
+*Figure A1. Landing page with the INV-095 result summary.*
+
+![Figure A2. Reconciliation workspace](appendix/fig_a2_reconciliation.png)
+
+*Figure A2. Reconciliation workspace: INV-095 matched to shipment SHP-001; ocean freight matches, the documentation fee is flagged +VND 800,000 while the invoice total still adds up.*
+
+![Figure A3. Evidence view](appendix/fig_a3_evidence.png)
+
+*Figure A3. Evidence view for the DOC line: invoice page 1 next to RATE-V3 line 12, the calculation, and the verification request.*
+
+![Figure A4. Rate-card builder](appendix/fig_a4_ratecard.png)
+
+*Figure A4. Rate-card builder: nine lines read from quotation Q-SA-2611 with their position and confidence; two low-confidence lines are marked for a person to check.*
+
+### B. Test case data (INV-095)
+
+| Source | Line | Fee | Condition | Amount (VND) |
+| --- | --- | --- | --- | --- |
+| Quotation Q-SA-2611 | Line 5 | Documentation fee (DOC) | 20' dry, per B/L, valid 1–30 Nov 2026 | 500,000 |
+| Approved rate card RATE-V3 | Line 12 | DOC, normalised from the quotation | Supplier A, Singapore to Cat Lai | 500,000 |
+| Invoice INV-095 | Page 1 | Ocean freight | 1 container | 8,000,000 |
+| Invoice INV-095 | Page 1 | Documentation fee | 1 B/L | 1,300,000 |
+| Invoice INV-095 | Total | Before tax | Adds up correctly | 9,300,000 |
+| Corrected invoice INV-095-A | Total | Before tax | After the supplier's correction | 8,500,000 |
+
+### C. Automated acceptance tests
+
+All 14 tests pass on the prototype's rules engine (Vitest).
+
+| Area | What the test checks |
+| --- | --- |
+| Reconciliation | INV-095: freight matches; DOC +800,000 pre-tax, sourced to page 1 and RATE-V3 line 12 |
+| Reconciliation | Matching variant: both lines match, total 8,500,000 |
+| Reconciliation | Missing DOC rate: the line becomes *Missing basis*, with no expected amount |
+| Reconciliation | INV-VN-020: a 40' rate charged on a 20' container is flagged +1,800,000 |
+| Reconciliation | Two matching rate rows make the line *Missing basis* instead of guessing |
+| Reconciliation | The rate version follows the rating date (October shipment priced on RATE-V2) |
+| Reconciliation | Two containers invoiced on a one-container shipment are flagged |
+| Duplicates | A renamed but identical PDF is detected as already received |
+| Rate-card builder | Approving all quotation lines reproduces the Supplier A rows of RATE-V3 |
+| Rate-card builder | Unapproved lines stay out of the exported rate card |
+| Rate-card builder | Low-confidence lines are flagged for one-by-one review |
+| Business case | 1,000 invoices, 15 to 9 minutes, VND 60,000 per hour: 100 hours and VND 6,000,000 a month; a VND 3,000,000 fee breaks even at 3 minutes |
+| Business case | Saving 3 and 9 minutes gives VND 3 and 9 million a month |
+| Business case | No negative savings; zero volume handled |
+
+### D. Calculations behind the figures
+
+All figures below are illustrative assumptions for the pilot to test, not results. Exchange rate: USD 1 = VND 25,500.
+
+| Figure in the report | Calculation |
+| --- | --- |
+| Overcharge on INV-095 | 1,300,000 − 500,000 = VND 800,000 (about USD 31) |
+| 100 staff hours a month | 1,000 invoices × (15 − 9) minutes = 6,000 minutes = 100 hours |
+| Value of time released | 100 hours × VND 60,000 per hour (assumed loaded cost) = VND 6,000,000, about USD 235 a month |
+| Usage cost | VND 3,000,000 a month, about USD 118; × 12 ≈ USD 1,412 a year |
+| Indicative price | About USD 1,400 per customer a year, rounded from the usage cost |
+| Break-even at 3 minutes | VND 3,000,000 ÷ VND 60,000 = 50 hours = 3,000 minutes ÷ 1,000 invoices = 3 minutes per invoice |
+| Serviceable market | 4,000 forwarders × 10% (assumption) = 400 × USD 1,400 = USD 560,000 a year |
+| Year-three target | 30 customers × USD 1,400 = USD 42,000 a year |
+
+### E. Evidence for key claims
+
+| Claim in the report | Source | What the source says |
+| --- | --- | --- |
+| Freight invoice auditing is a real job in Ho Chi Minh City | Flexport (2026) | Job posting for an AP and freight audit auditor in Ho Chi Minh City, validating freight invoices against contracts, rate agreements and shipment records |
+| Logistics costs about 16% of GDP; target 12–15% | Vietnam Investment Review (2026); Decision No. 2229/QĐ-TTg (2025) | Logistics costs remain at about 16% of GDP; the 2025–2035 strategy aims for 12–15% |
+| SIMO helped stop about VND 5.5 trillion in suspicious transfers | VietNamNet (2026) | About 1.6 million customers stopped suspicious transactions by the end of July 2026 |
+| 15 billion cashless transactions, +34.3% | VnEconomy (2026) | Cashless transactions in the first half of 2026 rose 34.3% |
+| Goods trade USD 1,010.55 billion, +32.3% | National Statistics Office (2026) | Ten-month 2026 import and export turnover |
+| Different handling charges for 20' and 40' containers | Maersk (2026) | Separate terminal handling charges by container size in Vietnam |
+| 3–6% of freight invoices contain errors | Transportation Insight (n.d.) | US freight audit provider's figure for a typical audit; 1–5% of spend recoverable |
+| USD 6 median cost per AP invoice | APQC (n.d.) | Benchmark across 5,846 organisations |
+| 4,000–4,500 freight forwarders in Vietnam | Ministry of Industry and Trade (2026) | Vietnam Logistics Report 2025, citing the VLA |
+
+### F. Team track record
+
+- AquaGuard, flood-rescue coordination platform: https://aquaguard.vn
+- TECH PLANTER Vietnam 2026 Demo Day and RMIT ADC Hackathon 2026: https://odylytics.com/#/blog
+- Team profiles: https://odylytics.com/#/team/co-founders
