@@ -84,6 +84,14 @@ The **AP accountant** uploads or receives the invoice and reviews flagged lines.
 
 AI handles reading, where documents vary; the rules engine handles money decisions, so every result is explainable and testable. Anything below the AI confidence threshold goes to a person.
 
+### Working MVP
+
+The core flow already runs at https://movago.odylytics.com, covered by 14 automated acceptance tests (Appendix B). Figure 2 shows the INV-095 case: the invoice adds up, yet the documentation fee is flagged with both sources and sent to pricing.
+
+![Figure 2. Evidence view in the working prototype](appendix/fig_a3_evidence.png)
+
+*Figure 2. Evidence view in the working prototype: invoice page 1 next to approved rate card RATE-V3 line 12, with the calculation and the verification request.*
+
 ### Open Innovation
 
 Movago starts from files every forwarder already has, then connects outward:
@@ -128,7 +136,7 @@ The global freight audit and payment market is valued at about USD 0.8–1.0 bil
 - **Setup fee** for rate-card normalisation and configuration.
 - **Verification API** fees per check for ERP, TMS and financing partners (later).
 
-Main costs are cloud hosting, document AI and LLM usage per page, onboarding and the core team. In an illustrative scenario of 1,000 invoices a month, cutting handling time from 15 to 9 minutes releases about 100 staff hours a month; at a usage cost of VND 3 million a month, saving 3 minutes per invoice covers the cost. These are assumptions the pilot will replace with measured results.
+Main costs are cloud hosting, document AI and LLM usage per page, onboarding and the core team. In an illustrative scenario of 1,000 invoices a month, cutting handling time from 15 to 9 minutes releases about 100 staff hours a month; at a usage cost of VND 3 million a month, saving 3 minutes per invoice covers the cost. These are assumptions the pilot will replace with measured results; Appendix C shows each calculation.
 
 ### Competitive landscape
 
@@ -221,34 +229,15 @@ Supplementary material. It is not scored and is not needed to follow the main re
 
 The prototype runs at https://movago.odylytics.com without login. A step-by-step guide is at https://docs.google.com/document/d/1GHJaJQgfQMNODwn2Mi6oo6TlpxobigB70ynNizR9qro/edit?usp=drivesdk. All data in the prototype is simulated.
 
-![Figure A1. Landing page](appendix/fig_a1_landing.png)
+![Figure A1. Reconciliation workspace](appendix/fig_a2_reconciliation.png)
 
-*Figure A1. Landing page with the INV-095 result summary.*
+*Figure A1. Reconciliation workspace: INV-095 matched to shipment SHP-001; ocean freight matches, the documentation fee is flagged +VND 800,000 while the invoice total still adds up.*
 
-![Figure A2. Reconciliation workspace](appendix/fig_a2_reconciliation.png)
+![Figure A2. Rate-card builder](appendix/fig_a4_ratecard.png)
 
-*Figure A2. Reconciliation workspace: INV-095 matched to shipment SHP-001; ocean freight matches, the documentation fee is flagged +VND 800,000 while the invoice total still adds up.*
+*Figure A2. Rate-card builder: nine lines read from quotation Q-SA-2611 with their position and confidence; two low-confidence lines are marked for a person to check.*
 
-![Figure A3. Evidence view](appendix/fig_a3_evidence.png)
-
-*Figure A3. Evidence view for the DOC line: invoice page 1 next to RATE-V3 line 12, the calculation, and the verification request.*
-
-![Figure A4. Rate-card builder](appendix/fig_a4_ratecard.png)
-
-*Figure A4. Rate-card builder: nine lines read from quotation Q-SA-2611 with their position and confidence; two low-confidence lines are marked for a person to check.*
-
-### B. Test case data (INV-095)
-
-| Source | Line | Fee | Condition | Amount (VND) |
-| --- | --- | --- | --- | --- |
-| Quotation Q-SA-2611 | Line 5 | Documentation fee (DOC) | 20' dry, per B/L, valid 1–30 Nov 2026 | 500,000 |
-| Approved rate card RATE-V3 | Line 12 | DOC, normalised from the quotation | Supplier A, Singapore to Cat Lai | 500,000 |
-| Invoice INV-095 | Page 1 | Ocean freight | 1 container | 8,000,000 |
-| Invoice INV-095 | Page 1 | Documentation fee | 1 B/L | 1,300,000 |
-| Invoice INV-095 | Total | Before tax | Adds up correctly | 9,300,000 |
-| Corrected invoice INV-095-A | Total | Before tax | After the supplier's correction | 8,500,000 |
-
-### C. Automated acceptance tests
+### B. Automated acceptance tests
 
 All 14 tests pass on the prototype's rules engine (Vitest).
 
@@ -269,7 +258,7 @@ All 14 tests pass on the prototype's rules engine (Vitest).
 | Business case | Saving 3 and 9 minutes gives VND 3 and 9 million a month |
 | Business case | No negative savings; zero volume handled |
 
-### D. Calculations behind the figures
+### C. Calculations behind the figures
 
 All figures below are illustrative assumptions for the pilot to test, not results. Exchange rate: USD 1 = VND 25,500.
 
@@ -284,7 +273,7 @@ All figures below are illustrative assumptions for the pilot to test, not result
 | Serviceable market | 4,000 forwarders × 10% (assumption) = 400 × USD 1,400 = USD 560,000 a year |
 | Year-three target | 30 customers × USD 1,400 = USD 42,000 a year |
 
-### E. Evidence for key claims
+### D. Evidence for key claims
 
 | Claim in the report | Source | What the source says |
 | --- | --- | --- |
@@ -298,7 +287,7 @@ All figures below are illustrative assumptions for the pilot to test, not result
 | USD 6 median cost per AP invoice | APQC (n.d.) | Benchmark across 5,846 organisations |
 | 4,000–4,500 freight forwarders in Vietnam | Ministry of Industry and Trade (2026) | Vietnam Logistics Report 2025, citing the VLA |
 
-### F. Team track record
+### E. Team track record
 
 - AquaGuard, flood-rescue coordination platform: https://aquaguard.vn
 - TECH PLANTER Vietnam 2026 Demo Day and RMIT ADC Hackathon 2026: https://odylytics.com/#/blog
