@@ -20,13 +20,13 @@ Văn bản gốc: [đề bài](de_bai_vong1.md) · [hướng dẫn nộp bài](h
 
 | File | Dùng để |
 | --- | --- |
-| [ban_nop/Odylytics_Round_1_Submission.docx](ban_nop/Odylytics_Round_1_Submission.docx) | **Nộp qua form.** Bản mới nhất. File cùng tên ở thư mục này là bản cũ, đang bị Word khóa nên chưa thay được. |
+| [Odylytics_Round_1_Submission.docx](Odylytics_Round_1_Submission.docx) | **Nộp qua form** |
 | [Odylytics_Round_1_Submission.pdf](Odylytics_Round_1_Submission.pdf) | Đọc, gửi nội bộ |
 | [Odylytics_Round_1_Submission.md](Odylytics_Round_1_Submission.md) | Bản nguồn để sửa. Sửa xong thì xuất lại cả .docx và .pdf. |
 | [movago_topology.png](movago_topology.png) | Hình 1, sơ đồ topology |
-| [appendix/](appendix/) | Ảnh chụp prototype cho phụ lục (hình A1–A4), chụp từ bản chạy local ngày 15/11 |
+| [appendix/](appendix/) | Ảnh chụp prototype (Hình 2, A1, A2), chụp từ bản chạy local ngày 15/11 |
 
-Phần được chấm điểm có khoảng 1.855 từ, đếm từ Executive Summary tới hết mục 6. Phụ lục (không chấm điểm) gồm ảnh prototype, dữ liệu ca INV-095, 14 test tự động, cách tính từng con số và bảng nguồn cho từng khẳng định.
+Phần được chấm điểm có khoảng 1.926 từ (giới hạn 2.000), đếm cả chữ trong bảng và chú thích hình. Ảnh prototype quan trọng nhất là Hình 2 trong thân bài. Phụ lục (không chấm điểm) gồm thêm 2 ảnh prototype, 14 test tự động, cách tính từng con số, bảng nguồn và link thành tích đội. Nếu sửa nội dung, giữ dưới 2.000 từ.
 
 ## Định vị
 
