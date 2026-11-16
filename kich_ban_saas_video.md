@@ -60,7 +60,7 @@ US$1,010 bn goods trade · first 10 months of 2026 · +32.3%
 ```
 **Nguồn:** `VIR 2026 · Decision 2229/QĐ-TTg · National Statistics Office`
 
-**VO:** "Logistics costs Vietnam about sixteen percent of its GDP. In the first ten months of 2026, trade passed a trillion dollars."
+**VO:** "Logistics costs Vietnam about sixteen percent of its GDP. In the first ten months of 2026, Vietnam's goods trade passed a trillion dollars."
 
 ## Lô hàng và dòng tiền
 
@@ -193,7 +193,7 @@ Odylytics · KTC Ideathon 2026
 
 ## Lời thoại liền mạch (dùng để thu âm)
 
-> Logistics costs Vietnam about sixteen percent of its GDP. In the first ten months of 2026, trade passed a trillion dollars.
+> Logistics costs Vietnam about sixteen percent of its GDP. In the first ten months of 2026, Vietnam's goods trade passed a trillion dollars.
 >
 > A Vietnamese company that needs to ship goods abroad usually calls a freight forwarder. The forwarder books the shipping line, the truck, customs and the port, and an agent overseas delivers to the buyer.
 >
