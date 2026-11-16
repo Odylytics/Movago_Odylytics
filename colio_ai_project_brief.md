@@ -39,6 +39,14 @@ Giả thuyết ưu tiên là kế toán mất công tìm đủ ba nguồn, rồi
 
 Phỏng vấn 5–10 người ở AP, operations, pricing và người có ngân sách. Nhờ họ đi qua hồ sơ gần nhất thay vì ước lượng chung. Ghi sản lượng, công cụ hiện tại, thời gian tìm đủ ba nguồn, người xử lý ngoại lệ và khoản tiền thực sự điều chỉnh. Hỏi khách đã có những tính năng đối chiếu nào và bước nào còn thực hiện bên ngoài. Tìm đầu mối qua [danh bạ VLA](https://vla.com.vn/danh-sach-hoi-vien/) và [danh bạ HLA](https://www.hla-hcm.vn/danh-sach-hoi-vien/).
 
+### Điều cần làm rõ trước (cập nhật 16/11/2026)
+
+Rà tài liệu công khai cho thấy phần quan trọng nhất chỉ trả lời được bằng phỏng vấn. Đến nay **chưa có buổi phỏng vấn nào được ghi lại**. Sáu câu cần trả lời: (1) forwarder kiểm hóa đơn mua bằng cách nào và mất bao lâu, (2) giá mua thương lượng nằm ở đâu và dạng gì, (3) loại phí nào hay sai và tốn nhất, (4) hãng tính sai thì forwarder tự chịu hay thu lại từ chủ hàng, (5) ai quyết định mua và ngân sách, (6) đang dùng phần mềm gì và xuất được dữ liệu không. Chỉ có các tín hiệu sau từ nguồn công khai:
+
+- Hãng tàu công bố biểu local charge và D&D tại Việt Nam, nên một phần căn cứ giá có thể lấy từ biểu công khai thay vì chỉ hợp đồng riêng. [Hapag-Lloyd](https://www.hapag-lloyd.com/content/dam/website/downloads/detention_demurrage/Vietnam_local_charges_service_fees_May2026.pdf) · [ONE](https://vn.one-line.com/sites/vietnam/files/2026-03/DnD%2020260401.pdf) · [Maersk](https://www.maersk.com/news/articles/2023/12/01/vietnam-import-demurrage-detention-updates). Giá thương lượng riêng vẫn chưa rõ.
+- Phụ phí là điểm nóng tại Việt Nam: Hiệp hội Chủ hàng phản ánh hãng tàu thu nhiều loại phụ phí và THC tăng 10–20%. Đây là góc nhìn của chủ hàng, chưa phải của forwarder. [VnBusiness](https://vnbusiness.vn/khong-de-keo-dai-bat-cap-quan-ly-phu-phi-xep-do-cang-bien-lam-kho-hang-viet.html) · [VnBusiness](https://vnbusiness.vn/hiep-hoi-chu-hang-to-hang-tau-ngoai-tu-tang-phi-va-phu-phi-tu-15-20.html)
+- Chưa có nguồn công khai nào về tỷ lệ sai hóa đơn mua của forwarder Việt Nam, về ai chịu khoản hãng tính sai, hay về ngân sách phần mềm.
+
 ### Chạy pilot
 
 1. Lấy 10–20 bộ đã ẩn thông tin để khảo sát. Khi đủ điều kiện, mở rộng khoảng 30–100 bộ có quyền sử dụng. Dùng một nhóm hồ sơ liên tiếp để đo thời gian và độ bao phủ. Dùng bộ ca ngoại lệ có chủ đích để thử quy tắc. Báo cáo mẫu thật và ca giả lập riêng.
@@ -62,6 +70,8 @@ Phỏng vấn 5–10 người ở AP, operations, pricing và người có ngân
 Giá trị ròng ước tính bằng giá trị thời gian giải phóng cộng khoản tránh chi hoặc thu hồi đã xác nhận, rồi trừ thuê bao, thiết lập, chuẩn hóa giá, tích hợp và chi phí vận hành tăng thêm. Tách lợi ích năng lực xử lý khỏi khoản tiết kiệm tiền mặt. Tránh tính hai lần thời gian duyệt đã nằm trong số phút đo.
 
 **Giả thuyết bán thử.** Thuê bao theo số hóa đơn duy nhất xử lý, với phí thiết lập khi cần cấu hình riêng. Nếu chi phí sử dụng quy đổi là $118/tháng, kịch bản trên cần giảm trung bình 3 phút/hóa đơn để cân bằng theo giá trị thời gian. Đề nghị pilot có KPI và xác nhận người mua, ngân sách và khả năng trả phí trước khi ước lượng phân khúc có thể phục vụ.
+
+**Rủi ro quy mô (16/11/2026).** Kịch bản trên chỉ tạo khoảng $235/tháng giá trị thời gian, thấp so với chi phí bán hàng và triển khai của một doanh nghiệp phần mềm. Nếu pilot cho thấy giá trị chủ yếu đến từ khoản chênh lệch thật, cân nhắc ưu tiên phụ phí và D&D (xem [ma trận bài toán](nghien_cuu_tung_slide/colio_ai_business_problems.md)) và thử cách tính phí theo khoản được xác nhận điều chỉnh. Cả hai chỉ là hướng thử, cần dữ liệu pilot.
 
 **Đối chứng cạnh tranh.** So trực tiếp với quy trình TMS/ERP, bảng tính và luồng AP đang dùng. Thử xem Movago có rút ngắn thời gian thiết lập và đối chiếu trên cùng bộ hồ sơ, với nguồn giá và vị trí chứng từ truy được hay không. Ghi riêng phần kiểm tra với giá hợp đồng và phần so với chi phí dự ghi trong TMS. Hai căn cứ có thể khác nhau. [Ma trận cạnh tranh và điều kiện đổi ưu tiên](nghien_cuu_tung_slide/colio_ai_business_problems.md)
 

@@ -1,6 +1,6 @@
 # Phỏng vấn kế toán công nợ forwarder
 
-**Mục tiêu:** trước khi nộp bài, có ít nhất **một câu trích dẫn thật** và **một con số thật** cho slide 2 và 4. Ví dụ: “Mỗi tháng chúng tôi nhận khoảng X hóa đơn cước, kiểm một hóa đơn mất Y phút.” Mỗi buổi 20–30 phút, 3–5 người là đủ cho Ideathon.
+**Mục tiêu:** có ít nhất **một câu trích dẫn thật** và **một con số thật** cho slide 2 và 4, và làm cơ sở kiểm chứng sau cuộc thi. Tính đến 16/11/2026 chưa có buổi nào được ghi lại. Ví dụ: “Mỗi tháng chúng tôi nhận khoảng X hóa đơn cước, kiểm một hóa đơn mất Y phút.” Mỗi buổi 20–30 phút, 3–5 người là đủ cho Ideathon.
 
 ## Tìm người
 
@@ -25,11 +25,12 @@ Hỏi về **lần gần nhất**, không hỏi “thường thì”. Người �
 3. Mỗi tháng phòng mình nhận khoảng bao nhiêu hóa đơn hoặc debit note cước? Bao nhiêu người kiểm?
 4. Tháng trước có khoản nào phải hỏi lại hoặc điều chỉnh không? Vì sao? Số tiền khoảng bao nhiêu?
 5. Lần gần nhất phát hiện chi sai hoặc suýt trả trùng là khi nào? Phát hiện bằng cách nào?
-6. Bảng giá đã duyệt nằm ở đâu: phần mềm, Excel, email? Có nhiều phiên bản không?
-7. Phần mềm đang dùng (TMS, ERP, MISA, Excel…) đã tự đối chiếu được phần nào? Phần nào vẫn làm tay?
-8. Nếu một công cụ cho thấy chênh lệch kèm hai căn cứ cạnh nhau, việc gì của anh/chị sẽ khác?
-9. *(Hỏi kế toán trưởng hoặc CFO)* Ai quyết định mua công cụ cho phòng kế toán? Với một công cụ như vậy, mức phí hằng tháng bao nhiêu thì đáng cân nhắc?
-10. Anh/chị có sẵn lòng cho đội xem 1–2 hóa đơn đã che thông tin để thử AI đọc không? *(Dùng cho [bộ kiểm thử trích xuất](kiem_thu_trich_xuat/README.md).)*
+6. Khi hãng tàu tính sai hoặc tính thêm một khoản, công ty mình tự chịu hay thu lại từ chủ hàng? Lần gần nhất là khoản nào, bao nhiêu?
+7. Bảng giá đã duyệt nằm ở đâu: phần mềm, Excel, email? Có nhiều phiên bản không?
+8. Phần mềm đang dùng (TMS, ERP, MISA, Excel…) đã tự đối chiếu được phần nào? Phần nào vẫn làm tay?
+9. Nếu một công cụ cho thấy chênh lệch kèm hai căn cứ cạnh nhau, việc gì của anh/chị sẽ khác?
+10. *(Hỏi kế toán trưởng hoặc CFO)* Ai quyết định mua công cụ cho phòng kế toán? Với một công cụ như vậy, mức phí hằng tháng bao nhiêu thì đáng cân nhắc?
+11. Anh/chị có sẵn lòng cho đội xem 1–2 hóa đơn đã che thông tin để thử AI đọc không? *(Dùng cho [bộ kiểm thử trích xuất](kiem_thu_trich_xuat/README.md).)*
 
 ## Phiếu ghi sau mỗi buổi
 

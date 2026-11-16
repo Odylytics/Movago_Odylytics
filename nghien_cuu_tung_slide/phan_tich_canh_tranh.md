@@ -22,7 +22,7 @@ Tài liệu này lấp các chỗ trống của deck 15 slide: **Why now** (slid
 |---|---|---|
 | Phút thao tác mỗi hóa đơn | Đo năng suất kế toán | Movago giả định 15 → 9 phút. Cần khảo sát |
 | Chi phí xử lý mỗi hóa đơn | So với giá thuê bao | APQC: trung vị 6 USD/hóa đơn, mẫu 5.846 tổ chức [3] |
-| Tỷ lệ hóa đơn có lỗi | Quy mô vấn đề | 3–6% hóa đơn cước trong một đợt audit điển hình [2] |
+| Tỷ lệ hóa đơn có lỗi | Quy mô vấn đề | 3–6% hóa đơn cước trong một đợt audit điển hình [2]. Nguồn của các hãng bán dịch vụ nêu 5–10%, có nơi tới 20%; số cao thường không có gốc rõ và chủ yếu về cước nội địa Mỹ. Chưa có số cho forwarder Việt Nam |
 | Tỷ lệ chi phí cước thu hồi được | Giá trị tiền mặt | 1–5% tổng chi cước [2] |
 | Tỷ lệ xử lý không chạm tay | Mức tự động hóa | Ardent Partners 2025: trung bình 32,6%, nhóm dẫn đầu 49,2% (qua tổng hợp thứ cấp) [4] |
 
@@ -110,7 +110,7 @@ Phần mềm forwarder (G.O.L, CargoWise) quản lý cả chuỗi và **phát h�
 |---|---|
 | Làm gì | Phần mềm quản lý forwarder trên Windows: chứng từ, giá mua, công nợ, debit note, duyệt chi phí [11] |
 | Quy mô | Trang ghi “1.000+ doanh nghiệp”, nhưng FAQ ghi 184 văn phòng và chi nhánh. Hai số mâu thuẫn |
-| Điểm yếu | Không thấy chức năng kiểm hóa đơn đầu vào hay AI/OCR trên trang sản phẩm |
+| Điểm yếu | Không thấy chức năng kiểm hóa đơn đầu vào hay AI/OCR trên trang sản phẩm (đọc lại trang ngày 16/11/2026, kết quả giữ nguyên: có giá mua, công nợ, debit/credit note, duyệt chi phí; không nhắc kiểm hóa đơn nhận vào) |
 | Hàm ý | Là **kênh hợp tác** hơn là đối thủ: Movago đọc file xuất từ G.O.L |
 
 ### Innomation AutoMatching
