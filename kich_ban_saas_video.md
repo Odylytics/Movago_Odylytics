@@ -103,7 +103,7 @@ Shipper ──pays──► Forwarder ──pays──► Shipping line · Truck
 
 **Nguồn:** `Transportation Insight (US)`
 
-**VO:** "In the US, studies have found that 3 to 6% of freight invoices contain errors. So, how much money could Vietnamese businesses be losing?"
+**VO:** "In the US, one freight audit firm reports that 3 to 6% of freight invoices contain errors. So, how much money could Vietnamese businesses be losing?"
 
 ## Movago
 
@@ -197,7 +197,7 @@ Odylytics · KTC Ideathon 2026
 >
 > The business pays the forwarder, and the forwarder then pays different service providers. Each provider sends an invoice listing the services and fees they charge. Before making these payments, the forwarder's accountant must check every fee against the original agreement and the approved prices. This process is often manual, time-consuming, and prone to errors.
 >
-> In the US, studies have found that 3 to 6% of freight invoices contain errors. So, how much money could Vietnamese businesses be losing?
+> In the US, one freight audit firm reports that 3 to 6% of freight invoices contain errors. So, how much money could Vietnamese businesses be losing?
 >
 > Let's look at one example. A forwarder agreed to pay a shipping company 8.5 million VND. But when the invoice arrived, it showed 9.3 million VND. At first glance, the invoice total looks reasonable. But one fee was actually 800,000 VND higher than the agreed price. If nobody catches this mistake, the forwarder could end up paying more than it should. This is where Movago comes in.
 >
