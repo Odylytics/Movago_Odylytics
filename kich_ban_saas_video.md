@@ -15,7 +15,7 @@ Video dài 1:55 đến 2:05, lời thoại khoảng 310 từ ở tốc độ 155
 
 1. Vế "and if the old file comes back under a new name, Movago blocks it" ở shot 8.
 2. Câu "Carriers name the same fee differently, and the right price changes with the container." ở shot 3.
-3. Câu "Booking, trucking and customs stay in the tools forwarders already use." ở shot 5.
+3. Câu "Pricing approves the carrier's quotation first, and each price becomes a rate card line that points back to the quote." ở shot 6, chỉ giữ hình.
 
 Phân bổ thời gian:
 
@@ -114,8 +114,10 @@ Shipper ──pays──► Forwarder ──pays──► Shipping line · Truck
 ### Shot 5 · Movago nằm ở bước nào (0:50 đến 1:02)
 
 **Hình:**
-1. Một hóa đơn được kéo ra khỏi chồng, tổng `9,300,000 ₫` hiện dấu ✓ "Total adds up". Dòng DOC lật sang Discrepancy, số `+800,000 ₫` đếm lên.
-2. Sơ đồ shot 2 thu nhỏ thành một dòng ở đáy khung. Bước cuối sáng màu Lime, logo Movago gắn vào, ba mũi tên đầu vào chạy vào:
+1. Bên trái hiện thẻ "Agreed with the carrier": Ocean freight `8,000,000` + DOC `500,000` = `8,500,000 ₫`.
+2. Mũi tên chạy sang phải, hóa đơn INV-095 bay vào: Ocean freight `8,000,000` + DOC `1,300,000` = `9,300,000 ₫`, kèm dấu ✓ "Total adds up".
+3. Dòng DOC trên hóa đơn lật sang Discrepancy, số `+800,000 ₫` đếm lên giữa hai thẻ.
+4. Sơ đồ shot 2 thu nhỏ thành một dòng ở đáy khung. Bước cuối sáng màu Lime, logo Movago gắn vào, ba mũi tên đầu vào chạy vào:
 
 ```
 Quote ──► Book ──► Move ──► Document ──► Pay suppliers
@@ -126,9 +128,9 @@ Quote ──► Book ──► Move ──► Document ──► Pay suppliers
                                             MOVAGO
 ```
 
-**On-screen:** `Total 9,300,000 ₫ · 800,000 ₫ too high` rồi `Movago checks the bill before the forwarder pays`
+**On-screen:** `Agreed 8,500,000 ₫ → Invoiced 9,300,000 ₫` rồi `Movago checks the bill before the forwarder pays`
 
-**VO:** "This invoice adds up, and it is still eight hundred thousand dong too high. Movago works at this one step, just before the forwarder pays a supplier. Booking, trucking and customs stay in the tools forwarders already use."
+**VO:** "Take one shipment. The forwarder agreed eight and a half million dong with the carrier. The invoice arrives at nine point three million. The total adds up, but the documentation fee is eight hundred thousand higher than agreed. Movago works at this step, just before the forwarder pays a supplier."
 
 ### Shot 6 · Bảng giá có căn cứ (1:02 đến 1:08)
 
@@ -201,7 +203,7 @@ Odylytics · KTC Ideathon 2026
 >
 > Even in the US, where freight billing is standardized and audited as a matter of routine, three to six percent of freight invoices contain errors. So what about Vietnam?
 >
-> This invoice adds up, and it is still eight hundred thousand dong too high. Movago works at this one step, just before the forwarder pays a supplier. Booking, trucking and customs stay in the tools forwarders already use.
+> Take one shipment. The forwarder agreed eight and a half million dong with the carrier. The invoice arrives at nine point three million. The total adds up, but the documentation fee is eight hundred thousand higher than agreed. Movago works at this step, just before the forwarder pays a supplier.
 >
 > Pricing approves the carrier's quotation first, and each price becomes a rate card line that points back to the quote.
 >
