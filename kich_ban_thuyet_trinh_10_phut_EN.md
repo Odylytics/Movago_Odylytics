@@ -1,6 +1,6 @@
 # Movago pitch script · 10 minutes · 2 speakers (English)
 
-This script follows `nghien_cuu_tung_slide/Movago_Pitch_Deck_EN.pptx` in presentation order (15 slides). It runs to about 1,150 spoken words, which fills ten minutes at a calm pace with pauses for the demo.
+This script follows `nghien_cuu_tung_slide/Movago_Pitch_Deck_EN.pptx` in presentation order (15 slides). It runs to about 1,250 spoken words, which fills ten minutes at about 125 words a minute. If rehearsal runs long, use the cuts in the rehearsal notes.
 
 Speaker A opens and covers the problem and the numbers (suggested: CEO). Speaker B covers the product, the AI and the demo (suggested: CPO).
 
