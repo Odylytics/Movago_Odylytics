@@ -11,11 +11,7 @@ Phần sau của video xoay quanh ca giả lập hóa đơn INV-095. Chỉ có v
 
 ## Quy tắc chung
 
-Video dài 1:55 đến 2:05, lời thoại khoảng 310 từ ở tốc độ 155 từ/phút. Nếu bản thu vượt 2:05, cắt lần lượt:
-
-1. Vế "and if the old file comes back under a new name, Movago blocks it" ở shot 8.
-2. Câu "Carriers name the same fee differently, and the right price changes with the container." ở shot 3.
-3. Câu "Pricing approves the carrier's quotation first, and each price becomes a rate card line that points back to the quote." ở shot 6, chỉ giữ hình.
+Video dài 2:00, lời thoại khoảng 250 từ, đọc chậm khoảng 130 từ/phút. Thời gian còn lại dành cho khoảng lặng để người xem đọc chữ trên hình: khoảng một giây sau câu hỏi "So what about Vietnam?" ở shot 4, và toàn bộ shot 6 chỉ có nhạc. Nếu bản thu ngắn hơn 1:55, kéo dài các khoảng lặng này, không thêm lời.
 
 Phân bổ thời gian:
 
@@ -61,7 +57,7 @@ Exports US$499.24 bn · a record
 ```
 **Nguồn:** `VIR 2026 · Decision 2229/QĐ-TTg · National Statistics Office`
 
-**VO:** "Logistics costs Vietnam about sixteen percent of its GDP. In the first ten months of 2026, Vietnam's goods trade passed a trillion dollars for the first time."
+**VO:** "Logistics costs Vietnam about sixteen percent of its GDP, and this year its goods trade passed a trillion dollars for the first time."
 
 ## Lô hàng và dòng tiền
 
@@ -96,7 +92,7 @@ Shipper ──pays──► Forwarder ──pays──► Shipping line · Truck
 
 **Nguồn (bước 4):** `Maersk, 31 Mar 2026`
 
-**VO:** "The money runs the other way: the shipper pays the forwarder, and the forwarder pays each supplier, who sends its own invoice. Before paying, an accountant checks every fee line against the shipment file and the approved rate, held by two other teams. Carriers name the same fee differently, and the right price changes with the container."
+**VO:** "The money runs the other way: the shipper pays the forwarder, and the forwarder pays each supplier, who sends its own invoice. Before paying, an accountant checks every fee line against the shipment file and the approved rate, held by two other teams."
 
 ### Shot 4 · Mức độ của vấn đề (0:40 đến 0:50)
 
@@ -107,7 +103,7 @@ Shipper ──pays──► Forwarder ──pays──► Shipping line · Truck
 
 **Nguồn:** `Transportation Insight (US)`
 
-**VO:** "Even in the US, where freight billing is standardized and audited as a matter of routine, three to six percent of freight invoices contain errors. So what about Vietnam?"
+**VO:** "Even in the US, where freight billing is standardized and routinely audited, three to six percent of freight invoices contain errors. So what about Vietnam?"
 
 ## Movago
 
@@ -130,7 +126,7 @@ Quote ──► Book ──► Move ──► Document ──► Pay suppliers
 
 **On-screen:** `Agreed 8,500,000 ₫ → Invoiced 9,300,000 ₫` rồi `Movago checks the bill before the forwarder pays`
 
-**VO:** "Take one shipment. The forwarder agreed eight and a half million dong with the carrier. The invoice arrives at nine point three million. The total adds up, but the documentation fee is eight hundred thousand higher than agreed. Movago works at this step, just before the forwarder pays a supplier."
+**VO:** "Take one shipment. The forwarder agreed eight and a half million dong with the carrier, but the invoice says nine point three million. The total adds up, yet the documentation fee is eight hundred thousand too high. Movago catches it before the forwarder pays."
 
 ### Shot 6 · Bảng giá có căn cứ (1:02 đến 1:08)
 
@@ -141,7 +137,7 @@ Quote ──► Book ──► Move ──► Document ──► Pay suppliers
 
 **On-screen, hiện một lần:** `Q-SA-2611 · line 5 → RATE-V3 · line 12`
 
-**VO:** "Pricing approves the carrier's quotation first, and each price becomes a rate card line that points back to the quote."
+**VO:** không có lời. Chỉ nhạc và hình, để người xem kịp thấy dòng giá đi từ báo giá vào bảng giá.
 
 ### Shot 7 · Bắt lỗi từng dòng (1:08 đến 1:22)
 
@@ -152,7 +148,7 @@ Quote ──► Book ──► Move ──► Document ──► Pay suppliers
    - DOC `1,300,000` so với `500,000`, Discrepancy `+800,000 ₫ (~US$31)`
 3. Hai thẻ căn cứ đặt cạnh nhau: `INV-095 · page 1 · DOC` và `RATE-V3 · line 12`.
 
-**VO:** "When an invoice arrives, Movago finds the shipment, picks the price for that route, container and date, and checks each line. Here the documentation fee is one point three million against five hundred thousand approved, with both sources on one screen."
+**VO:** "Movago matches the invoice to the shipment, picks the approved price for that route, container and date, and flags the line with both sources side by side."
 
 ### Shot 8 · Xử lý và duyệt chi (1:22 đến 1:36)
 
@@ -164,7 +160,7 @@ Quote ──► Book ──► Move ──► Document ──► Pay suppliers
 
 **On-screen:** `+800,000 ₫ not paid`
 
-**VO:** "One click sends the line to pricing. The supplier corrects the invoice, the chief accountant approves the right amount, and if the old file comes back under a new name, Movago blocks it."
+**VO:** "One click sends it to pricing, the supplier sends a corrected invoice, and the chief accountant approves it. A copy resent under a new name is blocked."
 
 ## Kết quả
 
@@ -178,7 +174,7 @@ Quote ──► Book ──► Move ──► Document ──► Pay suppliers
 Illustrative scenario · the pilot will measure the real result
 ```
 
-**VO:** "For a forwarder handling a thousand invoices a month, our illustrative scenario frees a hundred hours of work. The pilot will measure the real number."
+**VO:** "For a thousand invoices a month, our illustrative scenario frees a hundred hours. The pilot will measure the real number."
 
 ### Shot 10 · End card (1:50 đến 2:00)
 
@@ -195,23 +191,21 @@ Odylytics · KTC Ideathon 2026
 
 ## Lời thoại liền mạch (dùng để thu âm)
 
-> Logistics costs Vietnam about sixteen percent of its GDP. In the first ten months of 2026, Vietnam's goods trade passed a trillion dollars for the first time.
+> Logistics costs Vietnam about sixteen percent of its GDP, and this year its goods trade passed a trillion dollars for the first time.
 >
 > A Vietnamese company that needs to ship goods abroad usually calls a freight forwarder. The forwarder books the shipping line, the truck, customs and the port, and an agent overseas delivers to the buyer.
 >
-> The money runs the other way: the shipper pays the forwarder, and the forwarder pays each supplier, who sends its own invoice. Before paying, an accountant checks every fee line against the shipment file and the approved rate, held by two other teams. Carriers name the same fee differently, and the right price changes with the container.
+> The money runs the other way: the shipper pays the forwarder, and the forwarder pays each supplier, who sends its own invoice. Before paying, an accountant checks every fee line against the shipment file and the approved rate, held by two other teams.
 >
-> Even in the US, where freight billing is standardized and audited as a matter of routine, three to six percent of freight invoices contain errors. So what about Vietnam?
+> Even in the US, where freight billing is standardized and routinely audited, three to six percent of freight invoices contain errors. So what about Vietnam?
 >
-> Take one shipment. The forwarder agreed eight and a half million dong with the carrier. The invoice arrives at nine point three million. The total adds up, but the documentation fee is eight hundred thousand higher than agreed. Movago works at this step, just before the forwarder pays a supplier.
+> Take one shipment. The forwarder agreed eight and a half million dong with the carrier, but the invoice says nine point three million. The total adds up, yet the documentation fee is eight hundred thousand too high. Movago catches it before the forwarder pays.
 >
-> Pricing approves the carrier's quotation first, and each price becomes a rate card line that points back to the quote.
+> Movago matches the invoice to the shipment, picks the approved price for that route, container and date, and flags the line with both sources side by side.
 >
-> When an invoice arrives, Movago finds the shipment, picks the price for that route, container and date, and checks each line. Here the documentation fee is one point three million against five hundred thousand approved, with both sources on one screen.
+> One click sends it to pricing, the supplier sends a corrected invoice, and the chief accountant approves it. A copy resent under a new name is blocked.
 >
-> One click sends the line to pricing. The supplier corrects the invoice, the chief accountant approves the right amount, and if the old file comes back under a new name, Movago blocks it.
->
-> For a forwarder handling a thousand invoices a month, our illustrative scenario frees a hundred hours of work. The pilot will measure the real number.
+> For a thousand invoices a month, our illustrative scenario frees a hundred hours. The pilot will measure the real number.
 >
 > Movago. Move smarter. Go safer.
 
