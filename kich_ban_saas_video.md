@@ -51,16 +51,17 @@ Nhạc chậm và hơi căng ở shot 1 đến 4, sáng lên khi logo Movago hi�
 
 **Hình:**
 1. Số `16%` đếm lên giữa khung, thanh ngang có đoạn mục tiêu `12–15%` màu Lime.
-2. Thu nhỏ sang trái. Số `US$1,010 bn` đếm lên bên phải, kèm chip `+32.3%`.
+2. Thu nhỏ sang trái. Số `US$1,010 bn` đếm lên bên phải, vượt qua vạch `1,000` có nhãn `first time`, kèm chip `+32.3%`. Dòng nhỏ bên dưới: `Exports US$499.24 bn · a record`.
 
 **On-screen:**
 ```
 Logistics costs ≈ 16% of Vietnam's GDP · target 12–15% by 2035
-US$1,010 bn goods trade · first 10 months of 2026 · +32.3%
+US$1,010 bn goods trade · first time above US$1,000 bn · first 10 months of 2026 · +32.3%
+Exports US$499.24 bn · a record
 ```
 **Nguồn:** `VIR 2026 · Decision 2229/QĐ-TTg · National Statistics Office`
 
-**VO:** "Logistics costs Vietnam about sixteen percent of its GDP. In the first ten months of 2026, Vietnam's goods trade passed a trillion dollars."
+**VO:** "Logistics costs Vietnam about sixteen percent of its GDP. In the first ten months of 2026, Vietnam's goods trade passed a trillion dollars for the first time."
 
 ## Lô hàng và dòng tiền
 
@@ -193,7 +194,7 @@ Odylytics · KTC Ideathon 2026
 
 ## Lời thoại liền mạch (dùng để thu âm)
 
-> Logistics costs Vietnam about sixteen percent of its GDP. In the first ten months of 2026, Vietnam's goods trade passed a trillion dollars.
+> Logistics costs Vietnam about sixteen percent of its GDP. In the first ten months of 2026, Vietnam's goods trade passed a trillion dollars for the first time.
 >
 > A Vietnamese company that needs to ship goods abroad usually calls a freight forwarder. The forwarder books the shipping line, the truck, customs and the port, and an agent overseas delivers to the buyer.
 >
@@ -219,7 +220,7 @@ Odylytics · KTC Ideathon 2026
 | --- | --- | --- |
 | Chi phí logistics khoảng 16% GDP | [VIR](https://vir.com.vn/vietnam-logistics-costs-account-for-16-per-cent-of-gdp-159581.html) | Đây là chi phí logistics so với GDP, không phải tỷ trọng của ngành trong GDP. |
 | Mục tiêu 12–15% GDP đến 2035 | [Quyết định 2229/QĐ-TTg](https://datafiles.chinhphu.vn/cpp/files/vbpq/2025/10/2229-ttg.signed.pdf) | Văn bản gốc. |
-| US$1.010,55 tỷ, +32,3%, 10 tháng 2026 | [Cục Thống kê](https://www.nso.gov.vn/tin-tuc-thong-ke/2026/11/tong-kim-ngach-xuat-nhap-khau-vuot-moc-1-000-ty-usd-dau-moc-lich-su-va-dong-luc-tang-truong-moi/) | Chỉ nói đúng kỳ so sánh này. |
+| US$1.010,55 tỷ, +32,3%, 10 tháng 2026 | [Cục Thống kê](https://www.nso.gov.vn/tin-tuc-thong-ke/2026/11/tong-kim-ngach-xuat-nhap-khau-vuot-moc-1-000-ty-usd-dau-moc-lich-su-va-dong-luc-tang-truong-moi/) | Lần đầu tổng kim ngạch vượt 1.000 tỷ USD; xuất khẩu đạt kỷ lục 499,24 tỷ USD. Chỉ nói đúng kỳ 10 tháng này. Đối chiếu số 499,24 với bài gốc trước khi xuất video. |
 | DHC $127 (20') và $196 (40') | [Maersk, 31/03/2026](https://www.maersk.com/news/articles/2026/03/31/terminal-handling-charges-vietnam-ohc-dhc) | Giá gốc 3,25 triệu và 5 triệu đồng, áp dụng từ 01/05/2026. |
 | 3–6% hóa đơn cước có lỗi, 1–5% chi cước thu hồi được | [Transportation Insight](https://transportationinsight.com/resources/freight-audit-payment-protect-profit-soft-rates/) | Số đo ở Mỹ. Lời thoại nói "where freight audit is common", trên hình có dòng "Vietnam: not measured". |
 | Tin tuyển freight invoice auditor ở TP.HCM | [Flexport, 2026](https://job-boards.greenhouse.io/flexport/jobs/7660304) | Lời thoại nói "one global forwarder", không nêu tên Flexport. Làm mờ logo nếu chưa xin phép. |
