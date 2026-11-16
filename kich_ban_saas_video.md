@@ -66,7 +66,7 @@ US$1,010 bn goods trade · first 10 months of 2026 · +32.3%
 
 **On-screen:** `Collects from one customer. Pays many suppliers.`
 
-**VO:** "Between the shipper and the carriers sits the freight forwarder. It books the ship, the truck and the port for its customer, then pays each of them. It collects from one customer and pays many suppliers for every shipment."
+**VO:** "Between the shipper and the carriers sits the freight forwarder. It books the ship, the truck and the port, collects from one customer, and pays many suppliers for every shipment."
 
 ## Vấn đề
 
@@ -79,7 +79,7 @@ US$1,010 bn goods trade · first 10 months of 2026 · +32.3%
 
 **Nguồn (bước 3):** `Maersk notice, 31 Mar 2026`
 
-**VO:** "Before any of those bills is paid, an accountant checks each fee line against the invoice, the shipment file and the approved rate, which sit with three different teams. One carrier writes 'Documentation fee', another writes 'Phí chứng từ'. And the same handling charge costs more for a forty-foot container than for a twenty-foot one."
+**VO:** "Before any of those bills is paid, an accountant checks each fee line against the invoice, the shipment file and the approved rate, which sit with three different teams. One carrier writes 'Documentation fee', another writes 'Phí chứng từ'. A forty-foot container also pays a higher handling charge than a twenty-foot one."
 
 ### Shot 4 · Mức độ của vấn đề (0:40 đến 0:52)
 
@@ -104,7 +104,7 @@ US$1,010 bn goods trade · first 10 months of 2026 · +32.3%
 
 **On-screen:** `Total 9,300,000 ₫ · 800,000 ₫ too high` rồi `Built for the check before every payment`
 
-**VO:** "This invoice adds up to nine point three million dong, and it is still eight hundred thousand too high. Forwarders already run this check before every payment. Movago is a new product for that step."
+**VO:** "This invoice adds up, and it is still eight hundred thousand dong too high. Forwarders already run this check before every payment. Movago is a new product for that step."
 
 ### Shot 6 · Bảng giá có căn cứ (1:02 đến 1:10)
 
@@ -126,7 +126,7 @@ US$1,010 bn goods trade · first 10 months of 2026 · +32.3%
    - DOC `1,300,000` so với `500,000`, Discrepancy `+800,000 ₫ (~US$31)`
 3. Hai thẻ căn cứ đặt cạnh nhau: `INV-095 · page 1 · DOC` và `RATE-V3 · line 12`.
 
-**VO:** "When an invoice arrives, Movago finds the shipment, picks the price for that route, container and date, and checks each line. Here the documentation fee is one point three million dong against five hundred thousand approved, and the accountant sees both sources on one screen."
+**VO:** "When an invoice arrives, Movago finds the shipment, picks the price for that route, container and date, and checks each line. Here the documentation fee is one point three million against five hundred thousand approved, with both sources on one screen."
 
 ### Shot 8 · Xử lý và duyệt chi (1:24 đến 1:34)
 
@@ -148,7 +148,7 @@ US$1,010 bn goods trade · first 10 months of 2026 · +32.3%
 
 **On-screen:** `Works next to your TMS and accounting software`
 
-**VO:** "Operations still runs the shipment and accounting still sends the payment. Movago sits between them and shows whether the amount is right."
+**VO:** "Operations runs the shipment, accounting sends the payment, and Movago shows them whether the amount is right."
 
 ## Kết quả
 
@@ -181,21 +181,21 @@ Odylytics · KTC Ideathon 2026
 
 > Logistics costs Vietnam about sixteen percent of its GDP. In the first ten months of 2026, trade passed a trillion dollars.
 >
-> Between the shipper and the carriers sits the freight forwarder. It books the ship, the truck and the port for its customer, then pays each of them. It collects from one customer and pays many suppliers for every shipment.
+> Between the shipper and the carriers sits the freight forwarder. It books the ship, the truck and the port, collects from one customer, and pays many suppliers for every shipment.
 >
-> Before any of those bills is paid, an accountant checks each fee line against the invoice, the shipment file and the approved rate, which sit with three different teams. One carrier writes "Documentation fee", another writes "Phí chứng từ". And the same handling charge costs more for a forty-foot container than for a twenty-foot one.
+> Before any of those bills is paid, an accountant checks each fee line against the invoice, the shipment file and the approved rate, which sit with three different teams. One carrier writes "Documentation fee", another writes "Phí chứng từ". A forty-foot container also pays a higher handling charge than a twenty-foot one.
 >
 > Where freight audit is common, three to six percent of freight invoices contain errors, and up to five percent of freight spend can be recovered. Vietnam has no figure yet. In Ho Chi Minh City, one global forwarder is hiring someone just to do this check.
 >
-> This invoice adds up to nine point three million dong, and it is still eight hundred thousand too high. Forwarders already run this check before every payment. Movago is a new product for that step.
+> This invoice adds up, and it is still eight hundred thousand dong too high. Forwarders already run this check before every payment. Movago is a new product for that step.
 >
 > Pricing approves the carrier's quotation first, and each price becomes a rate card line that points back to the quote.
 >
-> When an invoice arrives, Movago finds the shipment, picks the price for that route, container and date, and checks each line. Here the documentation fee is one point three million dong against five hundred thousand approved, and the accountant sees both sources on one screen.
+> When an invoice arrives, Movago finds the shipment, picks the price for that route, container and date, and checks each line. Here the documentation fee is one point three million against five hundred thousand approved, with both sources on one screen.
 >
 > One click sends the line to pricing. The supplier corrects the invoice, the chief accountant approves the right amount, and if the old file comes back under a new name, Movago blocks it.
 >
-> Operations still runs the shipment and accounting still sends the payment. Movago sits between them and shows whether the amount is right.
+> Operations runs the shipment, accounting sends the payment, and Movago shows them whether the amount is right.
 >
 > For a forwarder handling a thousand invoices a month, our illustrative scenario frees a hundred hours of work. The pilot will measure the real number.
 >
