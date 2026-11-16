@@ -14,7 +14,7 @@ Phần sau của video xoay quanh ca giả lập hóa đơn INV-095. Chỉ có v
 Video dài 1:55 đến 2:05, lời thoại khoảng 310 từ ở tốc độ 155 từ/phút. Nếu bản thu vượt 2:05, cắt lần lượt:
 
 1. Vế "and if the old file comes back under a new name, Movago blocks it" ở shot 8.
-2. Vế "and in Ho Chi Minh City one global forwarder is hiring someone just to do this check" ở shot 4.
+2. Câu "Carriers name the same fee differently, and the right price changes with the container." ở shot 3.
 3. Câu "Booking, trucking and customs stay in the tools forwarders already use." ở shot 5.
 
 Phân bổ thời gian:
@@ -101,14 +101,13 @@ Shipper ──pays──► Forwarder ──pays──► Shipping line · Truck
 ### Shot 4 · Mức độ của vấn đề (0:40 đến 0:50)
 
 **Hình:**
-1. Chữ `3–6%` hiện lớn, nhãn nhỏ `freight invoices with errors · audits abroad`.
+1. Bản đồ nước Mỹ mờ phía sau. Chữ `3–6%` hiện lớn, nhãn nhỏ `freight invoices with errors · United States`.
 2. Dưới đó: `1–5% of freight spend recoverable`.
-3. Dòng `Vietnam: not measured` hiện ra với dấu hỏi.
-4. Góc phải trượt vào thẻ tin tuyển dụng đã làm mờ: `Freight invoice auditor · Ho Chi Minh City`.
+3. Máy quay lướt sang bản đồ Việt Nam. Ở vị trí con số chỉ có một dấu `?` lớn. Giữ khoảng một giây im lặng trước khi sang shot 5.
 
-**Nguồn:** `Transportation Insight (US) · Flexport job posting 2026`
+**Nguồn:** `Transportation Insight (US)`
 
-**VO:** "Where freight audit is common, three to six percent of freight invoices contain errors. Vietnam has no figure yet, and in Ho Chi Minh City one global forwarder is hiring someone just to do this check."
+**VO:** "Even in the US, where freight billing is standardized and audited as a matter of routine, three to six percent of freight invoices contain errors. So what about Vietnam?"
 
 ## Movago
 
@@ -200,7 +199,7 @@ Odylytics · KTC Ideathon 2026
 >
 > The money runs the other way: the shipper pays the forwarder, and the forwarder pays each supplier, who sends its own invoice. Before paying, an accountant checks every fee line against the shipment file and the approved rate, held by two other teams. Carriers name the same fee differently, and the right price changes with the container.
 >
-> Where freight audit is common, three to six percent of freight invoices contain errors. Vietnam has no figure yet, and in Ho Chi Minh City one global forwarder is hiring someone just to do this check.
+> Even in the US, where freight billing is standardized and audited as a matter of routine, three to six percent of freight invoices contain errors. So what about Vietnam?
 >
 > This invoice adds up, and it is still eight hundred thousand dong too high. Movago works at this one step, just before the forwarder pays a supplier. Booking, trucking and customs stay in the tools forwarders already use.
 >
@@ -222,8 +221,7 @@ Odylytics · KTC Ideathon 2026
 | Mục tiêu 12–15% GDP đến 2035 | [Quyết định 2229/QĐ-TTg](https://datafiles.chinhphu.vn/cpp/files/vbpq/2025/10/2229-ttg.signed.pdf) | Văn bản gốc. |
 | US$1.010,55 tỷ, +32,3%, 10 tháng 2026 | [Cục Thống kê](https://www.nso.gov.vn/tin-tuc-thong-ke/2026/11/tong-kim-ngach-xuat-nhap-khau-vuot-moc-1-000-ty-usd-dau-moc-lich-su-va-dong-luc-tang-truong-moi/) | Lần đầu tổng kim ngạch vượt 1.000 tỷ USD; xuất khẩu đạt kỷ lục 499,24 tỷ USD. Chỉ nói đúng kỳ 10 tháng này. Đối chiếu số 499,24 với bài gốc trước khi xuất video. |
 | DHC $127 (20') và $196 (40') | [Maersk, 31/03/2026](https://www.maersk.com/news/articles/2026/03/31/terminal-handling-charges-vietnam-ohc-dhc) | Giá gốc 3,25 triệu và 5 triệu đồng, áp dụng từ 01/05/2026. |
-| 3–6% hóa đơn cước có lỗi, 1–5% chi cước thu hồi được | [Transportation Insight](https://transportationinsight.com/resources/freight-audit-payment-protect-profit-soft-rates/) | Số đo ở Mỹ. Lời thoại nói "where freight audit is common", trên hình có dòng "Vietnam: not measured". |
-| Tin tuyển freight invoice auditor ở TP.HCM | [Flexport, 2026](https://job-boards.greenhouse.io/flexport/jobs/7660304) | Lời thoại nói "one global forwarder", không nêu tên Flexport. Làm mờ logo nếu chưa xin phép. |
+| 3–6% hóa đơn cước có lỗi, 1–5% chi cước thu hồi được | [Transportation Insight](https://transportationinsight.com/resources/freight-audit-payment-protect-profit-soft-rates/) | Số đo ở Mỹ, do một công ty bán dịch vụ kiểm toán cước đưa ra. Video chỉ đặt câu hỏi về Việt Nam, không nêu số hay nhận định nào cho Việt Nam. |
 | 1.000 hóa đơn, 15 xuống 9 phút, 100 giờ | Kịch bản minh họa trong [brief](colio_ai_project_brief.md) | Luôn có nhãn `Illustrative scenario` trên hình. |
 
 ## Những gì không đưa vào video
@@ -243,7 +241,7 @@ Odylytics · KTC Ideathon 2026
 - [ ] Shot 1 ghi "logistics costs", không ghi "logistics is 16% of GDP".
 - [ ] Shot 2 xếp các bước đúng thứ tự container di chuyển: hãng tàu, xe kéo, hải quan, cảng, đại lý nước ngoài.
 - [ ] Shot 3 dùng lại đúng sơ đồ shot 2, chỉ thêm mũi tên tiền và hóa đơn.
-- [ ] Shot 4 giữ vế "where freight audit is common" trong lời thoại và dòng "Vietnam: not measured" trên hình.
+- [ ] Shot 4 ghi rõ `United States` cạnh số 3–6%, và phía Việt Nam chỉ có dấu `?`, không có con số nào.
 - [ ] Shot 5 thu sơ đồ thành một dòng và chỉ rõ Movago ở bước "Pay suppliers".
 - [ ] Shot 7 có nhãn `Prototype simulation · planned document AI` khi PDF còn trên hình.
 - [ ] Shot 9 có dòng `Illustrative scenario` cùng lúc với các con số.
