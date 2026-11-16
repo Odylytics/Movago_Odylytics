@@ -8,6 +8,7 @@
 
 | Cần làm gì | Đọc ở đâu |
 |---|---|
+| Nắm ý tưởng Movago nhanh (cho ai, quy trình, chen vào đâu, còn thiếu gì) | [Tóm tắt ý tưởng (Word)](tong_quan/Movago_Tom_tat_y_tuong.docx) |
 | Chốt khách hàng, phạm vi MVP, kế hoạch pilot và mô hình kinh doanh | [Brief dự án](colio_ai_project_brief.md) |
 | Chọn bài toán kinh doanh và chuẩn bị bằng chứng cho pitch | [Nghiên cứu bài toán kinh doanh](nghien_cuu_tung_slide/colio_ai_business_problems.md) |
 | Làm deck | [Deck tiếng Anh để nộp](nghien_cuu_tung_slide/Movago_Pitch_Deck_EN.pptx) · [Nội dung từng slide](colio_ai_noi_dung_slide.md) |
