@@ -2,26 +2,26 @@
 
 This script follows `nghien_cuu_tung_slide/Movago_Pitch_Deck_EN.pptx` in presentation order (15 slides). It runs to about 1,150 spoken words, which fills ten minutes at about 115 words a minute with time for the demo clicks.
 
-Quân (Nguyễn Minh Quân, CEO) and Nghĩa (Trần Tuấn Nghĩa, CPO) take turns slide by slide. Nghĩa drives the demo on slide 9, and Quân asks the question that leads into it. Each of them speaks for about five minutes.
+Quân (Nguyễn Minh Quân, CEO) and Nghĩa (Trần Tuấn Nghĩa, CPO) take turns: every slide changes speaker, and on five slides Quân picks up the last paragraph. Nghĩa drives the demo on slide 9, and Quân asks the question that leads into it. Each of them speaks about 575 words, close to five minutes.
 
 Lines in *[brackets]* are stage directions. Anything still marked `[n]` or `[x]` has to come from the real survey before rehearsal, so never say an invented number there.
 
 | # | Slide | Speaker | Time | Clock |
 | --- | --- | --- | --- | --- |
 | 1 | Title | Quân, Nghĩa | 0:30 | 0:30 |
-| 2 | Business problem | Nghĩa | 0:40 | 1:10 |
+| 2 | Business problem | Nghĩa, Quân | 0:40 | 1:10 |
 | 3 | Target business and users | Quân | 0:40 | 1:50 |
-| 4 | Business insight | Nghĩa | 0:45 | 2:35 |
+| 4 | Business insight | Nghĩa, Quân | 0:45 | 2:35 |
 | 5 | Why now | Quân | 0:35 | 3:10 |
-| 6 | Proposed solution | Nghĩa | 0:35 | 3:45 |
+| 6 | Proposed solution | Nghĩa, Quân | 0:35 | 3:45 |
 | 7 | How AI helps | Quân | 0:45 | 4:30 |
 | 8 | How it works | Nghĩa | 0:40 | 5:10 |
 | 9 | Mockup and demo | Quân, Nghĩa | 1:05 | 6:15 |
 | 10 | User validation | Nghĩa | 0:35 | 6:50 |
 | 11 | Market size | Quân | 0:40 | 7:30 |
-| 12 | Feasibility and business value | Nghĩa | 0:45 | 8:15 |
+| 12 | Feasibility and business value | Nghĩa, Quân | 0:45 | 8:15 |
 | 13 | Competitive advantage | Quân | 0:40 | 8:55 |
-| 14 | Team and roadmap | Nghĩa | 0:40 | 9:35 |
+| 14 | Team and roadmap | Nghĩa, Quân | 0:40 | 9:35 |
 | 15 | Close | Quân, Nghĩa | 0:25 | 10:00 |
 
 ## 1 · Title (Quân, Nghĩa · 0:30)
@@ -32,13 +32,13 @@ Lines in *[brackets]* are stage directions. Anything still marked `[n]` or `[x]`
 
 *[Click.]*
 
-## 2 · Business problem (Nghĩa · 0:40)
+## 2 · Business problem (Nghĩa, Quân · 0:40)
 
 **Nghĩa:** Picture the accounts payable team at a freight forwarder. Before they pay one freight charge, they need three documents, each kept somewhere different.
 
 The invoice arrives as a PDF or a scan by email, Zalo or a carrier portal. The shipment file, with the route, container type and bill of lading, sits in the TMS or in Excel. The approved rate card belongs to the pricing team, often in several versions.
 
-So the accountant collects all three, compares every fee line by hand, and messages operations and pricing whenever something doesn't match.
+**Quân:** So the accountant collects all three, compares every fee line by hand, and messages operations and pricing whenever something doesn't match.
 
 ## 3 · Target business and users (Quân · 0:40)
 
@@ -46,13 +46,13 @@ So the accountant collects all three, compares every fee line by hand, and messa
 
 We build for the payables accountant. Operations confirms the shipment and pricing confirms the rate. The buyer is the chief accountant or CFO, who owns the budget and wants evidence before signing off a payment.
 
-## 4 · Business insight (Nghĩa · 0:45)
+## 4 · Business insight (Nghĩa, Quân · 0:45)
 
 **Nghĩa:** The check is hard because the correct charge depends on the shipment. Maersk's destination handling charge is about one hundred twenty-seven dollars for a twenty-foot container and about one hundred ninety-six for a forty-foot, under the same fee code.
 
 Carriers also name fees differently: "Documentation fee" on one invoice, "Phí chứng từ" on the next. So the company risks paying the wrong rate, using an old rate version, or paying an invoice twice after the supplier resends it under a new file name.
 
-In markets with professional freight audit, three to six percent of freight invoices contain errors. Vietnam has no published figure yet, and our pilot will measure it.
+**Quân:** In markets with professional freight audit, three to six percent of freight invoices contain errors. Vietnam has no published figure yet, and our pilot will measure it.
 
 ## 5 · Why now (Quân · 0:35)
 
@@ -61,11 +61,11 @@ In markets with professional freight audit, three to six percent of freight invo
 Invoices now arrive as data a machine can read, yet matching them to shipments and approved rates is still done by hand. Nghĩa will show you how Movago handles that step.
 
 
-## 6 · Proposed solution (Nghĩa · 0:35)
+## 6 · Proposed solution (Nghĩa, Quân · 0:35)
 
 **Nghĩa:** With Movago, the accountant works on one screen. Movago reads the invoice, finds the right shipment and rate version, and recalculates every fee line. Each line gets one of three results, Matched, Discrepancy or Missing basis, with the source shown on both sides.
 
-Movago never pays anything itself. Accountants confirm on the evidence, and payment approval stays with the people who already hold that authority.
+**Quân:** Movago never pays anything itself. Accountants confirm on the evidence, and payment approval stays with the people who already hold that authority.
 
 ## 7 · How AI helps (Quân · 0:45)
 
@@ -109,13 +109,13 @@ All it needs is a quotation PDF, an invoice PDF and a shipment CSV, so a company
 
 For Vietnam we count from the bottom up. Of four thousand forwarders, we assume one in ten fits our first profile: ocean freight, Ho Chi Minh City, and its own AP team. At fourteen hundred dollars a year each, that is an illustrative market of about five hundred sixty-five thousand dollars, and our target is thirty customers by year three. The pilot will replace these assumptions with measured figures.
 
-## 12 · Feasibility and business value (Nghĩa · 0:45)
+## 12 · Feasibility and business value (Nghĩa, Quân · 0:45)
 
 **Nghĩa:** Take a forwarder with a thousand invoices a month. If Movago cuts checking time from fifteen minutes to nine, the team gets back one hundred hours a month, worth about two hundred thirty-five dollars before costs.
 
 At a subscription of one hundred eighteen dollars a month, Movago pays for itself once it saves three minutes per invoice.
 
-We sell it as B2B SaaS, priced per unique invoice processed. The pilot covers one lane and one or two suppliers, uses CSV data, and aims to cut handling time by at least thirty percent.
+**Quân:** We sell it as B2B SaaS, priced per unique invoice processed. The pilot covers one lane and one or two suppliers, uses CSV data, and aims to cut handling time by at least thirty percent.
 
 
 ## 13 · Competitive advantage (Quân · 0:40)
@@ -124,11 +124,11 @@ We sell it as B2B SaaS, priced per unique invoice processed. The pilot covers on
 
 Each of these tools covers part of the job. Movago combines freight logic, Vietnamese documents and no change to existing systems, which suits mid-sized forwarders still working in G.O.L or Excel.
 
-## 14 · Team and roadmap (Nghĩa · 0:40)
+## 14 · Team and roadmap (Nghĩa, Quân · 0:40)
 
 **Nghĩa:** Odylytics is a student-founded AI team in Ho Chi Minh City. Our flood-response product AquaGuard surveyed over six hundred people and reached more than three hundred pilot users, and the team has won four prizes, including first at EPICS 8.
 
-After this demo, we plan a pilot with one forwarder in the first quarter of 2027, then debit notes, XML e-invoices and connectors to TMS and ERP systems.
+**Quân:** After this demo, we plan a pilot with one forwarder in the first quarter of 2027, then debit notes, XML e-invoices and connectors to TMS and ERP systems.
 
 ## 15 · Close (Quân, Nghĩa · 0:25)
 
@@ -141,7 +141,7 @@ After this demo, we plan a pilot with one forwarder in the first quarter of 2027
 ## Rehearsal notes
 
 - Fill slide 10 first. It is the only slide with placeholders, and judges will ask about it.
-- The speaker changes on every slide, so whoever is not speaking clicks the slides. That keeps each handover to one breath.
+- Whoever is not speaking clicks the slides, so each handover takes one breath.
 - On slide 9, Nghĩa points at the screen while speaking. Quân's question before the demo and his line after it give Nghĩa time to switch windows.
 - Say amounts in dollars, as on the slides, and keep the VND figures for questions ("about one point three million dong").
 - Say the Vietnamese fee name clearly on slides 4 and 7. It shows the product handles local documents.
