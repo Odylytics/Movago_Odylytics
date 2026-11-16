@@ -1,18 +1,16 @@
 # Movago brochure copy · tri-fold A4 (English)
 
-The copy is written for a tri-fold A4 brochure: 3 panels outside, 3 panels inside. It uses the same facts as `nghien_cuu_tung_slide/Movago_Pitch_Deck_EN.pptx` and the verified team facts in `ODYLYTICS_TEAM.md`. Colours and fonts follow `DEMO_DESIGN_RULES.md`.
+This copy fills a tri-fold A4 brochure, three panels on each side. The facts match `nghien_cuu_tung_slide/Movago_Pitch_Deck_EN.pptx` and the team facts in `ODYLYTICS_TEAM.md`. Colours and fonts follow `DEMO_DESIGN_RULES.md`.
 
-Rules for whoever lays it out:
+Notes for whoever lays it out:
 
-- Keep the "Simulated data" and "Illustrative" labels next to the numbers they belong to. Judges will read them as claims otherwise.
-- Survey results are not in yet. Do not add a user-validation number until the survey is done.
-- Suggested images are screenshots from the live demo (movago-odylytics.vercel.app). No stock photos of trucks or ports.
+- Keep the "Simulated data" and "Illustrative" labels next to the numbers they belong to, or judges will read those numbers as results.
+- The survey has no results yet, so leave user-validation numbers out until it does.
+- Use screenshots from the live demo (movago-odylytics.vercel.app) for images. Stock photos of trucks or ports don't fit.
 
-Fold order: when the brochure is closed, the reader sees panel 1 (front). Opening the cover shows panel 3 (the flap) next to panel 6. Opening the flap shows the full inside spread (4–5–6). Panel 2 is the back.
+Fold order: closed, the reader sees panel 1 (front). Opening the cover shows panel 3 (the flap) next to panel 6. Opening the flap shows the inside spread, panels 4, 5 and 6. Panel 2 is the back.
 
----
-
-## OUTSIDE
+## Outside
 
 ### Panel 1 · Front cover
 
@@ -20,15 +18,13 @@ Fold order: when the brochure is closed, the reader sees panel 1 (front). Openin
 
 **Move smarter. Go safer.**
 
-AI that checks every freight invoice against the shipment and the approved rate card, before you pay it.
+AI that checks every freight invoice against the shipment and the approved rate card before you pay it.
 
-*[Image: the reconciliation workspace, one invoice line flagged red.]*
+*[Image: the reconciliation workspace with one invoice line flagged.]*
 
 Team Odylytics · KTC Ideathon 2026 · Operations & Productivity
 
----
-
-### Panel 2 · Back cover (middle panel when folded)
+### Panel 2 · Back cover
 
 **Try it now**
 
@@ -36,68 +32,49 @@ Team Odylytics · KTC Ideathon 2026 · Operations & Productivity
 
 *[QR code to the demo]*
 
-Open case INV-095 and watch Movago find a $31 overcharge in under a minute.
+Open case INV-095 and see Movago find a $31 overcharge in under a minute.
 
 **Our ask**
 
-One freight forwarder in Ho Chi Minh City.
-30–100 invoice sets.
-We measure the time saved and the errors caught, together.
+We are looking for one freight forwarder in Ho Chi Minh City to run a pilot on 30 to 100 invoice sets with us, so we can measure the time saved and the errors caught.
 
 odylytics@gmail.com · odylytics.com
 
 **Check before you pay.**
 
----
+### Panel 3 · Flap
 
-### Panel 3 · Flap (seen first when the cover opens)
-
-**One freight charge. Three places to check.**
+**Each freight charge has to be checked in three places**
 
 Before paying a carrier, accounts payable has to find:
 
-**01 · The invoice**
-A PDF or scan, sent by email, Zalo or a carrier portal.
+**01 · The invoice.** A PDF or scan that arrives by email, Zalo or a carrier portal.
 
-**02 · The shipment file**
-Route, container and B/L number, in the TMS or Excel.
+**02 · The shipment file.** Route, container and B/L number, kept in the TMS or in Excel.
 
-**03 · The approved rate**
-Held by pricing, often in several versions.
+**03 · The approved rate.** Held by the pricing team, often in several versions.
 
-Today it is eyes and Excel, and many messages to operations and pricing.
+Today the accountant compares these by eye in Excel and messages operations and pricing when something is unclear. One carrier calls a fee "Documentation fee" and the next calls it "Phí chứng từ".
 
-> The same fee can be called "Documentation fee" on one invoice and "Phí chứng từ" on the next.
+## Inside
 
----
+### Band across panels 4, 5 and 6 · Where Movago fits
 
-## INSIDE
+*[A thin strip across the top of the inside spread, showing five steps as a timeline. Step 5 is in the brand colour with the Movago mark under it.]*
 
-### Top band across panels 4–5–6 · Where Movago fits
+**A forwarder collects from one customer and pays many suppliers for every shipment.**
 
-*[A thin horizontal strip across the top of the inside spread. Five steps as a timeline; step 5 highlighted in the brand colour, with the Movago mark under it.]*
+1 Sell: quote the shipper and agree rates with carriers
+2 Book: space on the vessel, trucks, depot
+3 Move: pack, haul to port, clear customs, sail, deliver
+4 Document: B/L, customs declaration, invoices
+5 Pay: carriers, truckers, ports and agents send invoices, **Movago checks every fee line**, the chief accountant approves, and the payment goes out
 
-**A forwarder collects from one customer, but pays many suppliers for every shipment.**
+Under the strip, three small labels show where Movago's data comes from: the approved rate card from pricing (step 1), the shipment file from the TMS or Excel (steps 2 and 3), and invoices and debit notes from suppliers (step 5).
 
-**1 · Sell** — quote the shipper, agree rates with carriers
-**2 · Book** — space on the vessel, trucks, depot
-**3 · Move** — pack, haul to port, customs, sail, deliver
-**4 · Document** — B/L, customs declaration, invoices
-**5 · Pay** — carriers, truckers, ports and agents send invoices → **Movago checks every fee line** → chief accountant approves → payment
+*Movago does not book space, track ships, clear customs or send payments. It works alongside the TMS and accounting software the forwarder already uses.*
 
-Under the strip, three small labels:
-
-- **Pricing → Movago:** the approved rate card (step 1)
-- **Operations → Movago:** the shipment file from your TMS or Excel (steps 2–3)
-- **Suppliers → Movago:** invoices and debit notes (step 5)
-
-**Operations moves the box. Accounting moves the money. Movago proves the money matches the box.**
-
-*Movago does not book, track, clear customs or send payments. It works next to the tools you already use.*
-
----
-
-### Panel 4 · The problem in money
+### Panel 4 · What it costs
 
 **The right charge depends on the shipment**
 
@@ -106,15 +83,11 @@ Under the strip, three small labels:
 | **$127** | Maersk DHC, 20' dry container |
 | **$196** | Maersk DHC, 40' dry container |
 
-Same fee code. Different correct amount.
+Both lines use the same fee code, but the correct amount differs.
 
-**Where money leaks**
+Money leaks in three ways. An invoice can use a price that is no longer approved. Invoices can wait on email and Zalo while approvers never see the proof. And a supplier can resend an invoice under a new file name so that it gets entered twice.
 
-- **Wrong rate or old version** — the invoice uses a price that is no longer approved.
-- **Missing evidence** — invoices wait on email and Zalo; approvers never see the proof.
-- **Duplicates** — a resent invoice with a new file name gets entered twice.
-
-**Why it hurts**
+**How often it happens**
 
 | | |
 | --- | --- |
@@ -122,40 +95,31 @@ Same fee code. Different correct amount.
 | **1–5%** | of total freight spend is recoverable |
 | **$6** | median cost to process one AP invoice (5,846 organisations) |
 | **16% of GDP** | Vietnam's logistics cost, against a 12–15% national target |
-| **4,000+** | freight forwarders in Vietnam, each paying carriers every week |
+| **4,000+** | freight forwarders in Vietnam |
 
-Checking freight invoices is a full-time job: Flexport is hiring a freight invoice auditor in Ho Chi Minh City to check invoices against contracts, rates and shipment records.
+In Ho Chi Minh City, Flexport is hiring an auditor whose job is to check freight invoices against contracts, rates and shipment records.
 
-*Sources: Transportation Insight (US freight audit provider); APQC; Vietnam Investment Review 2026 and Decision 2229/QĐ-TTg; VLA via Vietnam Logistics Report 2025; Flexport job posting 2026. Vietnam has no published freight-invoice error rate yet; our pilot will measure it.*
-
----
+*Sources: Transportation Insight (US freight audit provider); APQC; Vietnam Investment Review 2026 and Decision 2229/QĐ-TTg; VLA via Vietnam Logistics Report 2025; Flexport job posting 2026. Vietnam has no published freight-invoice error rate yet. Our pilot will measure it.*
 
 ### Panel 5 · How Movago works
 
-**One screen. Every fee line checked.**
+**One screen that checks every fee line**
 
-**1 · Build the rate card**
-AI reads the carrier quotation. Pricing approves each line.
+**1 · Build the rate card.** AI reads the carrier quotation and pricing approves each line.
 
-**2 · Read the invoice**
-AI pulls out every fee line. A digital fingerprint blocks resent invoices.
+**2 · Read the invoice.** AI pulls out every fee line, and a digital fingerprint blocks resent invoices.
 
-**3 · Match**
-Movago finds the right shipment and the rate card in force on that date.
+**3 · Match.** Movago finds the shipment and the rate card in force on that date.
 
-**4 · Check and confirm**
-Every line gets one result:
+**4 · Check and confirm.** Each line is marked Matched, Discrepancy or Missing basis.
 
-● **Matched** ● **Discrepancy** ● **Missing basis**
+● Matched ◆ Discrepancy □ Missing basis
 
-The accountant opens the evidence on both sides, confirms, and exports a report.
+The accountant opens the evidence from both sides, confirms, and exports a report.
 
-**AI reads. Rules check the money.**
-AI handles the slow reading and the fee names. The amount is always recalculated by fixed rules, so every result can be repeated and explained. When the AI is unsure, a person decides.
+AI does the slow reading and maps fee names to one code. Fixed rules recalculate the amount, so the same invoice always gives the same result with a reason attached. When the AI is unsure, a person decides.
 
-*[Image: evidence view — invoice page 1 next to RATE-V3 line 12.]*
-
----
+*[Image: evidence view, invoice page 1 next to RATE-V3 line 12.]*
 
 ### Panel 6 · Proof and value
 
@@ -165,7 +129,7 @@ AI handles the slow reading and the fee names. The amount is always recalculated
 | --- | --- | --- | --- |
 | Ocean freight | $314 | $314 | Matched |
 | Documentation fee | $51 | $20 | **+$31** |
-| Resent copy, new file name | — | — | **Blocked** |
+| Resent copy, new file name | | | **Blocked** |
 
 **What it could save** *(illustrative scenario)*
 
@@ -173,29 +137,24 @@ AI handles the slow reading and the fee names. The amount is always recalculated
 **15 → 9** minutes per invoice
 **100 hours** freed every month
 
-Break-even: **3 minutes saved per invoice** at $118 a month.
+At $118 a month, Movago pays for itself once it saves 3 minutes per invoice.
 
-**Built for**
-Mid-sized ocean freight forwarders in Ho Chi Minh City.
-Works from the files you already have: a quotation PDF, an invoice PDF and a shipment CSV. No system change.
+**Built for** mid-sized ocean freight forwarders in Ho Chi Minh City. It works from files they already have: a quotation PDF, an invoice PDF and a shipment CSV.
 
-**Team Odylytics**
-A student-founded AI team in Ho Chi Minh City. Our flood-response product AquaGuard won 1st prize at EPICS 8 (2026) and was used by communities during flood season.
+**Team Odylytics** is a student-founded AI team in Ho Chi Minh City. Our flood-response product AquaGuard won 1st prize at EPICS 8 (2026) and was used by communities during flood season.
 
-*USD 1 = VND 25,500. Movago prepares the evidence; payment approval stays with your team.*
+*USD 1 = VND 25,500. Movago prepares the evidence, and payment approval stays with your team.*
 
----
+## Short version (one-page flyer or A5 card)
 
-## Short version (for a one-page flyer or A5 card)
+**Movago · Move smarter. Go safer.**
 
-**Movago — Move smarter. Go safer.**
+Freight invoices arrive as PDFs and scans, the shipment details sit with operations, and the approved rate sits with pricing. Movago puts all three on one screen, recalculates every fee line, and shows the evidence before you pay.
 
-Freight invoices arrive as PDFs and scans. The shipment sits in operations, the approved rate sits with pricing. Movago brings all three onto one screen, recalculates every fee line, and shows you the evidence before you pay.
-
-✓ Reads Vietnamese and English invoices
-✓ Checks each line against the approved rate
-✓ Catches resent invoices
-✓ No system change — works from CSV
+- Reads Vietnamese and English invoices
+- Checks each line against the approved rate
+- Catches resent invoices
+- Works from CSV, with no change to your systems
 
 Try the demo: **movago-odylytics.vercel.app**
 Pilot with us: **odylytics@gmail.com**
