@@ -200,39 +200,9 @@ Illustrative scenario · the pilot will measure the real result
 
 **VO:** "For 1,000 invoices a month, our illustrative scenario estimates 100 hours saved. Our pilot will measure the actual impact."
 
-### Shot 9b · Hành trình Odylytics, timelapse (chèn giữa shot 9 và shot 10, 14 giây)
+### Shot 9b · Hành trình Odylytics, timelapse (14 giây)
 
-Chèn sau shot 9, trước end card. Lời thoại shot 9 kết bằng "Our pilot will measure the actual impact", nên đoạn này trả lời ngay câu hỏi ai sẽ chạy pilot đó: một đội đã đưa sản phẩm ra thực tế. Cắt ở đây không đụng vào lời thoại nào, và end card shot 10 giữ nguyên. Không có lời thoại, chỉ nhạc. Nhạc giữ nhịp tăng từ shot 9, có tiếng tua băng ngắn ở nhịp 2, rồi dồn lên và chốt ở khung cuối. Mỗi thẻ thành tích có tên dự án (AquaGuard, EnableCode, Includio) để người xem không nhầm là thành tích của Movago.
-
-**Hình:**
-
-1. **0,0 đến 1,5 giây · Kéo lùi.** Khung cuối shot 9 đứng hình, máy quay lùi ra. Dòng `Illustrative scenario · the pilot will measure the real result` thu lại thành một chấm Lime ở đầu phải một trục thời gian ngang, nhãn `Now · Movago`. Chữ hiện trên trục: `Built by Odylytics`.
-2. **1,5 đến 3,0 giây · Tua ngược.** Trục thời gian trượt nhanh sang trái, bộ đếm năm lùi `2026 → 2025`, hình hơi nhòe chuyển động.
-3. **3,0 đến 10,0 giây · Timelapse.** Trục chạy lại từ trái sang phải. Mỗi mốc bật lên một thẻ ảnh khoảng 0,8 giây rồi xếp chồng lên các thẻ trước, như ảnh dán trên bảng. Ảnh lấy từ bài blog tương ứng trên odylytics.com.
-
-```
-2025  1st prize · OISP Presentation Contest · AquaGuard
-2026  1st prize · EPICS 8th (ASU & Dow Vietnam) · AquaGuard
-2026  2nd prize · Bach Khoa Innovation · AquaGuard
-2026  1st prize · Fessior DevCamp Prometheus · EnableCode
-2026  Lightning Talk · TECH PLANTER Vietnam Demo Day · AquaGuard
-2026  Working MVP · RMIT ADC Hackathon · Includio
-      Featured in Thanh Niên newspaper
-      Founder receives the Quantum scholarship
-```
-
-   Cùng lúc, dải dưới khung đếm lên ba số của AquaGuard, nhãn nhỏ `AquaGuard · flood season`:
-
-```
-1,000,000+ reached on social media   600+ active users   5+ organisations endorsed
-```
-
-   Góc phải là bản đồ thế giới mờ, năm chấm sáng dần: Việt Nam, Úc, Mỹ, Pháp, Canada, nhãn `University collaborators`.
-
-4. **10,0 đến 12,0 giây · Toàn cảnh.** Các thẻ thu nhỏ thành một bức tường ảnh. Dòng chữ lớn ở giữa: `4 prizes · 6 products · 1 shared AI core`.
-5. **12,0 đến 14,0 giây · Về lại Movago.** Trục thời gian chạy tới chấm Lime `Now · Movago`, chấm nở thành logo Movago và chuyển thẳng vào end card shot 10. Ở end card, đổi dòng tên đội thành `Powered by Odylytics`.
-
-**VO:** Không có. Nếu đội muốn thêm một câu, dùng: "Built by Odylytics, the team behind AquaGuard." (8 từ, đọc ở nhịp 1).
+Chèn giữa shot 9 và shot 10. Kịch bản chi tiết, nguồn và checklist ở [kich_ban_video_timelapse_odylytics.md](kich_ban_video_timelapse_odylytics.md).
 
 ### Shot 10 · End card (1:50 đến 2:00)
 
@@ -257,8 +227,6 @@ Odylytics · KTC Ideathon 2026
 | DHC $127 (20') và $196 (40') | [Maersk, 31/03/2026](https://www.maersk.com/news/articles/2026/03/31/terminal-handling-charges-vietnam-ohc-dhc) | Giá gốc 3,25 triệu và 5 triệu đồng, áp dụng từ 01/05/2026. |
 | 3–6% hóa đơn cước có lỗi, 1–5% chi cước thu hồi được | [Transportation Insight](https://transportationinsight.com/resources/freight-audit-payment-protect-profit-soft-rates/) | Số đo ở Mỹ, do một công ty bán dịch vụ kiểm toán cước đưa ra. Video chỉ đặt câu hỏi về Việt Nam, không nêu số hay nhận định nào cho Việt Nam. |
 | 1.000 hóa đơn, 15 xuống 9 phút, 100 giờ | Kịch bản minh họa trong [brief](colio_ai_project_brief.md) | Luôn có nhãn `Illustrative scenario` trên hình. |
-| Shot 9b: bốn giải, TECH PLANTER, RMIT ADC, Thanh Niên, học bổng Quantum | [Blog Odylytics](https://odylytics.com/#/blog) | Tra ngày 17/11/2026. Blog không ghi năm cho bài EPICS; trang chủ ghi 2026. |
-| Shot 9b: 1.000.000+ lượt tiếp cận, 600+ người dùng, 5+ tổ chức, sáu sản phẩm, năm nước hợp tác | [Trang chủ Odylytics](https://odylytics.com/) | Số của AquaGuard, không phải của Movago. |
 
 ## Những gì không đưa vào video
 
@@ -284,4 +252,4 @@ Odylytics · KTC Ideathon 2026
 - [ ] Không câu thoại hay dòng chữ nào nói Movago đã đọc hoặc đã kéo về chứng từ từ email hay Zalo.
 - [ ] Mọi số tiền khớp dữ liệu demo: 8.000.000 · 1.300.000 · 500.000 · 9.300.000 · +800.000 · 8.500.000.
 - [ ] Có phụ đề tiếng Anh, vì nhiều người xem tắt tiếng.
-- [ ] Shot 9b: mỗi thẻ thành tích có tên dự án, dải số liệu có nhãn `AquaGuard`, end card có `Powered by Odylytics`.
+- [ ] Shot 9b đạt checklist trong [kịch bản timelapse](kich_ban_video_timelapse_odylytics.md).
