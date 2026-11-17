@@ -149,7 +149,7 @@ export default function Workspace({ story }: { story: boolean }) {
     const csv = '﻿' + [head, ...rows].map((r) => r.map(esc).join(',')).join('\r\n')
     const url = URL.createObjectURL(new Blob([csv], { type: 'text/csv;charset=utf-8' }))
     const a = document.createElement('a')
-    a.href = url; a.download = `movago-${c.header.invoiceId}-report.csv`; a.click()
+    a.href = url; a.download = `movago-${c.header.invoiceId}-payment-request.csv`; a.click()
     setTimeout(() => URL.revokeObjectURL(url), 1000)
     addLog(`${t('logExport')} · ${c.header.invoiceId}`)
   }

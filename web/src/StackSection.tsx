@@ -17,7 +17,7 @@ const PIPE: { icon: IconName; t: L; d: L }[] = [
   { icon: 'scan', t: { en: 'Document AI reading', vi: 'Document AI đọc chứng từ' }, d: { en: 'OCR and layout: fields, fee lines and their position on the page; low confidence goes to a person', vi: 'OCR và bố cục: trường, dòng phí và vị trí trên trang; trường tin cậy thấp chuyển cho người kiểm tra' } },
   { icon: 'rules', t: { en: 'Match and rules', vi: 'Ghép lô và quy tắc' }, d: { en: 'Shipment by ID or B/L + supplier; approved rate by route, container, unit and date', vi: 'Ghép lô theo mã hoặc vận đơn + nhà cung cấp; chọn giá theo tuyến, container, đơn vị và ngày' } },
   { icon: 'eye', t: { en: 'Evidence and review', vi: 'Căn cứ và xác minh' }, d: { en: 'Both sources side by side; send to pricing or operations with a reason', vi: 'Hai nguồn đặt cạnh nhau; chuyển pricing hoặc vận hành kèm lý do' } },
-  { icon: 'export', t: { en: 'Report and export', vi: 'Báo cáo và xuất' }, d: { en: 'CSV with values, sources, verifier and time; later an ERP / AP ledger link', vi: 'CSV có giá trị, nguồn, người xác minh và thời điểm; sau này nối ERP / sổ công nợ' } },
+  { icon: 'export', t: { en: 'Report and export', vi: 'Báo cáo và xuất' }, d: { en: 'Payment request as CSV with values, sources, verifier and time; later a MISA / ERP link', vi: 'Yêu cầu thanh toán dạng CSV có giá trị, nguồn, người xác minh và thời điểm; sau này nối MISA / ERP' } },
 ]
 
 const BUILT = ['React', 'TypeScript', 'Vite', 'Rules engine in TypeScript', 'Web Crypto · SHA-256', 'Web Audio', 'Vitest', 'Vercel']
@@ -27,7 +27,7 @@ const PLANNED: L[] = [
   { en: 'Mobile camera capture', vi: 'Chụp bằng camera điện thoại' },
   { en: 'Document AI, e.g. Azure AI Document Intelligence', vi: 'Document AI, ví dụ Azure AI Document Intelligence' },
   { en: 'Database with audit log', vi: 'Cơ sở dữ liệu kèm nhật ký kiểm toán' },
-  { en: 'ERP / TMS connectors', vi: 'Kết nối ERP / TMS' },
+  { en: 'MISA, ERP / TMS connectors', vi: 'Kết nối MISA, ERP / TMS' },
 ]
 
 export default function StackSection() {

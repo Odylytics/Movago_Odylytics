@@ -10,8 +10,8 @@ const FORWARDER: L = { en: 'Demo Forwarder Co., HCMC', vi: 'Demo Forwarder Co., 
 export const PERSONAS: Persona[] = [
   {
     id: 'ha', name: 'Trần Thu Hà', initials: 'TH', tone: 'navy',
-    role: { en: 'Accounts payable accountant', vi: 'Kế toán công nợ' }, org: FORWARDER,
-    does: { en: 'Checks every carrier charge before it is paid. Uses Movago every day.', vi: 'Kiểm tra từng khoản cước trước khi chi. Dùng Movago hằng ngày.' },
+    role: { en: 'Operations and customer service (CS)', vi: 'Vận hành và chăm sóc khách hàng (CS)' }, org: FORWARDER,
+    does: { en: 'Knows which services each job really used. Checks every supplier invoice against the job’s buy rates before asking accounting to pay. Uses Movago every day.', vi: 'Nắm mỗi job thực tế dùng dịch vụ nào. Kiểm từng hóa đơn nhà cung cấp theo giá mua của job trước khi đề nghị kế toán chi. Dùng Movago hằng ngày.' },
   },
   {
     id: 'vy', name: 'Hoàng Bảo Vy', initials: 'BV', tone: 'ice',
@@ -20,7 +20,7 @@ export const PERSONAS: Persona[] = [
   },
   {
     id: 'bao', name: 'Phạm Quốc Bảo', initials: 'QB', tone: 'blue',
-    role: { en: 'Operations and documents', vi: 'Vận hành và chứng từ' }, org: FORWARDER,
+    role: { en: 'Documentation', vi: 'Chứng từ' }, org: FORWARDER,
     does: { en: 'Keeps shipment file SHP-001: route, container, B/L and rating date.', vi: 'Giữ hồ sơ lô SHP-001: tuyến, container, vận đơn và mốc tính giá.' },
   },
   {
@@ -113,11 +113,11 @@ export const STEPS: StoryStep[] = [
     },
   },
   {
-    who: 'lananh', cue: 'done', also: ['an'], seconds: 10,
-    title: { en: 'Lan Anh decides, with evidence', vi: 'Lan Anh quyết định, có căn cứ' },
+    who: 'lananh', cue: 'done', also: ['ha', 'an'], seconds: 10,
+    title: { en: 'Hà sends the payment request; Lan Anh decides', vi: 'Hà gửi yêu cầu thanh toán, Lan Anh quyết định' },
     body: {
-      en: 'The chief accountant gets the CSV report with both values and their sources. Payment approval stays with her, and Minh An Uniforms is re-billed only for confirmed charges.',
-      vi: 'Kế toán trưởng nhận báo cáo CSV có giá trị hai phía và nguồn. Quyền duyệt chi vẫn thuộc chị, và Minh An Uniforms chỉ bị tính lại các khoản đã xác nhận.',
+      en: 'Hà sends the payment request for job SHP-001 to accounting as a CSV, with both values and their sources, instead of another email. The chief accountant brings it into MISA and approves payment. Minh An Uniforms is re-billed only for confirmed charges.',
+      vi: 'Hà gửi yêu cầu thanh toán của job SHP-001 sang kế toán dưới dạng CSV, có giá trị hai phía và nguồn, thay cho một email nữa. Kế toán trưởng đưa vào MISA và duyệt chi. Minh An Uniforms chỉ bị tính lại các khoản đã xác nhận.',
     },
   },
 ]

@@ -279,7 +279,7 @@ const ECON: { prio: 'p1' | 'p2' | 'x'; title: L; cost: L; does: L; measure: L; r
   {
     prio: 'p1', refs: [5, 6],
     title: { en: 'Finding the basis and re-entering data', vi: 'Tìm căn cứ và nhập lại dữ liệu' },
-    cost: { en: 'Accountant hours spent gathering invoice, shipment file and approved rate, then chasing pricing or operations for answers.', vi: 'Giờ công kế toán để gom hóa đơn, hồ sơ lô và giá đã duyệt, rồi hỏi lại pricing hoặc vận hành.' },
+    cost: { en: 'Operations hours spent gathering invoice, shipment file and approved rate, then chasing pricing or operations for answers.', vi: 'Giờ công vận hành để gom hóa đơn, hồ sơ lô và giá đã duyệt, rồi hỏi lại pricing hoặc vận hành.' },
     does: { en: 'Puts the three sources on one screen, matched by shipment or B/L plus supplier.', vi: 'Đặt ba nguồn trên một màn hình, ghép theo mã lô hoặc vận đơn cùng nhà cung cấp.' },
     measure: { en: 'Minutes per file, waiting hours, share of files with all three sources.', vi: 'Phút thao tác mỗi hồ sơ, giờ chờ, tỷ lệ hồ sơ đủ ba nguồn.' },
   },
@@ -322,7 +322,7 @@ const ECON: { prio: 'p1' | 'p2' | 'x'; title: L; cost: L; does: L; measure: L; r
 
 const MODEL: { k: L; v: L; refs?: number[] }[] = [
   { k: { en: 'Who pays', vi: 'Ai trả tiền' }, v: { en: 'Chief accountant or CFO, with the head of operations. IT or the data owner decides deployment.', vi: 'Kế toán trưởng hoặc CFO, cùng trưởng vận hành. IT hoặc người phụ trách dữ liệu quyết định triển khai.' } },
-  { k: { en: 'Who uses it', vi: 'Ai sử dụng' }, v: { en: 'Accounts payable daily. Pricing and operations confirm exceptions.', vi: 'Kế toán công nợ dùng hằng ngày. Pricing và vận hành xác nhận ngoại lệ.' } },
+  { k: { en: 'Who uses it', vi: 'Ai sử dụng' }, v: { en: 'Operations and CS daily, before each payment request. Pricing confirms exceptions; accounting approves payment.', vi: 'Vận hành và CS dùng hằng ngày, trước mỗi yêu cầu thanh toán. Pricing xác nhận ngoại lệ; kế toán duyệt chi.' } },
   { k: { en: 'Price metric', vi: 'Đơn vị tính phí' }, v: { en: 'Subscription by unique invoices processed, so a resent copy is never billed twice. A setup fee only when custom configuration or rate-card clean-up is needed.', vi: 'Thuê bao theo số hóa đơn duy nhất đã xử lý, nên bản gửi lại không bị tính hai lần. Phí thiết lập chỉ khi cần cấu hình riêng hoặc chuẩn hóa bảng giá.' }, refs: [10] },
   { k: { en: 'Entry offer', vi: 'Cách vào thị trường' }, v: { en: 'A KPI-based pilot: one AP team, one route or fee group, one or two suppliers. Buyer, budget and willingness to pay are confirmed before sizing the market.', vi: 'Pilot có KPI: một nhóm AP, một tuyến hoặc nhóm phí, một đến hai nhà cung cấp. Xác nhận người mua, ngân sách và mức sẵn sàng trả phí trước khi ước lượng thị trường.' }, refs: [10] },
   { k: { en: 'Against what exists', vi: 'So với giải pháp hiện có' }, v: { en: 'Compared on the same files with the customer’s TMS/ERP, spreadsheets and tools such as G.O.L, Innomation, ShipCheck, Conlio and BravoTran: setup time, checking minutes and traceable rate sources.', vi: 'So trên cùng bộ hồ sơ với TMS/ERP, bảng tính và các công cụ như G.O.L, Innomation, ShipCheck, Conlio, BravoTran: thời gian thiết lập, phút kiểm tra và khả năng truy nguồn giá.' }, refs: [14] },

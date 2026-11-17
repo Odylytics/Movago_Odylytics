@@ -62,7 +62,7 @@ const STEPS: { art: ComponentType; t: L; d: L }[] = [
   {
     art: ArtDecide,
     t: { en: 'Evidence and decision', vi: 'Căn cứ và quyết định' },
-    d: { en: 'Both sources sit side by side. Pricing confirms, the chief accountant decides, and the result exports to CSV.', vi: 'Hai nguồn đặt cạnh nhau. Pricing xác nhận, kế toán trưởng quyết định, kết quả xuất ra CSV.' },
+    d: { en: 'Both sources sit side by side. Pricing confirms, operations sends the payment request, and the chief accountant decides.', vi: 'Hai nguồn đặt cạnh nhau. Pricing xác nhận, kế toán trưởng quyết định, kết quả xuất ra CSV.' },
   },
 ]
 
@@ -85,7 +85,11 @@ const FAQ: { q: L; a: L }[] = [
   },
   {
     q: { en: 'Why not just use the TMS or ERP?', vi: 'Sao không dùng luôn TMS hay ERP?' },
-    a: { en: 'Movago checks against the approved rate with both sources on screen, then hands over a CSV that accounts payable can bring into the tools it already uses. Direct ERP links come after the pilot.', vi: 'Movago kiểm theo giá đã duyệt với hai nguồn trên màn hình, rồi bàn giao file CSV để kế toán công nợ đưa vào công cụ đang dùng. Kết nối ERP trực tiếp làm sau pilot.' },
+    a: { en: 'Movago checks against the approved rate with both sources on screen, then hands accounting a payment request as CSV to bring into MISA or the ERP it already uses. A direct MISA link comes after the pilot.', vi: 'Movago kiểm theo giá đã duyệt với hai nguồn trên màn hình, rồi chuyển kế toán yêu cầu thanh toán dạng CSV để đưa vào MISA hoặc ERP đang dùng. Kết nối MISA trực tiếp làm sau pilot.' },
+  },
+  {
+    q: { en: 'What if the shipment data is wrong from the start?', vi: 'Nếu dữ liệu lô hàng sai từ đầu thì sao?' },
+    a: { en: 'Movago assumes the job’s services and buy rates already sit in the forwarder’s system, entered by pricing and operations. It checks supplier invoices against that record and does not fix it. A charge with no basis in the job is flagged and sent back to operations, never guessed.', vi: 'Movago giả định dịch vụ và giá mua của job đã nằm trong hệ thống của forwarder, do pricing và vận hành nhập. Movago kiểm hóa đơn nhà cung cấp theo dữ liệu đó, không sửa dữ liệu đó. Khoản phí không có căn cứ trong job được đánh dấu và trả lại cho vận hành, không đoán.' },
   },
 ]
 

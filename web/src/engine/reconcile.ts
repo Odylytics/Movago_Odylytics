@@ -66,7 +66,7 @@ export function matchShipment(header: InvoiceHeader, shipments: Row[]): { shipme
   )
   if (hits.length === 1) return { shipment: hits[0], issue: null }
   if (hits.length === 0) return { shipment: null, issue: 'No shipment record matches the invoice reference and supplier.' }
-  return { shipment: null, issue: 'Several shipment records match; the accountant must choose one.' }
+  return { shipment: null, issue: 'Several shipment records match; a person must choose one.' }
 }
 
 /** Approved rate rows that apply to this shipment, fee code and unit on the rating date. */

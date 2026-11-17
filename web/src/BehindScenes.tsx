@@ -61,7 +61,7 @@ const VIGNETTES: Vignette[] = [
   },
   {
     set: 'desk', seconds: 7,
-    place: { en: 'Demo Forwarder · AP desk', vi: 'Demo Forwarder · bàn kế toán công nợ' },
+    place: { en: 'Demo Forwarder · operations desk', vi: 'Demo Forwarder · bàn vận hành' },
     caption: { en: 'Hà gets one notification: INV-095 is read and grouped. Nothing to type in by hand.', vi: 'Hà nhận một thông báo: INV-095 đã được đọc và gộp. Không phải gõ tay.' },
     actors: [
       { who: 'ha', x: 22, y: 90, size: 60, path: bob },
@@ -72,7 +72,7 @@ const VIGNETTES: Vignette[] = [
   },
   {
     set: 'desk', seconds: 7,
-    place: { en: 'Demo Forwarder · AP desk', vi: 'Demo Forwarder · bàn kế toán công nợ' },
+    place: { en: 'Demo Forwarder · operations desk', vi: 'Demo Forwarder · bàn vận hành' },
     caption: { en: 'The invoice, Bảo’s shipment file and Khoa’s rate card meet on Hà’s screen. One click runs the check.', vi: 'Hóa đơn, hồ sơ lô của Bảo và bảng giá của Khoa gặp nhau trên màn hình của Hà. Một cú bấm là chạy đối chiếu.' },
     actors: [
       { who: 'ha', x: 22, y: 90, size: 60, path: bob },
@@ -85,7 +85,7 @@ const VIGNETTES: Vignette[] = [
   },
   {
     set: 'desk', seconds: 7,
-    place: { en: 'Demo Forwarder · AP desk', vi: 'Demo Forwarder · bàn kế toán công nợ' },
+    place: { en: 'Demo Forwarder · operations desk', vi: 'Demo Forwarder · bàn vận hành' },
     caption: { en: 'No searching through email or spreadsheets: the invoice line and the approved rate are already side by side.', vi: 'Không phải lục email hay bảng tính: dòng hóa đơn và giá đã duyệt đã nằm cạnh nhau.' },
     actors: [
       { who: 'ha', x: 16, y: 96, size: 56, path: bob },
@@ -121,8 +121,8 @@ const VIGNETTES: Vignette[] = [
     set: 'office', seconds: 10,
     place: { en: 'Settling it · simulated outcome', vi: 'Giải quyết · kịch bản mô phỏng' },
     caption: {
-      en: 'Khoa calls Vy. Supplier A issues an adjusted invoice with DOC at 500,000. Lan Anh approves 8,500,000 pre-tax, and Minh An Uniforms is billed only for confirmed charges.',
-      vi: 'Khoa gọi Vy. Nhà cung cấp A xuất hóa đơn điều chỉnh với DOC 500.000. Lan Anh duyệt 8.500.000 trước thuế, và Minh An Uniforms chỉ bị tính khoản đã xác nhận.',
+      en: 'Khoa calls Vy. Supplier A issues an adjusted invoice with DOC at 500,000. Hà sends the payment request to accounting; Lan Anh approves 8,500,000 pre-tax, and Minh An Uniforms is billed only for confirmed charges.',
+      vi: 'Khoa gọi Vy. Nhà cung cấp A xuất hóa đơn điều chỉnh với DOC 500.000. Hà gửi yêu cầu thanh toán sang kế toán; Lan Anh duyệt 8.500.000 trước thuế, và Minh An Uniforms chỉ bị tính khoản đã xác nhận.',
     },
     actors: [
       { who: 'khoa', x: 10, y: 10, size: 46 },
