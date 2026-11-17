@@ -1,6 +1,6 @@
 # Movago · Nội dung 10 slide
 
-Bản tiếng Việt của nội dung trong [deck tiếng Anh để nộp](nghien_cuu_tung_slide/Movago_Pitch_Deck_EN.pptx). Đội chỉ làm slide bằng tiếng Anh; deck dựng trên [template Odylytics](nghien_cuu_tung_slide/Odylytics_Company_Deck.pptx). Lời nói cho từng slide nằm trong speaker notes của deck. Dùng [kịch bản demo và hỏi đáp](colio_ai_pitch_research_vi.md) để tập hỏi đáp và [nghiên cứu bài toán kinh doanh](nghien_cuu_tung_slide/colio_ai_business_problems.md) để tra nguồn.
+Bản tiếng Việt của nội dung trong [deck tiếng Anh để nộp](nghien_cuu_tung_slide/Movago_Pitch_V4.pptx). Đội chỉ làm slide bằng tiếng Anh; deck dựng trên [template Odylytics](nghien_cuu_tung_slide/Odylytics_Company_Deck.pptx). Lời nói cho từng slide nằm trong speaker notes của deck. Dùng [kịch bản demo và hỏi đáp](colio_ai_pitch_research_vi.md) để tập hỏi đáp và [nghiên cứu bài toán kinh doanh](nghien_cuu_tung_slide/colio_ai_business_problems.md) để tra nguồn.
 
 **Hạng mục dự thi** · Operations & Productivity: AI trích xuất thông tin từ hóa đơn và phát hiện điểm nghẽn trong quy trình kiểm tra cước.
 
@@ -14,24 +14,29 @@ Bản tiếng Việt của nội dung trong [deck tiếng Anh để nộp](nghie
 
 Tỷ giá quy đổi: 1 USD = 25.500 đồng, 1 EUR = 1,12 USD (09/11/2026).
 
-## Thứ tự 17 slide và phần còn phải điền
+## Thứ tự 17 slide
 
-Deck chính có 17 trang: trang mở đầu, 15 slide nội dung và trang kết. Đề cho tối đa 15 slide, không tính mở đầu và kết, nên deck đã dùng hết số slide nội dung. Các slide đánh dấu **KHUNG** có chỗ trống `[ ]` để đội điền sau. Phụ lục hỏi đáp nằm ở file riêng: [Movago_Appendix_QA_EN.pptx](nghien_cuu_tung_slide/Movago_Appendix_QA_EN.pptx).
+Deck chính là [Movago_Pitch_V4.pptx](nghien_cuu_tung_slide/Movago_Pitch_V4.pptx), dựng từ bản đội sửa [Movago_Pitch_V3.pptx](nghien_cuu_tung_slide/Movago_Pitch_V3.pptx) và thêm slide 1 và 15. Deck có 17 trang: trang mở đầu, 15 slide nội dung và trang kết. Đề cho tối đa 15 slide, không tính mở đầu và kết, nên deck đã dùng hết số slide nội dung. Phụ lục hỏi đáp nằm ở file riêng: [Movago_Appendix_QA_EN.pptx](nghien_cuu_tung_slide/Movago_Appendix_QA_EN.pptx).
 
-| # | Slide | Trạng thái | Điền từ đâu |
-|---|---|---|---|
-| 1 | Title (mở đầu, không tính) | Xong | |
-| 2 | How freight works | Xong. Sơ đồ shipper, forwarder và năm nhà cung cấp; hàng đi một chiều, hóa đơn về chiều ngược lại; Movago ở bước Pay suppliers. Cùng sơ đồ với shot 2 và 3 của video | |
-| 3–5 | Problem · Users · Insight | Xong | |
-| 6 | Why now | Đã điền: Nghị định 254/2026 hiệu lực 01/07/2026, 8,5 tỷ hóa đơn điện tử năm 2025. Còn ô ảnh và điều khoản phía người mua | Toàn văn Nghị định 254/2026/NĐ-CP, Thông tư 91/2026/TT-BTC |
-| 7–10 | Solution · AI · How it works · Mockup | Xong. Slide 9 có bước Dựng bảng giá và ảnh trang `#/rates` | |
-| 11 | User validation | **KHUNG** | [Form khảo sát](nghien_cuu_tung_slide/form_khao_sat.md) và [phỏng vấn](nghien_cuu_tung_slide/phong_van_ke_toan_cong_no.md) |
-| 12 | Market size và giá tham chiếu | Đã điền: TAM ~1 tỷ USD, SAM minh họa $565K (giả định 10%), SOM minh họa $42K/năm (30 khách năm 3), giá ShipCheck. Còn tỷ lệ đạt tiêu chí thật và LTV : CAC | Danh bạ VLA/HLA, câu 3 và 9 của form khảo sát |
-| 13 | Feasibility | Xong | |
-| 14 | Competitive | Đã thay bằng bảng 6 lựa chọn, thêm CargoWise IPP và Innomation | [Phân tích cạnh tranh](nghien_cuu_tung_slide/phan_tich_canh_tranh.md) |
-| 15 | Roadmap | Mốc lộ trình vẫn là bản nháp; còn `[n]` phỏng vấn và ô 2028+. Ba thẻ pilot đo: 30–100 bộ hóa đơn, giảm ≥ 30% phút xử lý, tỷ lệ lỗi thật | Đội chốt mốc thời gian |
-| 16 | Team and advisors | Xong: ba ảnh và thành tích, năm đồng sáng lập, năm cố vấn theo [trang đội ngũ](https://odylytics.com/#/team/co-founders) tra ngày 17/11/2026 | Xác nhận vai trò từng người trên Movago |
-| 17 | Kết (không tính) | Xong | |
+| Trang | Slide | Ghi chú |
+|---|---|---|
+| 1 | Mở đầu (không tính) | |
+| 2 | 1. How Freight Works | Mới. Shipper, forwarder và năm nhà cung cấp; hóa đơn đi chiều ngược lại; Movago ở bước Pay suppliers. Cùng sơ đồ với shot 2 và 3 của video |
+| 3 | 2. Business Problem | |
+| 4 | 3. Target Business & Users | |
+| 5 | 4. Business Insight | |
+| 6 | 5. Why Now | |
+| 7 | 6. Proposed Solution | |
+| 8 | 7. How AI Helps | |
+| 9 | 8. How It Works | |
+| 10 | 9. Mockup / Demo | |
+| 11 | 10. User Validation | |
+| 12 | 11. Market Size | |
+| 13 | 12. Feasibility & Business Value | |
+| 14 | 13. Competitive Advantage | |
+| 15 | 14. Team | |
+| 16 | 15. Track Record & Advisors | Mới. Hành trình giải thưởng, số liệu AquaGuard, năm cố vấn kèm vai trò, theo odylytics.com tra ngày 17/11/2026 |
+| 17 | Kết (không tính) | |
 
 Phụ lục: #1 Dữ liệu tài chính có an toàn không · #2 Nếu AI đọc sai · #3 Sao không dùng TMS/ERP · #4 Đo tác động · #5 Kiến trúc và tech stack · Tài liệu tham khảo.
 

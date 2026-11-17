@@ -1,6 +1,6 @@
 # Movago brochure copy · tri-fold A4 (English)
 
-This copy fills a tri-fold A4 brochure, three panels on each side. The facts match `nghien_cuu_tung_slide/Movago_Pitch_Deck_EN.pptx` and the team facts in `ODYLYTICS_TEAM.md`. Colours and fonts follow `DEMO_DESIGN_RULES.md`.
+This copy fills a tri-fold A4 brochure, three panels on each side. The facts match `nghien_cuu_tung_slide/Movago_Pitch_V4.pptx` and the team facts in `ODYLYTICS_TEAM.md`. Colours and fonts follow `DEMO_DESIGN_RULES.md`.
 
 Notes for whoever lays it out:
 
