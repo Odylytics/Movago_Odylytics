@@ -38,9 +38,9 @@ Chèn sau shot 9, trước end card. Lời thoại shot 9 kết bằng "Our pilo
 
 ## Tài sản cần chuẩn bị
 
-- Ảnh cho tám thẻ mốc: [video_assets/shot_9b/the_moc](video_assets/shot_9b/the_moc). Tên tệp đánh số theo thứ tự thẻ, lấy từ ảnh bài blog tương ứng trong repo landing page Odylytics. Ảnh thẻ Thanh Niên là ảnh buổi mentor mà blog dùng, không phải trang báo.
-- Logo Odylytics (wordmark nền sáng, nền tối, biểu tượng) và logo Movago: [video_assets/shot_9b/logo](video_assets/shot_9b/logo).
-- Ảnh phụ cho bức tường ảnh ở nhịp 4 (đội cầm ba giải, giấy chứng nhận EPICS, ảnh bìa AquaGuard, EnableCode, Includio): [video_assets/shot_9b/phu](video_assets/shot_9b/phu).
+- Ảnh thành tích: [video_assets/shot_9b](video_assets/shot_9b). Tệp 01 đến 08 là tám thẻ mốc theo thứ tự, lấy từ ảnh bài blog tương ứng trong repo landing page Odylytics. Tệp 09 và 10 (đội cầm ba giải, giấy chứng nhận EPICS) dùng thêm cho bức tường ảnh ở nhịp 4. Ảnh thẻ Thanh Niên là ảnh buổi mentor mà blog dùng, không phải trang báo.
+- Logo đối tác (chữ trắng, nền trong suốt): [video_assets/partner_logos](video_assets/partner_logos).
+- Logo Odylytics, logo Movago.
 - Bản đồ thế giới dạng nét mờ, đánh dấu Việt Nam, Úc, Mỹ, Pháp, Canada.
 - Hiệu ứng âm thanh tua băng ngắn (khoảng 1,5 giây).
 
