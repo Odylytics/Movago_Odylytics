@@ -14,25 +14,28 @@ Bản tiếng Việt của nội dung trong [deck tiếng Anh để nộp](nghie
 
 Tỷ giá quy đổi: 1 USD = 25.500 đồng, 1 EUR = 1,12 USD (09/11/2026).
 
-## Thứ tự 15 slide và phần còn phải điền
+## Thứ tự 17 slide và phần còn phải điền
 
-Deck chính có 15 trang, đúng giới hạn bài nộp. Bốn slide đánh dấu **KHUNG** có chỗ trống `[ ]` để đội điền sau. Phụ lục hỏi đáp nằm ở file riêng: [Movago_Appendix_QA_EN.pptx](nghien_cuu_tung_slide/Movago_Appendix_QA_EN.pptx).
+Deck chính có 17 trang: trang mở đầu, 15 slide nội dung và trang kết. Đề cho tối đa 15 slide, không tính mở đầu và kết, nên deck đã dùng hết số slide nội dung. Các slide đánh dấu **KHUNG** có chỗ trống `[ ]` để đội điền sau. Phụ lục hỏi đáp nằm ở file riêng: [Movago_Appendix_QA_EN.pptx](nghien_cuu_tung_slide/Movago_Appendix_QA_EN.pptx).
 
 | # | Slide | Trạng thái | Điền từ đâu |
 |---|---|---|---|
-| 1–4 | Title · Problem · Users · Insight | Xong | |
-| 5 | Why now | Đã điền: Nghị định 254/2026 hiệu lực 01/07/2026, 8,5 tỷ hóa đơn điện tử năm 2025. Còn ô ảnh và điều khoản phía người mua | Toàn văn Nghị định 254/2026/NĐ-CP, Thông tư 91/2026/TT-BTC |
-| 6–9 | Solution · AI · How it works · Mockup | Xong. Slide 8 có bước Dựng bảng giá và ảnh trang `#/rates` | |
-| 10 | User validation | **KHUNG** | [Form khảo sát](nghien_cuu_tung_slide/form_khao_sat.md) và [phỏng vấn](nghien_cuu_tung_slide/phong_van_ke_toan_cong_no.md) |
-| 11 | Market size và giá tham chiếu | Đã điền: TAM ~1 tỷ USD, SAM minh họa $565K (giả định 10%), SOM minh họa $42K/năm (30 khách năm 3), giá ShipCheck. Còn tỷ lệ đạt tiêu chí thật và LTV : CAC | Danh bạ VLA/HLA, câu 3 và 9 của form khảo sát |
-| 12 | Feasibility | Xong | |
-| 13 | Competitive | Đã thay bằng bảng 6 lựa chọn, thêm CargoWise IPP và Innomation | [Phân tích cạnh tranh](nghien_cuu_tung_slide/phan_tich_canh_tranh.md) |
-| 14 | Team và roadmap | Đã điền năng lực đội, vai trò, cố vấn từ [odylytics.com](https://odylytics.com/#/team/co-founders). Mốc lộ trình vẫn là bản nháp | Đội chốt mốc thời gian và vai trò trên Movago |
-| 15 | Kết | Xong | |
+| 1 | Title (mở đầu, không tính) | Xong | |
+| 2 | How freight works | Xong. Sơ đồ shipper, forwarder và năm nhà cung cấp; hàng đi một chiều, hóa đơn về chiều ngược lại; Movago ở bước Pay suppliers. Cùng sơ đồ với shot 2 và 3 của video | |
+| 3–5 | Problem · Users · Insight | Xong | |
+| 6 | Why now | Đã điền: Nghị định 254/2026 hiệu lực 01/07/2026, 8,5 tỷ hóa đơn điện tử năm 2025. Còn ô ảnh và điều khoản phía người mua | Toàn văn Nghị định 254/2026/NĐ-CP, Thông tư 91/2026/TT-BTC |
+| 7–10 | Solution · AI · How it works · Mockup | Xong. Slide 9 có bước Dựng bảng giá và ảnh trang `#/rates` | |
+| 11 | User validation | **KHUNG** | [Form khảo sát](nghien_cuu_tung_slide/form_khao_sat.md) và [phỏng vấn](nghien_cuu_tung_slide/phong_van_ke_toan_cong_no.md) |
+| 12 | Market size và giá tham chiếu | Đã điền: TAM ~1 tỷ USD, SAM minh họa $565K (giả định 10%), SOM minh họa $42K/năm (30 khách năm 3), giá ShipCheck. Còn tỷ lệ đạt tiêu chí thật và LTV : CAC | Danh bạ VLA/HLA, câu 3 và 9 của form khảo sát |
+| 13 | Feasibility | Xong | |
+| 14 | Competitive | Đã thay bằng bảng 6 lựa chọn, thêm CargoWise IPP và Innomation | [Phân tích cạnh tranh](nghien_cuu_tung_slide/phan_tich_canh_tranh.md) |
+| 15 | Roadmap | Mốc lộ trình vẫn là bản nháp; còn `[n]` phỏng vấn và ô 2028+. Ba thẻ pilot đo: 30–100 bộ hóa đơn, giảm ≥ 30% phút xử lý, tỷ lệ lỗi thật | Đội chốt mốc thời gian |
+| 16 | Team and advisors | Xong: ba ảnh và thành tích, năm đồng sáng lập, năm cố vấn theo [trang đội ngũ](https://odylytics.com/#/team/co-founders) tra ngày 17/11/2026 | Xác nhận vai trò từng người trên Movago |
+| 17 | Kết (không tính) | Xong | |
 
 Phụ lục: #1 Dữ liệu tài chính có an toàn không · #2 Nếu AI đọc sai · #3 Sao không dùng TMS/ERP · #4 Đo tác động · #5 Kiến trúc và tech stack · Tài liệu tham khảo.
 
-**Tech stack (phụ lục #5, tóm tắt ở slide 12).** Năm lớp: nhận chứng từ, AI đọc, quy tắc, duyệt và xuất, hạ tầng. Demo chạy React + TypeScript + Vite trên Vercel, rules engine TypeScript có 14 test Vitest, SHA-256 bằng Web Crypto; bước AI đọc là mô phỏng. Pilot dự kiến Azure Document Intelligence hoặc LLM, Gmail/IMAP, webhook Zalo OA, cơ sở dữ liệu lưu tại Việt Nam có audit log, kết nối ERP/TMS.
+**Tech stack (phụ lục #5, tóm tắt ở slide 13).** Năm lớp: nhận chứng từ, AI đọc, quy tắc, duyệt và xuất, hạ tầng. Demo chạy React + TypeScript + Vite trên Vercel, rules engine TypeScript có 14 test Vitest, SHA-256 bằng Web Crypto; bước AI đọc là mô phỏng. Pilot dự kiến Azure Document Intelligence hoặc LLM, Gmail/IMAP, webhook Zalo OA, cơ sở dữ liệu lưu tại Việt Nam có audit log, kết nối ERP/TMS.
 
 > Phần nội dung chi tiết bên dưới giữ đánh số 10 slide cũ. Số slide trong deck đã đổi theo bảng trên.
 

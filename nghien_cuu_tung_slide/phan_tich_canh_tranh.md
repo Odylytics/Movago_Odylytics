@@ -4,7 +4,7 @@
 
 Tỷ giá quy đổi: 1 USD = 25.500 đồng, 1 EUR = 1,12 USD (09/11/2026).
 
-Tài liệu này lấp các chỗ trống của deck 15 slide: **Why now** (slide 5), **Market size** (slide 11) và **Competitive** (slide 13). Phần cuối liệt kê từng thay đổi cần đưa vào slide. Số liệu công ty tư nhân phần lớn không công bố, nên ô thiếu ghi “–”. Mọi nhận định về đối thủ dựa trên trang sản phẩm công khai, chưa qua dùng thử.
+Tài liệu này lấp các chỗ trống của deck: **Why now** (slide 6), **Market size** (slide 12) và **Competitive** (slide 14). Phần cuối liệt kê từng thay đổi cần đưa vào slide. Số liệu công ty tư nhân phần lớn không công bố, nên ô thiếu ghi “–”. Mọi nhận định về đối thủ dựa trên trang sản phẩm công khai, chưa qua dùng thử.
 
 **Phạm vi đã chọn.** Movago là công ty trung tâm. Đối thủ chia theo mức độ cạnh tranh: hiện trạng, liền kề, trực tiếp. Người đọc là ban giám khảo Ideathon, nên bỏ phần kịch bản đầu tư (bull/base/bear).
 
