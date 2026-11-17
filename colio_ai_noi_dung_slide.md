@@ -21,7 +21,7 @@ Deck chính là [Movago_Pitch_V4.pptx](nghien_cuu_tung_slide/Movago_Pitch_V4.ppt
 | Trang | Slide | Ghi chú |
 |---|---|---|
 | 1 | Mở đầu (không tính) | |
-| 2 | 1. How Freight Works | Mới. Shipper, forwarder và năm nhà cung cấp; hóa đơn đi chiều ngược lại; Movago ở bước Pay suppliers. Cùng sơ đồ với shot 2 và 3 của video |
+| 2 | 1. How Freight Works | Mới. Mỗi bên có icon người. Shipper, forwarder và năm nhà cung cấp; hóa đơn đi chiều ngược lại; Movago ở bước Pay suppliers. Cùng sơ đồ với shot 2 và 3 của video |
 | 3 | 2. Business Problem | |
 | 4 | 3. Target Business & Users | |
 | 5 | 4. Business Insight | |
@@ -35,7 +35,7 @@ Deck chính là [Movago_Pitch_V4.pptx](nghien_cuu_tung_slide/Movago_Pitch_V4.ppt
 | 13 | 12. Feasibility & Business Value | |
 | 14 | 13. Competitive Advantage | |
 | 15 | 14. Team | |
-| 16 | 15. Track Record & Advisors | Mới. Hành trình giải thưởng, số liệu AquaGuard, năm cố vấn kèm vai trò, theo odylytics.com tra ngày 17/11/2026 |
+| 16 | 15. Why Our Team | Mới. Bốn thẻ năng lực đội (người dùng thật, giải thưởng, AI core, Demo Day) và năm cố vấn. Ảnh cố vấn đang là ảnh tạm có chữ viết tắt; bấm chuột phải → Change Picture để thay ảnh thật |
 | 17 | Kết (không tính) | |
 
 Phụ lục: #1 Dữ liệu tài chính có an toàn không · #2 Nếu AI đọc sai · #3 Sao không dùng TMS/ERP · #4 Đo tác động · #5 Kiến trúc và tech stack · Tài liệu tham khảo.
