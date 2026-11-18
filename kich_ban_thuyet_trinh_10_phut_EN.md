@@ -133,7 +133,7 @@ To be clear, those results belong to AquaGuard and our other products, not to Mo
 
 ## 17 · Close (Nghĩa, Quân · 0:30)
 
-**Nghĩa:** We are asking for one forwarder in Ho Chi Minh City to run thirty to one hundred invoice sets with us, so we can measure the time saved and the errors caught on real invoices.
+**Nghĩa:** We came to KTC Ideathon looking for support. We are looking for mentors who know freight and finance, and for guidance from experienced judges like you, to test this project and tell us where it is weak, before we take it to a real pilot with a forwarder in Ho Chi Minh City.
 
 **Quân:** Check before you pay. Move smarter. Go safer. Thank you.
 
