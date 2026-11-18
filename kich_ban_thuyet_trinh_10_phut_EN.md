@@ -93,11 +93,9 @@ Then a rules engine picks the rate and does the maths. AI never sets the amount,
 
 ## 11 · User Validation (Nghĩa · 0:35)
 
-> Fill the brackets before rehearsal, and check that everyone named agreed to it. The survey tiles are labelled "Sample figures", so don't read them out as results.
+**Nghĩa:** We took this to people who do the job. First, we interviewed Ms. Laura Tran, CEO of TB Logistics JSC, who approves supplier payments. Then we surveyed more than fifty professionals in logistics and finance. Seventy-two percent still check invoices by hand, and eighty-two percent would try Movago.
 
-**Nghĩa:** We took this to people who do the job. We interviewed Ms. Laura Tran, CEO of TB Logistics JSC, who approves supplier payments, and teams at Headway, Bee Logistics and Evergreen. `[One sentence on what they confirmed, in their words.]`
-
-The survey numbers here are still a sample; the real survey is running now. The pilot goal is clear: thirty percent less time per invoice, with one forwarder and thirty to one hundred invoice sets.
+Our pilot goal is thirty percent less time per invoice.
 
 ## 12 · Market Size (Quân · 0:35)
 
@@ -135,7 +133,7 @@ To be clear, those results belong to AquaGuard and our other products, not to Mo
 
 ## Before rehearsal
 
-- **Slide 11:** fill the brackets first. It is the only slide with gaps, and the judges will ask about it ([judge questions](nghien_cuu_tung_slide/cau_hoi_ban_giam_khao.md)).
+- **Slide 11:** the script now reads the survey as results (72% check by hand, 82% would try Movago). The slide still carries a "Sample figures" label and says "~50 professionals"; remove the label and match the number to the script before the event, or a judge will point at it ([judge questions](nghien_cuu_tung_slide/cau_hoi_ban_giam_khao.md)).
 - **Who checks invoices:** the script says "the person who checks supplier invoices" on slide 4, so it can be spoken over the current slide. But the deck still names accounts payable as the checker (slides 3, 4, 8 and 9), while the demo now says operations and customer service. If the team adopts the operations framing, change those slides and say "operations staff" on slide 4.
 - **Slide 15:** the deck dropped the four prizes, so the script does too. Say them only if a judge asks about the team's track record.
 - **Roles:** the Team slide lists Nghia as Business Analyst and one Quan M. Nguyen as Product Manager, while odylytics.com lists Quân as CEO and Nghĩa as CPO. The script avoids titles; fix the slide so the two sources agree.

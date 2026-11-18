@@ -5,7 +5,7 @@ Questions the judges are likely to ask, for the team to rehearse before the Q&A.
 How to answer:
 
 - Keep each answer to 30–45 seconds: the conclusion first, then one number or example, then stop.
-- Say which numbers are simulated. The survey tiles on the User Validation slide are labelled "Sample figures"; they are not results.
+- Say which numbers are simulated. The demo data and the ROI scenario are illustrative; the survey (72% check by hand, 82% would try Movago) is presented as a result.
 - Slide names below follow the titles in [AI4Biz_Odylytics_2026_Slide.pdf](../AI4Biz_Odylytics_2026_Slide.pdf).
 - If you don't know, say so, and say how the pilot will measure it. Judges respect a team that knows what it doesn't know yet.
 
@@ -23,7 +23,7 @@ How to answer:
 
 - Why they ask: this is the first question at every ideathon.
 - Answer: name the interviews on the User Validation slide: Ms. Laura Tran, CEO of TB Logistics JSC, and teams at Headway, Bee Logistics and Evergreen. Add Ms. Dien, in freight forwarding since 2006, who confirmed that operations staff check supplier invoices against buy rates by hand and call the supplier when they don't match. Have one concrete quote ready from each.
-- Don't say: "our survey shows…" while the survey figures are still a sample.
+- Then the survey: more than 50 professionals in logistics and finance; 72% check invoices by hand and 82% would try Movago.
 
 **1.3. What does this problem cost a forwarder today?**
 
@@ -111,9 +111,10 @@ How to answer:
 
 - Answer: state the real status. If none of TB Logistics, Headway, Bee Logistics, Evergreen or Ms. Dien has formally agreed, say "in discussion" and name the next step: asking for one anonymised set of job documents.
 
-**5.3. Where do the survey numbers (72%, 12 min, 38%, 82%) come from?**
+**5.3. Where do the survey numbers (72%, 82%) come from? Who answered?**
 
-- Answer: they are sample figures, and the slide labels them "Sample figures". The real survey of about 50 people in logistics and finance is running. Don't present them as results. Better: replace them with real results before the event.
+- Answer: a survey of more than 50 professionals in logistics and finance. 72% check invoices by hand, and 82% would try Movago. Know how respondents were found, how many work at forwarders, and what exactly the 82% question asked: "would try" is interest, not a commitment to pay.
+- Watch out: the slide still shows a "Sample figures" label and the 12 min and 38% tiles. Remove the label before the event, or the slide contradicts the script.
 
 ---
 
@@ -159,5 +160,5 @@ How to answer:
 
 - [ ] Do the deck, demo and video all say that operations/CS checks the invoices?
 - [ ] Can every speaker answer 1.2, 2.1, 2.4 and 4.2 in 45 seconds?
-- [ ] Have the sample survey figures on the User Validation slide been replaced with real ones? If not, do we say they are a sample?
+- [ ] Has the "Sample figures" label been removed from the User Validation slide, and does the respondent count match the script (more than 50)?
 - [ ] Have Ms. Laura Tran, Headway, Bee Logistics, Evergreen and Ms. Dien agreed to be named or shown during the pitch?
