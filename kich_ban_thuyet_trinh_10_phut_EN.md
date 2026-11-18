@@ -9,7 +9,7 @@ Spoken script for [AI4Biz_Odylytics_2026_Slide.pdf](AI4Biz_Odylytics_2026_Slide.
 
 | # | Slide | Speaker | Time | Clock |
 | --- | --- | --- | --- | --- |
-| 1 | Cover | Quân, Nghĩa | 0:20 | 0:20 |
+| 1 | Cover | Nghĩa, Quân | 0:20 | 0:20 |
 | 2 | How Freight Works | Quân | 0:50 | 1:10 |
 | 3 | Business Problem | Nghĩa | 0:35 | 1:45 |
 | 4 | Target Business & Users | Quân | 0:30 | 2:15 |
@@ -25,13 +25,13 @@ Spoken script for [AI4Biz_Odylytics_2026_Slide.pdf](AI4Biz_Odylytics_2026_Slide.
 | 14 | Competitive Advantage | Quân | 0:35 | 8:20 |
 | 15 | Team | Nghĩa | 0:20 | 8:40 |
 | 16 | Why Our Team | Quân | 0:50 | 9:30 |
-| 17 | Close | Quân, Nghĩa | 0:30 | 10:00 |
+| 17 | Close | Nghĩa, Quân | 0:30 | 10:00 |
 
-## 1 · Cover (Quân, Nghĩa · 0:20)
+## 1 · Cover (Nghĩa, Quân · 0:20)
 
-**Quân:** Good morning. We are team Odylytics, and this is Movago. Move smarter, go safer. I'm Quân.
+**Nghĩa:** Good morning. We are team Odylytics, and this is Movago. Move smarter, go safer. I'm Nghĩa.
 
-**Nghĩa:** And I'm Nghĩa. Movago checks every freight invoice against the shipment and the agreed rates, so forwarders stop overpaying.
+**Quân:** And I'm Quân. Movago checks every freight invoice against the shipment and the agreed rates, so forwarders stop overpaying.
 
 ## 2 · How Freight Works (Quân · 0:50)
 
@@ -127,13 +127,11 @@ We build fast: six products share one AI core, Movago reuses it, and Includio be
 
 To be clear, those results belong to AquaGuard and our other products, not to Movago. What they show is that we finish what we start.
 
-## 17 · Close (Quân, Nghĩa · 0:30)
+## 17 · Close (Nghĩa, Quân · 0:30)
 
-**Quân:** We are asking for one forwarder in Ho Chi Minh City to run thirty to one hundred invoice sets with us, so we can measure the time saved and the errors caught on real invoices.
+**Nghĩa:** We are asking for one forwarder in Ho Chi Minh City to run thirty to one hundred invoice sets with us, so we can measure the time saved and the errors caught on real invoices.
 
-**Nghĩa:** Check before you pay.
-
-**Quân and Nghĩa:** Move smarter. Go safer. Thank you.
+**Quân:** Check before you pay. Move smarter. Go safer. Thank you.
 
 ## Before rehearsal
 
