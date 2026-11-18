@@ -1,6 +1,6 @@
 # Movago pitch script · 10 minutes · Quân and Nghĩa
 
-Spoken script for [Movago_Pitch_V4.pptx](nghien_cuu_tung_slide/Movago_Pitch_V4.pptx), all 17 pages: the cover, 15 content slides and the close. The talk follows one shipment: a shipper hires a forwarder, the forwarder pays many suppliers, and Movago checks those suppliers' invoices before the forwarder pays.
+Spoken script for [AI4Biz_Odylytics_2026_Slide.pdf](AI4Biz_Odylytics_2026_Slide.pdf), the dark-theme deck dated 18/11/2026, all 17 pages: the cover, 15 content slides and the close. The talk follows one shipment: a shipper hires a forwarder, the forwarder pays many suppliers, and Movago checks those suppliers' invoices before the forwarder pays.
 
 - **Speakers:** Quân (Nguyễn Minh Quân, CEO) takes the business slides. Nghĩa (Trần Tuấn Nghĩa, CPO) takes the product slides and the demo.
 - **Length:** about 1,200 spoken words, which fills ten minutes at about 120 words a minute.
@@ -45,7 +45,7 @@ Spoken script for [Movago_Pitch_V4.pptx](nghien_cuu_tung_slide/Movago_Pitch_V4.p
 
 **Nghĩa:** And that step is getting more expensive. Logistics costs sixteen to seventeen percent of Vietnam's GDP, against about eleven percent worldwide. Container handling charges rose about fifty percent in ten years.
 
-In industry audits, three to six percent of freight invoices contain errors. For every million dollars paid to carriers, that is thirty to sixty thousand dollars at risk each year. Yet the check is still done by hand, across three files.
+In typical US audits, three to six percent of freight invoices carry billing errors. Vietnam has no published figure yet, and our pilot will measure it. Meanwhile, every charge is still checked by hand, across three files: the invoice, the shipment and the rate card.
 
 ## 4 · Target Business & Users (Quân · 0:30)
 
@@ -93,11 +93,11 @@ Then a rules engine picks the rate and does the maths. AI never sets the amount,
 
 ## 11 · User Validation (Nghĩa · 0:35)
 
-> Fill the brackets before rehearsal, and check that both people agreed to be named. If the survey figures on the slide are still the sample, say so out loud.
+> Fill the brackets before rehearsal, and check that everyone named agreed to it. The survey tiles are labelled "Sample figures", so don't read them out as results.
 
-**Nghĩa:** We took this to people who do the job. We interviewed Ms. Laura Tran, CEO of TB Logistics JSC, who approves supplier payments. `[One sentence on what she confirmed, in her words.]`
+**Nghĩa:** We took this to people who do the job. We interviewed Ms. Laura Tran, CEO of TB Logistics JSC, who approves supplier payments, and teams at Headway, Bee Logistics and Evergreen. `[One sentence on what they confirmed, in their words.]`
 
-We also met a forwarding manager who has worked in the industry since 2006. She confirmed that operations staff check supplier invoices against buy rates by hand, and call the supplier when they don't match. Our demand survey is running now, with `[n]` responses so far.
+The survey numbers here are still a sample; the real survey is running now. The pilot goal is clear: thirty percent less time per invoice, with one forwarder and thirty to one hundred invoice sets.
 
 ## 12 · Market Size (Quân · 0:35)
 
@@ -117,13 +117,13 @@ Movago combines freight logic and Vietnamese documents, and it works next to the
 
 ## 15 · Team (Nghĩa · 0:20)
 
-**Nghĩa:** Movago is built by five co-founders at Odylytics, a student-founded AI team from the UTS and Ho Chi Minh City University of Technology programme. Between us we cover product, engineering, AI, business and design.
+**Nghĩa:** Movago is built by five co-founders at Odylytics, a student-founded AI team from the UTS and Ho Chi Minh City University of Technology programme. Between us we cover engineering, business analysis, product, design and AI, and we are supported by partners including Leave a Nest, B71, NUSX, Dow, UTS and HCMUT.
 
 ## 16 · Why Our Team (Quân · 0:50)
 
-**Quân:** Why us? We ship to real users. Our flood-rescue platform AquaGuard has more than six hundred active users and has reached over a million people.
+**Quân:** Why us? We ship AI to real users. More than a thousand people have tested our products, and they have passed a million views on social media.
 
-We win on merit: four prizes in one year, including first at EPICS 8 with ASU and Dow Vietnam. We build fast: six products share one AI core, and Movago reuses it. And we are advised by academics from UTS, Ho Chi Minh City University of Technology and Laval University.
+We build fast: six products share one AI core, Movago reuses it, and Includio became a working MVP in a single hackathon. More than ten partner organisations endorse our work, and we are advised by academics from UTS, Ho Chi Minh City University of Technology and Laval University.
 
 To be clear, those results belong to AquaGuard and our other products, not to Movago. What they show is that we finish what we start.
 
@@ -138,7 +138,8 @@ To be clear, those results belong to AquaGuard and our other products, not to Mo
 ## Before rehearsal
 
 - **Slide 11:** fill the brackets first. It is the only slide with gaps, and the judges will ask about it ([judge questions](nghien_cuu_tung_slide/cau_hoi_ban_giam_khao.md)).
-- **Who checks invoices:** the script says "the person who checks supplier invoices" on slide 4, so it can be spoken over the current slide. But slides 2, 4 and 10 of the deck still say accounts payable, while the demo now says operations and customer service. If the team adopts the operations framing, change those slides and say "operations staff" on slide 4.
+- **Who checks invoices:** the script says "the person who checks supplier invoices" on slide 4, so it can be spoken over the current slide. But the deck still names accounts payable as the checker (slides 3, 4, 8 and 9), while the demo now says operations and customer service. If the team adopts the operations framing, change those slides and say "operations staff" on slide 4.
+- **Slide 15:** the deck dropped the four prizes, so the script does too. Say them only if a judge asks about the team's track record.
 - **Roles:** the Team slide lists Nghia as Business Analyst and one Quan M. Nguyen as Product Manager, while odylytics.com lists Quân as CEO and Nghĩa as CPO. The script avoids titles; fix the slide so the two sources agree.
 - **Amounts:** say them in dollars, as on the slides, and keep the VND figures for questions ("about one point three million dong").
 - **If it runs long:** cut the second paragraph of slide 5 and the last sentence of slide 12.
