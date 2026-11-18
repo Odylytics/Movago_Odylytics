@@ -13,15 +13,15 @@ Spoken script for [AI4Biz_Odylytics_2026_Slide.pdf](AI4Biz_Odylytics_2026_Slide.
 | 2 | How Freight Works | Quân | 0:50 | 1:10 |
 | 3 | Business Problem | Nghĩa | 0:35 | 1:45 |
 | 4 | Target Business & Users | Quân | 0:30 | 2:15 |
-| 5 | Business Insight | Nghĩa | 0:35 | 2:50 |
-| 6 | Why Now | Quân | 0:25 | 3:15 |
-| 7 | Proposed Solution | Nghĩa | 0:35 | 3:50 |
-| 8 | How AI Helps | Quân | 0:35 | 4:25 |
-| 9 | How It Works | Nghĩa | 0:30 | 4:55 |
-| 10 | Mockup / Demo | Nghĩa, Quân | 1:05 | 6:00 |
-| 11 | User Validation | Nghĩa | 0:35 | 6:35 |
-| 12 | Market Size | Quân | 0:35 | 7:10 |
-| 13 | Feasibility & Business Value | Nghĩa | 0:35 | 7:45 |
+| 5 | Business Insight | Nghĩa | 0:30 | 2:45 |
+| 6 | Why Now | Quân | 0:25 | 3:10 |
+| 7 | Proposed Solution | Nghĩa | 0:35 | 3:45 |
+| 8 | How AI Helps | Quân | 0:35 | 4:20 |
+| 9 | How It Works | Nghĩa | 0:30 | 4:50 |
+| 10 | Mockup / Demo | Nghĩa, Quân | 1:05 | 5:55 |
+| 11 | User Validation | Nghĩa | 0:50 | 6:45 |
+| 12 | Market Size | Quân | 0:30 | 7:15 |
+| 13 | Feasibility & Business Value | Nghĩa | 0:30 | 7:45 |
 | 14 | Competitive Advantage | Quân | 0:35 | 8:20 |
 | 15 | Team | Nghĩa | 0:20 | 8:40 |
 | 16 | Why Our Team | Quân | 0:50 | 9:30 |
@@ -51,7 +51,7 @@ In typical US audits, three to six percent of freight invoices carry billing err
 
 **Quân:** Our first customer is a mid-sized ocean forwarder in Ho Chi Minh City, one of four to four and a half thousand in Vietnam. The person who checks supplier invoices uses Movago every day. Operations confirms the shipment, pricing confirms the rate, and the chief accountant or CFO, who owns the budget, approves payment. The pilot starts small: one team, one lane, one or two suppliers.
 
-## 5 · Business Insight (Nghĩa · 0:35)
+## 5 · Business Insight (Nghĩa · 0:30)
 
 **Nghĩa:** Here is why it's hard: the correct amount depends on the shipment. Under the same fee code, a forty-foot container costs fifty-four to sixty percent more than a twenty-foot one, at both ONE and Maersk.
 
@@ -91,17 +91,23 @@ Then a rules engine picks the rate and does the maths. AI never sets the amount,
 
 **Quân:** The data is simulated, and you can try it at movago dot odylytics dot com.
 
-## 11 · User Validation (Nghĩa · 0:35)
+## 11 · User Validation (Nghĩa · 0:50)
 
-**Nghĩa:** We took this to people who do the job. First, we interviewed Ms. Laura Tran, CEO of TB Logistics JSC, who approves supplier payments. Then we surveyed more than fifty professionals in logistics and finance. Seventy-two percent still check invoices by hand, and eighty-two percent would try Movago.
+**Nghĩa:** We didn't build this from a desk. We took it to the companies that live with this problem.
 
-Our pilot goal is thirty percent less time per invoice.
+*[Point to the interview card.]* We interviewed Ms. Laura Tran, CEO of TB Logistics JSC, who approves supplier payments herself. And we spoke with teams at Headway, Bee Logistics and Evergreen, three companies that handle freight invoices every single day.
 
-## 12 · Market Size (Quân · 0:35)
+Every conversation pointed to the same step: supplier invoices are checked line by line, by hand, against rates kept in Excel and email.
+
+*[Point to the survey tiles.]* Then we tested it at scale. We surveyed more than fifty professionals in logistics and finance. Seventy-two percent still check invoices by hand, and eighty-two percent would try Movago.
+
+So our pilot goal is clear: thirty percent less time per invoice.
+
+## 12 · Market Size (Quân · 0:30)
 
 **Quân:** Freight audit is about a nine-hundred-million-dollar market worldwide. In Vietnam we size it bottom-up: four thousand forwarders, and we assume one in ten fits our first profile, so about four hundred firms. At three million dong a month, that is a serviceable market of five hundred sixty-five thousand dollars a year. Our target is thirty customers by year three. The pilot will test every one of these assumptions.
 
-## 13 · Feasibility & Business Value (Nghĩa · 0:35)
+## 13 · Feasibility & Business Value (Nghĩa · 0:30)
 
 **Nghĩa:** Is it worth paying for? Take a forwarder with a thousand invoices a month. Save six minutes on each, and the team gets back one hundred hours a month, about two hundred thirty-five dollars. Movago breaks even at three minutes saved.
 
@@ -138,4 +144,5 @@ To be clear, those results belong to AquaGuard and our other products, not to Mo
 - **Slide 15:** the deck dropped the four prizes, so the script does too. Say them only if a judge asks about the team's track record.
 - **Roles:** the Team slide lists Nghia as Business Analyst and one Quan M. Nguyen as Product Manager, while odylytics.com lists Quân as CEO and Nghĩa as CPO. The script avoids titles; fix the slide so the two sources agree.
 - **Amounts:** say them in dollars, as on the slides, and keep the VND figures for questions ("about one point three million dong").
-- **If it runs long:** cut the second paragraph of slide 5 and the last sentence of slide 12.
+- **Timing:** slide 11 now runs 0:50, so slides 5, 12 and 13 have 0:30 each. If the talk still runs long, cut the second paragraph of slide 5 and the last sentence of slide 12.
+- **Slide 11 claim:** "every conversation pointed to the same step" must match what Laura Tran, Headway, Bee Logistics and Evergreen actually said. Check with whoever ran the interviews, and confirm all four agreed to be named.
